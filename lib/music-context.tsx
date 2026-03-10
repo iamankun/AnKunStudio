@@ -93,13 +93,29 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
   const play = useCallback((track: Track) => {
     if (audioRef.current) {
+      // Stop current audio if playing
+      if (isPlaying) {
+        audioRef.current.pause();
+      }
+      
+      // Set new source and load
       audioRef.current.src = track.audioUrl;
-      audioRef.current.play();
+      audioRef.current.load();
+      
+      // Play after loading
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.error('Audio play failed:', error);
+          setIsPlaying(false);
+        });
+      }
+      
       setCurrentTrack(track);
       setIsPlaying(true);
       setProgress(0);
     }
-  }, []);
+  }, [isPlaying]);
 
   const next = useCallback(() => {
     if (!currentTrack || queue.length === 0) return;
@@ -148,7 +164,12 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
   const resume = useCallback(() => {
     if (audioRef.current && currentTrack) {
-      audioRef.current.play();
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.error('Audio resume failed:', error);
+        });
+      }
       setIsPlaying(true);
     }
   }, [currentTrack]);
