@@ -163,7 +163,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-clamp: 2;
-  box-orient: vertical;
 }
 
 .line-clamp-3 {
@@ -172,7 +171,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-clamp: 3;
-  box-orient: vertical;
 }
 
 /* Smooth Transitions */
@@ -373,22 +371,3 @@
   outline: none;
 }
 
-/* Enhanced scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #8b5cf6, #ec4899);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #7c3aed, #db2777);
-}

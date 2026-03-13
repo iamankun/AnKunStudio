@@ -168,7 +168,7 @@ export function ReleaseMusic() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-in-up text-balance">
               <span className="text-foreground">Phát hành Âm nhạc của bạn</span>
               <br />
-              <span className="bg-linear-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent animate-gradient-shift">
+              <span className="bg-linear-to-r from-red-500 via-yellow-500 to-purple-500 bg-clip-text text-transparent animate-gradient-shift">
                 Đến Thế giới
               </span>
             </h1>

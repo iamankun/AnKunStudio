@@ -19,16 +19,17 @@ interface MusicContextType {
   volume: number;
   queue: Track[];
   isPlayerVisible: boolean;
-  play: (track: Track) => void;
+  playTrack: (track: Track) => void;
   pause: () => void;
   resume: () => void;
-  next: () => void;
+  nextTrack: () => void;
   previous: () => void;
   setVolume: (volume: number) => void;
   seek: (time: number) => void;
   addToQueue: (track: Track) => void;
   setQueue: (tracks: Track[]) => void;
   closePlayer: () => void;
+  setIsPlayerVisible: (visible: boolean) => void;
 }
 
 const MusicContext = createContext<MusicContextType | null>(null);
@@ -90,87 +91,176 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const [queue, setQueueState] = useState<Track[]>(sampleTracks);
   const [isPlayerVisible, setIsPlayerVisible] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const playTrackRef = useRef<(track: Track) => void>(() => {});
 
-  const play = useCallback((track: Track) => {
-    if (audioRef.current) {
-      // Stop current audio if playing
-      if (isPlaying) {
-        audioRef.current.pause();
-      }
-      
-      // Set new source and load
-      audioRef.current.src = track.audioUrl;
-      audioRef.current.load();
-      
-      // Play after loading
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.error('Audio play failed:', error);
-          setIsPlaying(false);
-        });
-      }
-      
-      setCurrentTrack(track);
-      setIsPlaying(true);
-      setProgress(0);
-    }
-  }, [isPlaying]);
-
-  const next = useCallback(() => {
+  const nextTrack = useCallback(() => {
     if (!currentTrack || queue.length === 0) return;
     const currentIndex = queue.findIndex(t => t.id === currentTrack.id);
     const nextIndex = (currentIndex + 1) % queue.length;
-    play(queue[nextIndex]);
-  }, [currentTrack, queue, play]);
+    playTrackRef.current(queue[nextIndex]);
+  }, [currentTrack, queue, playTrackRef]);
+
+  // Initialize playTrack function in useEffect to avoid render-time ref access
+  useEffect(() => {
+    playTrackRef.current = (track: Track) => {
+      console.log('Playing track:', track.title, 'URL:', track.audioUrl);
+      
+      // If same track is already playing, don't recreate audio
+      if (audioRef.current && currentTrack?.id === track.id) {
+        console.log('Track already playing, resuming...');
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            if (error.name === 'AbortError') {
+              return;
+            }
+            console.error('Audio resume failed:', error);
+          });
+        }
+        setIsPlaying(true);
+        return;
+      }
+      
+      // Pause any existing audio before creating new one
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.removeEventListener('timeupdate', () => {});
+        audioRef.current.removeEventListener('ended', () => {});
+      }
+      
+      // Create new audio element to avoid conflicts
+      const newAudio = new Audio();
+      newAudio.volume = volume;
+      
+      // Set up event listeners for new audio
+      newAudio.addEventListener('timeupdate', () => {
+        if (newAudio.duration) {
+          setProgress((newAudio.currentTime / newAudio.duration) * 100);
+        }
+      });
+
+      newAudio.addEventListener('ended', () => {
+        nextTrack();
+      });
+
+      newAudio.addEventListener('error', (e) => {
+        console.error('Audio error:', e);
+        console.error('Audio error code:', newAudio.error);
+        setIsPlaying(false);
+      });
+
+      // Set source and play
+      newAudio.src = track.audioUrl;
+      
+      audioRef.current = newAudio;
+      setCurrentTrack(track);
+      setProgress(0);
+      
+      // Small delay to ensure state is updated
+      setTimeout(() => {
+        const playPromise = newAudio.play();
+        console.log('Play promise:', playPromise);
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log('Audio playing successfully');
+              setIsPlaying(true);
+            })
+            .catch(error => {
+              // AbortError is expected when play is interrupted by pause
+              if (error.name === 'AbortError') {
+                console.log('Audio play interrupted (AbortError - expected)');
+                return;
+              }
+              console.error('Audio play failed:', error);
+              console.error('Error name:', error.name);
+              console.error('Error message:', error.message);
+              setIsPlaying(false);
+            });
+        } else {
+          console.log('Play promise is undefined');
+          setIsPlaying(true);
+        }
+      }, 50);
+    };
+  }, [volume, nextTrack, currentTrack?.id, isPlaying]);
 
   const previous = useCallback(() => {
     if (!currentTrack || queue.length === 0) return;
     const currentIndex = queue.findIndex(t => t.id === currentTrack.id);
     const prevIndex = currentIndex === 0 ? queue.length - 1 : currentIndex - 1;
-    play(queue[prevIndex]);
-  }, [currentTrack, queue, play]);
+    playTrackRef.current(queue[prevIndex]);
+  }, [currentTrack, queue, playTrackRef]);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      audioRef.current = new Audio();
-      audioRef.current.volume = volume;
-      
-      audioRef.current.addEventListener('timeupdate', () => {
-        if (audioRef.current && audioRef.current.duration) {
-          setProgress((audioRef.current.currentTime / audioRef.current.duration) * 100);
-        }
-      });
-
-      audioRef.current.addEventListener('ended', () => {
-        next();
-      });
-    }
-
+    // Don't create audio here - it's created in playTrackRef.current
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current = null;
       }
     };
-  }, [next, volume]);
+  }, []);
+
+  const playTrack = useCallback((track: Track) => {
+    playTrackRef.current(track);
+  }, []);
 
   const pause = useCallback(() => {
+    console.log('pause() called, audioRef.current exists:', !!audioRef.current);
     if (audioRef.current) {
-      audioRef.current.pause();
-      setIsPlaying(false);
+      try {
+        console.log('Pausing audio...');
+        console.log('Audio paused before:', audioRef.current.paused);
+        console.log('Audio currentTime:', audioRef.current.currentTime);
+        
+        audioRef.current.pause();
+        
+        // Check if pause actually worked
+        setTimeout(() => {
+          console.log('Audio paused after:', audioRef.current?.paused);
+          console.log('Audio currentTime after pause:', audioRef.current?.currentTime);
+        }, 100);
+        
+        setIsPlaying(false);
+        console.log('Set isPlaying to false');
+      } catch (error) {
+        console.error('Audio pause failed:', error);
+        // Don't change state if pause failed
+      }
     }
   }, []);
 
   const resume = useCallback(() => {
+    console.log('resume() called');
+    console.log('audioRef.current exists:', !!audioRef.current);
+    console.log('currentTrack exists:', !!currentTrack);
+    console.log('audioRef.current.paused:', audioRef.current?.paused);
+    
     if (audioRef.current && currentTrack) {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.error('Audio resume failed:', error);
-        });
-      }
-      setIsPlaying(true);
+      console.log('Resuming audio...');
+      // Small delay to ensure pause is fully processed
+      setTimeout(() => {
+        if (audioRef.current) {
+          console.log('Attempting to play audio...');
+          const playPromise = audioRef.current.play();
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                console.log('Audio resumed successfully');
+                setIsPlaying(true);
+              })
+              .catch(error => {
+                // AbortError is expected when play is interrupted by pause
+                if (error.name === 'AbortError') {
+                  console.log('Audio resume interrupted (AbortError - expected)');
+                  return;
+                }
+                console.error('Audio resume failed:', error);
+              });
+          }
+        }
+      }, 50);
     }
   }, [currentTrack]);
 
@@ -213,16 +303,17 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         volume,
         queue,
         isPlayerVisible,
-        play,
+        playTrack,
         pause,
         resume,
-        next,
+        nextTrack,
         previous,
         setVolume,
         seek,
         addToQueue,
         setQueue,
         closePlayer,
+        setIsPlayerVisible,
       }}
     >
       {children}

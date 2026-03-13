@@ -39,8 +39,7 @@ export function Services() {
           {services.map((service, idx) => (
             <div 
               key={service.number} 
-              className="group space-y-6 animate-fade-in-up"
-              style={{ animationDelay: `${idx * 0.15}s` }}
+              className={`group space-y-6 animate-fade-in-up animate-delay-${idx + 1}`}
             >
               <div className="relative overflow-hidden">
                 <span className="text-6xl sm:text-7xl font-bold bg-linear-to-br from-primary/30 to-primary/10 bg-clip-text text-transparent group-hover:from-primary/50 group-hover:to-primary/30 transition-all duration-300">

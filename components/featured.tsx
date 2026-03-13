@@ -5,7 +5,7 @@ import { Play, Pause, Heart, Plus } from 'lucide-react';
 import Image from 'next/image';
 
 export function Featured() {
-  const { currentTrack, isPlaying, play, pause, resume } = useMusic();
+  const { currentTrack, isPlaying, playTrack, pause, resume, setIsPlayerVisible } = useMusic();
 
   const featuredTracks: (Track & { plays: string; durationFormatted: string })[] = sampleTracks.map((track, idx) => ({
     ...track,
@@ -29,14 +29,25 @@ export function Featured() {
   }
 
   const handlePlayTrack = (track: Track) => {
+    console.log('handlePlayTrack called with:', track.title);
+    console.log('Current track:', currentTrack?.title);
+    console.log('Is playing:', isPlaying);
+    console.log('Track ID match:', currentTrack?.id === track.id);
+    
+    setIsPlayerVisible(true); // Show music player
+    
     if (currentTrack?.id === track.id) {
+      console.log('Same track selected');
       if (isPlaying) {
+        console.log('Track is playing, calling pause...');
         pause();
       } else {
+        console.log('Track is paused, calling resume...');
         resume();
       }
     } else {
-      play(track);
+      console.log('Different track, calling playTrack...');
+      playTrack(track);
     }
   };
 

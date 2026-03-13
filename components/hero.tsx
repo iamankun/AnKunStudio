@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -35,8 +36,8 @@ export function Hero() {
       {/* YouTube Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <iframe
-          className="absolute top-1/2 left-1/2 w-[177.78vh] h-[56.25vw] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2"
-          src="https://www.youtube.com/embed/fd5vxULcZYw?autoplay=1&mute=1&loop=1&playlist=fd5vxULcZYw&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
+          className="absolute top-1/2 left-1/2 w-[120%] h-[120%] min-w-[120%] min-h-[120%] -translate-x-1/2 -translate-y-1/2"
+          src={`https://www.youtube.com/embed/woXlYnl0V6U?autoplay=1&mute=${isMuted ? '1' : '0'}&loop=1&playlist=woXlYnl0V6U&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1`}
           allow="autoplay; encrypted-media"
           allowFullScreen={false}
           title="Background video"
@@ -44,6 +45,24 @@ export function Hero() {
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-background/70" />
       </div>
+
+      {/* Mute/Unmute Button */}
+      <button
+        onClick={() => setIsMuted(!isMuted)}
+        className="absolute top-8 right-8 z-20 p-2 transition-all duration-300 hover:scale-110 pointer-events-auto group"
+        aria-label={isMuted ? 'Bật tiếng' : 'Tắt tiếng'}
+      >
+        {isMuted ? (
+          <svg className="w-7 h-7 text-primary/80 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+          </svg>
+        ) : (
+          <svg className="w-7 h-7 text-primary/80 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+          </svg>
+        )}
+      </button>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-16 sm:py-24">
