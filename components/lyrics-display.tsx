@@ -1,16 +1,17 @@
 'use client';
 
 import { useLyrics } from '@/lib/lyrics-context';
-import { ChevronUp, ChevronDown, Mic2 } from 'lucide-react';
+import { ChevronUp, ChevronDown, Mic2, Target } from 'lucide-react';
 import { getWordProgress } from '@/lib/lyrics-utils';
 import { useMusic } from '@/lib/music-context';
 import { useEffect, useRef } from 'react';
 
 interface LyricsDisplayProps {
   currentTime: number;
+  onCalibrate?: () => void;
 }
 
-export function LyricsDisplay({ currentTime }: LyricsDisplayProps) {
+export function LyricsDisplay({ currentTime, onCalibrate }: LyricsDisplayProps) {
   const { 
     lyrics, 
     currentLine, 
@@ -18,7 +19,9 @@ export function LyricsDisplay({ currentTime }: LyricsDisplayProps) {
     isExpanded, 
     isLoading, 
     error,
-    toggleExpanded 
+    toggleExpanded,
+    calibrate,
+    isCalibrated
   } = useLyrics();
   
   const lyricsRef = useRef<HTMLDivElement>(null);
@@ -60,7 +63,7 @@ export function LyricsDisplay({ currentTime }: LyricsDisplayProps) {
       <div className="relative">
         {/* Minimized Lyrics */}
         <div 
-          className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-4 cursor-pointer hover:from-primary/20 hover:to-secondary/20 transition-all"
+          className="bg-linear-to-r from-primary/10 to-secondary/10 rounded-lg p-4 cursor-pointer hover:from-primary/20 hover:to-secondary/20 transition-all"
           onClick={toggleExpanded}
         >
           <div className="flex items-center justify-between mb-2">
@@ -118,14 +121,31 @@ export function LyricsDisplay({ currentTime }: LyricsDisplayProps) {
         <div className="flex items-center">
           <Mic2 className="w-5 h-5 mr-2 text-primary" />
           <span className="font-semibold">Lời bài hát</span>
+          {isCalibrated && (
+            <span className="ml-2 text-xs text-green-500">✓ Đã đồng bộ</span>
+          )}
         </div>
-        <button
-          onClick={toggleExpanded}
-          className="p-2 rounded-full hover:bg-secondary transition-colors"
-          aria-label="Thu nhỏ lời bài hát"
-        >
-          <ChevronDown className="w-5 h-5" />
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Calibrate button */}
+          <button
+            onClick={() => {
+              calibrate(currentTime);
+              if (onCalibrate) onCalibrate();
+            }}
+            className="p-2 rounded-full hover:bg-secondary transition-colors text-primary"
+            aria-label="Đồng bộ lời với nhạc"
+            title="Nhấn khi nghe thấy lời đầu tiên để đồng bộ"
+          >
+            <Target className="w-5 h-5" />
+          </button>
+          <button
+            onClick={toggleExpanded}
+            className="p-2 rounded-full hover:bg-secondary transition-colors"
+            aria-label="Thu nhỏ lời bài hát"
+          >
+            <ChevronDown className="w-5 h-5" />
+          </button>
+        </div>
       </div>
 
       {/* Full Lyrics */}
@@ -147,7 +167,7 @@ export function LyricsDisplay({ currentTime }: LyricsDisplayProps) {
             <div
               key={line.id}
               data-line-id={line.id}
-              className={`transition-all duration-300 ${
+              className={`transition-all duration-300 text-center ${
                 isActive 
                   ? 'text-2xl md:text-3xl font-bold text-primary scale-105' 
                   : isPast 
@@ -183,7 +203,7 @@ export function LyricsDisplay({ currentTime }: LyricsDisplayProps) {
                 </p>
               ) : (
                 // Inactive line
-                <p className="leading-relaxed">{line.text}</p>
+                <p className="leading-relaxed text-center">{line.text}</p>
               )}
             </div>
           );

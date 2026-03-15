@@ -130,7 +130,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         return;
       }
       
-      // Pause any existing audio before creating new one
+      // Get actual audio duration dynamically
+    const handleLoadedMetadata = () => {
+      if (audioRef.current) {
+        const actualDuration = audioRef.current.duration;
+        console.log('🎵 Actual audio duration:', actualDuration, 'seconds');
+        // You can store this and use it for progress calculation
+      }
+    };
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.removeEventListener('timeupdate', () => {});

@@ -13,11 +13,66 @@ export interface LyricWord {
 }
 
 /**
- * Parse SRT content to structured lyrics data
+ * Parse SRT or LRC content to structured lyrics data
  * Supports both line-level and word-level timestamps
  */
 export function parseSRT(srtContent: string): LyricLine[] {
   const lines: LyricLine[] = [];
+  
+  // Check if it's LRC format (starts with [mm:ss.ms])
+  const isLRC = srtContent.trim().startsWith('[') || srtContent.includes('[00:');
+  
+  if (isLRC) {
+    // Parse LRC format
+    const lrcLines = srtContent.trim().split('\n');
+    let id = 1;
+    
+    for (const line of lrcLines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      
+      // Match [mm:ss.ms] format
+      const match = trimmed.match(/\[(\d{2}):(\d{2})\.(\d{2,3})\]\s*(.+)/);
+      if (!match) continue;
+      
+      const mins = parseInt(match[1]);
+      const secs = parseInt(match[2]);
+      const ms = parseInt(match[3].padEnd(3, '0'));
+      const text = match[4].trim();
+      
+      const startTime = mins * 60 + secs + ms / 1000;
+      
+      // Estimate end time based on next line or add 3 seconds
+      const endTime = startTime + 3;
+      
+      // Split into words
+      const words = text.split(/\s+/).filter(w => w.length > 0);
+      const wordDuration = (endTime - startTime) / words.length;
+      
+      const lyricWords: LyricWord[] = words.map((word, idx) => ({
+        text: word,
+        startTime: startTime + idx * wordDuration,
+        endTime: startTime + (idx + 1) * wordDuration,
+      }));
+      
+      lines.push({
+        id: id++,
+        startTime,
+        endTime,
+        text,
+        words: lyricWords,
+      });
+    }
+    
+    // Update end times based on next line's start time
+    for (let i = 0; i < lines.length - 1; i++) {
+      lines[i].endTime = lines[i + 1].startTime;
+    }
+    
+    return lines;
+  }
+  
+  // Parse SRT format (existing logic)
   const blocks = srtContent.trim().split(/\n\s*\n/);
 
   for (const block of blocks) {

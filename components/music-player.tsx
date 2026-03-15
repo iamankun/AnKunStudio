@@ -76,8 +76,10 @@ export function MusicPlayer() {
 
   // Handle lyrics button click
   const handleToggleLyrics = useCallback(() => {
+    console.log('🎵 Lyrics button clicked, current state:', isLyricsExpanded);
     toggleExpanded();
-  }, [toggleExpanded]);
+    console.log('🎵 After toggle, new state should be:', !isLyricsExpanded);
+  }, [toggleExpanded, isLyricsExpanded]);
 
   if (!isPlayerVisible || !currentTrack) return null;
 
@@ -204,13 +206,18 @@ export function MusicPlayer() {
 
               {/* Lyrics button */}
               <Button
-                variant="ghost"
+                variant={isLyricsExpanded ? "default" : "ghost"}
                 size="icon"
-                className="h-8 w-8"
-                onClick={handleToggleLyrics}
+                className="h-8 w-8 transition-all hover:scale-110"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log('🔘 Button clicked!');
+                  handleToggleLyrics();
+                }}
                 aria-label="Hiển thị lời bài hát"
+                title="Hiển thị lời bài hát"
               >
-                <Mic2 className="h-4 w-4" />
+                <Mic2 className={`h-4 w-4 ${isLyricsExpanded ? 'text-primary-foreground' : ''}`} />
               </Button>
 
               {/* Expand button */}
