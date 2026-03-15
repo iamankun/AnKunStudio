@@ -5,6 +5,24 @@
 @import './styles/sidebar.css';
 @import './styles/animations.css';
 
+/* UserProfileButton avatar loading */
+.user-profile-avatar {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.user-profile-avatar[data-loaded="false"] {
+  opacity: 0;
+}
+
+.user-profile-avatar[data-loaded="true"] {
+  opacity: 1;
+}
+
+/* UserProfileButton in header */
+[data-slot="dropdown-content"] {
+  z-index: 99999 !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

@@ -17,6 +17,7 @@ import {
 import { useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
+import { UserProfileButton } from '@/components/auth/UserProfileButton';
 
 const navItems = [
   { href: '/admin/dashboard', label: 'Bảng điều khiển', icon: LayoutDashboard },
@@ -120,6 +121,7 @@ export default function AdminLayout({
           <div className="flex-1" />
 
           <div className="flex items-center gap-2">
+            <UserProfileButton />
             <Button
               variant="ghost"
               size="icon"

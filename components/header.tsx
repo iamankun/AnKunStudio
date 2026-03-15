@@ -4,21 +4,45 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { UserProfileButton } from '@/components/auth/UserProfileButton';
+import { createClient } from '@/utils/supabase/client';
 
 export function Header() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 0);
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const checkAuth = async () => {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      console.log('🔍 [Header] Auth check result:', { user: !!user, email: user?.email });
+      setUser(user);
+    };
+
+    checkAuth();
+
+    const supabase = createClient();
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (_event: any, session: any) => {
+        console.log('🔍 [Header] Auth state changed:', { session: !!session?.user, email: session?.user?.email });
+        setUser(session?.user ?? null);
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   if (!mounted) return null;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 transition-all duration-300">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center group">
@@ -74,9 +98,16 @@ export function Header() {
               )}
             </button>
             
-            <button className="hidden sm:block px-4 py-2 rounded-lg text-sm font-medium bg-primary text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105">
-              Tham gia
-            </button>
+            <UserProfileButton />
+            
+            {user ? null : (
+              <a 
+                href="/auth/sign-up" 
+                className="hidden sm:inline-flex px-4 py-2 rounded-lg text-sm font-medium bg-primary text-primary-foreground hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                Tham gia
+              </a>
+            )}
 
             {/* Mobile menu button */}
             <button
@@ -127,9 +158,14 @@ export function Header() {
             Bài viết
           </Link>
           <div className="pt-2">
-            <button className="w-full px-4 py-3 rounded-lg text-sm font-medium bg-primary text-primary-foreground hover:opacity-90 transition-all duration-300">
-              Tham gia
-            </button>
+            {user ? null : (
+              <a 
+                href="/auth/sign-up" 
+                className="w-full px-4 py-3 rounded-lg text-sm font-medium bg-primary text-primary-foreground hover:opacity-90 transition-all duration-300"
+              >
+                Tham gia
+              </a>
+            )}
           </div>
         </nav>
       </div>

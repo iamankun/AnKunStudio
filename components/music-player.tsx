@@ -1,6 +1,8 @@
 "use client";
 
 import { useMusic } from '@/lib/music-context';
+import { useLyrics } from '@/lib/lyrics-context';
+import { LyricsDisplay } from '@/components/lyrics-display';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import Image from 'next/image';
@@ -15,8 +17,9 @@ import {
   ChevronUp,
   ChevronDown,
   ListMusic,
+  Mic2,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 function formatTime(seconds: number): string {
   const mins = Math.floor(seconds / 60);
@@ -34,20 +37,49 @@ export function MusicPlayer() {
     isPlayerVisible,
     pause,
     resume,
-    next,
+    nextTrack,
     previous,
     setVolume,
     seek,
     closePlayer,
-    play,
+    playTrack,
   } = useMusic();
+
+  const {
+    loadLyrics,
+    clearLyrics,
+    updatePosition,
+    isExpanded: isLyricsExpanded,
+    toggleExpanded,
+  } = useLyrics();
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [showQueue, setShowQueue] = useState(false);
 
-  if (!isPlayerVisible || !currentTrack) return null;
+  // Load lyrics when track changes
+  useEffect(() => {
+    if (currentTrack) {
+      // Try to load lyrics from SRT file
+      const lyricsUrl = `/tracks/dunglodenanh.srt`;
+      loadLyrics(lyricsUrl);
+    } else {
+      clearLyrics();
+    }
+  }, [currentTrack, loadLyrics, clearLyrics]);
 
+  // Update lyrics position
   const currentTime = currentTrack ? (progress / 100) * currentTrack.duration : 0;
+  
+  useEffect(() => {
+    updatePosition(currentTime);
+  }, [currentTime, updatePosition]);
+
+  // Handle lyrics button click
+  const handleToggleLyrics = useCallback(() => {
+    toggleExpanded();
+  }, [toggleExpanded]);
+
+  if (!isPlayerVisible || !currentTrack) return null;
 
   return (
     <>
@@ -80,7 +112,7 @@ export function MusicPlayer() {
                 onClick={() => setIsExpanded(true)}
                 className="flex items-center gap-3 flex-1 min-w-0 text-left"
               >
-                <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 shadow-lg">
+                <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 shadow-lg">
                   <Image
                     src={currentTrack.cover}
                     alt={currentTrack.title}
@@ -124,7 +156,7 @@ export function MusicPlayer() {
                   variant="ghost"
                   size="icon"
                   className="h-10 w-10 rounded-full"
-                  onClick={next}
+                  onClick={nextTrack}
                 >
                   <SkipForward className="h-4 w-4" />
                 </Button>
@@ -169,6 +201,17 @@ export function MusicPlayer() {
                   className="flex-1"
                 />
               </div>
+
+              {/* Lyrics button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8"
+                onClick={handleToggleLyrics}
+                aria-label="Hiển thị lời bài hát"
+              >
+                <Mic2 className="h-4 w-4" />
+              </Button>
 
               {/* Expand button */}
               <Button
@@ -278,7 +321,7 @@ export function MusicPlayer() {
                       variant="ghost"
                       size="icon"
                       className="h-12 w-12 rounded-full"
-                      onClick={next}
+                      onClick={nextTrack}
                     >
                       <SkipForward className="h-6 w-6" />
                     </Button>
@@ -309,7 +352,7 @@ export function MusicPlayer() {
                 </div>
 
                 {/* Queue Panel */}
-                {showQueue && (
+                {showQueue && !isLyricsExpanded && (
                   <div className="md:w-80 border-t md:border-t-0 md:border-l border-border overflow-y-auto">
                     <div className="p-4">
                       <h3 className="font-semibold mb-4">Tiếp theo</h3>
@@ -317,14 +360,14 @@ export function MusicPlayer() {
                         {queue.map((track) => (
                           <button
                             key={track.id}
-                            onClick={() => play(track)}
+                            onClick={() => playTrack(track)}
                             className={`w-full flex items-center gap-3 p-2 rounded-lg transition-colors ${
                               track.id === currentTrack.id
                                 ? 'bg-primary/10'
                                 : 'hover:bg-secondary'
                             }`}
                           >
-                            <div className="relative w-10 h-10 rounded overflow-hidden flex-shrink-0">
+                            <div className="relative w-10 h-10 rounded overflow-hidden shrink-0">
                               <Image
                                 src={track.cover}
                                 alt={track.title}
@@ -355,11 +398,21 @@ export function MusicPlayer() {
                     </div>
                   </div>
                 )}
+
+                {/* Lyrics Panel */}
+                {isExpanded && isLyricsExpanded && (
+                  <div className="md:w-96 border-t md:border-t-0 md:border-l border-border overflow-y-auto">
+                    <LyricsDisplay currentTime={currentTime} />
+                  </div>
+                )}
               </div>
             </div>
           )}
         </div>
       </div>
+
+      {/* Full Screen Lyrics Overlay */}
+      {isLyricsExpanded && <LyricsDisplay currentTime={currentTime} />}
     </>
   );
 }

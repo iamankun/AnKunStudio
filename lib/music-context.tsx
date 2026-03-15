@@ -37,6 +37,15 @@ const MusicContext = createContext<MusicContextType | null>(null);
 // Sample tracks with placeholder audio
 const sampleTracks: Track[] = [
   {
+    id: '0',
+    title: 'Đừng Lo Đến Anh',
+    artist: 'Willdawind ft. Xesi',
+    album: 'Single',
+    duration: 240,
+    cover: '/tracks/dung-lo-den-anh.jpg',
+    audioUrl: '/tracks/Willdawind - đừng lo đến anh ft. Xesi (Prod. by Pawn).m4a',
+  },
+  {
     id: '1',
     title: 'Midnight Dreams',
     artist: 'Luna Echo',

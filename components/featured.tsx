@@ -9,7 +9,7 @@ export function Featured() {
 
   const featuredTracks: (Track & { plays: string; durationFormatted: string })[] = sampleTracks.map((track, idx) => ({
     ...track,
-    plays: ['4.2M', '3.8M', '5.1M', '2.9M', '3.5M'][idx] || '1.0M',
+    plays: ['5.5M', '4.2M', '3.8M', '5.1M', '2.9M', '3.5M'][idx] || '1.0M',
     durationFormatted: formatDuration(track.duration),
   }));
 

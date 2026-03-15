@@ -5,7 +5,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "",
+        hostname: "exsoflgvdreikabvhvkg.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "**.supabase.co",
       },
     ],
   },
@@ -14,6 +18,19 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: exsoflgvdreikabvhvkg.supabase.co https: *.supabase.co; font-src 'self' data:; connect-src 'self' https: exsoflgvdreikabvhvkg.supabase.co https: *.supabase.co;",
+          },
+        ],
+      },
+    ];
   },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { MusicProvider } from '@/lib/music-context'
+import { LyricsProvider } from '@/lib/lyrics-context'
 import { MusicPlayer } from '@/components/music-player'
 import './globals.css'
 
@@ -50,8 +51,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <MusicProvider>
-            {children}
-            <MusicPlayer />
+            <LyricsProvider>
+              {children}
+              <MusicPlayer />
+            </LyricsProvider>
           </MusicProvider>
         </ThemeProvider>
         <Analytics />

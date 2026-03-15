@@ -162,8 +162,8 @@ export function UserProfileButton() {
         variant="flat"
         color="primary"
         startContent={<User size={20} />}
-        className="h-10 px-4 min-w-fit"
-        style={{ zIndex: 9999 }}
+        className="h-10 px-4 min-w-fit shadow-lg rounded-full"
+        style={{ zIndex: 99999 }}
       >
         Đang tải...
       </Button>
@@ -178,8 +178,8 @@ export function UserProfileButton() {
         variant="flat"
         color="primary"
         startContent={<User size={20} />}
-        className="h-10 px-4 min-w-fit"
-        style={{ zIndex: 9999 }}
+        className="h-10 px-4 min-w-fit shadow-lg rounded-full"
+        style={{ zIndex: 99999 }}
       >
         Đăng nhập
       </Button>
@@ -192,21 +192,39 @@ export function UserProfileButton() {
         <Button
           variant="flat"
           color="primary"
-          startContent={
-            <Avatar
-              src={profile?.avatar_url}
-              size="sm"
-              fallback={<User size={16} />}
-              className="h-6 w-6"
-            />
-          }
-          className="h-10 px-4 min-w-fit"
-          style={{ zIndex: 9999 }}
+          className="h-10 px-4 min-w-fit shadow-lg rounded-full"
+          style={{ zIndex: 99999 }}
         >
-          <span className="flex items-center">
-            {getDisplayName()}
-            {renderVerifiedBadge()}
-          </span>
+          <div className="flex items-center gap-2">
+            <div className="relative">
+              <Avatar
+                src={profile?.avatar_url || undefined}
+                size="sm"
+                fallback={<User size={16} />}
+                className="h-6 w-6 rounded-full border-2 border-white/20 user-profile-avatar"
+                imgProps={{
+                  className: "object-cover",
+                  onLoad: (e) => {
+                    e.currentTarget.setAttribute('data-loaded', 'true');
+                  },
+                  onError: (e) => {
+                    e.currentTarget.setAttribute('data-loaded', 'false');
+                    // Hide broken image and show fallback
+                    e.currentTarget.style.display = 'none';
+                    const fallbackIcon = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (fallbackIcon) {
+                      fallbackIcon.style.display = 'flex';
+                    }
+                  }
+                }}
+              />
+              <User size={16} className="absolute inset-0 m-auto h-6 w-6 text-white/80 pointer-events-none" style={{ display: 'none' }} />
+            </div>
+            <span className="flex items-center">
+              {getDisplayName()}
+              {renderVerifiedBadge()}
+            </span>
+          </div>
         </Button>
       </DropdownTrigger>
       <DropdownMenu aria-label="User menu">
