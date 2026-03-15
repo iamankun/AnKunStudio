@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
-import { LyricLine, loadSRT, getCurrentLine, getCurrentWord } from './lyrics-utils';
+import { LyricLine, loadLRC, getCurrentLine, getCurrentWord } from './lyrics-utils';
 
 interface LyricsContextType {
   // State
@@ -13,6 +13,7 @@ interface LyricsContextType {
   error: string | null;
   timeOffset: number; // in seconds, to adjust sync
   isCalibrated: boolean;
+  calibrationSamples: { expectedTime: number; actualTime: number }[];
   
   // Actions
   loadLyrics: (url: string) => Promise<void>;
@@ -42,13 +43,54 @@ export function LyricsProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
   const [timeOffset, setTimeOffsetState] = useState(-2); // in seconds, positive = lyrics delayed
   const [isCalibrated, setIsCalibrated] = useState(false);
+  const [calibrationSamples, setCalibrationSamples] = useState<{ expectedTime: number; actualTime: number }[]>([]);
+
+  // Helper function to calculate average drift
+  const calculateAverageDrift = (samples: { expectedTime: number; actualTime: number }[]): number => {
+    if (samples.length === 0) return 0;
+    const totalDrift = samples.reduce((sum, sample) => sum + (sample.actualTime - sample.expectedTime), 0);
+    return totalDrift / samples.length;
+  };
+
+  // Enhanced calibration using multiple sample points
+  const calibrate = useCallback((currentAudioTime: number) => {
+    if (lyrics.length === 0) return;
+    
+    // Find the current lyric line closest to this time
+    const currentLine = getCurrentLine(lyrics, currentAudioTime);
+    if (!currentLine) return;
+    
+    const expectedTime = currentLine.startTime;
+    const newSample = { expectedTime, actualTime: currentAudioTime };
+    
+    // Add to samples (keep last 5)
+    setCalibrationSamples(prev => {
+      const updated = [...prev, newSample].slice(-5);
+      
+      // Calculate average drift from samples
+      if (updated.length >= 3) {
+        const avgDrift = calculateAverageDrift(updated);
+        console.log('🎯 Multi-point calibration:', updated.length, 'samples, avg drift:', avgDrift.toFixed(2), 's');
+        setTimeOffsetState(avgDrift);
+        setIsCalibrated(true);
+      } else {
+        // Single point calibration
+        const singleOffset = currentAudioTime - expectedTime;
+        console.log('🎯 Single-point calibration: offset =', singleOffset.toFixed(2), 's');
+        setTimeOffsetState(singleOffset);
+        setIsCalibrated(true);
+      }
+      
+      return updated;
+    });
+  }, [lyrics]);
 
   const loadLyrics = useCallback(async (url: string) => {
     setIsLoading(true);
     setError(null);
     
     try {
-      const parsedLyrics = await loadSRT(url);
+      const parsedLyrics = await loadLRC(url);
       setLyrics(parsedLyrics);
       console.log('✅ Lyrics loaded:', parsedLyrics.length, 'lines');
     } catch (err) {
@@ -97,33 +139,6 @@ export function LyricsProvider({ children }: { children: ReactNode }) {
     setIsCalibrated(true);
   }, []);
 
-  // Calibrate: When user clicks at the moment they hear the first lyric
-  const calibrate = useCallback((currentAudioTime: number) => {
-    if (lyrics.length === 0) return;
-    
-    // Find the first lyric line with actual text (not just instrumental markers)
-    const firstLyricLine = lyrics.find(line => 
-      line.text.trim() && 
-      !line.text.startsWith('#') && 
-      !line.text.toLowerCase().includes('instrumental')
-    );
-    
-    if (!firstLyricLine) return;
-    
-    // Calculate offset: what time SHOULD it be vs what time it IS
-    const expectedTime = firstLyricLine.startTime;
-    const actualTime = currentAudioTime;
-    const newOffset = actualTime - expectedTime;
-    
-    console.log('🎯 Calibration:');
-    console.log('   Expected first lyric at:', expectedTime, 's');
-    console.log('   Actually heard at:', actualTime, 's');
-    console.log('   New offset:', newOffset, 's');
-    
-    setTimeOffsetState(newOffset);
-    setIsCalibrated(true);
-  }, [lyrics]);
-
   // Auto-adjust: Detect and correct drift
   const autoAdjust = useCallback((driftAmount: number) => {
     setTimeOffsetState(prev => {
@@ -151,6 +166,7 @@ export function LyricsProvider({ children }: { children: ReactNode }) {
         error,
         timeOffset,
         isCalibrated,
+        calibrationSamples,
         loadLyrics,
         updatePosition,
         toggleExpanded,
