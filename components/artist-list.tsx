@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const artists = [
@@ -180,7 +181,7 @@ export function ArtistList() {
         </div>
 
         {/* Search & Filter */}
-        <div className="flex flex-col md:flex-row gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <div className="flex flex-col md:flex-row gap-4 mb-12 animate-fade-in-up animate-delay-100">
           <div className="relative flex-1 max-w-md">
             <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -196,7 +197,7 @@ export function ArtistList() {
         </div>
 
         {/* Genre Filter */}
-        <div className="flex flex-wrap gap-2 mb-12 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+        <div className="flex flex-wrap gap-2 mb-12 animate-fade-in-up animate-delay-150">
           {genres.map((genre, idx) => (
             <button
               key={idx}
@@ -221,14 +222,15 @@ export function ArtistList() {
                 <Link
                   key={artist.id}
                   href={`/artists/${artist.slug}`}
-                  className="group animate-fade-in-up"
-                  style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
+                  className={`group animate-fade-in-up animate-delay-${Math.floor((0.2 + idx * 0.1) * 10)}`}
                 >
                   <article className="relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
                     <div className="aspect-square overflow-hidden">
-                      <img 
+                      <Image 
                         src={artist.image} 
                         alt={artist.name}
+                        width={400}
+                        height={400}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60" />
@@ -263,15 +265,16 @@ export function ArtistList() {
             <Link
               key={artist.id}
               href={`/artists/${artist.slug}`}
-              className="group animate-fade-in-up"
-              style={{ animationDelay: `${0.3 + idx * 0.05}s` }}
+              className={`group animate-fade-in-up animate-delay-${Math.floor((0.3 + idx * 0.05) * 20)}`}
             >
               <article className="text-center">
                 <div className="relative mb-4">
                   <div className="aspect-square rounded-full overflow-hidden bg-linear-to-br from-primary/20 to-primary/5 border-2 border-transparent group-hover:border-primary transition-all duration-300">
-                    <img 
+                    <Image 
                       src={artist.image} 
                       alt={artist.name}
+                      width={200}
+                      height={200}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>

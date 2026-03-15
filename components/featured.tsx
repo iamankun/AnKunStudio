@@ -104,16 +104,17 @@ export function Featured() {
                       {isCurrentlyPlaying && (
                         <div className="absolute bottom-2 left-2 right-2 flex items-center gap-1">
                           <div className="flex items-end gap-0.5 h-4">
-                            {[1, 2, 3, 4].map((bar) => {
-                              const height = Math.random() * 100;
-                              return (
-                                <div
-                                  key={bar}
-                                  className={`w-1 bg-primary rounded-full animate-pulse animate-delay-[${bar * 100}ms]`}
-                                  style={{ height: `${height}%` }}
-                                />
-                              );
-                            })}
+                            {[1, 2, 3, 4].map((bar) => (
+                              <div
+                                key={bar}
+                                className={`w-1 bg-primary rounded-full animate-pulse animate-delay-[${bar * 100}ms] ${
+                                  bar === 1 ? 'h-2/4' : 
+                                  bar === 2 ? 'h-3/4' : 
+                                  bar === 3 ? 'h-full' : 
+                                  'h-1/2'
+                                }`}
+                              />
+                            ))}
                           </div>
                           <span className="text-xs text-white font-medium ml-1">Đang phát</span>
                         </div>

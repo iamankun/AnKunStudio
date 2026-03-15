@@ -125,17 +125,17 @@ export function BlogPostDetail() {
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight animate-fade-in-up text-balance" style={{ animationDelay: '0.1s' }}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight animate-fade-in-up text-balance animate-delay-100">
             {blogPost.title}
           </h1>
 
           {/* Excerpt */}
-          <p className="text-xl text-muted-foreground mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-muted-foreground mb-8 animate-fade-in-up animate-delay-200">
             {blogPost.excerpt}
           </p>
 
           {/* Author & Date */}
-          <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-border animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-border animate-fade-in-up animate-delay-300">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
                 <span className="text-lg font-semibold text-primary">{blogPost.author.name.charAt(0)}</span>
@@ -231,8 +231,7 @@ export function BlogPostDetail() {
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group animate-fade-in-up"
-                style={{ animationDelay: `${idx * 0.1}s` }}
+                className={`group animate-fade-in-up animate-delay-${Math.floor((0.1 + idx * 0.1) * 10)}`}
               >
                 <article className="h-full overflow-hidden rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
                   <div className="aspect-video overflow-hidden">

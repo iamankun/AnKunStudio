@@ -26,7 +26,7 @@ export function LoginForm() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email || !password) {
       setError("Vui lòng nhập email và mật khẩu");
       return;
@@ -38,7 +38,7 @@ export function LoginForm() {
     try {
       console.log('🔐 [ĐĂNG NHẬP] Bắt đầu đăng nhập:', { email: email.substring(0, 10) + '...' });
       console.log('🔑 [ĐĂNG NHẬP] Supabase Key:', process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.substring(0, 20) + '...');
-      
+
       // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
@@ -47,59 +47,58 @@ export function LoginForm() {
         return;
       }
 
-      // Validate password length
-      if (password.length < 6) {
-        setError("Mật khẩu phải có ít nhất 6 ký tự.");
-        setIsLoading(false);
-        return;
-      }
-
-      console.log('📧 [ĐĂNG NHẬP] Email validated:', emailRegex.test(email));
-      console.log('🔒 [ĐĂNG NHẬP] Password length:', password.length);
-
-      // 🔥 LOGIN LOGIC - KHÔNG THAY ĐỔI
       const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+        email: email.trim().toLowerCase(),
+        password: password,
       });
 
-      console.log('📊 [ĐĂNG NHẬP] Response:', { 
-        hasData: !!data, 
-        hasError: !!error,
-        userEmail: data?.user?.email 
-      });
+      console.log('� [ĐĂNG NHẬP] Phản hồi Supabase:', { data, error });
 
       if (error) {
-        console.error('❌ [ĐĂNG NHẬP] Error:', error);
-        
-        // Handle specific error messages
+        console.error('❌ [ĐĂNG NHẬP] Lỗi đăng nhập:', error);
+
+        // Handle specific error types with better messages
         if (error.message?.includes('Invalid login credentials')) {
-          setError("Email hoặc mật khẩu không chính xác.");
+          // Try to get more specific error info
+          try {
+            const { data: user } = await supabase.auth.getUser();
+            console.log('� [ĐĂNG NHẬP] User sau khi đăng nhập thất bại:', user);
+
+            if (!user) {
+              setError('Email hoặc mật khẩu không đúng. Vui lòng thử lại.');
+            } else {
+              setError('Mật khẩu không đúng. Vui lòng kiểm tra lại.');
+            }
+          } catch (userCheckError) {
+            console.error('❌ [ĐĂNG NHẬP] Kiểm tra user thất bại:', userCheckError);
+            setError('Email hoặc mật khẩu không đúng. Vui lòng thử lại.');
+          }
         } else if (error.message?.includes('Email not confirmed')) {
-          setError("Vui lòng xác nhận email trước khi đăng nhập.");
+          setError('Email chưa được xác minh. Vui lòng kiểm tra hộp thư và xác minh email.');
         } else if (error.message?.includes('Too many requests')) {
-          setError("Quá nhiều lần thử. Vui lòng thử lại sau.");
+          setError('Quá nhiều lần thử. Vui lòng đợi 5 phút và thử lại.');
+        } else if (error.message?.includes('User already registered')) {
+          setError('Tài khoản đã tồn tại. Vui lòng đăng nhập.');
+        } else if (error.message?.includes('Failed to fetch') || error.message?.includes('Network')) {
+          setError("Không thể kết nối đến server. Vui lòng kiểm tra lại Supabase configuration.");
         } else {
-          setError(error.message || "Đăng nhập thất bại. Vui lòng thử lại.");
+          setError(error.message || 'Đăng nhập thất bại. Vui lòng thử lại.');
         }
-        setIsLoading(false);
-        return;
+        throw error;
       }
 
-      if (data?.user) {
-        // Show success notification
-        console.log('✅ [ĐĂNG NHẬP] Success! User:', data.user.email);
-        
-        // Redirect to intended page
+      console.log('✅ [ĐĂNG NHẬP] Đăng nhập thành công!');
+      console.log("🔀 [ĐĂNG NHẬP] Đăng nhập thành công, chuyển hướng đến:", redirectTo);
+
+      // Add small delay to ensure session is set
+      setTimeout(() => {
         router.push(redirectTo);
-      } else {
-        console.error('❌ [ĐĂNG NHẬP] No user data received');
-        setError("Đăng nhập thất bại. Vui lòng thử lại.");
-        setIsLoading(false);
-      }
-    } catch (err) {
-      console.error('💥 [ĐĂNG NHẬP] Unexpected error:', err);
-      setError("Có lỗi xảy ra. Vui lòng thử lại.");
+      }, 500);
+    } catch (error: unknown) {
+      console.error('❌ [ĐĂNG NHẬP] Lỗi đăng nhập không mong muốn:', error);
+      const errorMessage = error instanceof Error ? error.message : "Đăng nhập thất bại. Vui lòng thử lại.";
+      setError(errorMessage);
+    } finally {
       setIsLoading(false);
     }
   };

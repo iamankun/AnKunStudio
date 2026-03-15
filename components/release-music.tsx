@@ -201,8 +201,7 @@ export function ReleaseMusic() {
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg animate-fade-in-up"
-                style={{ animationDelay: `${idx * 0.1}s` }}
+                className={`p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg animate-fade-in-up animate-delay-${idx + 1}`}
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
                   {feature.icon}
@@ -227,8 +226,7 @@ export function ReleaseMusic() {
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="relative animate-fade-in-up"
-                style={{ animationDelay: `${idx * 0.1}s` }}
+                className={`relative animate-fade-in-up animate-delay-${idx + 1}`}
               >
                 <div className="text-6xl font-bold text-primary/10 mb-4">{step.step}</div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">{step.title}</h3>
@@ -257,12 +255,11 @@ export function ReleaseMusic() {
             {plans.map((plan, idx) => (
               <div
                 key={idx}
-                className={`p-8 rounded-2xl border transition-all duration-300 animate-fade-in-up ${
+                className={`p-8 rounded-2xl border transition-all duration-300 animate-fade-in-up animate-delay-${idx + 1} ${
                   plan.featured
                     ? 'bg-primary text-primary-foreground border-primary scale-105 shadow-xl'
                     : 'bg-card border-border hover:border-primary/30'
                 }`}
-                style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 {plan.featured && (
                   <span className="inline-block px-3 py-1 rounded-full bg-primary-foreground/20 text-sm font-medium mb-4">

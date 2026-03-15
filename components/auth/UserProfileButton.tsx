@@ -74,9 +74,23 @@ export function UserProfileButton() {
   }, []);
 
   const handleLogout = async () => {
-    const supabase = createClient();
-    await supabase.auth.signOut();
-    router.push("/");
+    try {
+      // Call logout API route
+      await fetch('/api/auth/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+      
+      // Fallback: also call client-side signOut
+      const supabase = createClient();
+      await supabase.auth.signOut();
+      
+      router.push("/auth/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+      // Still redirect even if error occurs
+      router.push("/auth/login");
+    }
   };
 
   // Render Facebook-style verified badge

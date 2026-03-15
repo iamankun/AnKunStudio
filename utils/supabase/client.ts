@@ -2,29 +2,15 @@ import { createBrowserClient } from "@supabase/ssr";
 import { Database } from "./types";
 
 export function createClient() {
-  // Check if environment variables are available
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-    // Return a mock client for build time
-    return {
-      auth: {
-        getUser: () => Promise.resolve({ data: { user: null }, error: null }),
-        signInWithPassword: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
-        signUp: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
-        signOut: () => Promise.resolve({ error: null }),
-        onAuthStateChange: () => ({ data: { subscription: null }, unsubscribe: () => {} }),
-      },
-      from: () => ({
-        select: () => ({ data: [], error: null }),
-        insert: () => ({ data: null, error: new Error('Supabase not configured') }),
-        update: () => ({ data: null, error: new Error('Supabase not configured') }),
-        delete: () => ({ data: null, error: new Error('Supabase not configured') }),
-      }),
-    } as any;
-  }
-
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key';
+  
+  console.log('🔗 [Supabase] URL:', supabaseUrl);
+  console.log('🔑 [Supabase] Key exists:', !!supabaseAnonKey && supabaseAnonKey !== 'placeholder-key');
+  
   return createBrowserClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       auth: {
         autoRefreshToken: true,
@@ -35,7 +21,7 @@ export function createClient() {
       },
       global: {
         headers: {
-          'X-Client-Info': 'cineverse-web/1.0.0'
+          'X-Client-Info': 'ankunstudio-web/1.0.0'
         }
       },
       db: {

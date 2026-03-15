@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const blogPosts = [
   {
@@ -98,7 +99,7 @@ export function BlogList() {
         </div>
 
         {/* Categories */}
-        <div className="flex flex-wrap gap-2 mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <div className="flex flex-wrap gap-2 mb-12 animate-fade-in-up animate-delay-100">
           {categories.map((category, idx) => (
             <button
               key={idx}
@@ -119,14 +120,15 @@ export function BlogList() {
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
-              className="group animate-fade-in-up"
-              style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
+              className={`group animate-fade-in-up animate-delay-${Math.floor((0.2 + idx * 0.1) * 10)}`}
             >
               <article className="relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
                 <div className="aspect-16/10 overflow-hidden">
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title}
+                    width={800}
+                    height={500}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -162,14 +164,15 @@ export function BlogList() {
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
-              className="group animate-fade-in-up"
-              style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
+              className={`group animate-fade-in-up animate-delay-${Math.floor((0.4 + idx * 0.1) * 10)}`}
             >
               <article className="h-full overflow-hidden rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title}
+                    width={400}
+                    height={225}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
