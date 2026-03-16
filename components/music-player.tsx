@@ -59,20 +59,37 @@ export function MusicPlayer() {
   // Load lyrics when track changes
   useEffect(() => {
     if (currentTrack) {
-      // Try to load lyrics from SRT file
-      const lyricsUrl = `/tracks/dunglodenanh.srt`;
+      const lyricsUrl = `/tracks/dunglodenanh.json`;
       loadLyrics(lyricsUrl);
     } else {
       clearLyrics();
     }
   }, [currentTrack, loadLyrics, clearLyrics]);
 
-  // Update lyrics position
-  const currentTime = currentTrack ? (progress / 100) * currentTrack.duration : 0;
+  const getCurrentTime = useMusic().getCurrentTime;
   
+  // High-performance 60fps lyrics sync loop
   useEffect(() => {
-    updatePosition(currentTime);
-  }, [currentTime, updatePosition]);
+    let animationFrameId: number;
+    
+    function syncLyrics() {
+      if (isPlaying) {
+        const time = getCurrentTime();
+        updatePosition(time);
+      }
+      animationFrameId = requestAnimationFrame(syncLyrics);
+    }
+    
+    if (isPlaying) {
+      animationFrameId = requestAnimationFrame(syncLyrics);
+    }
+    
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [isPlaying, getCurrentTime, updatePosition]);
+
+  const currentTimeDisplay = currentTrack ? (progress / 100) * currentTrack.duration : 0;
 
   // Handle lyrics button click
   const handleToggleLyrics = useCallback(() => {
@@ -167,7 +184,7 @@ export function MusicPlayer() {
               {/* Progress (desktop) */}
               <div className="hidden md:flex items-center gap-3 flex-1 max-w-md">
                 <span className="text-xs text-muted-foreground w-10 text-right">
-                  {formatTime(currentTime)}
+                  {formatTime(currentTimeDisplay)}
                 </span>
                 <Slider
                   value={[progress]}
@@ -297,7 +314,7 @@ export function MusicPlayer() {
                       step={0.1}
                     />
                     <div className="flex justify-between text-xs text-muted-foreground">
-                      <span>{formatTime(currentTime)}</span>
+                      <span>{formatTime(currentTimeDisplay)}</span>
                       <span>{formatTime(currentTrack.duration)}</span>
                     </div>
                   </div>
@@ -409,7 +426,7 @@ export function MusicPlayer() {
                 {/* Lyrics Panel */}
                 {isExpanded && isLyricsExpanded && (
                   <div className="md:w-96 border-t md:border-t-0 md:border-l border-border overflow-y-auto">
-                    <LyricsDisplay currentTime={currentTime} />
+                    <LyricsDisplay currentTime={currentTimeDisplay} />
                   </div>
                 )}
               </div>
@@ -419,7 +436,7 @@ export function MusicPlayer() {
       </div>
 
       {/* Full Screen Lyrics Overlay */}
-      {isLyricsExpanded && <LyricsDisplay currentTime={currentTime} />}
+      {isLyricsExpanded && <LyricsDisplay currentTime={currentTimeDisplay} />}
     </>
   );
 }

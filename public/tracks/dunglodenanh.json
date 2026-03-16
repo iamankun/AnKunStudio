@@ -1,0 +1,3073 @@
+[
+  {
+    "section": "Verse",
+    "startTime": 2,
+    "endTime": 5,
+    "text": "Hôm nay trời có mưa?",
+    "words": [
+      {
+        "text": "Hôm",
+        "startTime": 2,
+        "endTime": 2.5
+      },
+      {
+        "text": "nay",
+        "startTime": 2.5,
+        "endTime": 3
+      },
+      {
+        "text": "trời",
+        "startTime": 3,
+        "endTime": 3.5
+      },
+      {
+        "text": "có",
+        "startTime": 3.5,
+        "endTime": 4
+      },
+      {
+        "text": "mưa?",
+        "startTime": 4,
+        "endTime": 5
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 5,
+    "endTime": 8,
+    "text": "Em nhớ mang dù theo",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 5,
+        "endTime": 5.5
+      },
+      {
+        "text": "nhớ",
+        "startTime": 5.5,
+        "endTime": 6
+      },
+      {
+        "text": "mang",
+        "startTime": 6,
+        "endTime": 6.5
+      },
+      {
+        "text": "dù",
+        "startTime": 6.5,
+        "endTime": 7
+      },
+      {
+        "text": "theo",
+        "startTime": 7,
+        "endTime": 8
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 8,
+    "endTime": 11,
+    "text": "Anh vẫn thường đãng trí nên lại ướt đẫm",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 8,
+        "endTime": 8.2
+      },
+      {
+        "text": "vẫn",
+        "startTime": 8.2,
+        "endTime": 8.5
+      },
+      {
+        "text": "thường",
+        "startTime": 8.5,
+        "endTime": 8.8
+      },
+      {
+        "text": "đãng",
+        "startTime": 8.8,
+        "endTime": 9.2
+      },
+      {
+        "text": "trí",
+        "startTime": 9.2,
+        "endTime": 9.7
+      },
+      {
+        "text": "nên",
+        "startTime": 9.7,
+        "endTime": 10
+      },
+      {
+        "text": "lại",
+        "startTime": 10,
+        "endTime": 10.2
+      },
+      {
+        "text": "ướt",
+        "startTime": 10.2,
+        "endTime": 10.5
+      },
+      {
+        "text": "đẫm",
+        "startTime": 10.5,
+        "endTime": 11
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 11,
+    "endTime": 14,
+    "text": "Quanh em thế giới rộn ràng",
+    "words": [
+      {
+        "text": "Quanh",
+        "startTime": 11,
+        "endTime": 11.3
+      },
+      {
+        "text": "em",
+        "startTime": 11.3,
+        "endTime": 11.8
+      },
+      {
+        "text": "thế",
+        "startTime": 11.8,
+        "endTime": 12
+      },
+      {
+        "text": "giới",
+        "startTime": 12,
+        "endTime": 12.5
+      },
+      {
+        "text": "rộn",
+        "startTime": 12.5,
+        "endTime": 13
+      },
+      {
+        "text": "ràng",
+        "startTime": 13,
+        "endTime": 14
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 15,
+    "endTime": 19,
+    "text": "Sớm ban mai cũng nhanh hóa muộn màng",
+    "words": [
+      {
+        "text": "Sớm",
+        "startTime": 15,
+        "endTime": 15.5
+      },
+      {
+        "text": "ban",
+        "startTime": 15.5,
+        "endTime": 16
+      },
+      {
+        "text": "mai",
+        "startTime": 16,
+        "endTime": 16.5
+      },
+      {
+        "text": "cũng",
+        "startTime": 16.5,
+        "endTime": 17
+      },
+      {
+        "text": "nhanh",
+        "startTime": 17,
+        "endTime": 17.5
+      },
+      {
+        "text": "hóa",
+        "startTime": 17.5,
+        "endTime": 18
+      },
+      {
+        "text": "muộn",
+        "startTime": 18,
+        "endTime": 18.5
+      },
+      {
+        "text": "màng",
+        "startTime": 18.5,
+        "endTime": 19
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 19,
+    "endTime": 23,
+    "text": "Nên em hơi mệt rồi đúng không?",
+    "words": [
+      {
+        "text": "Nên",
+        "startTime": 19,
+        "endTime": 19.5
+      },
+      {
+        "text": "em",
+        "startTime": 19.5,
+        "endTime": 20
+      },
+      {
+        "text": "hơi",
+        "startTime": 20,
+        "endTime": 20.5
+      },
+      {
+        "text": "mệt",
+        "startTime": 20.5,
+        "endTime": 21
+      },
+      {
+        "text": "rồi",
+        "startTime": 21,
+        "endTime": 21.6
+      },
+      {
+        "text": "đúng",
+        "startTime": 21.6,
+        "endTime": 22.3
+      },
+      {
+        "text": "không?",
+        "startTime": 22.3,
+        "endTime": 23
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 23,
+    "endTime": 25,
+    "text": "Dễ thôi mà!",
+    "words": [
+      {
+        "text": "Dễ",
+        "startTime": 23,
+        "endTime": 23.6
+      },
+      {
+        "text": "thôi",
+        "startTime": 23.6,
+        "endTime": 24.3
+      },
+      {
+        "text": "mà!",
+        "startTime": 24.3,
+        "endTime": 25
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 25,
+    "endTime": 28,
+    "text": "Em đã có anh bên cạnh em",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 25,
+        "endTime": 25.4
+      },
+      {
+        "text": "đã",
+        "startTime": 25.4,
+        "endTime": 25.8
+      },
+      {
+        "text": "có",
+        "startTime": 25.8,
+        "endTime": 26.2
+      },
+      {
+        "text": "anh",
+        "startTime": 26.2,
+        "endTime": 26.6
+      },
+      {
+        "text": "bên",
+        "startTime": 26.6,
+        "endTime": 27
+      },
+      {
+        "text": "cạnh",
+        "startTime": 27,
+        "endTime": 27.5
+      },
+      {
+        "text": "em",
+        "startTime": 27.5,
+        "endTime": 28
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 28,
+    "endTime": 30,
+    "text": "Những điều khó trong đời",
+    "words": [
+      {
+        "text": "Những",
+        "startTime": 28,
+        "endTime": 28.4
+      },
+      {
+        "text": "điều",
+        "startTime": 28.4,
+        "endTime": 28.8
+      },
+      {
+        "text": "khó",
+        "startTime": 28.8,
+        "endTime": 29.2
+      },
+      {
+        "text": "trong",
+        "startTime": 29.2,
+        "endTime": 29.6
+      },
+      {
+        "text": "đời",
+        "startTime": 29.6,
+        "endTime": 30
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 30,
+    "endTime": 32,
+    "text": "Dù trái ý trời",
+    "words": [
+      {
+        "text": "Dù",
+        "startTime": 30,
+        "endTime": 30.5
+      },
+      {
+        "text": "trái",
+        "startTime": 30.5,
+        "endTime": 31
+      },
+      {
+        "text": "ý",
+        "startTime": 31,
+        "endTime": 31.5
+      },
+      {
+        "text": "trời",
+        "startTime": 31.5,
+        "endTime": 32
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 32,
+    "endTime": 34,
+    "text": "Vì em anh sẽ tới",
+    "words": [
+      {
+        "text": "Vì",
+        "startTime": 32,
+        "endTime": 32.4
+      },
+      {
+        "text": "em",
+        "startTime": 32.4,
+        "endTime": 32.8
+      },
+      {
+        "text": "anh",
+        "startTime": 32.8,
+        "endTime": 33.2
+      },
+      {
+        "text": "sẽ",
+        "startTime": 33.2,
+        "endTime": 33.6
+      },
+      {
+        "text": "tới",
+        "startTime": 33.6,
+        "endTime": 34
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 34,
+    "endTime": 36,
+    "text": "Nếu em cần",
+    "words": [
+      {
+        "text": "Nếu",
+        "startTime": 34,
+        "endTime": 34.6
+      },
+      {
+        "text": "em",
+        "startTime": 34.6,
+        "endTime": 35.3
+      },
+      {
+        "text": "cần",
+        "startTime": 35.3,
+        "endTime": 36
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 36,
+    "endTime": 38,
+    "text": "Nơi để cất hết mọi phiền lo",
+    "words": [
+      {
+        "text": "Nơi",
+        "startTime": 36,
+        "endTime": 36.3
+      },
+      {
+        "text": "để",
+        "startTime": 36.3,
+        "endTime": 36.6
+      },
+      {
+        "text": "cất",
+        "startTime": 36.6,
+        "endTime": 36.9
+      },
+      {
+        "text": "hết",
+        "startTime": 36.9,
+        "endTime": 37.2
+      },
+      {
+        "text": "mọi",
+        "startTime": 37.2,
+        "endTime": 37.5
+      },
+      {
+        "text": "phiền",
+        "startTime": 37.5,
+        "endTime": 37.8
+      },
+      {
+        "text": "lo",
+        "startTime": 37.8,
+        "endTime": 38
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 38,
+    "endTime": 41,
+    "text": "Xin hãy nghĩ đến anh",
+    "words": [
+      {
+        "text": "Xin",
+        "startTime": 38,
+        "endTime": 38.6
+      },
+      {
+        "text": "hãy",
+        "startTime": 38.6,
+        "endTime": 39.2
+      },
+      {
+        "text": "nghĩ",
+        "startTime": 39.2,
+        "endTime": 39.8
+      },
+      {
+        "text": "đến",
+        "startTime": 39.8,
+        "endTime": 40.4
+      },
+      {
+        "text": "anh",
+        "startTime": 40.4,
+        "endTime": 41
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 41,
+    "endTime": 43,
+    "text": "Nghĩ đến anh một lần",
+    "words": [
+      {
+        "text": "Nghĩ",
+        "startTime": 41,
+        "endTime": 41.4
+      },
+      {
+        "text": "đến",
+        "startTime": 41.4,
+        "endTime": 41.8
+      },
+      {
+        "text": "anh",
+        "startTime": 41.8,
+        "endTime": 42.2
+      },
+      {
+        "text": "một",
+        "startTime": 42.2,
+        "endTime": 42.6
+      },
+      {
+        "text": "lần",
+        "startTime": 42.6,
+        "endTime": 43
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 43,
+    "endTime": 46,
+    "text": "Em ơi sỏi đá thì chẳng biết đau",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 43,
+        "endTime": 43.3
+      },
+      {
+        "text": "ơi",
+        "startTime": 43.3,
+        "endTime": 43.7
+      },
+      {
+        "text": "sỏi",
+        "startTime": 43.7,
+        "endTime": 44.1
+      },
+      {
+        "text": "đá",
+        "startTime": 44.1,
+        "endTime": 44.5
+      },
+      {
+        "text": "thì",
+        "startTime": 44.5,
+        "endTime": 44.8
+      },
+      {
+        "text": "chẳng",
+        "startTime": 44.8,
+        "endTime": 45.2
+      },
+      {
+        "text": "biết",
+        "startTime": 45.2,
+        "endTime": 45.6
+      },
+      {
+        "text": "đau",
+        "startTime": 45.6,
+        "endTime": 46
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 46,
+    "endTime": 49,
+    "text": "Nên có gì để em phải đáng tiếc đâu?",
+    "words": [
+      {
+        "text": "Nên",
+        "startTime": 46,
+        "endTime": 46.3
+      },
+      {
+        "text": "có",
+        "startTime": 46.3,
+        "endTime": 46.6
+      },
+      {
+        "text": "gì",
+        "startTime": 46.6,
+        "endTime": 47
+      },
+      {
+        "text": "để",
+        "startTime": 47,
+        "endTime": 47.3
+      },
+      {
+        "text": "em",
+        "startTime": 47.3,
+        "endTime": 47.6
+      },
+      {
+        "text": "phải",
+        "startTime": 47.6,
+        "endTime": 48
+      },
+      {
+        "text": "đáng",
+        "startTime": 48,
+        "endTime": 48.3
+      },
+      {
+        "text": "tiếc",
+        "startTime": 48.3,
+        "endTime": 48.6
+      },
+      {
+        "text": "đâu?",
+        "startTime": 48.6,
+        "endTime": 49
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 49,
+    "endTime": 51,
+    "text": "Anh thích tự đón nhận những tổn thương",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 49,
+        "endTime": 49.2
+      },
+      {
+        "text": "thích",
+        "startTime": 49.2,
+        "endTime": 49.5
+      },
+      {
+        "text": "tự",
+        "startTime": 49.5,
+        "endTime": 49.8
+      },
+      {
+        "text": "đón",
+        "startTime": 49.8,
+        "endTime": 50
+      },
+      {
+        "text": "nhận",
+        "startTime": 50,
+        "endTime": 50.3
+      },
+      {
+        "text": "những",
+        "startTime": 50.3,
+        "endTime": 50.5
+      },
+      {
+        "text": "tổn",
+        "startTime": 50.5,
+        "endTime": 50.8
+      },
+      {
+        "text": "thương",
+        "startTime": 50.8,
+        "endTime": 51
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 51,
+    "endTime": 53,
+    "text": "Nên em đừng lo đến anh",
+    "words": [
+      {
+        "text": "Nên",
+        "startTime": 51,
+        "endTime": 51.3
+      },
+      {
+        "text": "em",
+        "startTime": 51.3,
+        "endTime": 51.6
+      },
+      {
+        "text": "đừng",
+        "startTime": 51.6,
+        "endTime": 52
+      },
+      {
+        "text": "lo",
+        "startTime": 52,
+        "endTime": 52.3
+      },
+      {
+        "text": "đến",
+        "startTime": 52.3,
+        "endTime": 52.6
+      },
+      {
+        "text": "anh",
+        "startTime": 52.6,
+        "endTime": 53
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 53,
+    "endTime": 55,
+    "text": "Lo đến anh",
+    "words": [
+      {
+        "text": "Lo",
+        "startTime": 53,
+        "endTime": 53.6
+      },
+      {
+        "text": "đến",
+        "startTime": 53.6,
+        "endTime": 54.3
+      },
+      {
+        "text": "anh",
+        "startTime": 54.3,
+        "endTime": 55
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 55,
+    "endTime": 57,
+    "text": "Em hãy cứ vui đi",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 55,
+        "endTime": 55.4
+      },
+      {
+        "text": "hãy",
+        "startTime": 55.4,
+        "endTime": 55.8
+      },
+      {
+        "text": "cứ",
+        "startTime": 55.8,
+        "endTime": 56.2
+      },
+      {
+        "text": "vui",
+        "startTime": 56.2,
+        "endTime": 56.6
+      },
+      {
+        "text": "đi",
+        "startTime": 56.6,
+        "endTime": 57
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 57,
+    "endTime": 59,
+    "text": "Yêu ai lắm khi thế giới diệu kì",
+    "words": [
+      {
+        "text": "Yêu",
+        "startTime": 57,
+        "endTime": 57.2
+      },
+      {
+        "text": "ai",
+        "startTime": 57.2,
+        "endTime": 57.5
+      },
+      {
+        "text": "lắm",
+        "startTime": 57.5,
+        "endTime": 57.8
+      },
+      {
+        "text": "khi",
+        "startTime": 57.8,
+        "endTime": 58
+      },
+      {
+        "text": "thế",
+        "startTime": 58,
+        "endTime": 58.3
+      },
+      {
+        "text": "giới",
+        "startTime": 58.3,
+        "endTime": 58.5
+      },
+      {
+        "text": "diệu",
+        "startTime": 58.5,
+        "endTime": 58.8
+      },
+      {
+        "text": "kì",
+        "startTime": 58.8,
+        "endTime": 59
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 59,
+    "endTime": 62,
+    "text": "Không có gì có thể cản ngăn em",
+    "words": [
+      {
+        "text": "Không",
+        "startTime": 59,
+        "endTime": 59.3
+      },
+      {
+        "text": "có",
+        "startTime": 59.3,
+        "endTime": 59.7
+      },
+      {
+        "text": "gì",
+        "startTime": 59.7,
+        "endTime": 60.1
+      },
+      {
+        "text": "có",
+        "startTime": 60.1,
+        "endTime": 60.5
+      },
+      {
+        "text": "thể",
+        "startTime": 60.5,
+        "endTime": 60.8
+      },
+      {
+        "text": "cản",
+        "startTime": 60.8,
+        "endTime": 61.2
+      },
+      {
+        "text": "ngăn",
+        "startTime": 61.2,
+        "endTime": 61.6
+      },
+      {
+        "text": "em",
+        "startTime": 61.6,
+        "endTime": 62
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 62,
+    "endTime": 65,
+    "text": "Nên em hãy cứ bước đi, cứ bước đi",
+    "words": [
+      {
+        "text": "Nên",
+        "startTime": 62,
+        "endTime": 62.3
+      },
+      {
+        "text": "em",
+        "startTime": 62.3,
+        "endTime": 62.6
+      },
+      {
+        "text": "hãy",
+        "startTime": 62.6,
+        "endTime": 63
+      },
+      {
+        "text": "cứ",
+        "startTime": 63,
+        "endTime": 63.3
+      },
+      {
+        "text": "bước",
+        "startTime": 63.3,
+        "endTime": 63.6
+      },
+      {
+        "text": "đi,",
+        "startTime": 63.6,
+        "endTime": 64
+      },
+      {
+        "text": "cứ",
+        "startTime": 64,
+        "endTime": 64.3
+      },
+      {
+        "text": "bước",
+        "startTime": 64.3,
+        "endTime": 64.6
+      },
+      {
+        "text": "đi",
+        "startTime": 64.6,
+        "endTime": 65
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 65,
+    "endTime": 67,
+    "text": "Em à!",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 65,
+        "endTime": 65.5
+      },
+      {
+        "text": "à!",
+        "startTime": 65.5,
+        "endTime": 67
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 67,
+    "endTime": 69,
+    "text": "Em là loài hoa đẹp nhất, dù cho cỏ dại phủ quanh",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 67,
+        "endTime": 67.1
+      },
+      {
+        "text": "là",
+        "startTime": 67.1,
+        "endTime": 67.3
+      },
+      {
+        "text": "loài",
+        "startTime": 67.3,
+        "endTime": 67.4
+      },
+      {
+        "text": "hoa",
+        "startTime": 67.4,
+        "endTime": 67.6
+      },
+      {
+        "text": "đẹp",
+        "startTime": 67.6,
+        "endTime": 67.8
+      },
+      {
+        "text": "nhất,",
+        "startTime": 67.8,
+        "endTime": 68.1
+      },
+      {
+        "text": "dù",
+        "startTime": 68.1,
+        "endTime": 68.3
+      },
+      {
+        "text": "cho",
+        "startTime": 68.3,
+        "endTime": 68.5
+      },
+      {
+        "text": "cỏ",
+        "startTime": 68.5,
+        "endTime": 68.6
+      },
+      {
+        "text": "dại",
+        "startTime": 68.6,
+        "endTime": 68.7
+      },
+      {
+        "text": "phủ",
+        "startTime": 68.7,
+        "endTime": 68.8
+      },
+      {
+        "text": "quanh",
+        "startTime": 68.8,
+        "endTime": 69
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 69,
+    "endTime": 71,
+    "text": "Anh đi tìm em giữa ngàn đau đớn ở trong cuộc đời của anh",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 69,
+        "endTime": 69.1
+      },
+      {
+        "text": "đi",
+        "startTime": 69.1,
+        "endTime": 69.3
+      },
+      {
+        "text": "tìm",
+        "startTime": 69.3,
+        "endTime": 69.4
+      },
+      {
+        "text": "em",
+        "startTime": 69.4,
+        "endTime": 69.6
+      },
+      {
+        "text": "giữa",
+        "startTime": 69.6,
+        "endTime": 69.7
+      },
+      {
+        "text": "ngàn",
+        "startTime": 69.7,
+        "endTime": 69.9
+      },
+      {
+        "text": "đau",
+        "startTime": 69.9,
+        "endTime": 70.1
+      },
+      {
+        "text": "đớn",
+        "startTime": 70.1,
+        "endTime": 70.2
+      },
+      {
+        "text": "ở",
+        "startTime": 70.2,
+        "endTime": 70.4
+      },
+      {
+        "text": "trong",
+        "startTime": 70.4,
+        "endTime": 70.5
+      },
+      {
+        "text": "cuộc",
+        "startTime": 70.5,
+        "endTime": 70.7
+      },
+      {
+        "text": "đời",
+        "startTime": 70.7,
+        "endTime": 70.8
+      },
+      {
+        "text": "của",
+        "startTime": 70.8,
+        "endTime": 70.9
+      },
+      {
+        "text": "anh",
+        "startTime": 70.9,
+        "endTime": 71
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 71,
+    "endTime": 74,
+    "text": "Anh đã từng tin mình đủ bản lĩnh và là vị vua của thời gian",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 71,
+        "endTime": 71.2
+      },
+      {
+        "text": "đã",
+        "startTime": 71.2,
+        "endTime": 71.4
+      },
+      {
+        "text": "từng",
+        "startTime": 71.4,
+        "endTime": 71.6
+      },
+      {
+        "text": "tin",
+        "startTime": 71.6,
+        "endTime": 71.8
+      },
+      {
+        "text": "mình",
+        "startTime": 71.8,
+        "endTime": 72
+      },
+      {
+        "text": "đủ",
+        "startTime": 72,
+        "endTime": 72.2
+      },
+      {
+        "text": "bản",
+        "startTime": 72.2,
+        "endTime": 72.5
+      },
+      {
+        "text": "lĩnh",
+        "startTime": 72.5,
+        "endTime": 72.7
+      },
+      {
+        "text": "và",
+        "startTime": 72.7,
+        "endTime": 72.9
+      },
+      {
+        "text": "là",
+        "startTime": 72.9,
+        "endTime": 73.1
+      },
+      {
+        "text": "vị",
+        "startTime": 73.1,
+        "endTime": 73.3
+      },
+      {
+        "text": "vua",
+        "startTime": 73.3,
+        "endTime": 73.5
+      },
+      {
+        "text": "của",
+        "startTime": 73.5,
+        "endTime": 73.8
+      },
+      {
+        "text": "thời",
+        "startTime": 73.8,
+        "endTime": 73.9
+      },
+      {
+        "text": "gian",
+        "startTime": 73.9,
+        "endTime": 74
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 74,
+    "endTime": 76,
+    "text": "Trước khi nhận ra thế giới của em cách xa cả triệu năm ánh sáng",
+    "words": [
+      {
+        "text": "Trước",
+        "startTime": 74,
+        "endTime": 74.1
+      },
+      {
+        "text": "khi",
+        "startTime": 74.1,
+        "endTime": 74.3
+      },
+      {
+        "text": "nhận",
+        "startTime": 74.3,
+        "endTime": 74.4
+      },
+      {
+        "text": "ra",
+        "startTime": 74.4,
+        "endTime": 74.6
+      },
+      {
+        "text": "thế",
+        "startTime": 74.6,
+        "endTime": 74.7
+      },
+      {
+        "text": "giới",
+        "startTime": 74.7,
+        "endTime": 74.8
+      },
+      {
+        "text": "của",
+        "startTime": 74.8,
+        "endTime": 75
+      },
+      {
+        "text": "em",
+        "startTime": 75,
+        "endTime": 75.1
+      },
+      {
+        "text": "cách",
+        "startTime": 75.1,
+        "endTime": 75.3
+      },
+      {
+        "text": "xa",
+        "startTime": 75.3,
+        "endTime": 75.4
+      },
+      {
+        "text": "cả",
+        "startTime": 75.4,
+        "endTime": 75.6
+      },
+      {
+        "text": "triệu",
+        "startTime": 75.6,
+        "endTime": 75.7
+      },
+      {
+        "text": "năm",
+        "startTime": 75.7,
+        "endTime": 75.8
+      },
+      {
+        "text": "ánh",
+        "startTime": 75.8,
+        "endTime": 75.9
+      },
+      {
+        "text": "sáng",
+        "startTime": 75.9,
+        "endTime": 76
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 76,
+    "endTime": 78,
+    "text": "Còn lời yêu nào em che đậy?",
+    "words": [
+      {
+        "text": "Còn",
+        "startTime": 76,
+        "endTime": 76.3
+      },
+      {
+        "text": "lời",
+        "startTime": 76.3,
+        "endTime": 76.6
+      },
+      {
+        "text": "yêu",
+        "startTime": 76.6,
+        "endTime": 76.8
+      },
+      {
+        "text": "nào",
+        "startTime": 76.8,
+        "endTime": 77.1
+      },
+      {
+        "text": "em",
+        "startTime": 77.1,
+        "endTime": 77.4
+      },
+      {
+        "text": "che",
+        "startTime": 77.4,
+        "endTime": 77.7
+      },
+      {
+        "text": "đậy?",
+        "startTime": 77.7,
+        "endTime": 78
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 78,
+    "endTime": 80,
+    "text": "Anh đã thật mong mình hơn vậy",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 78,
+        "endTime": 78.3
+      },
+      {
+        "text": "đã",
+        "startTime": 78.3,
+        "endTime": 78.6
+      },
+      {
+        "text": "thật",
+        "startTime": 78.6,
+        "endTime": 78.8
+      },
+      {
+        "text": "mong",
+        "startTime": 78.8,
+        "endTime": 79.1
+      },
+      {
+        "text": "mình",
+        "startTime": 79.1,
+        "endTime": 79.4
+      },
+      {
+        "text": "hơn",
+        "startTime": 79.4,
+        "endTime": 79.7
+      },
+      {
+        "text": "vậy",
+        "startTime": 79.7,
+        "endTime": 80
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 80,
+    "endTime": 82,
+    "text": "Anh thấy mệt mỏi khi phải giữ mình tỉnh táo trong từng cơn say",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 80,
+        "endTime": 80.1
+      },
+      {
+        "text": "thấy",
+        "startTime": 80.1,
+        "endTime": 80.3
+      },
+      {
+        "text": "mệt",
+        "startTime": 80.3,
+        "endTime": 80.4
+      },
+      {
+        "text": "mỏi",
+        "startTime": 80.4,
+        "endTime": 80.6
+      },
+      {
+        "text": "khi",
+        "startTime": 80.6,
+        "endTime": 80.7
+      },
+      {
+        "text": "phải",
+        "startTime": 80.7,
+        "endTime": 80.9
+      },
+      {
+        "text": "giữ",
+        "startTime": 80.9,
+        "endTime": 81.1
+      },
+      {
+        "text": "mình",
+        "startTime": 81.1,
+        "endTime": 81.2
+      },
+      {
+        "text": "tỉnh",
+        "startTime": 81.2,
+        "endTime": 81.4
+      },
+      {
+        "text": "táo",
+        "startTime": 81.4,
+        "endTime": 81.5
+      },
+      {
+        "text": "trong",
+        "startTime": 81.5,
+        "endTime": 81.7
+      },
+      {
+        "text": "từng",
+        "startTime": 81.7,
+        "endTime": 81.8
+      },
+      {
+        "text": "cơn",
+        "startTime": 81.8,
+        "endTime": 82
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 82,
+    "endTime": 84,
+    "text": "Anh đã từng mong mình có thể đến ôm lấy em vào lòng",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 82,
+        "endTime": 82.1
+      },
+      {
+        "text": "đã",
+        "startTime": 82.1,
+        "endTime": 82.3
+      },
+      {
+        "text": "từng",
+        "startTime": 82.3,
+        "endTime": 82.4
+      },
+      {
+        "text": "mong",
+        "startTime": 82.4,
+        "endTime": 82.6
+      },
+      {
+        "text": "mình",
+        "startTime": 82.6,
+        "endTime": 82.8
+      },
+      {
+        "text": "có",
+        "startTime": 82.8,
+        "endTime": 82.9
+      },
+      {
+        "text": "thể",
+        "startTime": 82.9,
+        "endTime": 83.1
+      },
+      {
+        "text": "đến",
+        "startTime": 83.1,
+        "endTime": 83.2
+      },
+      {
+        "text": "ôm",
+        "startTime": 83.2,
+        "endTime": 83.4
+      },
+      {
+        "text": "lấy",
+        "startTime": 83.4,
+        "endTime": 83.5
+      },
+      {
+        "text": "em",
+        "startTime": 83.5,
+        "endTime": 83.7
+      },
+      {
+        "text": "vào",
+        "startTime": 83.7,
+        "endTime": 83.8
+      },
+      {
+        "text": "lòng",
+        "startTime": 83.8,
+        "endTime": 84
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 84,
+    "endTime": 86,
+    "text": "Anh chỉ còn lại chân thành",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 84,
+        "endTime": 84.3
+      },
+      {
+        "text": "chỉ",
+        "startTime": 84.3,
+        "endTime": 84.7
+      },
+      {
+        "text": "còn",
+        "startTime": 84.7,
+        "endTime": 85
+      },
+      {
+        "text": "lại",
+        "startTime": 85,
+        "endTime": 85.3
+      },
+      {
+        "text": "chân",
+        "startTime": 85.3,
+        "endTime": 85.7
+      },
+      {
+        "text": "thành",
+        "startTime": 85.7,
+        "endTime": 86
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 86,
+    "endTime": 88,
+    "text": "Vậy em còn bận tâm nào không?",
+    "words": [
+      {
+        "text": "Vậy",
+        "startTime": 86,
+        "endTime": 86.3
+      },
+      {
+        "text": "em",
+        "startTime": 86.3,
+        "endTime": 86.6
+      },
+      {
+        "text": "còn",
+        "startTime": 86.6,
+        "endTime": 86.9
+      },
+      {
+        "text": "bận",
+        "startTime": 86.9,
+        "endTime": 87.1
+      },
+      {
+        "text": "tâm",
+        "startTime": 87.1,
+        "endTime": 87.4
+      },
+      {
+        "text": "nào",
+        "startTime": 87.4,
+        "endTime": 87.7
+      },
+      {
+        "text": "không?",
+        "startTime": 87.7,
+        "endTime": 88
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 88,
+    "endTime": 89,
+    "text": "Chuyện đã cũ y hệt như ngày hôm qua",
+    "words": [
+      {
+        "text": "Chuyện",
+        "startTime": 88,
+        "endTime": 88.1
+      },
+      {
+        "text": "đã",
+        "startTime": 88.1,
+        "endTime": 88.2
+      },
+      {
+        "text": "cũ",
+        "startTime": 88.2,
+        "endTime": 88.3
+      },
+      {
+        "text": "y",
+        "startTime": 88.3,
+        "endTime": 88.4
+      },
+      {
+        "text": "hệt",
+        "startTime": 88.4,
+        "endTime": 88.5
+      },
+      {
+        "text": "như",
+        "startTime": 88.5,
+        "endTime": 88.7
+      },
+      {
+        "text": "ngày",
+        "startTime": 88.7,
+        "endTime": 88.8
+      },
+      {
+        "text": "hôm",
+        "startTime": 88.8,
+        "endTime": 88.9
+      },
+      {
+        "text": "qua",
+        "startTime": 88.9,
+        "endTime": 89
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 89,
+    "endTime": 91,
+    "text": "Nhưng tận sâu ở trái tim vẫn xem người là món quà",
+    "words": [
+      {
+        "text": "Nhưng",
+        "startTime": 89,
+        "endTime": 89.2
+      },
+      {
+        "text": "tận",
+        "startTime": 89.2,
+        "endTime": 89.3
+      },
+      {
+        "text": "sâu",
+        "startTime": 89.3,
+        "endTime": 89.5
+      },
+      {
+        "text": "ở",
+        "startTime": 89.5,
+        "endTime": 89.7
+      },
+      {
+        "text": "trái",
+        "startTime": 89.7,
+        "endTime": 89.8
+      },
+      {
+        "text": "tim",
+        "startTime": 89.8,
+        "endTime": 90
+      },
+      {
+        "text": "vẫn",
+        "startTime": 90,
+        "endTime": 90.2
+      },
+      {
+        "text": "xem",
+        "startTime": 90.2,
+        "endTime": 90.3
+      },
+      {
+        "text": "người",
+        "startTime": 90.3,
+        "endTime": 90.5
+      },
+      {
+        "text": "là",
+        "startTime": 90.5,
+        "endTime": 90.7
+      },
+      {
+        "text": "món",
+        "startTime": 90.7,
+        "endTime": 90.8
+      },
+      {
+        "text": "quà",
+        "startTime": 90.8,
+        "endTime": 91
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 91,
+    "endTime": 94,
+    "text": "Nói đi! Nếu em sắp phải đi xa?",
+    "words": [
+      {
+        "text": "Nói",
+        "startTime": 91,
+        "endTime": 91.4
+      },
+      {
+        "text": "đi!",
+        "startTime": 91.4,
+        "endTime": 91.8
+      },
+      {
+        "text": "Nếu",
+        "startTime": 91.8,
+        "endTime": 92.3
+      },
+      {
+        "text": "em",
+        "startTime": 92.3,
+        "endTime": 92.7
+      },
+      {
+        "text": "sắp",
+        "startTime": 92.7,
+        "endTime": 93.1
+      },
+      {
+        "text": "phải",
+        "startTime": 93.1,
+        "endTime": 93.6
+      },
+      {
+        "text": "đi",
+        "startTime": 93.6,
+        "endTime": 94
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 94,
+    "endTime": 97,
+    "text": "Xin hãy thiêu đốt từng đêm từng đêm như sativa",
+    "words": [
+      {
+        "text": "Xin",
+        "startTime": 94,
+        "endTime": 94.3
+      },
+      {
+        "text": "hãy",
+        "startTime": 94.3,
+        "endTime": 94.6
+      },
+      {
+        "text": "thiêu",
+        "startTime": 94.6,
+        "endTime": 94.9
+      },
+      {
+        "text": "đốt",
+        "startTime": 94.9,
+        "endTime": 95.2
+      },
+      {
+        "text": "từng",
+        "startTime": 95.2,
+        "endTime": 95.5
+      },
+      {
+        "text": "đêm",
+        "startTime": 95.5,
+        "endTime": 95.8
+      },
+      {
+        "text": "từng",
+        "startTime": 95.8,
+        "endTime": 96.1
+      },
+      {
+        "text": "đêm",
+        "startTime": 96.1,
+        "endTime": 96.4
+      },
+      {
+        "text": "như",
+        "startTime": 96.4,
+        "endTime": 96.7
+      },
+      {
+        "text": "sativa",
+        "startTime": 96.7,
+        "endTime": 97
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 97,
+    "endTime": 99,
+    "text": "Em ơi! Em đừng vội tin",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 97,
+        "endTime": 97.3
+      },
+      {
+        "text": "ơi!",
+        "startTime": 97.3,
+        "endTime": 97.7
+      },
+      {
+        "text": "Em",
+        "startTime": 97.7,
+        "endTime": 98
+      },
+      {
+        "text": "đừng",
+        "startTime": 98,
+        "endTime": 98.3
+      },
+      {
+        "text": "vội",
+        "startTime": 98.3,
+        "endTime": 98.7
+      },
+      {
+        "text": "tin",
+        "startTime": 98.7,
+        "endTime": 99
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 99,
+    "endTime": 102,
+    "text": "Những đêm cô đơn kéo đến anh không thể đánh mất mình",
+    "words": [
+      {
+        "text": "Những",
+        "startTime": 99,
+        "endTime": 99.3
+      },
+      {
+        "text": "đêm",
+        "startTime": 99.3,
+        "endTime": 99.5
+      },
+      {
+        "text": "cô",
+        "startTime": 99.5,
+        "endTime": 99.8
+      },
+      {
+        "text": "đơn",
+        "startTime": 99.8,
+        "endTime": 100.1
+      },
+      {
+        "text": "kéo",
+        "startTime": 100.1,
+        "endTime": 100.4
+      },
+      {
+        "text": "đến",
+        "startTime": 100.4,
+        "endTime": 100.6
+      },
+      {
+        "text": "anh",
+        "startTime": 100.6,
+        "endTime": 100.9
+      },
+      {
+        "text": "không",
+        "startTime": 100.9,
+        "endTime": 101.2
+      },
+      {
+        "text": "thể",
+        "startTime": 101.2,
+        "endTime": 101.4
+      },
+      {
+        "text": "đánh",
+        "startTime": 101.4,
+        "endTime": 101.7
+      },
+      {
+        "text": "mất",
+        "startTime": 101.7,
+        "endTime": 102
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 102,
+    "endTime": 105,
+    "text": "Nếu đêm nay chỉ còn lại là giấc mơ",
+    "words": [
+      {
+        "text": "Nếu",
+        "startTime": 102,
+        "endTime": 102.3
+      },
+      {
+        "text": "đêm",
+        "startTime": 102.3,
+        "endTime": 102.7
+      },
+      {
+        "text": "nay",
+        "startTime": 102.7,
+        "endTime": 103
+      },
+      {
+        "text": "chỉ",
+        "startTime": 103,
+        "endTime": 103.3
+      },
+      {
+        "text": "còn",
+        "startTime": 103.3,
+        "endTime": 103.7
+      },
+      {
+        "text": "lại",
+        "startTime": 103.7,
+        "endTime": 104
+      },
+      {
+        "text": "là",
+        "startTime": 104,
+        "endTime": 104.3
+      },
+      {
+        "text": "giấc",
+        "startTime": 104.3,
+        "endTime": 104.7
+      },
+      {
+        "text": "mơ",
+        "startTime": 104.7,
+        "endTime": 105
+      }
+    ]
+  },
+  {
+    "section": "Rap",
+    "startTime": 105,
+    "endTime": 108,
+    "text": "Xin hãy đừng lo đến anh vì chuyện chúng ta đâu còn bất ngờ",
+    "words": [
+      {
+        "text": "Xin",
+        "startTime": 105,
+        "endTime": 105.2
+      },
+      {
+        "text": "hãy",
+        "startTime": 105.2,
+        "endTime": 105.5
+      },
+      {
+        "text": "đừng",
+        "startTime": 105.5,
+        "endTime": 105.7
+      },
+      {
+        "text": "lo",
+        "startTime": 105.7,
+        "endTime": 105.9
+      },
+      {
+        "text": "đến",
+        "startTime": 105.9,
+        "endTime": 106.2
+      },
+      {
+        "text": "anh",
+        "startTime": 106.2,
+        "endTime": 106.4
+      },
+      {
+        "text": "vì",
+        "startTime": 106.4,
+        "endTime": 106.6
+      },
+      {
+        "text": "chuyện",
+        "startTime": 106.6,
+        "endTime": 106.8
+      },
+      {
+        "text": "chúng",
+        "startTime": 106.8,
+        "endTime": 107.1
+      },
+      {
+        "text": "ta",
+        "startTime": 107.1,
+        "endTime": 107.3
+      },
+      {
+        "text": "đâu",
+        "startTime": 107.3,
+        "endTime": 107.5
+      },
+      {
+        "text": "còn",
+        "startTime": 107.5,
+        "endTime": 107.8
+      },
+      {
+        "text": "bất",
+        "startTime": 107.8,
+        "endTime": 107.9
+      },
+      {
+        "text": "ngờ",
+        "startTime": 107.9,
+        "endTime": 108
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 108,
+    "endTime": 111,
+    "text": "You say don’t fall in love",
+    "words": [
+      {
+        "text": "You",
+        "startTime": 108,
+        "endTime": 108.5
+      },
+      {
+        "text": "say",
+        "startTime": 108.5,
+        "endTime": 109
+      },
+      {
+        "text": "don’t",
+        "startTime": 109,
+        "endTime": 109.5
+      },
+      {
+        "text": "fall",
+        "startTime": 109.5,
+        "endTime": 110
+      },
+      {
+        "text": "in",
+        "startTime": 110,
+        "endTime": 110.5
+      },
+      {
+        "text": "love",
+        "startTime": 110.5,
+        "endTime": 111
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 111,
+    "endTime": 114,
+    "text": "Vì giờ đây em quên hết rồi",
+    "words": [
+      {
+        "text": "Vì",
+        "startTime": 111,
+        "endTime": 111.4
+      },
+      {
+        "text": "giờ",
+        "startTime": 111.4,
+        "endTime": 111.9
+      },
+      {
+        "text": "đây",
+        "startTime": 111.9,
+        "endTime": 112.3
+      },
+      {
+        "text": "em",
+        "startTime": 112.3,
+        "endTime": 112.7
+      },
+      {
+        "text": "quên",
+        "startTime": 112.7,
+        "endTime": 113.1
+      },
+      {
+        "text": "hết",
+        "startTime": 113.1,
+        "endTime": 113.6
+      },
+      {
+        "text": "rồi",
+        "startTime": 113.6,
+        "endTime": 114
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 114,
+    "endTime": 118,
+    "text": "Mặc kệ lời yêu mỗi đêm vẫn chờ đợi",
+    "words": [
+      {
+        "text": "Mặc",
+        "startTime": 114,
+        "endTime": 114.5
+      },
+      {
+        "text": "kệ",
+        "startTime": 114.5,
+        "endTime": 115
+      },
+      {
+        "text": "lời",
+        "startTime": 115,
+        "endTime": 115.5
+      },
+      {
+        "text": "yêu",
+        "startTime": 115.5,
+        "endTime": 116
+      },
+      {
+        "text": "mỗi",
+        "startTime": 116,
+        "endTime": 116.5
+      },
+      {
+        "text": "đêm",
+        "startTime": 116.5,
+        "endTime": 117
+      },
+      {
+        "text": "vẫn",
+        "startTime": 117,
+        "endTime": 117.5
+      },
+      {
+        "text": "chờ",
+        "startTime": 117.5,
+        "endTime": 117.6
+      },
+      {
+        "text": "đợi",
+        "startTime": 117.6,
+        "endTime": 118
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 118,
+    "endTime": 122,
+    "text": "Vậy thì xin em hãy đừng lo",
+    "words": [
+      {
+        "text": "Vậy",
+        "startTime": 118,
+        "endTime": 118.6
+      },
+      {
+        "text": "thì",
+        "startTime": 118.6,
+        "endTime": 119.1
+      },
+      {
+        "text": "xin",
+        "startTime": 119.1,
+        "endTime": 119.7
+      },
+      {
+        "text": "em",
+        "startTime": 119.7,
+        "endTime": 120.3
+      },
+      {
+        "text": "hãy",
+        "startTime": 120.3,
+        "endTime": 120.9
+      },
+      {
+        "text": "đừng",
+        "startTime": 120.9,
+        "endTime": 121.4
+      },
+      {
+        "text": "lo",
+        "startTime": 121.4,
+        "endTime": 122
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 122,
+    "endTime": 125,
+    "text": "Về mọi thứ mà ta từng có",
+    "words": [
+      {
+        "text": "Về",
+        "startTime": 122,
+        "endTime": 122.4
+      },
+      {
+        "text": "mọi",
+        "startTime": 122.4,
+        "endTime": 122.9
+      },
+      {
+        "text": "thứ",
+        "startTime": 122.9,
+        "endTime": 123.3
+      },
+      {
+        "text": "mà",
+        "startTime": 123.3,
+        "endTime": 123.7
+      },
+      {
+        "text": "ta",
+        "startTime": 123.7,
+        "endTime": 124.1
+      },
+      {
+        "text": "từng",
+        "startTime": 124.1,
+        "endTime": 124.6
+      },
+      {
+        "text": "có",
+        "startTime": 124.6,
+        "endTime": 125
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 125,
+    "endTime": 127,
+    "text": "Trả lại cho em con tim tự do",
+    "words": [
+      {
+        "text": "Trả",
+        "startTime": 125,
+        "endTime": 125.3
+      },
+      {
+        "text": "lại",
+        "startTime": 125.3,
+        "endTime": 125.6
+      },
+      {
+        "text": "cho",
+        "startTime": 125.6,
+        "endTime": 125.9
+      },
+      {
+        "text": "em",
+        "startTime": 125.9,
+        "endTime": 126.1
+      },
+      {
+        "text": "con",
+        "startTime": 126.1,
+        "endTime": 126.4
+      },
+      {
+        "text": "tim",
+        "startTime": 126.4,
+        "endTime": 126.7
+      },
+      {
+        "text": "tự",
+        "startTime": 126.7,
+        "endTime": 127
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 127,
+    "endTime": 130,
+    "text": "Rồi tất cả sẽ hoá thành tàn tro",
+    "words": [
+      {
+        "text": "Rồi",
+        "startTime": 127,
+        "endTime": 127.4
+      },
+      {
+        "text": "tất",
+        "startTime": 127.4,
+        "endTime": 127.8
+      },
+      {
+        "text": "cả",
+        "startTime": 127.8,
+        "endTime": 128.1
+      },
+      {
+        "text": "sẽ",
+        "startTime": 128.1,
+        "endTime": 128.5
+      },
+      {
+        "text": "hoá",
+        "startTime": 128.5,
+        "endTime": 128.9
+      },
+      {
+        "text": "thành",
+        "startTime": 128.9,
+        "endTime": 129.3
+      },
+      {
+        "text": "tàn",
+        "startTime": 129.3,
+        "endTime": 129.6
+      },
+      {
+        "text": "tro",
+        "startTime": 129.6,
+        "endTime": 130
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 130,
+    "endTime": 133,
+    "text": "Em ơi sỏi đá thì chẳng biết đau",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 130,
+        "endTime": 130.4
+      },
+      {
+        "text": "ơi",
+        "startTime": 130.4,
+        "endTime": 130.8
+      },
+      {
+        "text": "sỏi",
+        "startTime": 130.8,
+        "endTime": 131.1
+      },
+      {
+        "text": "đá",
+        "startTime": 131.1,
+        "endTime": 131.5
+      },
+      {
+        "text": "thì",
+        "startTime": 131.5,
+        "endTime": 131.9
+      },
+      {
+        "text": "chẳng",
+        "startTime": 131.9,
+        "endTime": 132.3
+      },
+      {
+        "text": "biết",
+        "startTime": 132.3,
+        "endTime": 132.6
+      },
+      {
+        "text": "đau",
+        "startTime": 132.6,
+        "endTime": 133
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 133,
+    "endTime": 135,
+    "text": "Nên có gì để em phải đáng tiếc đâu?",
+    "words": [
+      {
+        "text": "Nên",
+        "startTime": 133,
+        "endTime": 133.2
+      },
+      {
+        "text": "có",
+        "startTime": 133.2,
+        "endTime": 133.4
+      },
+      {
+        "text": "gì",
+        "startTime": 133.4,
+        "endTime": 133.7
+      },
+      {
+        "text": "để",
+        "startTime": 133.7,
+        "endTime": 133.9
+      },
+      {
+        "text": "em",
+        "startTime": 133.9,
+        "endTime": 134.1
+      },
+      {
+        "text": "phải",
+        "startTime": 134.1,
+        "endTime": 134.3
+      },
+      {
+        "text": "đáng",
+        "startTime": 134.3,
+        "endTime": 134.6
+      },
+      {
+        "text": "tiếc",
+        "startTime": 134.6,
+        "endTime": 134.8
+      },
+      {
+        "text": "đâu?",
+        "startTime": 134.8,
+        "endTime": 135
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 135,
+    "endTime": 137,
+    "text": "Anh thích tự đón nhận những tổn thương",
+    "words": [
+      {
+        "text": "Anh",
+        "startTime": 135,
+        "endTime": 135.3
+      },
+      {
+        "text": "thích",
+        "startTime": 135.3,
+        "endTime": 135.5
+      },
+      {
+        "text": "tự",
+        "startTime": 135.5,
+        "endTime": 135.8
+      },
+      {
+        "text": "đón",
+        "startTime": 135.8,
+        "endTime": 136
+      },
+      {
+        "text": "nhận",
+        "startTime": 136,
+        "endTime": 136.3
+      },
+      {
+        "text": "những",
+        "startTime": 136.3,
+        "endTime": 136.5
+      },
+      {
+        "text": "tổn",
+        "startTime": 136.5,
+        "endTime": 136.8
+      },
+      {
+        "text": "thương",
+        "startTime": 136.8,
+        "endTime": 137
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 137,
+    "endTime": 139,
+    "text": "Nên em đừng lo đến anh",
+    "words": [
+      {
+        "text": "Nên",
+        "startTime": 137,
+        "endTime": 137.3
+      },
+      {
+        "text": "em",
+        "startTime": 137.3,
+        "endTime": 137.7
+      },
+      {
+        "text": "đừng",
+        "startTime": 137.7,
+        "endTime": 138
+      },
+      {
+        "text": "lo",
+        "startTime": 138,
+        "endTime": 138.3
+      },
+      {
+        "text": "đến",
+        "startTime": 138.3,
+        "endTime": 138.7
+      },
+      {
+        "text": "anh",
+        "startTime": 138.7,
+        "endTime": 139
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 139,
+    "endTime": 141,
+    "text": "Lo đến anh",
+    "words": [
+      {
+        "text": "Lo",
+        "startTime": 139,
+        "endTime": 139.7
+      },
+      {
+        "text": "đến",
+        "startTime": 139.7,
+        "endTime": 140.3
+      },
+      {
+        "text": "anh",
+        "startTime": 140.3,
+        "endTime": 141
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 141,
+    "endTime": 143,
+    "text": "Em hãy cứ vui đi",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 141,
+        "endTime": 141.4
+      },
+      {
+        "text": "hãy",
+        "startTime": 141.4,
+        "endTime": 141.8
+      },
+      {
+        "text": "cứ",
+        "startTime": 141.8,
+        "endTime": 142.2
+      },
+      {
+        "text": "vui",
+        "startTime": 142.2,
+        "endTime": 142.6
+      },
+      {
+        "text": "đi",
+        "startTime": 142.6,
+        "endTime": 143
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 143,
+    "endTime": 145,
+    "text": "Yêu ai lắm khi thế giới diệu kì",
+    "words": [
+      {
+        "text": "Yêu",
+        "startTime": 143,
+        "endTime": 143.3
+      },
+      {
+        "text": "ai",
+        "startTime": 143.3,
+        "endTime": 143.5
+      },
+      {
+        "text": "lắm",
+        "startTime": 143.5,
+        "endTime": 143.8
+      },
+      {
+        "text": "khi",
+        "startTime": 143.8,
+        "endTime": 144
+      },
+      {
+        "text": "thế",
+        "startTime": 144,
+        "endTime": 144.3
+      },
+      {
+        "text": "giới",
+        "startTime": 144.3,
+        "endTime": 144.5
+      },
+      {
+        "text": "diệu",
+        "startTime": 144.5,
+        "endTime": 144.8
+      },
+      {
+        "text": "kì",
+        "startTime": 144.8,
+        "endTime": 145
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 145,
+    "endTime": 147,
+    "text": "Không có gì có thể cản ngăn em",
+    "words": [
+      {
+        "text": "Không",
+        "startTime": 145,
+        "endTime": 145.3
+      },
+      {
+        "text": "có",
+        "startTime": 145.3,
+        "endTime": 145.5
+      },
+      {
+        "text": "gì",
+        "startTime": 145.5,
+        "endTime": 145.8
+      },
+      {
+        "text": "có",
+        "startTime": 145.8,
+        "endTime": 146
+      },
+      {
+        "text": "thể",
+        "startTime": 146,
+        "endTime": 146.3
+      },
+      {
+        "text": "cản",
+        "startTime": 146.3,
+        "endTime": 146.5
+      },
+      {
+        "text": "ngăn",
+        "startTime": 146.5,
+        "endTime": 146.8
+      },
+      {
+        "text": "em",
+        "startTime": 146.8,
+        "endTime": 147
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 147,
+    "endTime": 150,
+    "text": "Nên em hãy cứ bước đi, cứ bước đi",
+    "words": [
+      {
+        "text": "Nên",
+        "startTime": 147,
+        "endTime": 147.3
+      },
+      {
+        "text": "em",
+        "startTime": 147.3,
+        "endTime": 147.7
+      },
+      {
+        "text": "hãy",
+        "startTime": 147.7,
+        "endTime": 148
+      },
+      {
+        "text": "cứ",
+        "startTime": 148,
+        "endTime": 148.3
+      },
+      {
+        "text": "bước",
+        "startTime": 148.3,
+        "endTime": 148.7
+      },
+      {
+        "text": "đi,",
+        "startTime": 148.7,
+        "endTime": 149
+      },
+      {
+        "text": "cứ",
+        "startTime": 149,
+        "endTime": 149.3
+      },
+      {
+        "text": "bước",
+        "startTime": 149.3,
+        "endTime": 149.7
+      },
+      {
+        "text": "đi",
+        "startTime": 149.7,
+        "endTime": 150
+      }
+    ]
+  },
+  {
+    "section": "Bridge",
+    "startTime": 150,
+    "endTime": 152,
+    "text": "Cứ bước đi",
+    "words": [
+      {
+        "text": "Cứ",
+        "startTime": 150,
+        "endTime": 150.7
+      },
+      {
+        "text": "bước",
+        "startTime": 150.7,
+        "endTime": 151.3
+      },
+      {
+        "text": "đi",
+        "startTime": 151.3,
+        "endTime": 152
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 152,
+    "endTime": 154,
+    "text": "You say don’t fall in love",
+    "words": [
+      {
+        "text": "You",
+        "startTime": 152,
+        "endTime": 152.3
+      },
+      {
+        "text": "say",
+        "startTime": 152.3,
+        "endTime": 152.7
+      },
+      {
+        "text": "don’t",
+        "startTime": 152.7,
+        "endTime": 153
+      },
+      {
+        "text": "fall",
+        "startTime": 153,
+        "endTime": 153.3
+      },
+      {
+        "text": "in",
+        "startTime": 153.3,
+        "endTime": 153.7
+      },
+      {
+        "text": "love",
+        "startTime": 153.7,
+        "endTime": 154
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 154,
+    "endTime": 158,
+    "text": "Vì giờ đây em quên hết rồi",
+    "words": [
+      {
+        "text": "Vì",
+        "startTime": 154,
+        "endTime": 154.6
+      },
+      {
+        "text": "giờ",
+        "startTime": 154.6,
+        "endTime": 155.1
+      },
+      {
+        "text": "đây",
+        "startTime": 155.1,
+        "endTime": 155.7
+      },
+      {
+        "text": "em",
+        "startTime": 155.7,
+        "endTime": 156.3
+      },
+      {
+        "text": "quên",
+        "startTime": 156.3,
+        "endTime": 156.9
+      },
+      {
+        "text": "hết",
+        "startTime": 156.9,
+        "endTime": 157.4
+      },
+      {
+        "text": "rồi",
+        "startTime": 157.4,
+        "endTime": 158
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 158,
+    "endTime": 162,
+    "text": "Mặc kệ lời yêu mỗi đêm vẫn chờ đợi",
+    "words": [
+      {
+        "text": "Mặc",
+        "startTime": 158,
+        "endTime": 158.5
+      },
+      {
+        "text": "kệ",
+        "startTime": 158.5,
+        "endTime": 159
+      },
+      {
+        "text": "lời",
+        "startTime": 159,
+        "endTime": 159.5
+      },
+      {
+        "text": "yêu",
+        "startTime": 159.5,
+        "endTime": 160
+      },
+      {
+        "text": "mỗi",
+        "startTime": 160,
+        "endTime": 160.5
+      },
+      {
+        "text": "đêm",
+        "startTime": 160.5,
+        "endTime": 161
+      },
+      {
+        "text": "vẫn",
+        "startTime": 161,
+        "endTime": 161.5
+      },
+      {
+        "text": "chờ",
+        "startTime": 161.5,
+        "endTime": 161.6
+      },
+      {
+        "text": "đợi",
+        "startTime": 161.6,
+        "endTime": 162
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 162,
+    "endTime": 164,
+    "text": "Vậy thì xin em hãy đừng lo",
+    "words": [
+      {
+        "text": "Vậy",
+        "startTime": 162,
+        "endTime": 162.3
+      },
+      {
+        "text": "thì",
+        "startTime": 162.3,
+        "endTime": 162.6
+      },
+      {
+        "text": "xin",
+        "startTime": 162.6,
+        "endTime": 162.9
+      },
+      {
+        "text": "em",
+        "startTime": 162.9,
+        "endTime": 163.1
+      },
+      {
+        "text": "hãy",
+        "startTime": 163.1,
+        "endTime": 163.4
+      },
+      {
+        "text": "đừng",
+        "startTime": 163.4,
+        "endTime": 163.7
+      },
+      {
+        "text": "lo",
+        "startTime": 163.7,
+        "endTime": 164
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 164,
+    "endTime": 167,
+    "text": "Về mọi thứ mà ta từng có",
+    "words": [
+      {
+        "text": "Về",
+        "startTime": 164,
+        "endTime": 164.4
+      },
+      {
+        "text": "mọi",
+        "startTime": 164.4,
+        "endTime": 164.9
+      },
+      {
+        "text": "thứ",
+        "startTime": 164.9,
+        "endTime": 165.3
+      },
+      {
+        "text": "mà",
+        "startTime": 165.3,
+        "endTime": 165.7
+      },
+      {
+        "text": "ta",
+        "startTime": 165.7,
+        "endTime": 166.1
+      },
+      {
+        "text": "từng",
+        "startTime": 166.1,
+        "endTime": 166.6
+      },
+      {
+        "text": "có",
+        "startTime": 166.6,
+        "endTime": 167
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 167,
+    "endTime": 170,
+    "text": "Trả lại cho em con tim tự do",
+    "words": [
+      {
+        "text": "Trả",
+        "startTime": 167,
+        "endTime": 167.4
+      },
+      {
+        "text": "lại",
+        "startTime": 167.4,
+        "endTime": 167.8
+      },
+      {
+        "text": "cho",
+        "startTime": 167.8,
+        "endTime": 168.1
+      },
+      {
+        "text": "em",
+        "startTime": 168.1,
+        "endTime": 168.5
+      },
+      {
+        "text": "con",
+        "startTime": 168.5,
+        "endTime": 168.9
+      },
+      {
+        "text": "tim",
+        "startTime": 168.9,
+        "endTime": 169.3
+      },
+      {
+        "text": "tự",
+        "startTime": 169.3,
+        "endTime": 169.6
+      },
+      {
+        "text": "do",
+        "startTime": 169.6,
+        "endTime": 170
+      }
+    ]
+  },
+  {
+    "section": "Chorus",
+    "startTime": 170,
+    "endTime": 173,
+    "text": "Rồi tất cả sẽ hoá thành tàn tro",
+    "words": [
+      {
+        "text": "Rồi",
+        "startTime": 170,
+        "endTime": 170.4
+      },
+      {
+        "text": "tất",
+        "startTime": 170.4,
+        "endTime": 170.8
+      },
+      {
+        "text": "cả",
+        "startTime": 170.8,
+        "endTime": 171.1
+      },
+      {
+        "text": "sẽ",
+        "startTime": 171.1,
+        "endTime": 171.5
+      },
+      {
+        "text": "hoá",
+        "startTime": 171.5,
+        "endTime": 171.9
+      },
+      {
+        "text": "thành",
+        "startTime": 171.9,
+        "endTime": 172.3
+      },
+      {
+        "text": "tàn",
+        "startTime": 172.3,
+        "endTime": 172.6
+      },
+      {
+        "text": "tro",
+        "startTime": 172.6,
+        "endTime": 173
+      }
+    ]
+  }
+]

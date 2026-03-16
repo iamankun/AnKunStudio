@@ -3,6 +3,7 @@ export interface LyricLine {
   startTime: number; // in seconds
   endTime: number;   // in seconds
   text: string;
+  section?: string;  // e.g. "Verse", "Rap", "Chorus"
   words: LyricWord[];
 }
 
@@ -22,6 +23,22 @@ export async function loadLRC(url: string): Promise<LyricLine[]> {
 }
 
 /**
+ * Load structured JSON lyrics from URL (Apple Music Style)
+ */
+export async function loadJSONLyrics(url: string): Promise<LyricLine[]> {
+  const response = await fetch(url);
+  const json = await response.json();
+  
+  // Ensure we assign arbitrary IDs to JSON chunks if missing
+  return json.map((line: any, index: number) => ({
+    ...line,
+    id: line.id || index + 1,
+    section: line.section || 'Verse',
+    words: line.words || [],
+  }));
+}
+
+/**
  * Parse SRT or LRC content to structured lyrics data
  * Supports both line-level and word-level timestamps
  */
@@ -35,10 +52,17 @@ export function parseSRT(srtContent: string): LyricLine[] {
     // Parse LRC format
     const lrcLines = srtContent.trim().split('\n');
     let id = 1;
+    let currentSection = 'Verse';
     
     for (const line of lrcLines) {
       const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith('#')) continue;
+      if (!trimmed) continue;
+      
+      // Parse UI section tags
+      if (trimmed.startsWith('#')) {
+        currentSection = trimmed.substring(1).trim();
+        continue;
+      }
       
       // Try Enhanced LRC format first (word-level timestamps)
       const enhanced = parseEnhancedLRC(trimmed);
@@ -48,6 +72,7 @@ export function parseSRT(srtContent: string): LyricLine[] {
           startTime: enhanced.startTime,
           endTime: enhanced.endTime,
           text: enhanced.text,
+          section: currentSection,
           words: enhanced.words,
         });
         continue;
@@ -64,25 +89,14 @@ export function parseSRT(srtContent: string): LyricLine[] {
       
       const startTime = mins * 60 + secs + ms / 1000;
       
-      // Estimate end time based on next line or add 3 seconds
-      const endTime = startTime + 3;
-      
-      // Split into words with estimated timing
-      const words = text.split(/\s+/).filter(w => w.length > 0);
-      const wordDuration = (endTime - startTime) / words.length;
-      
-      const lyricWords: LyricWord[] = words.map((word, idx) => ({
-        text: word,
-        startTime: startTime + idx * wordDuration,
-        endTime: startTime + (idx + 1) * wordDuration,
-      }));
-      
       lines.push({
         id: id++,
         startTime,
-        endTime,
+        // Estimate end time based on next line or add 3 seconds later
+        endTime: startTime + 3,
         text,
-        words: lyricWords,
+        section: currentSection,
+        words: [], // populated after finding true end times
       });
     }
     
@@ -91,15 +105,40 @@ export function parseSRT(srtContent: string): LyricLine[] {
       lines[i].endTime = lines[i + 1].startTime;
     }
     
+    // Calculate simulated word timings now that lines have true end times
+    for (const line of lines) {
+      if (line.words.length === 0 && line.text) {
+        const words = line.text.split(/\s+/).filter(w => w.length > 0);
+        // Constrain duration to max 5 seconds so words don't stretch forever in long instrumental gaps
+        const totalDuration = Math.min(line.endTime - line.startTime, 5);
+        const wordDuration = totalDuration / words.length;
+        
+        line.words = words.map((word, idx) => ({
+          text: word,
+          startTime: line.startTime + idx * wordDuration,
+          endTime: line.startTime + (idx + 1) * wordDuration - (wordDuration * 0.1), // 10% gap
+        }));
+      }
+    }
+    
     return lines;
   }
   
   // Parse SRT format (existing logic)
   const blocks = srtContent.trim().split(/\n\s*\n/);
+  let currentSection = 'Verse';
 
   for (const block of blocks) {
     const lines_in_block = block.trim().split('\n');
     if (lines_in_block.length < 2) continue;
+
+    // Check if block is just a section tag
+    if (lines_in_block[0].trim().startsWith('#')) {
+       currentSection = lines_in_block[0].trim().substring(1).trim();
+       if (lines_in_block.length === 1) continue; 
+       // Remove tag from processing lines if attached to actual text block
+       lines_in_block.shift(); 
+    }
 
     // Parse ID
     const id = parseInt(lines_in_block[0].trim());
@@ -144,6 +183,7 @@ export function parseSRT(srtContent: string): LyricLine[] {
       startTime,
       endTime,
       text: fullText,
+      section: currentSection,
       words: lyricWords,
     });
   }
@@ -225,11 +265,14 @@ function parseEnhancedLRC(line: string): { startTime: number; endTime: number; t
 
   // Extract word timestamps
   let match;
-  const matches: { index: number; mins: number; secs: number; ms: number }[] = [];
+  const matches: { index: number; minStr: string; secStr: string; msStr: string; mins: number; secs: number; ms: number }[] = [];
   
   while ((match = wordTimeRegex.exec(content)) !== null) {
     matches.push({
       index: match.index,
+      minStr: match[1],
+      secStr: match[2],
+      msStr: match[3],
       mins: parseInt(match[1]),
       secs: parseInt(match[2]),
       ms: parseInt(match[3].padEnd(3, '0')),
@@ -242,7 +285,10 @@ function parseEnhancedLRC(line: string): { startTime: number; endTime: number; t
     const next = matches[i + 1];
     
     const wordStartTime = current.mins * 60 + current.secs + current.ms / 1000;
-    const textStart = current.index + `<${String(current.mins).padStart(2, '0')}:${String(current.secs).padStart(2, '0')}.${String(current.ms).slice(0, 2)}>`.length;
+    
+    // dynamically determine length of the matched string to extract text accurately
+    const tagLength = `<${current.minStr}:${current.secStr}.${current.msStr}>`.length;
+    const textStart = current.index + tagLength;
     const textEnd = next ? next.index : content.length;
     
     const wordText = content.substring(textStart, textEnd).trim();

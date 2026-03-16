@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
-import { LyricLine, loadLRC, getCurrentLine, getCurrentWord } from './lyrics-utils';
+import { LyricLine, loadLRC, loadJSONLyrics, getCurrentLine, getCurrentWord } from './lyrics-utils';
 
 interface LyricsContextType {
   // State
@@ -41,7 +41,7 @@ export function LyricsProvider({ children }: { children: ReactNode }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [timeOffset, setTimeOffsetState] = useState(-2); // in seconds, positive = lyrics delayed
+  const [timeOffset, setTimeOffsetState] = useState(0); // in seconds, positive = lyrics delayed
   const [isCalibrated, setIsCalibrated] = useState(false);
   const [calibrationSamples, setCalibrationSamples] = useState<{ expectedTime: number; actualTime: number }[]>([]);
 
@@ -90,9 +90,14 @@ export function LyricsProvider({ children }: { children: ReactNode }) {
     setError(null);
     
     try {
-      const parsedLyrics = await loadLRC(url);
+      let parsedLyrics;
+      if (url.toLowerCase().endsWith('.json')) {
+        parsedLyrics = await loadJSONLyrics(url);
+      } else {
+        parsedLyrics = await loadLRC(url);
+      }
       setLyrics(parsedLyrics);
-      console.log('✅ Lyrics loaded:', parsedLyrics.length, 'lines');
+      console.log('✅ Lyrics loaded:', parsedLyrics.length, 'lines via', url);
     } catch (err) {
       console.error('❌ Failed to load lyrics:', err);
       setError('Không thể tải lời bài hát');

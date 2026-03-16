@@ -19,6 +19,7 @@ interface MusicContextType {
   volume: number;
   queue: Track[];
   isPlayerVisible: boolean;
+  getCurrentTime: () => number;
   playTrack: (track: Track) => void;
   pause: () => void;
   resume: () => void;
@@ -218,6 +219,10 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  const getCurrentTime = useCallback(() => {
+    return audioRef.current?.currentTime || 0;
+  }, []);
+
   const playTrack = useCallback((track: Track) => {
     playTrackRef.current(track);
   }, []);
@@ -319,6 +324,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         volume,
         queue,
         isPlayerVisible,
+        getCurrentTime,
         playTrack,
         pause,
         resume,
