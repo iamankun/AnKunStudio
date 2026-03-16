@@ -199,7 +199,7 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
             <div
               key={line.id}
               data-line-id={line.id}
-              className={`transition-all duration-500 origin-center text-center font-semibold tracking-tight ${
+              className={`transition-all duration-500 origin-center text-center font-bold tracking-tight ${
                 isActive 
                   ? 'text-2xl md:text-3xl lg:text-4xl font-bold text-foreground scale-100 blur-none opacity-100' 
                   : isPast 
