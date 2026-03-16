@@ -36,7 +36,7 @@
     "section": "Verse",
     "startTime": 5,
     "endTime": 8,
-    "text": "Em nhớ mang dù theo",
+    "text": "Em nhớ đem dù theo",
     "words": [
       {
         "text": "Em",
@@ -49,7 +49,7 @@
         "endTime": 6
       },
       {
-        "text": "mang",
+        "text": "đem",
         "startTime": 6,
         "endTime": 6.5
       },
@@ -1416,6 +1416,11 @@
       {
         "text": "cơn",
         "startTime": 81.8,
+        "endTime": 81.9
+      },
+      {
+        "text": "say",
+        "startTime": 81.9,
         "endTime": 82
       }
     ]
@@ -1734,6 +1739,11 @@
       {
         "text": "đi",
         "startTime": 93.6,
+        "endTime": 93.7
+      },
+      {
+        "text": "xa",
+        "startTime": 93.7,
         "endTime": 94
       }
     ]
@@ -1893,6 +1903,11 @@
       {
         "text": "mất",
         "startTime": 101.7,
+        "endTime": 101.8
+      },
+      {
+        "text": "mình",
+        "startTime": 101.8,
         "endTime": 102
       }
     ]
@@ -2287,6 +2302,11 @@
       {
         "text": "tự",
         "startTime": 126.7,
+        "endTime": 126.8
+      },
+      {
+        "text": "do",
+        "startTime": 126.8,
         "endTime": 127
       }
     ]

@@ -199,7 +199,7 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
             <div
               key={line.id}
               data-line-id={line.id}
-              className={`transition-all duration-500 origin-center text-center ${
+              className={`transition-all duration-500 origin-center text-center font-semibold tracking-tight ${
                 isActive 
                   ? 'text-2xl md:text-3xl lg:text-4xl font-bold text-foreground scale-100 blur-none opacity-100' 
                   : isPast 
@@ -219,17 +219,16 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
                   return (
                     <span
                       key={idx}
-                      className="inline-block mx-1 lg:mx-1.5 transition-colors duration-200"
-                      style={{
+                      className="inline-block mx-0.5 lg:mx-1 transition-all duration-150"
+                      style={isActive ? {
+                        // For the active line: upcoming words dim, sung words colored
                         backgroundImage: isUpcoming 
                           ? 'none' 
-                          : `linear-gradient(90deg, var(--color-primary) ${progress}%, color-mix(in oklch, var(--color-foreground) 30%, transparent) ${progress}%)`,
+                          : `linear-gradient(90deg, var(--color-primary) ${progress}%, color-mix(in oklch, var(--color-foreground) 50%, transparent) ${progress}%)`,
                         WebkitBackgroundClip: isUpcoming ? 'none' : 'text',
-                        WebkitTextFillColor: isUpcoming ? 'color-mix(in oklch, var(--color-foreground) 30%, transparent)' : 'transparent',
-                        textShadow: isActive && !isUpcoming && progress < 100 
-                          ? '0 0 15px color-mix(in oklch, var(--color-primary) 30%, transparent)' 
-                          : 'none'
-                      }}
+                        WebkitTextFillColor: isUpcoming ? 'currentColor' : 'transparent',
+                        opacity: isUpcoming ? 0.3 : 1,
+                      } : {}}
                     >
                       {word.text}
                     </span>
