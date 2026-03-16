@@ -58,13 +58,13 @@ export function MusicPlayer() {
 
   // Load lyrics when track changes
   useEffect(() => {
-    if (currentTrack) {
-      const lyricsUrl = `/tracks/dunglodenanh.json`;
-      loadLyrics(lyricsUrl);
+    if (currentTrack?.lyricUrl) {
+      loadLyrics(currentTrack.lyricUrl);
     } else {
       clearLyrics();
     }
   }, [currentTrack, loadLyrics, clearLyrics]);
+
 
   const getCurrentTime = useMusic().getCurrentTime;
   

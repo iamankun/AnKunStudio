@@ -10,6 +10,7 @@ export interface Track {
   duration: number;
   cover: string;
   audioUrl: string;
+  lyricUrl?: string;
 }
 
 interface MusicContextType {
@@ -39,21 +40,23 @@ const MusicContext = createContext<MusicContextType | null>(null);
 const sampleTracks: Track[] = [
   {
     id: '0',
+    title: 'Cứ Bước Đi',
+    artist: 'Congtri_ ft. QUYEN.',
+    album: 'Single',
+    duration: 245,
+    cover: '/tracks/cubuocdi.jpg',
+    audioUrl: '/tracks/congtri_ & QUYEN - Cứ Bước Đi.wav',
+    lyricUrl: '/tracks/cubuocdi.json'
+  },
+  {
+    id: '1',
     title: 'Đừng Lo Đến Anh',
     artist: 'Willdawind ft. Xesi',
     album: 'Single',
     duration: 240,
     cover: '/tracks/dung-lo-den-anh.jpg',
     audioUrl: '/tracks/Willdawind - đừng lo đến anh ft. Xesi (Prod. by Pawn).m4a',
-  },
-  {
-    id: '1',
-    title: 'Midnight Dreams',
-    artist: 'Luna Echo',
-    album: 'Ethereal Waves',
-    duration: 245,
-    cover: '/tracks/midnight-dreams.jpg',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    lyricUrl: '/tracks/dunglodenanh.json'
   },
   {
     id: '2',
@@ -101,7 +104,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const [queue, setQueueState] = useState<Track[]>(sampleTracks);
   const [isPlayerVisible, setIsPlayerVisible] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const playTrackRef = useRef<(track: Track) => void>(() => {});
+  const playTrackRef = useRef<(track: Track) => void>(() => { });
 
   const nextTrack = useCallback(() => {
     if (!currentTrack || queue.length === 0) return;
@@ -114,7 +117,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     playTrackRef.current = (track: Track) => {
       console.log('Playing track:', track.title, 'URL:', track.audioUrl);
-      
+
       // If same track is already playing, don't recreate audio
       if (audioRef.current && currentTrack?.id === track.id) {
         console.log('Track already playing, resuming...');
@@ -130,25 +133,25 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         setIsPlaying(true);
         return;
       }
-      
+
       // Get actual audio duration dynamically
-    const handleLoadedMetadata = () => {
-      if (audioRef.current) {
-        const actualDuration = audioRef.current.duration;
-        console.log('🎵 Actual audio duration:', actualDuration, 'seconds');
-        // You can store this and use it for progress calculation
-      }
-    };
+      const handleLoadedMetadata = () => {
+        if (audioRef.current) {
+          const actualDuration = audioRef.current.duration;
+          console.log('🎵 Actual audio duration:', actualDuration, 'seconds');
+          // You can store this and use it for progress calculation
+        }
+      };
       if (audioRef.current) {
         audioRef.current.pause();
-        audioRef.current.removeEventListener('timeupdate', () => {});
-        audioRef.current.removeEventListener('ended', () => {});
+        audioRef.current.removeEventListener('timeupdate', () => { });
+        audioRef.current.removeEventListener('ended', () => { });
       }
-      
+
       // Create new audio element to avoid conflicts
       const newAudio = new Audio();
       newAudio.volume = volume;
-      
+
       // Set up event listeners for new audio
       newAudio.addEventListener('timeupdate', () => {
         if (newAudio.duration) {
@@ -168,11 +171,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
       // Set source and play
       newAudio.src = track.audioUrl;
-      
+
       audioRef.current = newAudio;
       setCurrentTrack(track);
       setProgress(0);
-      
+
       // Small delay to ensure state is updated
       setTimeout(() => {
         const playPromise = newAudio.play();
@@ -234,15 +237,15 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         console.log('Pausing audio...');
         console.log('Audio paused before:', audioRef.current.paused);
         console.log('Audio currentTime:', audioRef.current.currentTime);
-        
+
         audioRef.current.pause();
-        
+
         // Check if pause actually worked
         setTimeout(() => {
           console.log('Audio paused after:', audioRef.current?.paused);
           console.log('Audio currentTime after pause:', audioRef.current?.currentTime);
         }, 100);
-        
+
         setIsPlaying(false);
         console.log('Set isPlaying to false');
       } catch (error) {
@@ -257,7 +260,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     console.log('audioRef.current exists:', !!audioRef.current);
     console.log('currentTrack exists:', !!currentTrack);
     console.log('audioRef.current.paused:', audioRef.current?.paused);
-    
+
     if (audioRef.current && currentTrack) {
       console.log('Resuming audio...');
       // Small delay to ensure pause is fully processed
