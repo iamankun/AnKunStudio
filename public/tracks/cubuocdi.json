@@ -1,2854 +1,3453 @@
 [
-    {
-        "section": "Intro",
-        "startTime": 7.5,
-        "endTime": 9.12,
-        "text": "(Cứ bước đi)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 7.5,
-                "endTime": 8.04
-            },
-            {
-                "text": "bước",
-                "startTime": 8.04,
-                "endTime": 8.58
-            },
-            {
-                "text": "đi)",
-                "startTime": 8.58,
-                "endTime": 9.12
-            }
-        ]
-    },
-    {
-        "section": "Intro",
-        "startTime": 9.12,
-        "endTime": 10.83,
-        "text": "(Cứ bước đi)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 9.12,
-                "endTime": 9.69
-            },
-            {
-                "text": "bước",
-                "startTime": 9.69,
-                "endTime": 10.26
-            },
-            {
-                "text": "đi)",
-                "startTime": 10.26,
-                "endTime": 10.83
-            }
-        ]
-    },
-    {
-        "section": "Intro",
-        "startTime": 10.83,
-        "endTime": 13.28,
-        "text": "(Cứ bước đi, yeah)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 10.83,
-                "endTime": 11.44
-            },
-            {
-                "text": "bước",
-                "startTime": 11.44,
-                "endTime": 12.05
-            },
-            {
-                "text": "đi,",
-                "startTime": 12.05,
-                "endTime": 12.66
-            },
-            {
-                "text": "yeah)",
-                "startTime": 12.66,
-                "endTime": 13.28
-            }
-        ]
-    },
-    {
-        "section": "Intro",
-        "startTime": 13.28,
-        "endTime": 14.57,
+  {
+    "section": "Verse",
+    "startTime": 7.595123,
+    "endTime": 7.918065,
+    "text": "(Cứ bước đi)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 7.595123,
+        "endTime": 7.812518
+      },
+      {
+        "text": "bước",
+        "startTime": 7.812518,
+        "endTime": 7.918065
+      },
+      {
+        "text": "đi)",
+        "startTime": 7.918065,
+        "endTime": 7.918065
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 8.779469,
+    "endTime": 9.784427,
+    "text": "(Cứ bước đi)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 8.779469,
+        "endTime": 9.247534
+      },
+      {
+        "text": "bước",
+        "startTime": 9.247534,
+        "endTime": 9.784427
+      },
+      {
+        "text": "đi)",
+        "startTime": 9.784427,
+        "endTime": 9.784427
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 10.820913,
+    "endTime": 12.28144,
+    "text": "(Cứ bước đi, yeah)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 10.820913,
+        "endTime": 11.045604
+      },
+      {
+        "text": "bước",
+        "startTime": 11.045604,
+        "endTime": 11.157439
+      },
+      {
+        "text": "đi,",
+        "startTime": 11.157439,
+        "endTime": 12.28144
+      },
+      {
+        "text": "yeah)",
+        "startTime": 12.28144,
+        "endTime": 12.28144
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 13.526078,
+    "endTime": 13.526078,
+    "text": "Ahh",
+    "words": [
+      {
         "text": "Ahh",
-        "words": [
-            {
-                "text": "Ahh",
-                "startTime": 13.28,
-                "endTime": 14.57
-            }
-        ]
-    },
-    {
-        "section": "Intro",
-        "startTime": 14.57,
-        "endTime": 16.25,
-        "text": "Ahh-ahh-ahh-ahh-ahh (cứ bước đi)",
-        "words": [
-            {
-                "text": "Ahh-ahh-ahh-ahh-ahh",
-                "startTime": 14.57,
-                "endTime": 15.13
-            },
-            {
-                "text": "(cứ",
-                "startTime": 15.13,
-                "endTime": 15.69
-            },
-            {
-                "text": "bước",
-                "startTime": 15.69,
-                "endTime": 16.25
-            },
-            {
-                "text": "đi)",
-                "startTime": 16.25,
-                "endTime": 16.25
-            }
-        ]
-    },
-    {
-        "section": "Intro",
-        "startTime": 16.25,
-        "endTime": 17.79,
-        "text": "Ahh-ahh-ahh-ahh-ahh (cứ bước đi)",
-        "words": [
-            {
-                "text": "Ahh-ahh-ahh-ahh-ahh",
-                "startTime": 16.25,
-                "endTime": 16.76
-            },
-            {
-                "text": "(cứ",
-                "startTime": 16.76,
-                "endTime": 17.27
-            },
-            {
-                "text": "bước",
-                "startTime": 17.27,
-                "endTime": 17.79
-            },
-            {
-                "text": "đi)",
-                "startTime": 17.79,
-                "endTime": 17.79
-            }
-        ]
-    },
-    {
-        "section": "Intro",
-        "startTime": 17.79,
-        "endTime": 21.0,
+        "startTime": 13.526078,
+        "endTime": 13.526078
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 15.199834,
+    "endTime": 16.293291,
+    "text": "Ahh-ahh-ahh-ahh-ahh (cứ bước đi)",
+    "words": [
+      {
+        "text": "Ahh-ahh-ahh-ahh-ahh",
+        "startTime": 15.199834,
+        "endTime": 15.313642
+      },
+      {
+        "text": "(cứ",
+        "startTime": 15.313642,
+        "endTime": 15.828775
+      },
+      {
+        "text": "bước",
+        "startTime": 15.828775,
+        "endTime": 16.293291
+      },
+      {
+        "text": "đi)",
+        "startTime": 16.293291,
+        "endTime": 16.293291
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 17.536129,
+    "endTime": 18.320772,
+    "text": "Ahh-ahh-ahh-ahh-ahh (cứ bước đi)",
+    "words": [
+      {
+        "text": "Ahh-ahh-ahh-ahh-ahh",
+        "startTime": 17.536129,
+        "endTime": 17.787732
+      },
+      {
+        "text": "(cứ",
+        "startTime": 17.787732,
+        "endTime": 17.787732
+      },
+      {
+        "text": "bước",
+        "startTime": 17.787732,
+        "endTime": 18.320772
+      },
+      {
+        "text": "đi)",
+        "startTime": 18.320772,
+        "endTime": 18.320772
+      }
+    ]
+  },
+  {
+    "section": "Verse",
+    "startTime": 19.470258,
+    "endTime": 19.470258,
+    "text": "Ahh-ahh-ahh-ahh-ahh-ahh-ahh-ahh-ahh",
+    "words": [
+      {
         "text": "Ahh-ahh-ahh-ahh-ahh-ahh-ahh-ahh-ahh",
-        "words": [
-            {
-                "text": "Ahh-ahh-ahh-ahh-ahh-ahh-ahh-ahh-ahh",
-                "startTime": 17.79,
-                "endTime": 21.0
-            }
-        ]
-    },
-    {
-        "section": "Intro",
-        "startTime": 55.25,
-        "endTime": 57.51,
-        "text": "Mặc kệ đi anh chẳng hề sao đâu, oh-oh",
-        "words": [
-            {
-                "text": "Mặc",
-                "startTime": 55.25,
-                "endTime": 55.53
-            },
-            {
-                "text": "kệ",
-                "startTime": 55.53,
-                "endTime": 55.81
-            },
-            {
-                "text": "đi",
-                "startTime": 55.81,
-                "endTime": 56.09
-            },
-            {
-                "text": "anh",
-                "startTime": 56.09,
-                "endTime": 56.37
-            },
-            {
-                "text": "chẳng",
-                "startTime": 56.37,
-                "endTime": 56.65
-            },
-            {
-                "text": "hề",
-                "startTime": 56.65,
-                "endTime": 56.93
-            },
-            {
-                "text": "sao",
-                "startTime": 56.93,
-                "endTime": 57.21
-            },
-            {
-                "text": "đâu,",
-                "startTime": 57.21,
-                "endTime": 57.51
-            },
-            {
-                "text": "oh-oh",
-                "startTime": 57.51,
-                "endTime": 57.51
-            }
-        ]
-    },
-    {
-        "section": "Intro",
-        "startTime": 57.51,
-        "endTime": 59.73,
-        "text": "Chẳng hề sao đâu, oh-oh-ah-ah",
-        "words": [
-            {
-                "text": "Chẳng",
-                "startTime": 57.51,
-                "endTime": 57.95
-            },
-            {
-                "text": "hề",
-                "startTime": 57.95,
-                "endTime": 58.39
-            },
-            {
-                "text": "sao",
-                "startTime": 58.39,
-                "endTime": 58.83
-            },
-            {
-                "text": "đâu,",
-                "startTime": 58.83,
-                "endTime": 59.27
-            },
-            {
-                "text": "oh-oh-ah-ah",
-                "startTime": 59.27,
-                "endTime": 59.73
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 59.73,
-        "endTime": 65.01,
-        "text": "Lá la là lá la là lá la là la",
-        "words": [
-            {
-                "text": "Lá",
-                "startTime": 59.73,
-                "endTime": 60.26
-            },
-            {
-                "text": "la",
-                "startTime": 60.26,
-                "endTime": 60.79
-            },
-            {
-                "text": "là",
-                "startTime": 60.79,
-                "endTime": 61.32
-            },
-            {
-                "text": "lá",
-                "startTime": 61.32,
-                "endTime": 61.85
-            },
-            {
-                "text": "la",
-                "startTime": 61.85,
-                "endTime": 62.38
-            },
-            {
-                "text": "là",
-                "startTime": 62.38,
-                "endTime": 62.91
-            },
-            {
-                "text": "lá",
-                "startTime": 62.91,
-                "endTime": 63.44
-            },
-            {
-                "text": "la",
-                "startTime": 63.44,
-                "endTime": 63.97
-            },
-            {
-                "text": "là",
-                "startTime": 63.97,
-                "endTime": 64.5
-            },
-            {
-                "text": "la",
-                "startTime": 64.5,
-                "endTime": 65.01
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 65.01,
-        "endTime": 66.08,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 65.01,
-                "endTime": 65.22
-            },
-            {
-                "text": "bước",
-                "startTime": 65.22,
-                "endTime": 65.43
-            },
-            {
-                "text": "đi,",
-                "startTime": 65.43,
-                "endTime": 65.64
-            },
-            {
-                "text": "cứ",
-                "startTime": 65.64,
-                "endTime": 65.85
-            },
-            {
-                "text": "bước",
-                "startTime": 65.85,
-                "endTime": 66.06
-            },
-            {
-                "text": "đi!)",
-                "startTime": 66.06,
-                "endTime": 66.08
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 66.08,
-        "endTime": 74.19,
-        "text": "Lá la là lá la là lá la là la (cứ bước đi, cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "Lá",
-                "startTime": 66.08,
-                "endTime": 66.59
-            },
-            {
-                "text": "la",
-                "startTime": 66.59,
-                "endTime": 67.1
-            },
-            {
-                "text": "là",
-                "startTime": 67.1,
-                "endTime": 67.61
-            },
-            {
-                "text": "lá",
-                "startTime": 67.61,
-                "endTime": 68.12
-            },
-            {
-                "text": "la",
-                "startTime": 68.12,
-                "endTime": 68.63
-            },
-            {
-                "text": "là",
-                "startTime": 68.63,
-                "endTime": 69.14
-            },
-            {
-                "text": "lá",
-                "startTime": 69.14,
-                "endTime": 69.65
-            },
-            {
-                "text": "la",
-                "startTime": 69.65,
-                "endTime": 70.16
-            },
-            {
-                "text": "là",
-                "startTime": 70.16,
-                "endTime": 70.67
-            },
-            {
-                "text": "la",
-                "startTime": 70.67,
-                "endTime": 71.18
-            },
-            {
-                "text": "(cứ",
-                "startTime": 71.18,
-                "endTime": 71.69
-            },
-            {
-                "text": "bước",
-                "startTime": 71.69,
-                "endTime": 72.2
-            },
-            {
-                "text": "đi,",
-                "startTime": 72.2,
-                "endTime": 72.71
-            },
-            {
-                "text": "cứ",
-                "startTime": 72.71,
-                "endTime": 73.22
-            },
-            {
-                "text": "bước",
-                "startTime": 73.22,
-                "endTime": 73.73
-            },
-            {
-                "text": "đi,",
-                "startTime": 73.73,
-                "endTime": 74.24
-            },
-            {
-                "text": "cứ",
-                "startTime": 74.24,
-                "endTime": 74.75
-            },
-            {
-                "text": "bước",
-                "startTime": 74.75,
-                "endTime": 75.26
-            },
-            {
-                "text": "đi!)",
-                "startTime": 75.26,
-                "endTime": 74.19
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 74.19,
-        "endTime": 77.19,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 74.19,
-                "endTime": 74.69
-            },
-            {
-                "text": "bước",
-                "startTime": 74.69,
-                "endTime": 75.19
-            },
-            {
-                "text": "đi,",
-                "startTime": 75.19,
-                "endTime": 75.69
-            },
-            {
-                "text": "cứ",
-                "startTime": 75.69,
-                "endTime": 76.19
-            },
-            {
-                "text": "bước",
-                "startTime": 76.19,
-                "endTime": 76.69
-            },
-            {
-                "text": "đi!)",
-                "startTime": 76.69,
-                "endTime": 77.19
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 77.19,
-        "endTime": 80.29,
-        "text": "(Cứ bước đi, ehh!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 77.19,
-                "endTime": 77.96
-            },
-            {
-                "text": "bước",
-                "startTime": 77.96,
-                "endTime": 78.73
-            },
-            {
-                "text": "đi,",
-                "startTime": 78.73,
-                "endTime": 79.5
-            },
-            {
-                "text": "ehh!)",
-                "startTime": 79.5,
-                "endTime": 80.29
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 80.29,
-        "endTime": 83.52,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 80.29,
-                "endTime": 80.83
-            },
-            {
-                "text": "bước",
-                "startTime": 80.83,
-                "endTime": 81.37
-            },
-            {
-                "text": "đi,",
-                "startTime": 81.37,
-                "endTime": 81.91
-            },
-            {
-                "text": "cứ",
-                "startTime": 81.91,
-                "endTime": 82.45
-            },
-            {
-                "text": "bước",
-                "startTime": 82.45,
-                "endTime": 82.99
-            },
-            {
-                "text": "đi!)",
-                "startTime": 82.99,
-                "endTime": 83.52
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 83.52,
-        "endTime": 86.13,
-        "text": "(Cứ bước đi, ehh!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 83.52,
-                "endTime": 84.17
-            },
-            {
-                "text": "bước",
-                "startTime": 84.17,
-                "endTime": 84.82
-            },
-            {
-                "text": "đi,",
-                "startTime": 84.82,
-                "endTime": 85.47
-            },
-            {
-                "text": "ehh!)",
-                "startTime": 85.47,
-                "endTime": 86.13
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 86.13,
-        "endTime": 88.28,
-        "text": "Mỗi sớm mai thức dậy",
-        "words": [
-            {
-                "text": "Mỗi",
-                "startTime": 86.13,
-                "endTime": 86.67
-            },
-            {
-                "text": "sớm",
-                "startTime": 86.67,
-                "endTime": 87.21
-            },
-            {
-                "text": "mai",
-                "startTime": 87.21,
-                "endTime": 87.75
-            },
-            {
-                "text": "thức",
-                "startTime": 87.75,
-                "endTime": 88.29
-            },
-            {
-                "text": "dậy",
-                "startTime": 88.29,
-                "endTime": 88.28
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 88.28,
-        "endTime": 92.65,
-        "text": "Lòng ta chợt nghĩ phải làm gì đây",
-        "words": [
-            {
-                "text": "Lòng",
-                "startTime": 88.28,
-                "endTime": 88.83
-            },
-            {
-                "text": "ta",
-                "startTime": 88.83,
-                "endTime": 89.38
-            },
-            {
-                "text": "chợt",
-                "startTime": 89.38,
-                "endTime": 89.93
-            },
-            {
-                "text": "nghĩ",
-                "startTime": 89.93,
-                "endTime": 90.48
-            },
-            {
-                "text": "phải",
-                "startTime": 90.48,
-                "endTime": 91.03
-            },
-            {
-                "text": "làm",
-                "startTime": 91.03,
-                "endTime": 91.58
-            },
-            {
-                "text": "gì",
-                "startTime": 91.58,
-                "endTime": 92.13
-            },
-            {
-                "text": "đây",
-                "startTime": 92.13,
-                "endTime": 92.65
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 92.65,
-        "endTime": 94.94,
-        "text": "Mong có ai đứng dậy",
-        "words": [
-            {
-                "text": "Mong",
-                "startTime": 92.65,
-                "endTime": 93.11
-            },
-            {
-                "text": "có",
-                "startTime": 93.11,
-                "endTime": 93.57
-            },
-            {
-                "text": "ai",
-                "startTime": 93.57,
-                "endTime": 94.03
-            },
-            {
-                "text": "đứng",
-                "startTime": 94.03,
-                "endTime": 94.49
-            },
-            {
-                "text": "dậy",
-                "startTime": 94.49,
-                "endTime": 94.94
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 94.94,
-        "endTime": 99.3,
-        "text": "Lật tấm màn xuống chẳng để bóng đêm quấy rầy",
-        "words": [
-            {
-                "text": "Lật",
-                "startTime": 94.94,
-                "endTime": 95.42
-            },
-            {
-                "text": "tấm",
-                "startTime": 95.42,
-                "endTime": 95.9
-            },
-            {
-                "text": "màn",
-                "startTime": 95.9,
-                "endTime": 96.38
-            },
-            {
-                "text": "xuống",
-                "startTime": 96.38,
-                "endTime": 96.86
-            },
-            {
-                "text": "chẳng",
-                "startTime": 96.86,
-                "endTime": 97.34
-            },
-            {
-                "text": "để",
-                "startTime": 97.34,
-                "endTime": 97.82
-            },
-            {
-                "text": "bóng",
-                "startTime": 97.82,
-                "endTime": 98.3
-            },
-            {
-                "text": "đêm",
-                "startTime": 98.3,
-                "endTime": 98.78
-            },
-            {
-                "text": "quấy",
-                "startTime": 98.78,
-                "endTime": 99.26
-            },
-            {
-                "text": "rầy",
-                "startTime": 99.26,
-                "endTime": 99.3
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 99.3,
-        "endTime": 101.19,
-        "text": "Biết ta phải đớn đau bao nhiêu lần",
-        "words": [
-            {
-                "text": "Biết",
-                "startTime": 99.3,
-                "endTime": 99.57
-            },
-            {
-                "text": "ta",
-                "startTime": 99.57,
-                "endTime": 99.84
-            },
-            {
-                "text": "phải",
-                "startTime": 99.84,
-                "endTime": 100.11
-            },
-            {
-                "text": "đớn",
-                "startTime": 100.11,
-                "endTime": 100.38
-            },
-            {
-                "text": "đau",
-                "startTime": 100.38,
-                "endTime": 100.65
-            },
-            {
-                "text": "bao",
-                "startTime": 100.65,
-                "endTime": 100.92
-            },
-            {
-                "text": "nhiêu",
-                "startTime": 100.92,
-                "endTime": 101.19
-            },
-            {
-                "text": "lần",
-                "startTime": 101.19,
-                "endTime": 101.19
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 101.19,
-        "endTime": 104.12,
-        "text": "Để hôm nay ta chơi cùng mây gió, ayy",
-        "words": [
-            {
-                "text": "Để",
-                "startTime": 101.19,
-                "endTime": 101.56
-            },
-            {
-                "text": "hôm",
-                "startTime": 101.56,
-                "endTime": 101.93
-            },
-            {
-                "text": "nay",
-                "startTime": 101.93,
-                "endTime": 102.3
-            },
-            {
-                "text": "ta",
-                "startTime": 102.3,
-                "endTime": 102.67
-            },
-            {
-                "text": "chơi",
-                "startTime": 102.67,
-                "endTime": 103.04
-            },
-            {
-                "text": "cùng",
-                "startTime": 103.04,
-                "endTime": 103.41
-            },
-            {
-                "text": "mây",
-                "startTime": 103.41,
-                "endTime": 103.78
-            },
-            {
-                "text": "gió,",
-                "startTime": 103.78,
-                "endTime": 104.15
-            },
-            {
-                "text": "ayy",
-                "startTime": 104.15,
-                "endTime": 104.12
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 104.12,
-        "endTime": 105.88,
-        "text": "Được tự do, ayy",
-        "words": [
-            {
-                "text": "Được",
-                "startTime": 104.12,
-                "endTime": 104.71
-            },
-            {
-                "text": "tự",
-                "startTime": 104.71,
-                "endTime": 105.3
-            },
-            {
-                "text": "do,",
-                "startTime": 105.3,
-                "endTime": 105.89
-            },
-            {
-                "text": "ayy",
-                "startTime": 105.89,
-                "endTime": 105.88
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 105.88,
-        "endTime": 107.65,
-        "text": "Đứng xung quanh chiếc gương vô hình",
-        "words": [
-            {
-                "text": "Đứng",
-                "startTime": 105.88,
-                "endTime": 106.18
-            },
-            {
-                "text": "xung",
-                "startTime": 106.18,
-                "endTime": 106.48
-            },
-            {
-                "text": "quanh",
-                "startTime": 106.48,
-                "endTime": 106.78
-            },
-            {
-                "text": "chiếc",
-                "startTime": 106.78,
-                "endTime": 107.08
-            },
-            {
-                "text": "gương",
-                "startTime": 107.08,
-                "endTime": 107.38
-            },
-            {
-                "text": "vô",
-                "startTime": 107.38,
-                "endTime": 107.68
-            },
-            {
-                "text": "hình",
-                "startTime": 107.68,
-                "endTime": 107.65
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 107.65,
-        "endTime": 110.52,
-        "text": "Tự thấy chính mình từ thân tàn thành tro",
-        "words": [
-            {
-                "text": "Tự",
-                "startTime": 107.65,
-                "endTime": 108.01
-            },
-            {
-                "text": "thấy",
-                "startTime": 108.01,
-                "endTime": 108.37
-            },
-            {
-                "text": "chính",
-                "startTime": 108.37,
-                "endTime": 108.73
-            },
-            {
-                "text": "mình",
-                "startTime": 108.73,
-                "endTime": 109.09
-            },
-            {
-                "text": "từ",
-                "startTime": 109.09,
-                "endTime": 109.45
-            },
-            {
-                "text": "thân",
-                "startTime": 109.45,
-                "endTime": 109.81
-            },
-            {
-                "text": "tàn",
-                "startTime": 109.81,
-                "endTime": 110.17
-            },
-            {
-                "text": "thành",
-                "startTime": 110.17,
-                "endTime": 110.53
-            },
-            {
-                "text": "tro",
-                "startTime": 110.53,
-                "endTime": 110.52
-            }
-        ]
-    },
-    {
-        "section": "Verse",
-        "startTime": 110.52,
-        "endTime": 113.11,
-        "text": "Sải cánh bay lên (hãy cứ bước)",
-        "words": [
-            {
-                "text": "Sải",
-                "startTime": 110.52,
-                "endTime": 110.95
-            },
-            {
-                "text": "cánh",
-                "startTime": 110.95,
-                "endTime": 111.38
-            },
-            {
-                "text": "bay",
-                "startTime": 111.38,
-                "endTime": 111.81
-            },
-            {
-                "text": "lên",
-                "startTime": 111.81,
-                "endTime": 112.24
-            },
-            {
-                "text": "(hãy",
-                "startTime": 112.24,
-                "endTime": 112.67
-            },
-            {
-                "text": "cứ",
-                "startTime": 112.67,
-                "endTime": 113.1
-            },
-            {
-                "text": "bước)",
-                "startTime": 113.1,
-                "endTime": 113.11
-            }
-        ]
-    },
-    {
-        "section": "Pre-chorus",
-        "startTime": 113.11,
-        "endTime": 116.82,
-        "text": "Bao gian nan cố giấu, chỉ mỉm cười rằng con không sao đâu",
-        "words": [
-            {
-                "text": "Bao",
-                "startTime": 113.11,
-                "endTime": 113.45
-            },
-            {
-                "text": "gian",
-                "startTime": 113.45,
-                "endTime": 113.79
-            },
-            {
-                "text": "nan",
-                "startTime": 113.79,
-                "endTime": 114.13
-            },
-            {
-                "text": "cố",
-                "startTime": 114.13,
-                "endTime": 114.47
-            },
-            {
-                "text": "giấu,",
-                "startTime": 114.47,
-                "endTime": 114.81
-            },
-            {
-                "text": "chỉ",
-                "startTime": 114.81,
-                "endTime": 115.15
-            },
-            {
-                "text": "mỉm",
-                "startTime": 115.15,
-                "endTime": 115.49
-            },
-            {
-                "text": "cười",
-                "startTime": 115.49,
-                "endTime": 115.83
-            },
-            {
-                "text": "rằng",
-                "startTime": 115.83,
-                "endTime": 116.17
-            },
-            {
-                "text": "con",
-                "startTime": 116.17,
-                "endTime": 116.51
-            },
-            {
-                "text": "không",
-                "startTime": 116.51,
-                "endTime": 116.85
-            },
-            {
-                "text": "sao",
-                "startTime": 116.85,
-                "endTime": 117.19
-            },
-            {
-                "text": "đâu",
-                "startTime": 117.19,
-                "endTime": 116.82
-            }
-        ]
-    },
-    {
-        "section": "Pre-chorus",
-        "startTime": 116.82,
-        "endTime": 120.09,
-        "text": "Bao đêm thâu nung nấu, làm sao bay lên vùng trời cao sâu",
-        "words": [
-            {
-                "text": "Bao",
-                "startTime": 116.82,
-                "endTime": 117.09
-            },
-            {
-                "text": "đêm",
-                "startTime": 117.09,
-                "endTime": 117.36
-            },
-            {
-                "text": "thâu",
-                "startTime": 117.36,
-                "endTime": 117.63
-            },
-            {
-                "text": "nung",
-                "startTime": 117.63,
-                "endTime": 117.9
-            },
-            {
-                "text": "nấu,",
-                "startTime": 117.9,
-                "endTime": 118.17
-            },
-            {
-                "text": "làm",
-                "startTime": 118.17,
-                "endTime": 118.44
-            },
-            {
-                "text": "sao",
-                "startTime": 118.44,
-                "endTime": 118.71
-            },
-            {
-                "text": "bay",
-                "startTime": 118.71,
-                "endTime": 118.98
-            },
-            {
-                "text": "lên",
-                "startTime": 118.98,
-                "endTime": 119.25
-            },
-            {
-                "text": "vùng",
-                "startTime": 119.25,
-                "endTime": 119.52
-            },
-            {
-                "text": "trời",
-                "startTime": 119.52,
-                "endTime": 119.79
-            },
-            {
-                "text": "cao",
-                "startTime": 119.79,
-                "endTime": 120.06
-            },
-            {
-                "text": "sâu",
-                "startTime": 120.06,
-                "endTime": 120.09
-            }
-        ]
-    },
-    {
-        "section": "Pre-chorus",
-        "startTime": 120.09,
-        "endTime": 121.37,
-        "text": "Em quay đi, oh no",
-        "words": [
-            {
-                "text": "Em",
-                "startTime": 120.09,
-                "endTime": 120.35
-            },
-            {
-                "text": "quay",
-                "startTime": 120.35,
-                "endTime": 120.61
-            },
-            {
-                "text": "đi,",
-                "startTime": 120.61,
-                "endTime": 120.87
-            },
-            {
-                "text": "oh",
-                "startTime": 120.87,
-                "endTime": 121.13
-            },
-            {
-                "text": "no",
-                "startTime": 121.13,
-                "endTime": 121.37
-            }
-        ]
-    },
-    {
-        "section": "Pre-chorus",
-        "startTime": 121.37,
-        "endTime": 123.75,
-        "text": "Mặc kệ đi anh chẳng hề sao đâu, oh-oh",
-        "words": [
-            {
-                "text": "Mặc",
-                "startTime": 121.37,
-                "endTime": 121.63
-            },
-            {
-                "text": "kệ",
-                "startTime": 121.63,
-                "endTime": 121.89
-            },
-            {
-                "text": "đi",
-                "startTime": 121.89,
-                "endTime": 122.15
-            },
-            {
-                "text": "anh",
-                "startTime": 122.15,
-                "endTime": 122.41
-            },
-            {
-                "text": "chẳng",
-                "startTime": 122.41,
-                "endTime": 122.67
-            },
-            {
-                "text": "hề",
-                "startTime": 122.67,
-                "endTime": 122.93
-            },
-            {
-                "text": "sao",
-                "startTime": 122.93,
-                "endTime": 123.19
-            },
-            {
-                "text": "đâu,",
-                "startTime": 123.19,
-                "endTime": 123.45
-            },
-            {
-                "text": "oh-oh",
-                "startTime": 123.45,
-                "endTime": 123.75
-            }
-        ]
-    },
-    {
-        "section": "Pre-chorus",
-        "startTime": 123.75,
-        "endTime": 126.04,
-        "text": "Chẳng hề sao đâu, oh-oh-ah-ah",
-        "words": [
-            {
-                "text": "Chẳng",
-                "startTime": 123.75,
-                "endTime": 124.21
-            },
-            {
-                "text": "hề",
-                "startTime": 124.21,
-                "endTime": 124.67
-            },
-            {
-                "text": "sao",
-                "startTime": 124.67,
-                "endTime": 125.13
-            },
-            {
-                "text": "đâu,",
-                "startTime": 125.13,
-                "endTime": 125.59
-            },
-            {
-                "text": "oh-oh-ah-ah",
-                "startTime": 125.59,
-                "endTime": 126.04
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 126.04,
-        "endTime": 131.21,
-        "text": "Lá la là lá la là lá la là la",
-        "words": [
-            {
-                "text": "Lá",
-                "startTime": 126.04,
-                "endTime": 126.56
-            },
-            {
-                "text": "la",
-                "startTime": 126.56,
-                "endTime": 127.08
-            },
-            {
-                "text": "là",
-                "startTime": 127.08,
-                "endTime": 127.6
-            },
-            {
-                "text": "lá",
-                "startTime": 127.6,
-                "endTime": 128.12
-            },
-            {
-                "text": "la",
-                "startTime": 128.12,
-                "endTime": 128.64
-            },
-            {
-                "text": "là",
-                "startTime": 128.64,
-                "endTime": 129.16
-            },
-            {
-                "text": "lá",
-                "startTime": 129.16,
-                "endTime": 129.68
-            },
-            {
-                "text": "la",
-                "startTime": 129.68,
-                "endTime": 130.2
-            },
-            {
-                "text": "là",
-                "startTime": 130.2,
-                "endTime": 130.72
-            },
-            {
-                "text": "la",
-                "startTime": 130.72,
-                "endTime": 131.21
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 131.21,
-        "endTime": 132.86,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 131.21,
-                "endTime": 131.48
-            },
-            {
-                "text": "bước",
-                "startTime": 131.48,
-                "endTime": 131.75
-            },
-            {
-                "text": "đi,",
-                "startTime": 131.75,
-                "endTime": 132.02
-            },
-            {
-                "text": "cứ",
-                "startTime": 132.02,
-                "endTime": 132.29
-            },
-            {
-                "text": "bước",
-                "startTime": 132.29,
-                "endTime": 132.56
-            },
-            {
-                "text": "đi!)",
-                "startTime": 132.56,
-                "endTime": 132.86
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 132.86,
-        "endTime": 140.0,
-        "text": "Lá la là lá la là lá la là la (cứ bước đi, cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "Lá",
-                "startTime": 132.86,
-                "endTime": 133.24
-            },
-            {
-                "text": "la",
-                "startTime": 133.24,
-                "endTime": 133.62
-            },
-            {
-                "text": "là",
-                "startTime": 133.62,
-                "endTime": 134.0
-            },
-            {
-                "text": "lá",
-                "startTime": 134.0,
-                "endTime": 134.38
-            },
-            {
-                "text": "la",
-                "startTime": 134.38,
-                "endTime": 134.76
-            },
-            {
-                "text": "là",
-                "startTime": 134.76,
-                "endTime": 135.14
-            },
-            {
-                "text": "lá",
-                "startTime": 135.14,
-                "endTime": 135.52
-            },
-            {
-                "text": "la",
-                "startTime": 135.52,
-                "endTime": 135.9
-            },
-            {
-                "text": "là",
-                "startTime": 135.9,
-                "endTime": 136.28
-            },
-            {
-                "text": "la",
-                "startTime": 136.28,
-                "endTime": 136.66
-            },
-            {
-                "text": "(cứ",
-                "startTime": 136.66,
-                "endTime": 137.04
-            },
-            {
-                "text": "bước",
-                "startTime": 137.04,
-                "endTime": 137.42
-            },
-            {
-                "text": "đi,",
-                "startTime": 137.42,
-                "endTime": 137.8
-            },
-            {
-                "text": "cứ",
-                "startTime": 137.8,
-                "endTime": 138.18
-            },
-            {
-                "text": "bước",
-                "startTime": 138.18,
-                "endTime": 138.56
-            },
-            {
-                "text": "đi,",
-                "startTime": 138.56,
-                "endTime": 138.94
-            },
-            {
-                "text": "cứ",
-                "startTime": 138.94,
-                "endTime": 139.32
-            },
-            {
-                "text": "bước",
-                "startTime": 139.32,
-                "endTime": 139.7
-            },
-            {
-                "text": "đi!)",
-                "startTime": 139.7,
-                "endTime": 140.0
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 140.0,
-        "endTime": 143.18,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 140.0,
-                "endTime": 140.53
-            },
-            {
-                "text": "bước",
-                "startTime": 140.53,
-                "endTime": 141.06
-            },
-            {
-                "text": "đi,",
-                "startTime": 141.06,
-                "endTime": 141.59
-            },
-            {
-                "text": "cứ",
-                "startTime": 141.59,
-                "endTime": 142.12
-            },
-            {
-                "text": "bước",
-                "startTime": 142.12,
-                "endTime": 142.65
-            },
-            {
-                "text": "đi!)",
-                "startTime": 142.65,
-                "endTime": 143.18
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 143.18,
-        "endTime": 146.97,
-        "text": "(Cứ bước đi, ehh!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 143.18,
-                "endTime": 144.13
-            },
-            {
-                "text": "bước",
-                "startTime": 144.13,
-                "endTime": 145.08
-            },
-            {
-                "text": "đi,",
-                "startTime": 145.08,
-                "endTime": 146.03
-            },
-            {
-                "text": "ehh!)",
-                "startTime": 146.03,
-                "endTime": 146.97
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 146.97,
-        "endTime": 149.98,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 146.97,
-                "endTime": 147.47
-            },
-            {
-                "text": "bước",
-                "startTime": 147.47,
-                "endTime": 147.97
-            },
-            {
-                "text": "đi,",
-                "startTime": 147.97,
-                "endTime": 148.47
-            },
-            {
-                "text": "cứ",
-                "startTime": 148.47,
-                "endTime": 148.97
-            },
-            {
-                "text": "bước",
-                "startTime": 148.97,
-                "endTime": 149.47
-            },
-            {
-                "text": "đi!)",
-                "startTime": 149.47,
-                "endTime": 149.98
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 149.98,
-        "endTime": 152.54,
-        "text": "(Cứ bước đi, ehh!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 149.98,
-                "endTime": 150.62
-            },
-            {
-                "text": "bước",
-                "startTime": 150.62,
-                "endTime": 151.26
-            },
-            {
-                "text": "đi,",
-                "startTime": 151.26,
-                "endTime": 151.9
-            },
-            {
-                "text": "ehh!)",
-                "startTime": 151.9,
-                "endTime": 152.54
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 152.54,
-        "endTime": 156.38,
-        "text": "Vì ta, vì ta, vì ta, ahh",
-        "words": [
-            {
-                "text": "Vì",
-                "startTime": 152.54,
-                "endTime": 153.09
-            },
-            {
-                "text": "ta,",
-                "startTime": 153.09,
-                "endTime": 153.64
-            },
-            {
-                "text": "vì",
-                "startTime": 153.64,
-                "endTime": 154.19
-            },
-            {
-                "text": "ta,",
-                "startTime": 154.19,
-                "endTime": 154.74
-            },
-            {
-                "text": "vì",
-                "startTime": 154.74,
-                "endTime": 155.29
-            },
-            {
-                "text": "ta,",
-                "startTime": 155.29,
-                "endTime": 155.84
-            },
-            {
-                "text": "ahh",
-                "startTime": 155.84,
-                "endTime": 156.38
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 156.38,
-        "endTime": 158.72,
-        "text": "Ta vẫn là ta bước qua hết nỗi đau",
-        "words": [
-            {
-                "text": "Ta",
-                "startTime": 156.38,
-                "endTime": 156.64
-            },
-            {
-                "text": "vẫn",
-                "startTime": 156.64,
-                "endTime": 156.9
-            },
-            {
-                "text": "là",
-                "startTime": 156.9,
-                "endTime": 157.16
-            },
-            {
-                "text": "ta",
-                "startTime": 157.16,
-                "endTime": 157.42
-            },
-            {
-                "text": "bước",
-                "startTime": 157.42,
-                "endTime": 157.68
-            },
-            {
-                "text": "qua",
-                "startTime": 157.68,
-                "endTime": 157.94
-            },
-            {
-                "text": "hết",
-                "startTime": 157.94,
-                "endTime": 158.2
-            },
-            {
-                "text": "nỗi",
-                "startTime": 158.2,
-                "endTime": 158.46
-            },
-            {
-                "text": "đau",
-                "startTime": 158.46,
-                "endTime": 158.72
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 158.72,
-        "endTime": 161.55,
-        "text": "Dù cô đơn ta vẫn khắc sâu vào tim",
-        "words": [
-            {
-                "text": "Dù",
-                "startTime": 158.72,
-                "endTime": 159.03
-            },
-            {
-                "text": "cô",
-                "startTime": 159.03,
-                "endTime": 159.34
-            },
-            {
-                "text": "đơn",
-                "startTime": 159.34,
-                "endTime": 159.65
-            },
-            {
-                "text": "ta",
-                "startTime": 159.65,
-                "endTime": 159.96
-            },
-            {
-                "text": "vẫn",
-                "startTime": 159.96,
-                "endTime": 160.27
-            },
-            {
-                "text": "khắc",
-                "startTime": 160.27,
-                "endTime": 160.58
-            },
-            {
-                "text": "sâu",
-                "startTime": 160.58,
-                "endTime": 160.89
-            },
-            {
-                "text": "vào",
-                "startTime": 160.89,
-                "endTime": 161.2
-            },
-            {
-                "text": "tim",
-                "startTime": 161.2,
-                "endTime": 161.55
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 161.55,
-        "endTime": 164.46,
-        "text": "Who will care, will be along",
-        "words": [
-            {
-                "text": "Who",
-                "startTime": 161.55,
-                "endTime": 162.03
-            },
-            {
-                "text": "will",
-                "startTime": 162.03,
-                "endTime": 162.51
-            },
-            {
-                "text": "care,",
-                "startTime": 162.51,
-                "endTime": 162.99
-            },
-            {
-                "text": "will",
-                "startTime": 162.99,
-                "endTime": 163.47
-            },
-            {
-                "text": "be",
-                "startTime": 163.47,
-                "endTime": 163.95
-            },
-            {
-                "text": "along",
-                "startTime": 163.95,
-                "endTime": 164.46
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 164.46,
-        "endTime": 167.61,
-        "text": "Be yourself, be brave and strong",
-        "words": [
-            {
-                "text": "Be",
-                "startTime": 164.46,
-                "endTime": 164.98
-            },
-            {
-                "text": "yourself,",
-                "startTime": 164.98,
-                "endTime": 165.5
-            },
-            {
-                "text": "be",
-                "startTime": 165.5,
-                "endTime": 166.02
-            },
-            {
-                "text": "brave",
-                "startTime": 166.02,
-                "endTime": 166.54
-            },
-            {
-                "text": "and",
-                "startTime": 166.54,
-                "endTime": 167.06
-            },
-            {
-                "text": "strong",
-                "startTime": 167.06,
-                "endTime": 167.61
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 167.61,
-        "endTime": 170.05,
-        "text": "Let me fly, to the sky",
-        "words": [
-            {
-                "text": "Let",
-                "startTime": 167.61,
-                "endTime": 168.02
-            },
-            {
-                "text": "me",
-                "startTime": 168.02,
-                "endTime": 168.43
-            },
-            {
-                "text": "fly,",
-                "startTime": 168.43,
-                "endTime": 168.84
-            },
-            {
-                "text": "to",
-                "startTime": 168.84,
-                "endTime": 169.25
-            },
-            {
-                "text": "the",
-                "startTime": 169.25,
-                "endTime": 169.66
-            },
-            {
-                "text": "sky",
-                "startTime": 169.66,
-                "endTime": 170.05
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 170.05,
-        "endTime": 171.65,
-        "text": "Everything will change",
-        "words": [
-            {
-                "text": "Everything",
-                "startTime": 170.05,
-                "endTime": 170.58
-            },
-            {
-                "text": "will",
-                "startTime": 170.58,
-                "endTime": 171.11
-            },
-            {
-                "text": "change",
-                "startTime": 171.11,
-                "endTime": 171.65
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 171.65,
-        "endTime": 173.23,
-        "text": "No more pain",
-        "words": [
-            {
-                "text": "No",
-                "startTime": 171.65,
-                "endTime": 172.18
-            },
-            {
-                "text": "more",
-                "startTime": 172.18,
-                "endTime": 172.71
-            },
-            {
-                "text": "pain",
-                "startTime": 172.71,
-                "endTime": 173.23
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 173.23,
-        "endTime": 176.48,
-        "text": "Hãy để tôi bay lên bầu trời",
-        "words": [
-            {
-                "text": "Hãy",
-                "startTime": 173.23,
-                "endTime": 173.69
-            },
-            {
-                "text": "để",
-                "startTime": 173.69,
-                "endTime": 174.15
-            },
-            {
-                "text": "tôi",
-                "startTime": 174.15,
-                "endTime": 174.61
-            },
-            {
-                "text": "bay",
-                "startTime": 174.61,
-                "endTime": 175.07
-            },
-            {
-                "text": "lên",
-                "startTime": 175.07,
-                "endTime": 175.53
-            },
-            {
-                "text": "bầu",
-                "startTime": 175.53,
-                "endTime": 175.99
-            },
-            {
-                "text": "trời",
-                "startTime": 175.99,
-                "endTime": 176.48
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 176.48,
-        "endTime": 178.44,
-        "text": "Mọi thứ sẽ thay đổi mau",
-        "words": [
-            {
-                "text": "Mọi",
-                "startTime": 176.48,
-                "endTime": 176.81
-            },
-            {
-                "text": "thứ",
-                "startTime": 176.81,
-                "endTime": 177.14
-            },
-            {
-                "text": "sẽ",
-                "startTime": 177.14,
-                "endTime": 177.47
-            },
-            {
-                "text": "thay",
-                "startTime": 177.47,
-                "endTime": 177.8
-            },
-            {
-                "text": "đổi",
-                "startTime": 177.8,
-                "endTime": 178.13
-            },
-            {
-                "text": "mau",
-                "startTime": 178.13,
-                "endTime": 178.44
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 178.44,
-        "endTime": 180.39,
-        "text": "Chẳng còn nỗi đau",
-        "words": [
-            {
-                "text": "Chẳng",
-                "startTime": 178.44,
-                "endTime": 178.93
-            },
-            {
-                "text": "còn",
-                "startTime": 178.93,
-                "endTime": 179.42
-            },
-            {
-                "text": "nỗi",
-                "startTime": 179.42,
-                "endTime": 179.91
-            },
-            {
-                "text": "đau",
-                "startTime": 179.91,
-                "endTime": 180.39
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 180.39,
-        "endTime": 186.02,
-        "text": "Lá la là lá la là lá la là la",
-        "words": [
-            {
-                "text": "Lá",
-                "startTime": 180.39,
-                "endTime": 180.95
-            },
-            {
-                "text": "la",
-                "startTime": 180.95,
-                "endTime": 181.51
-            },
-            {
-                "text": "là",
-                "startTime": 181.51,
-                "endTime": 182.07
-            },
-            {
-                "text": "lá",
-                "startTime": 182.07,
-                "endTime": 182.63
-            },
-            {
-                "text": "la",
-                "startTime": 182.63,
-                "endTime": 183.19
-            },
-            {
-                "text": "là",
-                "startTime": 183.19,
-                "endTime": 183.75
-            },
-            {
-                "text": "lá",
-                "startTime": 183.75,
-                "endTime": 184.31
-            },
-            {
-                "text": "la",
-                "startTime": 184.31,
-                "endTime": 184.87
-            },
-            {
-                "text": "là",
-                "startTime": 184.87,
-                "endTime": 185.43
-            },
-            {
-                "text": "la",
-                "startTime": 185.43,
-                "endTime": 186.02
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 186.02,
-        "endTime": 187.64,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 186.02,
-                "endTime": 186.29
-            },
-            {
-                "text": "bước",
-                "startTime": 186.29,
-                "endTime": 186.56
-            },
-            {
-                "text": "đi,",
-                "startTime": 186.56,
-                "endTime": 186.83
-            },
-            {
-                "text": "cứ",
-                "startTime": 186.83,
-                "endTime": 187.1
-            },
-            {
-                "text": "bước",
-                "startTime": 187.1,
-                "endTime": 187.37
-            },
-            {
-                "text": "đi!)",
-                "startTime": 187.37,
-                "endTime": 187.64
-            }
-        ]
-    },
-    {
-        "section": "Chorus",
-        "startTime": 187.64,
-        "endTime": 194.18,
-        "text": "Lá la là lá la là lá la là la (cứ bước đi, cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "Lá",
-                "startTime": 187.64,
-                "endTime": 187.98
-            },
-            {
-                "text": "la",
-                "startTime": 187.98,
-                "endTime": 188.32
-            },
-            {
-                "text": "là",
-                "startTime": 188.32,
-                "endTime": 188.66
-            },
-            {
-                "text": "lá",
-                "startTime": 188.66,
-                "endTime": 189.0
-            },
-            {
-                "text": "la",
-                "startTime": 189.0,
-                "endTime": 189.34
-            },
-            {
-                "text": "là",
-                "startTime": 189.34,
-                "endTime": 189.68
-            },
-            {
-                "text": "lá",
-                "startTime": 189.68,
-                "endTime": 190.02
-            },
-            {
-                "text": "la",
-                "startTime": 190.02,
-                "endTime": 190.36
-            },
-            {
-                "text": "là",
-                "startTime": 190.36,
-                "endTime": 190.7
-            },
-            {
-                "text": "la",
-                "startTime": 190.7,
-                "endTime": 191.04
-            },
-            {
-                "text": "(cứ",
-                "startTime": 191.04,
-                "endTime": 191.38
-            },
-            {
-                "text": "bước",
-                "startTime": 191.38,
-                "endTime": 191.72
-            },
-            {
-                "text": "đi,",
-                "startTime": 191.72,
-                "endTime": 192.06
-            },
-            {
-                "text": "cứ",
-                "startTime": 192.06,
-                "endTime": 192.4
-            },
-            {
-                "text": "bước",
-                "startTime": 192.4,
-                "endTime": 192.74
-            },
-            {
-                "text": "đi,",
-                "startTime": 192.74,
-                "endTime": 193.08
-            },
-            {
-                "text": "cứ",
-                "startTime": 193.08,
-                "endTime": 193.42
-            },
-            {
-                "text": "bước",
-                "startTime": 193.42,
-                "endTime": 193.76
-            },
-            {
-                "text": "đi!)",
-                "startTime": 193.76,
-                "endTime": 194.18
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 194.18,
-        "endTime": 198.05,
-        "text": "Đừng buồn nha, đừng sầu nha, đừng phiền lo, đừng gục ngã, đừng bật khóc",
-        "words": [
-            {
-                "text": "Đừng",
-                "startTime": 194.18,
-                "endTime": 194.53
-            },
-            {
-                "text": "buồn",
-                "startTime": 194.53,
-                "endTime": 194.88
-            },
-            {
-                "text": "nha,",
-                "startTime": 194.88,
-                "endTime": 195.23
-            },
-            {
-                "text": "đừng",
-                "startTime": 195.23,
-                "endTime": 195.58
-            },
-            {
-                "text": "sầu",
-                "startTime": 195.58,
-                "endTime": 195.93
-            },
-            {
-                "text": "nha,",
-                "startTime": 195.93,
-                "endTime": 196.28
-            },
-            {
-                "text": "đừng",
-                "startTime": 196.28,
-                "endTime": 196.63
-            },
-            {
-                "text": "phiền",
-                "startTime": 196.63,
-                "endTime": 196.98
-            },
-            {
-                "text": "lo,",
-                "startTime": 196.98,
-                "endTime": 197.33
-            },
-            {
-                "text": "đừng",
-                "startTime": 197.33,
-                "endTime": 197.68
-            },
-            {
-                "text": "gục",
-                "startTime": 197.68,
-                "endTime": 198.03
-            },
-            {
-                "text": "ngã,",
-                "startTime": 198.03,
-                "endTime": 198.38
-            },
-            {
-                "text": "đừng",
-                "startTime": 198.38,
-                "endTime": 198.73
-            },
-            {
-                "text": "bật",
-                "startTime": 198.73,
-                "endTime": 199.08
-            },
-            {
-                "text": "khóc",
-                "startTime": 199.08,
-                "endTime": 198.05
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 198.05,
-        "endTime": 200.33,
-        "text": "Vì mọi thứ, sẽ oke mà!",
-        "words": [
-            {
-                "text": "Vì",
-                "startTime": 198.05,
-                "endTime": 198.43
-            },
-            {
-                "text": "mọi",
-                "startTime": 198.43,
-                "endTime": 198.81
-            },
-            {
-                "text": "thứ,",
-                "startTime": 198.81,
-                "endTime": 199.19
-            },
-            {
-                "text": "sẽ",
-                "startTime": 199.19,
-                "endTime": 199.57
-            },
-            {
-                "text": "oke",
-                "startTime": 199.57,
-                "endTime": 199.95
-            },
-            {
-                "text": "mà!",
-                "startTime": 199.95,
-                "endTime": 200.33
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 200.33,
-        "endTime": 204.83,
-        "text": "Điều gì đến, rồi sẽ đến, ngày buồn sẽ, vội tan biến, cầu vồng đến",
-        "words": [
-            {
-                "text": "Điều",
-                "startTime": 200.33,
-                "endTime": 200.65
-            },
-            {
-                "text": "gì",
-                "startTime": 200.65,
-                "endTime": 200.97
-            },
-            {
-                "text": "đến,",
-                "startTime": 200.97,
-                "endTime": 201.29
-            },
-            {
-                "text": "rồi",
-                "startTime": 201.29,
-                "endTime": 201.61
-            },
-            {
-                "text": "sẽ",
-                "startTime": 201.61,
-                "endTime": 201.93
-            },
-            {
-                "text": "đến,",
-                "startTime": 201.93,
-                "endTime": 202.25
-            },
-            {
-                "text": "ngày",
-                "startTime": 202.25,
-                "endTime": 202.57
-            },
-            {
-                "text": "buồn",
-                "startTime": 202.57,
-                "endTime": 202.89
-            },
-            {
-                "text": "sẽ,",
-                "startTime": 202.89,
-                "endTime": 203.21
-            },
-            {
-                "text": "vội",
-                "startTime": 203.21,
-                "endTime": 203.53
-            },
-            {
-                "text": "tan",
-                "startTime": 203.53,
-                "endTime": 203.85
-            },
-            {
-                "text": "biến,",
-                "startTime": 203.85,
-                "endTime": 204.17
-            },
-            {
-                "text": "cầu",
-                "startTime": 204.17,
-                "endTime": 204.49
-            },
-            {
-                "text": "vồng",
-                "startTime": 204.49,
-                "endTime": 204.81
-            },
-            {
-                "text": "đến",
-                "startTime": 204.81,
-                "endTime": 204.83
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 204.83,
-        "endTime": 207.08,
-        "text": "Cùng mây gió, giữa mưa thiên hà!",
-        "words": [
-            {
-                "text": "Cùng",
-                "startTime": 204.83,
-                "endTime": 205.15
-            },
-            {
-                "text": "mây",
-                "startTime": 205.15,
-                "endTime": 205.47
-            },
-            {
-                "text": "gió,",
-                "startTime": 205.47,
-                "endTime": 205.79
-            },
-            {
-                "text": "giữa",
-                "startTime": 205.79,
-                "endTime": 206.11
-            },
-            {
-                "text": "mưa",
-                "startTime": 206.11,
-                "endTime": 206.43
-            },
-            {
-                "text": "thiên",
-                "startTime": 206.43,
-                "endTime": 206.75
-            },
-            {
-                "text": "hà!",
-                "startTime": 206.75,
-                "endTime": 207.08
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 207.08,
-        "endTime": 211.35,
-        "text": "Đừng buồn nha, đừng sầu nha, đừng phiền lo, đừng gục ngã, đừng bật khóc",
-        "words": [
-            {
-                "text": "Đừng",
-                "startTime": 207.08,
-                "endTime": 207.36
-            },
-            {
-                "text": "buồn",
-                "startTime": 207.36,
-                "endTime": 207.64
-            },
-            {
-                "text": "nha,",
-                "startTime": 207.64,
-                "endTime": 207.92
-            },
-            {
-                "text": "đừng",
-                "startTime": 207.92,
-                "endTime": 208.2
-            },
-            {
-                "text": "sầu",
-                "startTime": 208.2,
-                "endTime": 208.48
-            },
-            {
-                "text": "nha,",
-                "startTime": 208.48,
-                "endTime": 208.76
-            },
-            {
-                "text": "đừng",
-                "startTime": 208.76,
-                "endTime": 209.04
-            },
-            {
-                "text": "phiền",
-                "startTime": 209.04,
-                "endTime": 209.32
-            },
-            {
-                "text": "lo,",
-                "startTime": 209.32,
-                "endTime": 209.6
-            },
-            {
-                "text": "đừng",
-                "startTime": 209.6,
-                "endTime": 209.88
-            },
-            {
-                "text": "gục",
-                "startTime": 209.88,
-                "endTime": 210.16
-            },
-            {
-                "text": "ngã,",
-                "startTime": 210.16,
-                "endTime": 210.44
-            },
-            {
-                "text": "đừng",
-                "startTime": 210.44,
-                "endTime": 210.72
-            },
-            {
-                "text": "bật",
-                "startTime": 210.72,
-                "endTime": 211.0
-            },
-            {
-                "text": "khóc",
-                "startTime": 211.0,
-                "endTime": 211.35
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 211.35,
-        "endTime": 213.55,
-        "text": "Vì mọi thứ, sẽ oke mà!",
-        "words": [
-            {
-                "text": "Vì",
-                "startTime": 211.35,
-                "endTime": 211.72
-            },
-            {
-                "text": "mọi",
-                "startTime": 211.72,
-                "endTime": 212.09
-            },
-            {
-                "text": "thứ,",
-                "startTime": 212.09,
-                "endTime": 212.46
-            },
-            {
-                "text": "sẽ",
-                "startTime": 212.46,
-                "endTime": 212.83
-            },
-            {
-                "text": "oke",
-                "startTime": 212.83,
-                "endTime": 213.2
-            },
-            {
-                "text": "mà!",
-                "startTime": 213.2,
-                "endTime": 213.55
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 213.55,
-        "endTime": 218.07,
-        "text": "Điều gì đến, rồi sẽ đến, ngày buồn sẽ, vội tan biến, cầu vồng đến",
-        "words": [
-            {
-                "text": "Điều",
-                "startTime": 213.55,
-                "endTime": 213.85
-            },
-            {
-                "text": "gì",
-                "startTime": 213.85,
-                "endTime": 214.15
-            },
-            {
-                "text": "đến,",
-                "startTime": 214.15,
-                "endTime": 214.45
-            },
-            {
-                "text": "rồi",
-                "startTime": 214.45,
-                "endTime": 214.75
-            },
-            {
-                "text": "sẽ",
-                "startTime": 214.75,
-                "endTime": 215.05
-            },
-            {
-                "text": "đến,",
-                "startTime": 215.05,
-                "endTime": 215.35
-            },
-            {
-                "text": "ngày",
-                "startTime": 215.35,
-                "endTime": 215.65
-            },
-            {
-                "text": "buồn",
-                "startTime": 215.65,
-                "endTime": 215.95
-            },
-            {
-                "text": "sẽ,",
-                "startTime": 215.95,
-                "endTime": 216.25
-            },
-            {
-                "text": "vội",
-                "startTime": 216.25,
-                "endTime": 216.55
-            },
-            {
-                "text": "tan",
-                "startTime": 216.55,
-                "endTime": 216.85
-            },
-            {
-                "text": "biến,",
-                "startTime": 216.85,
-                "endTime": 217.15
-            },
-            {
-                "text": "cầu",
-                "startTime": 217.15,
-                "endTime": 217.45
-            },
-            {
-                "text": "vồng",
-                "startTime": 217.45,
-                "endTime": 217.75
-            },
-            {
-                "text": "đến",
-                "startTime": 217.75,
-                "endTime": 218.07
-            }
-        ]
-    },
-    {
-        "section": "Bridge",
-        "startTime": 218.07,
-        "endTime": 220.62,
-        "text": "Cùng mây gió, giữa mưa thiên hà!",
-        "words": [
-            {
-                "text": "Cùng",
-                "startTime": 218.07,
-                "endTime": 218.43
-            },
-            {
-                "text": "mây",
-                "startTime": 218.43,
-                "endTime": 218.79
-            },
-            {
-                "text": "gió,",
-                "startTime": 218.79,
-                "endTime": 219.15
-            },
-            {
-                "text": "giữa",
-                "startTime": 219.15,
-                "endTime": 219.51
-            },
-            {
-                "text": "mưa",
-                "startTime": 219.51,
-                "endTime": 219.87
-            },
-            {
-                "text": "thiên",
-                "startTime": 219.87,
-                "endTime": 220.23
-            },
-            {
-                "text": "hà!",
-                "startTime": 220.23,
-                "endTime": 220.62
-            }
-        ]
-    },
-    {
-        "section": "Outro",
-        "startTime": 220.62,
-        "endTime": 224.21,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 220.62,
-                "endTime": 221.22
-            },
-            {
-                "text": "bước",
-                "startTime": 221.22,
-                "endTime": 221.82
-            },
-            {
-                "text": "đi,",
-                "startTime": 221.82,
-                "endTime": 222.42
-            },
-            {
-                "text": "cứ",
-                "startTime": 222.42,
-                "endTime": 223.02
-            },
-            {
-                "text": "bước",
-                "startTime": 223.02,
-                "endTime": 223.62
-            },
-            {
-                "text": "đi!)",
-                "startTime": 223.62,
-                "endTime": 224.21
-            }
-        ]
-    },
-    {
-        "section": "Outro",
-        "startTime": 224.21,
-        "endTime": 227.81,
-        "text": "(Cứ bước đi, ehh!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 224.21,
-                "endTime": 225.11
-            },
-            {
-                "text": "bước",
-                "startTime": 225.11,
-                "endTime": 226.01
-            },
-            {
-                "text": "đi,",
-                "startTime": 226.01,
-                "endTime": 226.91
-            },
-            {
-                "text": "ehh!)",
-                "startTime": 226.91,
-                "endTime": 227.81
-            }
-        ]
-    },
-    {
-        "section": "Outro",
-        "startTime": 227.81,
-        "endTime": 230.94,
-        "text": "(Cứ bước đi, cứ bước đi!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 227.81,
-                "endTime": 228.33
-            },
-            {
-                "text": "bước",
-                "startTime": 228.33,
-                "endTime": 228.85
-            },
-            {
-                "text": "đi,",
-                "startTime": 228.85,
-                "endTime": 229.37
-            },
-            {
-                "text": "cứ",
-                "startTime": 229.37,
-                "endTime": 229.89
-            },
-            {
-                "text": "bước",
-                "startTime": 229.89,
-                "endTime": 230.41
-            },
-            {
-                "text": "đi!)",
-                "startTime": 230.41,
-                "endTime": 230.94
-            }
-        ]
-    },
-    {
-        "section": "Outro",
-        "startTime": 230.94,
-        "endTime": 233.94,
-        "text": "(Cứ bước đi, ehh!)",
-        "words": [
-            {
-                "text": "(Cứ",
-                "startTime": 230.94,
-                "endTime": 231.69
-            },
-            {
-                "text": "bước",
-                "startTime": 231.69,
-                "endTime": 232.44
-            },
-            {
-                "text": "đi,",
-                "startTime": 232.44,
-                "endTime": 233.19
-            },
-            {
-                "text": "ehh!)",
-                "startTime": 233.19,
-                "endTime": 233.94
-            }
-        ]
-    }
+        "startTime": 19.470258,
+        "endTime": 19.470258
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 20.719889,
+    "endTime": 23.072607,
+    "text": "Người đã đến, làm ta quá đau",
+    "words": [
+      {
+        "text": "Người",
+        "startTime": 20.719889,
+        "endTime": 21.366993
+      },
+      {
+        "text": "đã",
+        "startTime": 21.366993,
+        "endTime": 21.42178
+      },
+      {
+        "text": "đến,",
+        "startTime": 21.42178,
+        "endTime": 22.447658
+      },
+      {
+        "text": "làm",
+        "startTime": 22.447658,
+        "endTime": 22.504386
+      },
+      {
+        "text": "ta",
+        "startTime": 22.504386,
+        "endTime": 22.691039
+      },
+      {
+        "text": "quá",
+        "startTime": 22.691039,
+        "endTime": 23.072607
+      },
+      {
+        "text": "đau",
+        "startTime": 23.072607,
+        "endTime": 23.072607
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 24.146548,
+    "endTime": 25.993932,
+    "text": "Mình đã có thể quên",
+    "words": [
+      {
+        "text": "Mình",
+        "startTime": 24.146548,
+        "endTime": 24.333322
+      },
+      {
+        "text": "đã",
+        "startTime": 24.333322,
+        "endTime": 24.567545
+      },
+      {
+        "text": "có",
+        "startTime": 24.567545,
+        "endTime": 25.537561
+      },
+      {
+        "text": "thể",
+        "startTime": 25.537561,
+        "endTime": 25.993932
+      },
+      {
+        "text": "quên",
+        "startTime": 25.993932,
+        "endTime": 25.993932
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 27.596175,
+    "endTime": 29.225497,
+    "text": "Tìm lời hát, tận trong hố sâu",
+    "words": [
+      {
+        "text": "Tìm",
+        "startTime": 27.596175,
+        "endTime": 27.843382
+      },
+      {
+        "text": "lời",
+        "startTime": 27.843382,
+        "endTime": 27.903773
+      },
+      {
+        "text": "hát,",
+        "startTime": 27.903773,
+        "endTime": 28.981597
+      },
+      {
+        "text": "tận",
+        "startTime": 28.981597,
+        "endTime": 29.039702
+      },
+      {
+        "text": "trong",
+        "startTime": 29.039702,
+        "endTime": 29.225497
+      },
+      {
+        "text": "hố",
+        "startTime": 29.225497,
+        "endTime": 29.225497
+      },
+      {
+        "text": "sâu",
+        "startTime": 29.225497,
+        "endTime": 29.225497
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 30.140807,
+    "endTime": 32.294063,
+    "text": "Khi chẳng ai ở cạnh bên",
+    "words": [
+      {
+        "text": "Khi",
+        "startTime": 30.140807,
+        "endTime": 31.101766
+      },
+      {
+        "text": "chẳng",
+        "startTime": 31.101766,
+        "endTime": 31.212348
+      },
+      {
+        "text": "ai",
+        "startTime": 31.212348,
+        "endTime": 31.921454
+      },
+      {
+        "text": "ở",
+        "startTime": 31.921454,
+        "endTime": 32.067305
+      },
+      {
+        "text": "cạnh",
+        "startTime": 32.067305,
+        "endTime": 32.294063
+      },
+      {
+        "text": "bên",
+        "startTime": 32.294063,
+        "endTime": 32.294063
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 34.592491,
+    "endTime": 36.481021,
+    "text": "Tỉnh giấc nhận ra từng cơn sóng xô vào tim",
+    "words": [
+      {
+        "text": "Tỉnh",
+        "startTime": 34.592491,
+        "endTime": 34.592491
+      },
+      {
+        "text": "giấc",
+        "startTime": 34.592491,
+        "endTime": 34.592491
+      },
+      {
+        "text": "nhận",
+        "startTime": 34.592491,
+        "endTime": 35.103923
+      },
+      {
+        "text": "ra",
+        "startTime": 35.103923,
+        "endTime": 35.243094
+      },
+      {
+        "text": "từng",
+        "startTime": 35.243094,
+        "endTime": 35.538142
+      },
+      {
+        "text": "cơn",
+        "startTime": 35.538142,
+        "endTime": 35.538142
+      },
+      {
+        "text": "sóng",
+        "startTime": 35.538142,
+        "endTime": 35.538142
+      },
+      {
+        "text": "xô",
+        "startTime": 35.538142,
+        "endTime": 36.192665
+      },
+      {
+        "text": "vào",
+        "startTime": 36.192665,
+        "endTime": 36.481021
+      },
+      {
+        "text": "tim",
+        "startTime": 36.481021,
+        "endTime": 36.481021
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 38.464332,
+    "endTime": 40.292475,
+    "text": "Từng đã nhiều đêm giấc mơ vẫn không thể nào yên",
+    "words": [
+      {
+        "text": "Từng",
+        "startTime": 38.464332,
+        "endTime": 38.464332
+      },
+      {
+        "text": "đã",
+        "startTime": 38.464332,
+        "endTime": 38.464332
+      },
+      {
+        "text": "nhiều",
+        "startTime": 38.464332,
+        "endTime": 38.464332
+      },
+      {
+        "text": "đêm",
+        "startTime": 38.464332,
+        "endTime": 38.464332
+      },
+      {
+        "text": "giấc",
+        "startTime": 38.464332,
+        "endTime": 38.762913
+      },
+      {
+        "text": "mơ",
+        "startTime": 38.762913,
+        "endTime": 38.915784
+      },
+      {
+        "text": "vẫn",
+        "startTime": 38.915784,
+        "endTime": 39.258149
+      },
+      {
+        "text": "không",
+        "startTime": 39.258149,
+        "endTime": 39.45363
+      },
+      {
+        "text": "thể",
+        "startTime": 39.45363,
+        "endTime": 39.862058
+      },
+      {
+        "text": "nào",
+        "startTime": 39.862058,
+        "endTime": 40.292475
+      },
+      {
+        "text": "yên",
+        "startTime": 40.292475,
+        "endTime": 40.292475
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 41.151878,
+    "endTime": 42.311522,
+    "text": "Đừng để thời gian vùi chôn dấu chân",
+    "words": [
+      {
+        "text": "Đừng",
+        "startTime": 41.151878,
+        "endTime": 41.225524
+      },
+      {
+        "text": "để",
+        "startTime": 41.225524,
+        "endTime": 41.225524
+      },
+      {
+        "text": "thời",
+        "startTime": 41.225524,
+        "endTime": 41.225524
+      },
+      {
+        "text": "gian",
+        "startTime": 41.225524,
+        "endTime": 41.643158
+      },
+      {
+        "text": "vùi",
+        "startTime": 41.643158,
+        "endTime": 42.013402
+      },
+      {
+        "text": "chôn",
+        "startTime": 42.013402,
+        "endTime": 42.311522
+      },
+      {
+        "text": "dấu",
+        "startTime": 42.311522,
+        "endTime": 42.311522
+      },
+      {
+        "text": "chân",
+        "startTime": 42.311522,
+        "endTime": 42.311522
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 42.930163,
+    "endTime": 45.707476,
+    "text": "Bình minh chờ ta ngay sau cuối chân trời!",
+    "words": [
+      {
+        "text": "Bình",
+        "startTime": 42.930163,
+        "endTime": 43.003106
+      },
+      {
+        "text": "minh",
+        "startTime": 43.003106,
+        "endTime": 43.5949
+      },
+      {
+        "text": "chờ",
+        "startTime": 43.5949,
+        "endTime": 43.926036
+      },
+      {
+        "text": "ta",
+        "startTime": 43.926036,
+        "endTime": 44.239857
+      },
+      {
+        "text": "ngay",
+        "startTime": 44.239857,
+        "endTime": 44.7179
+      },
+      {
+        "text": "sau",
+        "startTime": 44.7179,
+        "endTime": 44.7179
+      },
+      {
+        "text": "cuối",
+        "startTime": 44.7179,
+        "endTime": 45.028369
+      },
+      {
+        "text": "chân",
+        "startTime": 45.028369,
+        "endTime": 45.707476
+      },
+      {
+        "text": "trời!",
+        "startTime": 45.707476,
+        "endTime": 45.707476
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 46.245605,
+    "endTime": 46.874885,
+    "text": "(Hãy cứ bước đi)",
+    "words": [
+      {
+        "text": "(Hãy",
+        "startTime": 46.245605,
+        "endTime": 46.321122
+      },
+      {
+        "text": "cứ",
+        "startTime": 46.321122,
+        "endTime": 46.321122
+      },
+      {
+        "text": "bước",
+        "startTime": 46.321122,
+        "endTime": 46.874885
+      },
+      {
+        "text": "đi)",
+        "startTime": 46.874885,
+        "endTime": 46.874885
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 47.34073,
+    "endTime": 49.416951,
+    "text": "Bao gian nan cố giấu, chỉ mỉm cười rằng con không sao đâu",
+    "words": [
+      {
+        "text": "Bao",
+        "startTime": 47.34073,
+        "endTime": 47.34073
+      },
+      {
+        "text": "gian",
+        "startTime": 47.34073,
+        "endTime": 47.34073
+      },
+      {
+        "text": "nan",
+        "startTime": 47.34073,
+        "endTime": 47.34073
+      },
+      {
+        "text": "cố",
+        "startTime": 47.34073,
+        "endTime": 47.34073
+      },
+      {
+        "text": "giấu,",
+        "startTime": 47.34073,
+        "endTime": 47.34073
+      },
+      {
+        "text": "chỉ",
+        "startTime": 47.34073,
+        "endTime": 48.037668
+      },
+      {
+        "text": "mỉm",
+        "startTime": 48.037668,
+        "endTime": 48.333104
+      },
+      {
+        "text": "cười",
+        "startTime": 48.333104,
+        "endTime": 48.803459
+      },
+      {
+        "text": "rằng",
+        "startTime": 48.803459,
+        "endTime": 48.803459
+      },
+      {
+        "text": "con",
+        "startTime": 48.803459,
+        "endTime": 49.119082
+      },
+      {
+        "text": "không",
+        "startTime": 49.119082,
+        "endTime": 49.416951
+      },
+      {
+        "text": "sao",
+        "startTime": 49.416951,
+        "endTime": 49.416951
+      },
+      {
+        "text": "đâu",
+        "startTime": 49.416951,
+        "endTime": 49.416951
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 50.962749,
+    "endTime": 52.945477,
+    "text": "Bao đêm thâu nung nấu, làm sao bay lên vùng trời cao sâu",
+    "words": [
+      {
+        "text": "Bao",
+        "startTime": 50.962749,
+        "endTime": 50.962749
+      },
+      {
+        "text": "đêm",
+        "startTime": 50.962749,
+        "endTime": 50.962749
+      },
+      {
+        "text": "thâu",
+        "startTime": 50.962749,
+        "endTime": 50.962749
+      },
+      {
+        "text": "nung",
+        "startTime": 50.962749,
+        "endTime": 50.962749
+      },
+      {
+        "text": "nấu,",
+        "startTime": 50.962749,
+        "endTime": 51.497846
+      },
+      {
+        "text": "làm",
+        "startTime": 51.497846,
+        "endTime": 51.788981
+      },
+      {
+        "text": "sao",
+        "startTime": 51.788981,
+        "endTime": 51.788981
+      },
+      {
+        "text": "bay",
+        "startTime": 51.788981,
+        "endTime": 51.788981
+      },
+      {
+        "text": "lên",
+        "startTime": 51.788981,
+        "endTime": 52.292837
+      },
+      {
+        "text": "vùng",
+        "startTime": 52.292837,
+        "endTime": 52.634899
+      },
+      {
+        "text": "trời",
+        "startTime": 52.634899,
+        "endTime": 52.945477
+      },
+      {
+        "text": "cao",
+        "startTime": 52.945477,
+        "endTime": 52.945477
+      },
+      {
+        "text": "sâu",
+        "startTime": 52.945477,
+        "endTime": 52.945477
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 53.896731,
+    "endTime": 55.267307,
+    "text": "Em quay đi, oh no",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 53.896731,
+        "endTime": 54.199543
+      },
+      {
+        "text": "quay",
+        "startTime": 54.199543,
+        "endTime": 54.697294
+      },
+      {
+        "text": "đi,",
+        "startTime": 54.697294,
+        "endTime": 55.000061
+      },
+      {
+        "text": "oh",
+        "startTime": 55.000061,
+        "endTime": 55.267307
+      },
+      {
+        "text": "no",
+        "startTime": 55.267307,
+        "endTime": 55.267307
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 55.411666,
+    "endTime": 56.902371,
+    "text": "Mặc kệ đi anh chẳng hề sao đâu, oh-oh",
+    "words": [
+      {
+        "text": "Mặc",
+        "startTime": 55.411666,
+        "endTime": 55.478326
+      },
+      {
+        "text": "kệ",
+        "startTime": 55.478326,
+        "endTime": 55.478326
+      },
+      {
+        "text": "đi",
+        "startTime": 55.478326,
+        "endTime": 55.478326
+      },
+      {
+        "text": "anh",
+        "startTime": 55.478326,
+        "endTime": 56.113477
+      },
+      {
+        "text": "chẳng",
+        "startTime": 56.113477,
+        "endTime": 56.422245
+      },
+      {
+        "text": "hề",
+        "startTime": 56.422245,
+        "endTime": 56.422245
+      },
+      {
+        "text": "sao",
+        "startTime": 56.422245,
+        "endTime": 56.422245
+      },
+      {
+        "text": "đâu,",
+        "startTime": 56.422245,
+        "endTime": 56.902371
+      },
+      {
+        "text": "oh-oh",
+        "startTime": 56.902371,
+        "endTime": 56.902371
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 57.406442,
+    "endTime": 58.792924,
+    "text": "Chẳng hề sao đâu, oh-oh-ah-ah",
+    "words": [
+      {
+        "text": "Chẳng",
+        "startTime": 57.406442,
+        "endTime": 57.468246
+      },
+      {
+        "text": "hề",
+        "startTime": 57.468246,
+        "endTime": 58.056263
+      },
+      {
+        "text": "sao",
+        "startTime": 58.056263,
+        "endTime": 58.397554
+      },
+      {
+        "text": "đâu,",
+        "startTime": 58.397554,
+        "endTime": 58.792924
+      },
+      {
+        "text": "oh-oh-ah-ah",
+        "startTime": 58.792924,
+        "endTime": 58.792924
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 59.919361,
+    "endTime": 64.234334,
+    "text": "Lá la là lá la là lá la là la",
+    "words": [
+      {
+        "text": "Lá",
+        "startTime": 59.919361,
+        "endTime": 60.118657
+      },
+      {
+        "text": "la",
+        "startTime": 60.118657,
+        "endTime": 60.599673
+      },
+      {
+        "text": "là",
+        "startTime": 60.599673,
+        "endTime": 61.30152
+      },
+      {
+        "text": "lá",
+        "startTime": 61.30152,
+        "endTime": 61.665169
+      },
+      {
+        "text": "la",
+        "startTime": 61.665169,
+        "endTime": 62.123701
+      },
+      {
+        "text": "là",
+        "startTime": 62.123701,
+        "endTime": 62.664022
+      },
+      {
+        "text": "lá",
+        "startTime": 62.664022,
+        "endTime": 63.180585
+      },
+      {
+        "text": "la",
+        "startTime": 63.180585,
+        "endTime": 63.707162
+      },
+      {
+        "text": "là",
+        "startTime": 63.707162,
+        "endTime": 64.234334
+      },
+      {
+        "text": "la",
+        "startTime": 64.234334,
+        "endTime": 64.234334
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 64.788517,
+    "endTime": 66.199283,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 64.788517,
+        "endTime": 64.906717
+      },
+      {
+        "text": "bước",
+        "startTime": 64.906717,
+        "endTime": 65.5067
+      },
+      {
+        "text": "đi,",
+        "startTime": 65.5067,
+        "endTime": 65.708191
+      },
+      {
+        "text": "cứ",
+        "startTime": 65.708191,
+        "endTime": 65.708191
+      },
+      {
+        "text": "bước",
+        "startTime": 65.708191,
+        "endTime": 66.199283
+      },
+      {
+        "text": "đi!)",
+        "startTime": 66.199283,
+        "endTime": 66.199283
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 66.197705,
+    "endTime": 70.843316,
+    "text": "Lá la là lá la là lá la là la (cứ bước đi, cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "Lá",
+        "startTime": 66.197705,
+        "endTime": 66.266372
+      },
+      {
+        "text": "la",
+        "startTime": 66.266372,
+        "endTime": 66.266372
+      },
+      {
+        "text": "là",
+        "startTime": 66.266372,
+        "endTime": 66.867174
+      },
+      {
+        "text": "lá",
+        "startTime": 66.867174,
+        "endTime": 66.867174
+      },
+      {
+        "text": "la",
+        "startTime": 66.867174,
+        "endTime": 67.36616
+      },
+      {
+        "text": "là",
+        "startTime": 67.36616,
+        "endTime": 67.678416
+      },
+      {
+        "text": "lá",
+        "startTime": 67.678416,
+        "endTime": 68.213859
+      },
+      {
+        "text": "la",
+        "startTime": 68.213859,
+        "endTime": 68.213859
+      },
+      {
+        "text": "là",
+        "startTime": 68.213859,
+        "endTime": 68.57267
+      },
+      {
+        "text": "la",
+        "startTime": 68.57267,
+        "endTime": 69.086939
+      },
+      {
+        "text": "(cứ",
+        "startTime": 69.086939,
+        "endTime": 69.086939
+      },
+      {
+        "text": "bước",
+        "startTime": 69.086939,
+        "endTime": 69.460005
+      },
+      {
+        "text": "đi,",
+        "startTime": 69.460005,
+        "endTime": 69.804866
+      },
+      {
+        "text": "cứ",
+        "startTime": 69.804866,
+        "endTime": 69.804866
+      },
+      {
+        "text": "bước",
+        "startTime": 69.804866,
+        "endTime": 70.37846
+      },
+      {
+        "text": "đi,",
+        "startTime": 70.37846,
+        "endTime": 70.37846
+      },
+      {
+        "text": "cứ",
+        "startTime": 70.37846,
+        "endTime": 70.37846
+      },
+      {
+        "text": "bước",
+        "startTime": 70.37846,
+        "endTime": 70.843316
+      },
+      {
+        "text": "đi!)",
+        "startTime": 70.843316,
+        "endTime": 70.843316
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 74.471476,
+    "endTime": 75.786365,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 74.471476,
+        "endTime": 74.471476
+      },
+      {
+        "text": "bước",
+        "startTime": 74.471476,
+        "endTime": 75.034256
+      },
+      {
+        "text": "đi,",
+        "startTime": 75.034256,
+        "endTime": 75.095673
+      },
+      {
+        "text": "cứ",
+        "startTime": 75.095673,
+        "endTime": 75.590502
+      },
+      {
+        "text": "bước",
+        "startTime": 75.590502,
+        "endTime": 75.786365
+      },
+      {
+        "text": "đi!)",
+        "startTime": 75.786365,
+        "endTime": 75.786365
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 77.465881,
+    "endTime": 78.879093,
+    "text": "(Cứ bước đi, ehh!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 77.465881,
+        "endTime": 77.465881
+      },
+      {
+        "text": "bước",
+        "startTime": 77.465881,
+        "endTime": 78.166468
+      },
+      {
+        "text": "đi,",
+        "startTime": 78.166468,
+        "endTime": 78.879093
+      },
+      {
+        "text": "ehh!)",
+        "startTime": 78.879093,
+        "endTime": 78.879093
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 80.576306,
+    "endTime": 83.159216,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 80.576306,
+        "endTime": 81.104214
+      },
+      {
+        "text": "bước",
+        "startTime": 81.104214,
+        "endTime": 81.735476
+      },
+      {
+        "text": "đi,",
+        "startTime": 81.735476,
+        "endTime": 82.271706
+      },
+      {
+        "text": "cứ",
+        "startTime": 82.271706,
+        "endTime": 82.610682
+      },
+      {
+        "text": "bước",
+        "startTime": 82.610682,
+        "endTime": 83.159216
+      },
+      {
+        "text": "đi!)",
+        "startTime": 83.159216,
+        "endTime": 83.159216
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 84.315405,
+    "endTime": 85.918354,
+    "text": "(Cứ bước đi, ehh!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 84.315405,
+        "endTime": 84.701383
+      },
+      {
+        "text": "bước",
+        "startTime": 84.701383,
+        "endTime": 85.372519
+      },
+      {
+        "text": "đi,",
+        "startTime": 85.372519,
+        "endTime": 85.918354
+      },
+      {
+        "text": "ehh!)",
+        "startTime": 85.918354,
+        "endTime": 85.918354
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 85.46527,
+    "endTime": 87.222003,
+    "text": "Mỗi sớm mai thức dậy",
+    "words": [
+      {
+        "text": "Mỗi",
+        "startTime": 85.46527,
+        "endTime": 85.938536
+      },
+      {
+        "text": "sớm",
+        "startTime": 85.938536,
+        "endTime": 86.601587
+      },
+      {
+        "text": "mai",
+        "startTime": 86.601587,
+        "endTime": 86.601587
+      },
+      {
+        "text": "thức",
+        "startTime": 86.601587,
+        "endTime": 87.222003
+      },
+      {
+        "text": "dậy",
+        "startTime": 87.222003,
+        "endTime": 87.222003
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 87.91201,
+    "endTime": 91.052817,
+    "text": "Lòng ta chợt nghĩ phải làm gì đây",
+    "words": [
+      {
+        "text": "Lòng",
+        "startTime": 87.91201,
+        "endTime": 88.274475
+      },
+      {
+        "text": "ta",
+        "startTime": 88.274475,
+        "endTime": 88.789589
+      },
+      {
+        "text": "chợt",
+        "startTime": 88.789589,
+        "endTime": 88.789589
+      },
+      {
+        "text": "nghĩ",
+        "startTime": 88.789589,
+        "endTime": 89.556488
+      },
+      {
+        "text": "phải",
+        "startTime": 89.556488,
+        "endTime": 90.146973
+      },
+      {
+        "text": "làm",
+        "startTime": 90.146973,
+        "endTime": 90.484769
+      },
+      {
+        "text": "gì",
+        "startTime": 90.484769,
+        "endTime": 91.052817
+      },
+      {
+        "text": "đây",
+        "startTime": 91.052817,
+        "endTime": 91.052817
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 92.819924,
+    "endTime": 94.897775,
+    "text": "Mong có ai đứng dậy",
+    "words": [
+      {
+        "text": "Mong",
+        "startTime": 92.819924,
+        "endTime": 93.646396
+      },
+      {
+        "text": "có",
+        "startTime": 93.646396,
+        "endTime": 93.992181
+      },
+      {
+        "text": "ai",
+        "startTime": 93.992181,
+        "endTime": 94.550542
+      },
+      {
+        "text": "đứng",
+        "startTime": 94.550542,
+        "endTime": 94.897775
+      },
+      {
+        "text": "dậy",
+        "startTime": 94.897775,
+        "endTime": 94.897775
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 94.519906,
+    "endTime": 97.698506,
+    "text": "Lật tấm màn xuống chẳng để bóng đêm quấy rầy",
+    "words": [
+      {
+        "text": "Lật",
+        "startTime": 94.519906,
+        "endTime": 94.736497
+      },
+      {
+        "text": "tấm",
+        "startTime": 94.736497,
+        "endTime": 95.349129
+      },
+      {
+        "text": "màn",
+        "startTime": 95.349129,
+        "endTime": 95.916012
+      },
+      {
+        "text": "xuống",
+        "startTime": 95.916012,
+        "endTime": 95.916012
+      },
+      {
+        "text": "chẳng",
+        "startTime": 95.916012,
+        "endTime": 95.916012
+      },
+      {
+        "text": "để",
+        "startTime": 95.916012,
+        "endTime": 96.316978
+      },
+      {
+        "text": "bóng",
+        "startTime": 96.316978,
+        "endTime": 96.947963
+      },
+      {
+        "text": "đêm",
+        "startTime": 96.947963,
+        "endTime": 97.341683
+      },
+      {
+        "text": "quấy",
+        "startTime": 97.341683,
+        "endTime": 97.698506
+      },
+      {
+        "text": "rầy",
+        "startTime": 97.698506,
+        "endTime": 97.698506
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 99.509953,
+    "endTime": 101.40541,
+    "text": "Biết ta phải đớn đau bao nhiêu lần",
+    "words": [
+      {
+        "text": "Biết",
+        "startTime": 99.509953,
+        "endTime": 99.578474
+      },
+      {
+        "text": "ta",
+        "startTime": 99.578474,
+        "endTime": 100.255475
+      },
+      {
+        "text": "phải",
+        "startTime": 100.255475,
+        "endTime": 100.255475
+      },
+      {
+        "text": "đớn",
+        "startTime": 100.255475,
+        "endTime": 100.623659
+      },
+      {
+        "text": "đau",
+        "startTime": 100.623659,
+        "endTime": 100.623659
+      },
+      {
+        "text": "bao",
+        "startTime": 100.623659,
+        "endTime": 100.623659
+      },
+      {
+        "text": "nhiêu",
+        "startTime": 100.623659,
+        "endTime": 101.40541
+      },
+      {
+        "text": "lần",
+        "startTime": 101.40541,
+        "endTime": 101.40541
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 101.143905,
+    "endTime": 102.756528,
+    "text": "Để hôm nay ta chơi cùng mây gió, ayy",
+    "words": [
+      {
+        "text": "Để",
+        "startTime": 101.143905,
+        "endTime": 101.143905
+      },
+      {
+        "text": "hôm",
+        "startTime": 101.143905,
+        "endTime": 101.143905
+      },
+      {
+        "text": "nay",
+        "startTime": 101.143905,
+        "endTime": 101.764725
+      },
+      {
+        "text": "ta",
+        "startTime": 101.764725,
+        "endTime": 102.355701
+      },
+      {
+        "text": "chơi",
+        "startTime": 102.355701,
+        "endTime": 102.355701
+      },
+      {
+        "text": "cùng",
+        "startTime": 102.355701,
+        "endTime": 102.355701
+      },
+      {
+        "text": "mây",
+        "startTime": 102.355701,
+        "endTime": 102.355701
+      },
+      {
+        "text": "gió,",
+        "startTime": 102.355701,
+        "endTime": 102.756528
+      },
+      {
+        "text": "ayy",
+        "startTime": 102.756528,
+        "endTime": 102.756528
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 103.965473,
+    "endTime": 105.685778,
+    "text": "Được tự do, ayy",
+    "words": [
+      {
+        "text": "Được",
+        "startTime": 103.965473,
+        "endTime": 104.547391
+      },
+      {
+        "text": "tự",
+        "startTime": 104.547391,
+        "endTime": 104.927514
+      },
+      {
+        "text": "do,",
+        "startTime": 104.927514,
+        "endTime": 105.685778
+      },
+      {
+        "text": "ayy",
+        "startTime": 105.685778,
+        "endTime": 105.685778
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 105.852262,
+    "endTime": 107.1286,
+    "text": "Đứng xung quanh chiếc gương vô hình",
+    "words": [
+      {
+        "text": "Đứng",
+        "startTime": 105.852262,
+        "endTime": 105.921371
+      },
+      {
+        "text": "xung",
+        "startTime": 105.921371,
+        "endTime": 106.682523
+      },
+      {
+        "text": "quanh",
+        "startTime": 106.682523,
+        "endTime": 106.682523
+      },
+      {
+        "text": "chiếc",
+        "startTime": 106.682523,
+        "endTime": 106.682523
+      },
+      {
+        "text": "gương",
+        "startTime": 106.682523,
+        "endTime": 106.682523
+      },
+      {
+        "text": "vô",
+        "startTime": 106.682523,
+        "endTime": 107.1286
+      },
+      {
+        "text": "hình",
+        "startTime": 107.1286,
+        "endTime": 107.1286
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 107.512956,
+    "endTime": 108.939577,
+    "text": "Tự thấy chính mình từ thân tàn thành tro",
+    "words": [
+      {
+        "text": "Tự",
+        "startTime": 107.512956,
+        "endTime": 107.512956
+      },
+      {
+        "text": "thấy",
+        "startTime": 107.512956,
+        "endTime": 107.512956
+      },
+      {
+        "text": "chính",
+        "startTime": 107.512956,
+        "endTime": 107.512956
+      },
+      {
+        "text": "mình",
+        "startTime": 107.512956,
+        "endTime": 107.512956
+      },
+      {
+        "text": "từ",
+        "startTime": 107.512956,
+        "endTime": 108.335476
+      },
+      {
+        "text": "thân",
+        "startTime": 108.335476,
+        "endTime": 108.939577
+      },
+      {
+        "text": "tàn",
+        "startTime": 108.939577,
+        "endTime": 108.939577
+      },
+      {
+        "text": "thành",
+        "startTime": 108.939577,
+        "endTime": 108.939577
+      },
+      {
+        "text": "tro",
+        "startTime": 108.939577,
+        "endTime": 108.939577
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 110.753868,
+    "endTime": 112.967424,
+    "text": "Sải cánh bay lên (hãy cứ bước)",
+    "words": [
+      {
+        "text": "Sải",
+        "startTime": 110.753868,
+        "endTime": 110.753868
+      },
+      {
+        "text": "cánh",
+        "startTime": 110.753868,
+        "endTime": 111.514659
+      },
+      {
+        "text": "bay",
+        "startTime": 111.514659,
+        "endTime": 111.514659
+      },
+      {
+        "text": "lên",
+        "startTime": 111.514659,
+        "endTime": 111.887681
+      },
+      {
+        "text": "(hãy",
+        "startTime": 111.887681,
+        "endTime": 112.574593
+      },
+      {
+        "text": "cứ",
+        "startTime": 112.574593,
+        "endTime": 112.967424
+      },
+      {
+        "text": "bước)",
+        "startTime": 112.967424,
+        "endTime": 112.967424
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 112.642479,
+    "endTime": 115.227917,
+    "text": "Bao gian nan cố giấu, chỉ mỉm cười rằng con không sao đâu",
+    "words": [
+      {
+        "text": "Bao",
+        "startTime": 112.642479,
+        "endTime": 112.642479
+      },
+      {
+        "text": "gian",
+        "startTime": 112.642479,
+        "endTime": 112.642479
+      },
+      {
+        "text": "nan",
+        "startTime": 112.642479,
+        "endTime": 113.458475
+      },
+      {
+        "text": "cố",
+        "startTime": 113.458475,
+        "endTime": 113.458475
+      },
+      {
+        "text": "giấu,",
+        "startTime": 113.458475,
+        "endTime": 113.458475
+      },
+      {
+        "text": "chỉ",
+        "startTime": 113.458475,
+        "endTime": 113.458475
+      },
+      {
+        "text": "mỉm",
+        "startTime": 113.458475,
+        "endTime": 113.458475
+      },
+      {
+        "text": "cười",
+        "startTime": 113.458475,
+        "endTime": 113.458475
+      },
+      {
+        "text": "rằng",
+        "startTime": 113.458475,
+        "endTime": 113.917266
+      },
+      {
+        "text": "con",
+        "startTime": 113.917266,
+        "endTime": 114.140677
+      },
+      {
+        "text": "không",
+        "startTime": 114.140677,
+        "endTime": 114.798952
+      },
+      {
+        "text": "sao",
+        "startTime": 114.798952,
+        "endTime": 115.227917
+      },
+      {
+        "text": "đâu",
+        "startTime": 115.227917,
+        "endTime": 115.227917
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 116.781316,
+    "endTime": 119.134436,
+    "text": "Bao đêm thâu nung nấu, làm sao bay lên vùng trời cao sâu",
+    "words": [
+      {
+        "text": "Bao",
+        "startTime": 116.781316,
+        "endTime": 116.895909
+      },
+      {
+        "text": "đêm",
+        "startTime": 116.895909,
+        "endTime": 116.895909
+      },
+      {
+        "text": "thâu",
+        "startTime": 116.895909,
+        "endTime": 117.434412
+      },
+      {
+        "text": "nung",
+        "startTime": 117.434412,
+        "endTime": 117.434412
+      },
+      {
+        "text": "nấu,",
+        "startTime": 117.434412,
+        "endTime": 117.434412
+      },
+      {
+        "text": "làm",
+        "startTime": 117.434412,
+        "endTime": 117.434412
+      },
+      {
+        "text": "sao",
+        "startTime": 117.434412,
+        "endTime": 118.027468
+      },
+      {
+        "text": "bay",
+        "startTime": 118.027468,
+        "endTime": 118.027468
+      },
+      {
+        "text": "lên",
+        "startTime": 118.027468,
+        "endTime": 118.027468
+      },
+      {
+        "text": "vùng",
+        "startTime": 118.027468,
+        "endTime": 118.429331
+      },
+      {
+        "text": "trời",
+        "startTime": 118.429331,
+        "endTime": 119.134436
+      },
+      {
+        "text": "cao",
+        "startTime": 119.134436,
+        "endTime": 119.134436
+      },
+      {
+        "text": "sâu",
+        "startTime": 119.134436,
+        "endTime": 119.134436
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 120.045977,
+    "endTime": 121.014942,
+    "text": "Em quay đi, oh no",
+    "words": [
+      {
+        "text": "Em",
+        "startTime": 120.045977,
+        "endTime": 120.045977
+      },
+      {
+        "text": "quay",
+        "startTime": 120.045977,
+        "endTime": 120.045977
+      },
+      {
+        "text": "đi,",
+        "startTime": 120.045977,
+        "endTime": 120.628694
+      },
+      {
+        "text": "oh",
+        "startTime": 120.628694,
+        "endTime": 121.014942
+      },
+      {
+        "text": "no",
+        "startTime": 121.014942,
+        "endTime": 121.014942
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 121.18159,
+    "endTime": 122.507663,
+    "text": "Mặc kệ đi anh chẳng hề sao đâu, oh-oh",
+    "words": [
+      {
+        "text": "Mặc",
+        "startTime": 121.18159,
+        "endTime": 121.249277
+      },
+      {
+        "text": "kệ",
+        "startTime": 121.249277,
+        "endTime": 122.061415
+      },
+      {
+        "text": "đi",
+        "startTime": 122.061415,
+        "endTime": 122.061415
+      },
+      {
+        "text": "anh",
+        "startTime": 122.061415,
+        "endTime": 122.061415
+      },
+      {
+        "text": "chẳng",
+        "startTime": 122.061415,
+        "endTime": 122.507663
+      },
+      {
+        "text": "hề",
+        "startTime": 122.507663,
+        "endTime": 122.507663
+      },
+      {
+        "text": "sao",
+        "startTime": 122.507663,
+        "endTime": 122.507663
+      },
+      {
+        "text": "đâu,",
+        "startTime": 122.507663,
+        "endTime": 122.507663
+      },
+      {
+        "text": "oh-oh",
+        "startTime": 122.507663,
+        "endTime": 122.507663
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 123.859812,
+    "endTime": 125.817026,
+    "text": "Chẳng hề sao đâu, oh-oh-ah-ah",
+    "words": [
+      {
+        "text": "Chẳng",
+        "startTime": 123.859812,
+        "endTime": 123.859812
+      },
+      {
+        "text": "hề",
+        "startTime": 123.859812,
+        "endTime": 124.696825
+      },
+      {
+        "text": "sao",
+        "startTime": 124.696825,
+        "endTime": 125.213736
+      },
+      {
+        "text": "đâu,",
+        "startTime": 125.213736,
+        "endTime": 125.817026
+      },
+      {
+        "text": "oh-oh-ah-ah",
+        "startTime": 125.817026,
+        "endTime": 125.817026
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 125.630724,
+    "endTime": 130.900652,
+    "text": "Lá la là lá la là lá la là la",
+    "words": [
+      {
+        "text": "Lá",
+        "startTime": 125.630724,
+        "endTime": 125.838758
+      },
+      {
+        "text": "la",
+        "startTime": 125.838758,
+        "endTime": 126.600713
+      },
+      {
+        "text": "là",
+        "startTime": 126.600713,
+        "endTime": 127.257844
+      },
+      {
+        "text": "lá",
+        "startTime": 127.257844,
+        "endTime": 127.720173
+      },
+      {
+        "text": "la",
+        "startTime": 127.720173,
+        "endTime": 128.375553
+      },
+      {
+        "text": "là",
+        "startTime": 128.375553,
+        "endTime": 129.065913
+      },
+      {
+        "text": "lá",
+        "startTime": 129.065913,
+        "endTime": 129.710489
+      },
+      {
+        "text": "la",
+        "startTime": 129.710489,
+        "endTime": 130.246677
+      },
+      {
+        "text": "là",
+        "startTime": 130.246677,
+        "endTime": 130.900652
+      },
+      {
+        "text": "la",
+        "startTime": 130.900652,
+        "endTime": 130.900652
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 130.943694,
+    "endTime": 132.533937,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 130.943694,
+        "endTime": 130.943694
+      },
+      {
+        "text": "bước",
+        "startTime": 130.943694,
+        "endTime": 131.809296
+      },
+      {
+        "text": "đi,",
+        "startTime": 131.809296,
+        "endTime": 132.533937
+      },
+      {
+        "text": "cứ",
+        "startTime": 132.533937,
+        "endTime": 132.533937
+      },
+      {
+        "text": "bước",
+        "startTime": 132.533937,
+        "endTime": 132.533937
+      },
+      {
+        "text": "đi!)",
+        "startTime": 132.533937,
+        "endTime": 132.533937
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 132.792629,
+    "endTime": 138.688623,
+    "text": "Lá la là lá la là lá la là la (cứ bước đi, cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "Lá",
+        "startTime": 132.792629,
+        "endTime": 132.792629
+      },
+      {
+        "text": "la",
+        "startTime": 132.792629,
+        "endTime": 132.792629
+      },
+      {
+        "text": "là",
+        "startTime": 132.792629,
+        "endTime": 133.71188
+      },
+      {
+        "text": "lá",
+        "startTime": 133.71188,
+        "endTime": 134.412293
+      },
+      {
+        "text": "la",
+        "startTime": 134.412293,
+        "endTime": 134.412293
+      },
+      {
+        "text": "là",
+        "startTime": 134.412293,
+        "endTime": 134.412293
+      },
+      {
+        "text": "lá",
+        "startTime": 134.412293,
+        "endTime": 134.412293
+      },
+      {
+        "text": "la",
+        "startTime": 134.412293,
+        "endTime": 134.412293
+      },
+      {
+        "text": "là",
+        "startTime": 134.412293,
+        "endTime": 134.412293
+      },
+      {
+        "text": "la",
+        "startTime": 134.412293,
+        "endTime": 134.837545
+      },
+      {
+        "text": "(cứ",
+        "startTime": 134.837545,
+        "endTime": 135.531046
+      },
+      {
+        "text": "bước",
+        "startTime": 135.531046,
+        "endTime": 135.531046
+      },
+      {
+        "text": "đi,",
+        "startTime": 135.531046,
+        "endTime": 135.966618
+      },
+      {
+        "text": "cứ",
+        "startTime": 135.966618,
+        "endTime": 136.634723
+      },
+      {
+        "text": "bước",
+        "startTime": 136.634723,
+        "endTime": 137.175862
+      },
+      {
+        "text": "đi,",
+        "startTime": 137.175862,
+        "endTime": 137.931933
+      },
+      {
+        "text": "cứ",
+        "startTime": 137.931933,
+        "endTime": 137.931933
+      },
+      {
+        "text": "bước",
+        "startTime": 137.931933,
+        "endTime": 138.688623
+      },
+      {
+        "text": "đi!)",
+        "startTime": 138.688623,
+        "endTime": 138.688623
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 139.702717,
+    "endTime": 141.364828,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 139.702717,
+        "endTime": 140.186386
+      },
+      {
+        "text": "bước",
+        "startTime": 140.186386,
+        "endTime": 140.186386
+      },
+      {
+        "text": "đi,",
+        "startTime": 140.186386,
+        "endTime": 140.186386
+      },
+      {
+        "text": "cứ",
+        "startTime": 140.186386,
+        "endTime": 141.364828
+      },
+      {
+        "text": "bước",
+        "startTime": 141.364828,
+        "endTime": 141.364828
+      },
+      {
+        "text": "đi!)",
+        "startTime": 141.364828,
+        "endTime": 141.364828
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 143.596489,
+    "endTime": 144.368307,
+    "text": "(Cứ bước đi, ehh!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 143.596489,
+        "endTime": 143.596489
+      },
+      {
+        "text": "bước",
+        "startTime": 143.596489,
+        "endTime": 144.299397
+      },
+      {
+        "text": "đi,",
+        "startTime": 144.299397,
+        "endTime": 144.368307
+      },
+      {
+        "text": "ehh!)",
+        "startTime": 144.368307,
+        "endTime": 144.368307
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 146.644166,
+    "endTime": 149.090214,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 146.644166,
+        "endTime": 146.727414
+      },
+      {
+        "text": "bước",
+        "startTime": 146.727414,
+        "endTime": 147.548393
+      },
+      {
+        "text": "đi,",
+        "startTime": 147.548393,
+        "endTime": 147.619355
+      },
+      {
+        "text": "cứ",
+        "startTime": 147.619355,
+        "endTime": 148.609134
+      },
+      {
+        "text": "bước",
+        "startTime": 148.609134,
+        "endTime": 149.090214
+      },
+      {
+        "text": "đi!)",
+        "startTime": 149.090214,
+        "endTime": 149.090214
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 150.027233,
+    "endTime": 151.70142,
+    "text": "(Cứ bước đi, ehh!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 150.027233,
+        "endTime": 150.027233
+      },
+      {
+        "text": "bước",
+        "startTime": 150.027233,
+        "endTime": 150.991022
+      },
+      {
+        "text": "đi,",
+        "startTime": 150.991022,
+        "endTime": 151.70142
+      },
+      {
+        "text": "ehh!)",
+        "startTime": 151.70142,
+        "endTime": 151.70142
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 151.294645,
+    "endTime": 151.294645,
+    "text": "[bridge]",
+    "words": [
+      {
+        "text": "[bridge]",
+        "startTime": 151.294645,
+        "endTime": 151.294645
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 153.408334,
+    "endTime": 154.940314,
+    "text": "Vì ta, vì ta, vì ta, ahh",
+    "words": [
+      {
+        "text": "Vì",
+        "startTime": 153.408334,
+        "endTime": 153.408334
+      },
+      {
+        "text": "ta,",
+        "startTime": 153.408334,
+        "endTime": 153.408334
+      },
+      {
+        "text": "vì",
+        "startTime": 153.408334,
+        "endTime": 154.22362
+      },
+      {
+        "text": "ta,",
+        "startTime": 154.22362,
+        "endTime": 154.22362
+      },
+      {
+        "text": "vì",
+        "startTime": 154.22362,
+        "endTime": 154.22362
+      },
+      {
+        "text": "ta,",
+        "startTime": 154.22362,
+        "endTime": 154.940314
+      },
+      {
+        "text": "ahh",
+        "startTime": 154.940314,
+        "endTime": 154.940314
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 156.684116,
+    "endTime": 158.610796,
+    "text": "Ta vẫn là ta bước qua hết nỗi đau",
+    "words": [
+      {
+        "text": "Ta",
+        "startTime": 156.684116,
+        "endTime": 156.684116
+      },
+      {
+        "text": "vẫn",
+        "startTime": 156.684116,
+        "endTime": 156.932416
+      },
+      {
+        "text": "là",
+        "startTime": 156.932416,
+        "endTime": 156.932416
+      },
+      {
+        "text": "ta",
+        "startTime": 156.932416,
+        "endTime": 157.677731
+      },
+      {
+        "text": "bước",
+        "startTime": 157.677731,
+        "endTime": 157.677731
+      },
+      {
+        "text": "qua",
+        "startTime": 157.677731,
+        "endTime": 157.677731
+      },
+      {
+        "text": "hết",
+        "startTime": 157.677731,
+        "endTime": 158.348424
+      },
+      {
+        "text": "nỗi",
+        "startTime": 158.348424,
+        "endTime": 158.610796
+      },
+      {
+        "text": "đau",
+        "startTime": 158.610796,
+        "endTime": 158.610796
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 158.604266,
+    "endTime": 160.355761,
+    "text": "Dù cô đơn ta vẫn khắc sâu vào tim",
+    "words": [
+      {
+        "text": "Dù",
+        "startTime": 158.604266,
+        "endTime": 158.604266
+      },
+      {
+        "text": "cô",
+        "startTime": 158.604266,
+        "endTime": 158.681819
+      },
+      {
+        "text": "đơn",
+        "startTime": 158.681819,
+        "endTime": 158.681819
+      },
+      {
+        "text": "ta",
+        "startTime": 158.681819,
+        "endTime": 158.681819
+      },
+      {
+        "text": "vẫn",
+        "startTime": 158.681819,
+        "endTime": 159.595652
+      },
+      {
+        "text": "khắc",
+        "startTime": 159.595652,
+        "endTime": 160.355761
+      },
+      {
+        "text": "sâu",
+        "startTime": 160.355761,
+        "endTime": 160.355761
+      },
+      {
+        "text": "vào",
+        "startTime": 160.355761,
+        "endTime": 160.355761
+      },
+      {
+        "text": "tim",
+        "startTime": 160.355761,
+        "endTime": 160.355761
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 161.387452,
+    "endTime": 163.569159,
+    "text": "Who will care, will be along",
+    "words": [
+      {
+        "text": "Who",
+        "startTime": 161.387452,
+        "endTime": 161.622469
+      },
+      {
+        "text": "will",
+        "startTime": 161.622469,
+        "endTime": 162.330309
+      },
+      {
+        "text": "care,",
+        "startTime": 162.330309,
+        "endTime": 163.011442
+      },
+      {
+        "text": "will",
+        "startTime": 163.011442,
+        "endTime": 163.011442
+      },
+      {
+        "text": "be",
+        "startTime": 163.011442,
+        "endTime": 163.569159
+      },
+      {
+        "text": "along",
+        "startTime": 163.569159,
+        "endTime": 163.569159
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 164.588696,
+    "endTime": 166.921324,
+    "text": "Be yourself, be brave and strong",
+    "words": [
+      {
+        "text": "Be",
+        "startTime": 164.588696,
+        "endTime": 164.832066
+      },
+      {
+        "text": "yourself,",
+        "startTime": 164.832066,
+        "endTime": 165.775923
+      },
+      {
+        "text": "be",
+        "startTime": 165.775923,
+        "endTime": 166.005452
+      },
+      {
+        "text": "brave",
+        "startTime": 166.005452,
+        "endTime": 166.691769
+      },
+      {
+        "text": "and",
+        "startTime": 166.691769,
+        "endTime": 166.921324
+      },
+      {
+        "text": "strong",
+        "startTime": 166.921324,
+        "endTime": 166.921324
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 167.244885,
+    "endTime": 169.361747,
+    "text": "Let me fly, to the sky",
+    "words": [
+      {
+        "text": "Let",
+        "startTime": 167.244885,
+        "endTime": 167.244885
+      },
+      {
+        "text": "me",
+        "startTime": 167.244885,
+        "endTime": 168.184359
+      },
+      {
+        "text": "fly,",
+        "startTime": 168.184359,
+        "endTime": 168.654269
+      },
+      {
+        "text": "to",
+        "startTime": 168.654269,
+        "endTime": 168.654269
+      },
+      {
+        "text": "the",
+        "startTime": 168.654269,
+        "endTime": 169.361747
+      },
+      {
+        "text": "sky",
+        "startTime": 169.361747,
+        "endTime": 169.361747
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 169.890271,
+    "endTime": 170.174997,
+    "text": "Everything will change",
+    "words": [
+      {
+        "text": "Everything",
+        "startTime": 169.890271,
+        "endTime": 170.174997
+      },
+      {
+        "text": "will",
+        "startTime": 170.174997,
+        "endTime": 170.174997
+      },
+      {
+        "text": "change",
+        "startTime": 170.174997,
+        "endTime": 170.174997
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 171.257529,
+    "endTime": 171.681295,
+    "text": "No more pain",
+    "words": [
+      {
+        "text": "No",
+        "startTime": 171.257529,
+        "endTime": 171.681295
+      },
+      {
+        "text": "more",
+        "startTime": 171.681295,
+        "endTime": 171.681295
+      },
+      {
+        "text": "pain",
+        "startTime": 171.681295,
+        "endTime": 171.681295
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 172.687059,
+    "endTime": 176.42581,
+    "text": "Hãy để tôi bay lên bầu trời",
+    "words": [
+      {
+        "text": "Hãy",
+        "startTime": 172.687059,
+        "endTime": 173.121165
+      },
+      {
+        "text": "để",
+        "startTime": 173.121165,
+        "endTime": 173.121165
+      },
+      {
+        "text": "tôi",
+        "startTime": 173.121165,
+        "endTime": 173.873915
+      },
+      {
+        "text": "bay",
+        "startTime": 173.873915,
+        "endTime": 174.647352
+      },
+      {
+        "text": "lên",
+        "startTime": 174.647352,
+        "endTime": 175.182836
+      },
+      {
+        "text": "bầu",
+        "startTime": 175.182836,
+        "endTime": 176.42581
+      },
+      {
+        "text": "trời",
+        "startTime": 176.42581,
+        "endTime": 175.182836
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 176.487053,
+    "endTime": 179.348318,
+    "text": "Mọi thứ sẽ thay đổi mau",
+    "words": [
+      {
+        "text": "Mọi",
+        "startTime": 176.487053,
+        "endTime": 176.557213
+      },
+      {
+        "text": "thứ",
+        "startTime": 176.557213,
+        "endTime": 176.557213
+      },
+      {
+        "text": "sẽ",
+        "startTime": 176.557213,
+        "endTime": 177.393438
+      },
+      {
+        "text": "thay",
+        "startTime": 177.393438,
+        "endTime": 177.393438
+      },
+      {
+        "text": "đổi",
+        "startTime": 177.393438,
+        "endTime": 179.348318
+      },
+      {
+        "text": "mau",
+        "startTime": 179.348318,
+        "endTime": 179.348318
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 178.402904,
+    "endTime": 179.403945,
+    "text": "Chẳng còn nỗi đau",
+    "words": [
+      {
+        "text": "Chẳng",
+        "startTime": 178.402904,
+        "endTime": 178.402904
+      },
+      {
+        "text": "còn",
+        "startTime": 178.402904,
+        "endTime": 178.486709
+      },
+      {
+        "text": "nỗi",
+        "startTime": 178.486709,
+        "endTime": 179.403945
+      },
+      {
+        "text": "đau",
+        "startTime": 179.403945,
+        "endTime": 179.403945
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 180.20872,
+    "endTime": 184.715206,
+    "text": "Lá la là lá la là lá la là la",
+    "words": [
+      {
+        "text": "Lá",
+        "startTime": 180.20872,
+        "endTime": 180.435267
+      },
+      {
+        "text": "la",
+        "startTime": 180.435267,
+        "endTime": 181.193227
+      },
+      {
+        "text": "là",
+        "startTime": 181.193227,
+        "endTime": 181.193227
+      },
+      {
+        "text": "lá",
+        "startTime": 181.193227,
+        "endTime": 181.9023
+      },
+      {
+        "text": "la",
+        "startTime": 181.9023,
+        "endTime": 182.538443
+      },
+      {
+        "text": "là",
+        "startTime": 182.538443,
+        "endTime": 183.261578
+      },
+      {
+        "text": "lá",
+        "startTime": 183.261578,
+        "endTime": 183.759777
+      },
+      {
+        "text": "la",
+        "startTime": 183.759777,
+        "endTime": 183.759777
+      },
+      {
+        "text": "là",
+        "startTime": 183.759777,
+        "endTime": 184.715206
+      },
+      {
+        "text": "la",
+        "startTime": 184.715206,
+        "endTime": 184.715206
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 185.729471,
+    "endTime": 187.076829,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 185.729471,
+        "endTime": 185.895764
+      },
+      {
+        "text": "bước",
+        "startTime": 185.895764,
+        "endTime": 185.895764
+      },
+      {
+        "text": "đi,",
+        "startTime": 185.895764,
+        "endTime": 185.895764
+      },
+      {
+        "text": "cứ",
+        "startTime": 185.895764,
+        "endTime": 187.076829
+      },
+      {
+        "text": "bước",
+        "startTime": 187.076829,
+        "endTime": 187.076829
+      },
+      {
+        "text": "đi!)",
+        "startTime": 187.076829,
+        "endTime": 187.076829
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 187.368129,
+    "endTime": 191.350915,
+    "text": "Lá la là lá la là lá la là la (cứ bước đi, cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "Lá",
+        "startTime": 187.368129,
+        "endTime": 187.474279
+      },
+      {
+        "text": "la",
+        "startTime": 187.474279,
+        "endTime": 187.474279
+      },
+      {
+        "text": "là",
+        "startTime": 187.474279,
+        "endTime": 188.054015
+      },
+      {
+        "text": "lá",
+        "startTime": 188.054015,
+        "endTime": 188.054015
+      },
+      {
+        "text": "la",
+        "startTime": 188.054015,
+        "endTime": 189.029493
+      },
+      {
+        "text": "là",
+        "startTime": 189.029493,
+        "endTime": 189.029493
+      },
+      {
+        "text": "lá",
+        "startTime": 189.029493,
+        "endTime": 189.968839
+      },
+      {
+        "text": "la",
+        "startTime": 189.968839,
+        "endTime": 189.968839
+      },
+      {
+        "text": "là",
+        "startTime": 189.968839,
+        "endTime": 189.968839
+      },
+      {
+        "text": "la",
+        "startTime": 189.968839,
+        "endTime": 189.968839
+      },
+      {
+        "text": "(cứ",
+        "startTime": 189.968839,
+        "endTime": 189.968839
+      },
+      {
+        "text": "bước",
+        "startTime": 189.968839,
+        "endTime": 189.968839
+      },
+      {
+        "text": "đi,",
+        "startTime": 189.968839,
+        "endTime": 189.968839
+      },
+      {
+        "text": "cứ",
+        "startTime": 189.968839,
+        "endTime": 189.968839
+      },
+      {
+        "text": "bước",
+        "startTime": 189.968839,
+        "endTime": 189.968839
+      },
+      {
+        "text": "đi,",
+        "startTime": 189.968839,
+        "endTime": 191.350915
+      },
+      {
+        "text": "cứ",
+        "startTime": 191.350915,
+        "endTime": 191.350915
+      },
+      {
+        "text": "bước",
+        "startTime": 191.350915,
+        "endTime": 191.350915
+      },
+      {
+        "text": "đi!)",
+        "startTime": 191.350915,
+        "endTime": 191.350915
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 193.716393,
+    "endTime": 196.504665,
+    "text": "Đừng buồn nha, đừng sầu nha, đừng phiền lo, đừng gục ngã, đừng bật khóc",
+    "words": [
+      {
+        "text": "Đừng",
+        "startTime": 193.716393,
+        "endTime": 193.716393
+      },
+      {
+        "text": "buồn",
+        "startTime": 193.716393,
+        "endTime": 193.803655
+      },
+      {
+        "text": "nha,",
+        "startTime": 193.803655,
+        "endTime": 193.803655
+      },
+      {
+        "text": "đừng",
+        "startTime": 193.803655,
+        "endTime": 193.803655
+      },
+      {
+        "text": "sầu",
+        "startTime": 193.803655,
+        "endTime": 194.926721
+      },
+      {
+        "text": "nha,",
+        "startTime": 194.926721,
+        "endTime": 195.86137
+      },
+      {
+        "text": "đừng",
+        "startTime": 195.86137,
+        "endTime": 195.86137
+      },
+      {
+        "text": "phiền",
+        "startTime": 195.86137,
+        "endTime": 195.86137
+      },
+      {
+        "text": "lo,",
+        "startTime": 195.86137,
+        "endTime": 195.86137
+      },
+      {
+        "text": "đừng",
+        "startTime": 195.86137,
+        "endTime": 195.86137
+      },
+      {
+        "text": "gục",
+        "startTime": 195.86137,
+        "endTime": 195.86137
+      },
+      {
+        "text": "ngã,",
+        "startTime": 195.86137,
+        "endTime": 196.504665
+      },
+      {
+        "text": "đừng",
+        "startTime": 196.504665,
+        "endTime": 196.504665
+      },
+      {
+        "text": "bật",
+        "startTime": 196.504665,
+        "endTime": 196.504665
+      },
+      {
+        "text": "khóc",
+        "startTime": 196.504665,
+        "endTime": 196.504665
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 198.042411,
+    "endTime": 199.602651,
+    "text": "Vì mọi thứ, sẽ oke mà!",
+    "words": [
+      {
+        "text": "Vì",
+        "startTime": 198.042411,
+        "endTime": 198.042411
+      },
+      {
+        "text": "mọi",
+        "startTime": 198.042411,
+        "endTime": 198.042411
+      },
+      {
+        "text": "thứ,",
+        "startTime": 198.042411,
+        "endTime": 199.070608
+      },
+      {
+        "text": "sẽ",
+        "startTime": 199.070608,
+        "endTime": 199.602651
+      },
+      {
+        "text": "oke",
+        "startTime": 199.602651,
+        "endTime": 199.602651
+      },
+      {
+        "text": "mà!",
+        "startTime": 199.602651,
+        "endTime": 199.602651
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 200.455509,
+    "endTime": 205.289479,
+    "text": "Điều gì đến, rồi sẽ đến, ngày buồn sẽ, vội tan biến, cầu vồng đến",
+    "words": [
+      {
+        "text": "Điều",
+        "startTime": 200.455509,
+        "endTime": 200.455509
+      },
+      {
+        "text": "gì",
+        "startTime": 200.455509,
+        "endTime": 200.529261
+      },
+      {
+        "text": "đến,",
+        "startTime": 200.529261,
+        "endTime": 200.529261
+      },
+      {
+        "text": "rồi",
+        "startTime": 200.529261,
+        "endTime": 200.529261
+      },
+      {
+        "text": "sẽ",
+        "startTime": 200.529261,
+        "endTime": 201.572693
+      },
+      {
+        "text": "đến,",
+        "startTime": 201.572693,
+        "endTime": 202.389051
+      },
+      {
+        "text": "ngày",
+        "startTime": 202.389051,
+        "endTime": 202.389051
+      },
+      {
+        "text": "buồn",
+        "startTime": 202.389051,
+        "endTime": 202.389051
+      },
+      {
+        "text": "sẽ,",
+        "startTime": 202.389051,
+        "endTime": 202.389051
+      },
+      {
+        "text": "vội",
+        "startTime": 202.389051,
+        "endTime": 202.389051
+      },
+      {
+        "text": "tan",
+        "startTime": 202.389051,
+        "endTime": 202.986027
+      },
+      {
+        "text": "biến,",
+        "startTime": 202.986027,
+        "endTime": 203.851899
+      },
+      {
+        "text": "cầu",
+        "startTime": 203.851899,
+        "endTime": 204.641677
+      },
+      {
+        "text": "vồng",
+        "startTime": 204.641677,
+        "endTime": 205.289479
+      },
+      {
+        "text": "đến",
+        "startTime": 205.289479,
+        "endTime": 205.289479
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 204.790252,
+    "endTime": 206.607049,
+    "text": "Cùng mây gió, giữa mưa thiên hà!",
+    "words": [
+      {
+        "text": "Cùng",
+        "startTime": 204.790252,
+        "endTime": 204.790252
+      },
+      {
+        "text": "mây",
+        "startTime": 204.790252,
+        "endTime": 204.790252
+      },
+      {
+        "text": "gió,",
+        "startTime": 204.790252,
+        "endTime": 205.833306
+      },
+      {
+        "text": "giữa",
+        "startTime": 205.833306,
+        "endTime": 205.833306
+      },
+      {
+        "text": "mưa",
+        "startTime": 205.833306,
+        "endTime": 205.833306
+      },
+      {
+        "text": "thiên",
+        "startTime": 205.833306,
+        "endTime": 206.607049
+      },
+      {
+        "text": "hà!",
+        "startTime": 206.607049,
+        "endTime": 206.607049
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 207.0165,
+    "endTime": 210.547895,
+    "text": "Đừng buồn nha, đừng sầu nha, đừng phiền lo, đừng gục ngã, đừng bật khóc",
+    "words": [
+      {
+        "text": "Đừng",
+        "startTime": 207.0165,
+        "endTime": 207.126291
+      },
+      {
+        "text": "buồn",
+        "startTime": 207.126291,
+        "endTime": 207.126291
+      },
+      {
+        "text": "nha,",
+        "startTime": 207.126291,
+        "endTime": 207.126291
+      },
+      {
+        "text": "đừng",
+        "startTime": 207.126291,
+        "endTime": 207.126291
+      },
+      {
+        "text": "sầu",
+        "startTime": 207.126291,
+        "endTime": 208.269332
+      },
+      {
+        "text": "nha,",
+        "startTime": 208.269332,
+        "endTime": 208.269332
+      },
+      {
+        "text": "đừng",
+        "startTime": 208.269332,
+        "endTime": 208.269332
+      },
+      {
+        "text": "phiền",
+        "startTime": 208.269332,
+        "endTime": 208.269332
+      },
+      {
+        "text": "lo,",
+        "startTime": 208.269332,
+        "endTime": 208.269332
+      },
+      {
+        "text": "đừng",
+        "startTime": 208.269332,
+        "endTime": 209.418756
+      },
+      {
+        "text": "gục",
+        "startTime": 209.418756,
+        "endTime": 209.418756
+      },
+      {
+        "text": "ngã,",
+        "startTime": 209.418756,
+        "endTime": 209.418756
+      },
+      {
+        "text": "đừng",
+        "startTime": 209.418756,
+        "endTime": 209.418756
+      },
+      {
+        "text": "bật",
+        "startTime": 209.418756,
+        "endTime": 210.547895
+      },
+      {
+        "text": "khóc",
+        "startTime": 210.547895,
+        "endTime": 210.547895
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 211.36108,
+    "endTime": 213.235165,
+    "text": "Vì mọi thứ, sẽ oke mà!",
+    "words": [
+      {
+        "text": "Vì",
+        "startTime": 211.36108,
+        "endTime": 211.36108
+      },
+      {
+        "text": "mọi",
+        "startTime": 211.36108,
+        "endTime": 211.36108
+      },
+      {
+        "text": "thứ,",
+        "startTime": 211.36108,
+        "endTime": 212.114358
+      },
+      {
+        "text": "sẽ",
+        "startTime": 212.114358,
+        "endTime": 212.42488
+      },
+      {
+        "text": "oke",
+        "startTime": 212.42488,
+        "endTime": 213.235165
+      },
+      {
+        "text": "mà!",
+        "startTime": 213.235165,
+        "endTime": 213.235165
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 213.700922,
+    "endTime": 215.787094,
+    "text": "Điều gì đến, rồi sẽ đến, ngày buồn sẽ, vội tan biến, cầu vồng đến",
+    "words": [
+      {
+        "text": "Điều",
+        "startTime": 213.700922,
+        "endTime": 213.700922
+      },
+      {
+        "text": "gì",
+        "startTime": 213.700922,
+        "endTime": 213.700922
+      },
+      {
+        "text": "đến,",
+        "startTime": 213.700922,
+        "endTime": 213.700922
+      },
+      {
+        "text": "rồi",
+        "startTime": 213.700922,
+        "endTime": 213.700922
+      },
+      {
+        "text": "sẽ",
+        "startTime": 213.700922,
+        "endTime": 214.921571
+      },
+      {
+        "text": "đến,",
+        "startTime": 214.921571,
+        "endTime": 214.921571
+      },
+      {
+        "text": "ngày",
+        "startTime": 214.921571,
+        "endTime": 214.921571
+      },
+      {
+        "text": "buồn",
+        "startTime": 214.921571,
+        "endTime": 214.921571
+      },
+      {
+        "text": "sẽ,",
+        "startTime": 214.921571,
+        "endTime": 215.787094
+      },
+      {
+        "text": "vội",
+        "startTime": 215.787094,
+        "endTime": 215.787094
+      },
+      {
+        "text": "tan",
+        "startTime": 215.787094,
+        "endTime": 215.787094
+      },
+      {
+        "text": "biến,",
+        "startTime": 215.787094,
+        "endTime": 215.787094
+      },
+      {
+        "text": "cầu",
+        "startTime": 215.787094,
+        "endTime": 215.787094
+      },
+      {
+        "text": "vồng",
+        "startTime": 215.787094,
+        "endTime": 215.787094
+      },
+      {
+        "text": "đến",
+        "startTime": 215.787094,
+        "endTime": 215.787094
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 217.668225,
+    "endTime": 219.689645,
+    "text": "Cùng mây gió, giữa mưa thiên hà!",
+    "words": [
+      {
+        "text": "Cùng",
+        "startTime": 217.668225,
+        "endTime": 217.881989
+      },
+      {
+        "text": "mây",
+        "startTime": 217.881989,
+        "endTime": 218.772632
+      },
+      {
+        "text": "gió,",
+        "startTime": 218.772632,
+        "endTime": 218.772632
+      },
+      {
+        "text": "giữa",
+        "startTime": 218.772632,
+        "endTime": 218.772632
+      },
+      {
+        "text": "mưa",
+        "startTime": 218.772632,
+        "endTime": 219.689645
+      },
+      {
+        "text": "thiên",
+        "startTime": 219.689645,
+        "endTime": 219.689645
+      },
+      {
+        "text": "hà!",
+        "startTime": 219.689645,
+        "endTime": 219.689645
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 221.985369,
+    "endTime": 223.977794,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 221.985369,
+        "endTime": 221.985369
+      },
+      {
+        "text": "bước",
+        "startTime": 221.985369,
+        "endTime": 223.208911
+      },
+      {
+        "text": "đi,",
+        "startTime": 223.208911,
+        "endTime": 223.208911
+      },
+      {
+        "text": "cứ",
+        "startTime": 223.208911,
+        "endTime": 223.977794
+      },
+      {
+        "text": "bước",
+        "startTime": 223.977794,
+        "endTime": 223.977794
+      },
+      {
+        "text": "đi!)",
+        "startTime": 223.977794,
+        "endTime": 223.977794
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 224.264107,
+    "endTime": 225.493447,
+    "text": "(Cứ bước đi, ehh!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 224.264107,
+        "endTime": 224.504513
+      },
+      {
+        "text": "bước",
+        "startTime": 224.504513,
+        "endTime": 225.493447
+      },
+      {
+        "text": "đi,",
+        "startTime": 225.493447,
+        "endTime": 225.493447
+      },
+      {
+        "text": "ehh!)",
+        "startTime": 225.493447,
+        "endTime": 225.493447
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 227.966607,
+    "endTime": 229.700799,
+    "text": "(Cứ bước đi, cứ bước đi!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 227.966607,
+        "endTime": 227.966607
+      },
+      {
+        "text": "bước",
+        "startTime": 227.966607,
+        "endTime": 228.838688
+      },
+      {
+        "text": "đi,",
+        "startTime": 228.838688,
+        "endTime": 228.920986
+      },
+      {
+        "text": "cứ",
+        "startTime": 228.920986,
+        "endTime": 228.920986
+      },
+      {
+        "text": "bước",
+        "startTime": 228.920986,
+        "endTime": 229.700799
+      },
+      {
+        "text": "đi!)",
+        "startTime": 229.700799,
+        "endTime": 229.700799
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 231.272345,
+    "endTime": 233.372617,
+    "text": "(Cứ bước đi, ehh!)",
+    "words": [
+      {
+        "text": "(Cứ",
+        "startTime": 231.272345,
+        "endTime": 231.272345
+      },
+      {
+        "text": "bước",
+        "startTime": 231.272345,
+        "endTime": 232.501448
+      },
+      {
+        "text": "đi,",
+        "startTime": 232.501448,
+        "endTime": 233.372617
+      },
+      {
+        "text": "ehh!)",
+        "startTime": 233.372617,
+        "endTime": 233.372617
+      }
+    ]
+  }
 ]
