@@ -1,3154 +1,3094 @@
 [
   {
-    "section": "Verse",
-    "startTime": 0,
-    "endTime": 0,
-    "text": "#Verse",
+    "section": "intro",
+    "startTime": 0.624673,
+    "endTime": 1.110559,
+    "text": "Daisymajor Baby",
     "words": [
       {
-        "text": "#Verse",
-        "startTime": null,
-        "endTime": null
+        "text": "Daisymajor",
+        "startTime": 0.624673,
+        "endTime": 1.110559
+      },
+      {
+        "text": "Baby",
+        "startTime": 1.110559,
+        "endTime": 1.110559
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 2.713076,
-    "endTime": 4.436492,
+    "section": "verse",
+    "startTime": 2.809217,
+    "endTime": 4.379718,
     "text": "Hôm nay trời có mưa?",
     "words": [
       {
         "text": "Hôm",
-        "startTime": 2.713076,
-        "endTime": 3.350633
+        "startTime": 2.809217,
+        "endTime": 3.33246
       },
       {
         "text": "nay",
-        "startTime": 3.350633,
-        "endTime": 3.950162
+        "startTime": 3.33246,
+        "endTime": 3.878411
       },
       {
         "text": "trời",
-        "startTime": 3.950162,
-        "endTime": 4.248503
+        "startTime": 3.878411,
+        "endTime": 4.140885
       },
       {
         "text": "có",
-        "startTime": 4.248503,
-        "endTime": 4.436492
+        "startTime": 4.140885,
+        "endTime": 4.379718
       },
       {
         "text": "mưa?",
-        "startTime": 4.436492,
-        "endTime": 4.436492
+        "startTime": 4.379718,
+        "endTime": 4.379718
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 5.212009,
-    "endTime": 6.461593,
-    "text": "Em nhớ mang dù theo",
+    "section": "verse",
+    "startTime": 5.135038,
+    "endTime": 6.462778,
+    "text": "Em nhớ đem dù theo",
     "words": [
       {
         "text": "Em",
-        "startTime": 5.212009,
-        "endTime": 5.565815
+        "startTime": 5.135038,
+        "endTime": 5.563486
       },
       {
         "text": "nhớ",
-        "startTime": 5.565815,
-        "endTime": 5.782676
+        "startTime": 5.563486,
+        "endTime": 5.79263
       },
       {
-        "text": "mang",
-        "startTime": 5.782676,
-        "endTime": 6.12765
+        "text": "đem",
+        "startTime": 5.79263,
+        "endTime": 6.117886
       },
       {
         "text": "dù",
-        "startTime": 6.12765,
-        "endTime": 6.461593
+        "startTime": 6.117886,
+        "endTime": 6.462778
       },
       {
         "text": "theo",
-        "startTime": 6.461593,
-        "endTime": 6.461593
+        "startTime": 6.462778,
+        "endTime": 6.462778
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 8.012146,
-    "endTime": 11.570993,
+    "section": "verse",
+    "startTime": 7.961118,
+    "endTime": 11.586415,
     "text": "Anh vẫn thường đãng trí nên lại ướt đẫm",
     "words": [
       {
         "text": "Anh",
-        "startTime": 8.012146,
-        "endTime": 8.658329
+        "startTime": 7.961118,
+        "endTime": 8.622134
       },
       {
         "text": "vẫn",
-        "startTime": 8.658329,
-        "endTime": 9.239463
+        "startTime": 8.622134,
+        "endTime": 9.296632
       },
       {
         "text": "thường",
-        "startTime": 9.239463,
-        "endTime": 9.521635
+        "startTime": 9.296632,
+        "endTime": 9.580309
       },
       {
         "text": "đãng",
-        "startTime": 9.521635,
-        "endTime": 9.691997
+        "startTime": 9.580309,
+        "endTime": 9.741855
       },
       {
         "text": "trí",
-        "startTime": 9.691997,
-        "endTime": 10.248715
+        "startTime": 9.741855,
+        "endTime": 10.298444
       },
       {
         "text": "nên",
-        "startTime": 10.248715,
-        "endTime": 10.632144
+        "startTime": 10.298444,
+        "endTime": 10.61384
       },
       {
         "text": "lại",
-        "startTime": 10.632144,
-        "endTime": 11.153664
+        "startTime": 10.61384,
+        "endTime": 11.137007
       },
       {
         "text": "ướt",
-        "startTime": 11.153664,
-        "endTime": 11.570993
+        "startTime": 11.137007,
+        "endTime": 11.586415
       },
       {
         "text": "đẫm",
-        "startTime": 11.570993,
-        "endTime": 11.570993
+        "startTime": 11.586415,
+        "endTime": 11.586415
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 13.312529,
-    "endTime": 15.198126,
+    "section": "verse",
+    "startTime": 13.277332,
+    "endTime": 15.189774,
     "text": "Quanh em thế giới rộn ràng",
     "words": [
       {
         "text": "Quanh",
-        "startTime": 13.312529,
-        "endTime": 13.864226
+        "startTime": 13.277332,
+        "endTime": 13.878323
       },
       {
         "text": "em",
-        "startTime": 13.864226,
-        "endTime": 14.459405
+        "startTime": 13.878323,
+        "endTime": 14.443062
       },
       {
         "text": "thế",
-        "startTime": 14.459405,
-        "endTime": 14.686762
+        "startTime": 14.443062,
+        "endTime": 14.670227
       },
       {
         "text": "giới",
-        "startTime": 14.686762,
-        "endTime": 14.995157
+        "startTime": 14.670227,
+        "endTime": 14.965659
       },
       {
         "text": "rộn",
-        "startTime": 14.995157,
-        "endTime": 15.198126
+        "startTime": 14.965659,
+        "endTime": 15.189774
       },
       {
         "text": "ràng",
-        "startTime": 15.198126,
-        "endTime": 15.198126
+        "startTime": 15.189774,
+        "endTime": 15.189774
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 15.964794,
-    "endTime": 17.832359,
+    "section": "verse",
+    "startTime": 16.021343,
+    "endTime": 17.879632,
     "text": "Sớm ban mai cũng nhanh hóa muộn màng",
     "words": [
       {
         "text": "Sớm",
-        "startTime": 15.964794,
-        "endTime": 16.309717
+        "startTime": 16.021343,
+        "endTime": 16.312563
       },
       {
         "text": "ban",
-        "startTime": 16.309717,
-        "endTime": 16.486592
+        "startTime": 16.312563,
+        "endTime": 16.531771
       },
       {
         "text": "mai",
-        "startTime": 16.486592,
-        "endTime": 16.797958
+        "startTime": 16.531771,
+        "endTime": 16.881937
       },
       {
         "text": "cũng",
-        "startTime": 16.797958,
-        "endTime": 17.110319
+        "startTime": 16.881937,
+        "endTime": 17.172925
       },
       {
         "text": "nhanh",
-        "startTime": 17.110319,
-        "endTime": 17.343488
+        "startTime": 17.172925,
+        "endTime": 17.386998
       },
       {
         "text": "hóa",
-        "startTime": 17.343488,
-        "endTime": 17.637318
+        "startTime": 17.386998,
+        "endTime": 17.688924
       },
       {
         "text": "muộn",
-        "startTime": 17.637318,
-        "endTime": 17.832359
+        "startTime": 17.688924,
+        "endTime": 17.879632
       },
       {
         "text": "màng",
-        "startTime": 17.832359,
-        "endTime": 17.832359
+        "startTime": 17.879632,
+        "endTime": 17.879632
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 18.239085,
-    "endTime": 20.89975,
+    "section": "verse",
+    "startTime": 18.304989,
+    "endTime": 20.885804,
     "text": "Nên em hơi mệt rồi đúng không?",
     "words": [
       {
         "text": "Nên",
-        "startTime": 18.239085,
-        "endTime": 18.606539
+        "startTime": 18.304989,
+        "endTime": 18.668611
       },
       {
         "text": "em",
-        "startTime": 18.606539,
-        "endTime": 19.102365
+        "startTime": 18.668611,
+        "endTime": 19.199202
       },
       {
         "text": "hơi",
-        "startTime": 19.102365,
-        "endTime": 19.52296
+        "startTime": 19.199202,
+        "endTime": 19.607549
       },
       {
         "text": "mệt",
-        "startTime": 19.52296,
-        "endTime": 20.156533
+        "startTime": 19.607549,
+        "endTime": 20.294189
       },
       {
         "text": "rồi",
-        "startTime": 20.156533,
-        "endTime": 20.538962
+        "startTime": 20.294189,
+        "endTime": 20.579444
       },
       {
         "text": "đúng",
-        "startTime": 20.538962,
-        "endTime": 20.89975
+        "startTime": 20.579444,
+        "endTime": 20.885804
       },
       {
         "text": "không?",
-        "startTime": 20.89975,
-        "endTime": 20.89975
+        "startTime": 20.885804,
+        "endTime": 20.885804
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 23.937571,
-    "endTime": 24.5618,
+    "section": "verse",
+    "startTime": 23.878387,
+    "endTime": 24.612098,
     "text": "Dễ thôi mà!",
     "words": [
       {
         "text": "Dễ",
-        "startTime": 23.937571,
-        "endTime": 24.199304
+        "startTime": 23.878387,
+        "endTime": 24.260717
       },
       {
         "text": "thôi",
-        "startTime": 24.199304,
-        "endTime": 24.5618
+        "startTime": 24.260717,
+        "endTime": 24.612098
       },
       {
         "text": "mà!",
-        "startTime": 24.5618,
-        "endTime": 24.5618
+        "startTime": 24.612098,
+        "endTime": 24.612098
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 25.93628,
-    "endTime": 27.932538,
+    "section": "verse",
+    "startTime": 25.999847,
+    "endTime": 27.906963,
     "text": "Em đã có anh bên cạnh em",
     "words": [
       {
         "text": "Em",
-        "startTime": 25.93628,
-        "endTime": 26.224678
+        "startTime": 25.999847,
+        "endTime": 26.286938
       },
       {
         "text": "đã",
-        "startTime": 26.224678,
-        "endTime": 26.577793
+        "startTime": 26.286938,
+        "endTime": 26.645449
       },
       {
         "text": "có",
-        "startTime": 26.577793,
-        "endTime": 26.935875
+        "startTime": 26.645449,
+        "endTime": 26.958695
       },
       {
         "text": "anh",
-        "startTime": 26.935875,
-        "endTime": 27.243343
+        "startTime": 26.958695,
+        "endTime": 27.303821
       },
       {
         "text": "bên",
-        "startTime": 27.243343,
-        "endTime": 27.591593
+        "startTime": 27.303821,
+        "endTime": 27.615762
       },
       {
         "text": "cạnh",
-        "startTime": 27.591593,
-        "endTime": 27.932538
+        "startTime": 27.615762,
+        "endTime": 27.906963
       },
       {
         "text": "em",
-        "startTime": 27.932538,
-        "endTime": 27.932538
+        "startTime": 27.906963,
+        "endTime": 27.906963
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 28.528802,
-    "endTime": 29.905808,
+    "section": "verse",
+    "startTime": 28.641862,
+    "endTime": 29.888354,
     "text": "Những điều khó trong đời",
     "words": [
       {
         "text": "Những",
-        "startTime": 28.528802,
-        "endTime": 28.897235
+        "startTime": 28.641862,
+        "endTime": 28.939353
       },
       {
         "text": "điều",
-        "startTime": 28.897235,
-        "endTime": 29.248907
+        "startTime": 28.939353,
+        "endTime": 29.315447
       },
       {
         "text": "khó",
-        "startTime": 29.248907,
-        "endTime": 29.572332
+        "startTime": 29.315447,
+        "endTime": 29.571194
       },
       {
         "text": "trong",
-        "startTime": 29.572332,
-        "endTime": 29.905808
+        "startTime": 29.571194,
+        "endTime": 29.888354
       },
       {
         "text": "đời",
-        "startTime": 29.905808,
-        "endTime": 29.905808
+        "startTime": 29.888354,
+        "endTime": 29.888354
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 30.49459,
-    "endTime": 31.251107,
+    "section": "verse",
+    "startTime": 30.463367,
+    "endTime": 31.29987,
     "text": "Dù trái ý trời",
     "words": [
       {
         "text": "Dù",
-        "startTime": 30.49459,
-        "endTime": 30.67307
+        "startTime": 30.463367,
+        "endTime": 30.625726
       },
       {
         "text": "trái",
-        "startTime": 30.67307,
-        "endTime": 30.942078
+        "startTime": 30.625726,
+        "endTime": 30.964793
       },
       {
         "text": "ý",
-        "startTime": 30.942078,
-        "endTime": 31.251107
+        "startTime": 30.964793,
+        "endTime": 31.29987
       },
       {
         "text": "trời",
-        "startTime": 31.251107,
-        "endTime": 31.251107
+        "startTime": 31.29987,
+        "endTime": 31.29987
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 31.558128,
-    "endTime": 33.914528,
+    "section": "verse",
+    "startTime": 31.626967,
+    "endTime": 33.977516,
     "text": "Vì em anh sẽ tới",
     "words": [
       {
         "text": "Vì",
-        "startTime": 31.558128,
-        "endTime": 31.949891
+        "startTime": 31.626967,
+        "endTime": 31.947495
       },
       {
         "text": "em",
-        "startTime": 31.949891,
-        "endTime": 32.64723
+        "startTime": 31.947495,
+        "endTime": 32.670559
       },
       {
         "text": "anh",
-        "startTime": 32.64723,
-        "endTime": 33.226116
+        "startTime": 32.670559,
+        "endTime": 33.307797
       },
       {
         "text": "sẽ",
-        "startTime": 33.226116,
-        "endTime": 33.914528
+        "startTime": 33.307797,
+        "endTime": 33.977516
       },
       {
         "text": "tới",
-        "startTime": 33.914528,
-        "endTime": 33.914528
+        "startTime": 33.977516,
+        "endTime": 33.977516
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 34.61826,
-    "endTime": 35.238227,
+    "section": "verse",
+    "startTime": 34.649161,
+    "endTime": 35.298886,
     "text": "Nếu em cần",
     "words": [
       {
         "text": "Nếu",
-        "startTime": 34.61826,
-        "endTime": 34.908475
+        "startTime": 34.649161,
+        "endTime": 34.951118
       },
       {
         "text": "em",
-        "startTime": 34.908475,
-        "endTime": 35.238227
+        "startTime": 34.951118,
+        "endTime": 35.298886
       },
       {
         "text": "cần",
-        "startTime": 35.238227,
-        "endTime": 35.238227
+        "startTime": 35.298886,
+        "endTime": 35.298886
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 36.620416,
-    "endTime": 38.551379,
+    "section": "verse",
+    "startTime": 36.777759,
+    "endTime": 38.617027,
     "text": "Nơi để cất hết mọi phiền lo",
     "words": [
       {
         "text": "Nơi",
-        "startTime": 36.620416,
-        "endTime": 36.923017
+        "startTime": 36.777759,
+        "endTime": 37.023462
       },
       {
         "text": "để",
-        "startTime": 36.923017,
-        "endTime": 37.251616
+        "startTime": 37.023462,
+        "endTime": 37.333216
       },
       {
         "text": "cất",
-        "startTime": 37.251616,
-        "endTime": 37.604182
+        "startTime": 37.333216,
+        "endTime": 37.66202
       },
       {
         "text": "hết",
-        "startTime": 37.604182,
-        "endTime": 37.925102
+        "startTime": 37.66202,
+        "endTime": 37.984412
       },
       {
         "text": "mọi",
-        "startTime": 37.925102,
-        "endTime": 38.25679
+        "startTime": 37.984412,
+        "endTime": 38.325069
       },
       {
         "text": "phiền",
-        "startTime": 38.25679,
-        "endTime": 38.551379
+        "startTime": 38.325069,
+        "endTime": 38.617027
       },
       {
         "text": "lo",
-        "startTime": 38.551379,
-        "endTime": 38.551379
+        "startTime": 38.617027,
+        "endTime": 38.617027
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 39.275563,
-    "endTime": 40.415776,
+    "section": "verse",
+    "startTime": 39.263962,
+    "endTime": 40.47883,
     "text": "Xin hãy nghĩ đến anh",
     "words": [
       {
         "text": "Xin",
-        "startTime": 39.275563,
-        "endTime": 39.581304
+        "startTime": 39.263962,
+        "endTime": 39.624266
       },
       {
         "text": "hãy",
-        "startTime": 39.581304,
-        "endTime": 39.941357
+        "startTime": 39.624266,
+        "endTime": 39.985985
       },
       {
         "text": "nghĩ",
-        "startTime": 39.941357,
-        "endTime": 40.25393
+        "startTime": 39.985985,
+        "endTime": 40.296704
       },
       {
         "text": "đến",
-        "startTime": 40.25393,
-        "endTime": 40.415776
+        "startTime": 40.296704,
+        "endTime": 40.47883
       },
       {
         "text": "anh",
-        "startTime": 40.415776,
-        "endTime": 40.415776
+        "startTime": 40.47883,
+        "endTime": 40.47883
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 41.26514,
-    "endTime": 42.432913,
+    "section": "verse",
+    "startTime": 41.316422,
+    "endTime": 42.582936,
     "text": "Nghĩ đến anh một lần",
     "words": [
       {
         "text": "Nghĩ",
-        "startTime": 41.26514,
-        "endTime": 41.600576
+        "startTime": 41.316422,
+        "endTime": 41.654461
       },
       {
         "text": "đến",
-        "startTime": 41.600576,
-        "endTime": 41.787121
+        "startTime": 41.654461,
+        "endTime": 41.865777
       },
       {
         "text": "anh",
-        "startTime": 41.787121,
-        "endTime": 42.156437
+        "startTime": 41.865777,
+        "endTime": 42.221646
       },
       {
         "text": "một",
-        "startTime": 42.156437,
-        "endTime": 42.432913
+        "startTime": 42.221646,
+        "endTime": 42.582936
       },
       {
         "text": "lần",
-        "startTime": 42.432913,
-        "endTime": 42.432913
+        "startTime": 42.582936,
+        "endTime": 42.582936
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 42.432913,
-    "endTime": 42.432913,
-    "text": "#Bridge",
-    "words": [
-      {
-        "text": "#Bridge",
-        "startTime": null,
-        "endTime": null
-      }
-    ]
-  },
-  {
-    "section": "Verse",
-    "startTime": 44.466157,
-    "endTime": 46.606409,
+    "section": "bridge",
+    "startTime": 44.526543,
+    "endTime": 46.625598,
     "text": "Em ơi sỏi đá thì chẳng biết đau",
     "words": [
       {
         "text": "Em",
-        "startTime": 44.466157,
-        "endTime": 44.809199
+        "startTime": 44.526543,
+        "endTime": 44.827118
       },
       {
         "text": "ơi",
-        "startTime": 44.809199,
-        "endTime": 45.116161
+        "startTime": 44.827118,
+        "endTime": 45.101401
       },
       {
         "text": "sỏi",
-        "startTime": 45.116161,
-        "endTime": 45.338415
+        "startTime": 45.101401,
+        "endTime": 45.328609
       },
       {
         "text": "đá",
-        "startTime": 45.338415,
-        "endTime": 45.645471
+        "startTime": 45.328609,
+        "endTime": 45.630099
       },
       {
         "text": "thì",
-        "startTime": 45.645471,
-        "endTime": 45.970233
+        "startTime": 45.630099,
+        "endTime": 45.934092
       },
       {
         "text": "chẳng",
-        "startTime": 45.970233,
-        "endTime": 46.272185
+        "startTime": 45.934092,
+        "endTime": 46.277782
       },
       {
         "text": "biết",
-        "startTime": 46.272185,
-        "endTime": 46.606409
+        "startTime": 46.277782,
+        "endTime": 46.625598
       },
       {
         "text": "đau",
-        "startTime": 46.606409,
-        "endTime": 46.606409
+        "startTime": 46.625598,
+        "endTime": 46.625598
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 47.134096,
-    "endTime": 49.262154,
+    "section": "bridge",
+    "startTime": 47.166445,
+    "endTime": 49.319258,
     "text": "Nên có gì để em phải đáng tiếc đâu?",
     "words": [
       {
         "text": "Nên",
-        "startTime": 47.134096,
-        "endTime": 47.313299
+        "startTime": 47.166445,
+        "endTime": 47.413112
       },
       {
         "text": "có",
-        "startTime": 47.313299,
-        "endTime": 47.49151
+        "startTime": 47.413112,
+        "endTime": 47.67461
       },
       {
         "text": "gì",
-        "startTime": 47.49151,
-        "endTime": 47.772263
+        "startTime": 47.67461,
+        "endTime": 47.877863
       },
       {
         "text": "để",
-        "startTime": 47.772263,
-        "endTime": 47.964523
+        "startTime": 47.877863,
+        "endTime": 48.06682
       },
       {
         "text": "em",
-        "startTime": 47.964523,
-        "endTime": 48.286028
+        "startTime": 48.06682,
+        "endTime": 48.339233
       },
       {
         "text": "phải",
-        "startTime": 48.286028,
-        "endTime": 48.585511
+        "startTime": 48.339233,
+        "endTime": 48.636361
       },
       {
         "text": "đáng",
-        "startTime": 48.585511,
-        "endTime": 48.897116
+        "startTime": 48.636361,
+        "endTime": 48.955932
       },
       {
         "text": "tiếc",
-        "startTime": 48.897116,
-        "endTime": 49.262154
+        "startTime": 48.955932,
+        "endTime": 49.319258
       },
       {
         "text": "đâu?",
-        "startTime": 49.262154,
-        "endTime": 49.262154
+        "startTime": 49.319258,
+        "endTime": 49.319258
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 49.909137,
-    "endTime": 51.952444,
+    "section": "bridge",
+    "startTime": 49.998525,
+    "endTime": 51.998187,
     "text": "Anh thích tự đón nhận những tổn thương",
     "words": [
       {
         "text": "Anh",
-        "startTime": 49.909137,
-        "endTime": 50.116761
+        "startTime": 49.998525,
+        "endTime": 50.17977
       },
       {
         "text": "thích",
-        "startTime": 50.116761,
-        "endTime": 50.444744
+        "startTime": 50.17977,
+        "endTime": 50.445121
       },
       {
         "text": "tự",
-        "startTime": 50.444744,
-        "endTime": 50.616118
+        "startTime": 50.445121,
+        "endTime": 50.640229
       },
       {
         "text": "đón",
-        "startTime": 50.616118,
-        "endTime": 50.942651
+        "startTime": 50.640229,
+        "endTime": 50.975757
       },
       {
         "text": "nhận",
-        "startTime": 50.942651,
-        "endTime": 51.255521
+        "startTime": 50.975757,
+        "endTime": 51.273502
       },
       {
         "text": "những",
-        "startTime": 51.255521,
-        "endTime": 51.606305
+        "startTime": 51.273502,
+        "endTime": 51.605233
       },
       {
         "text": "tổn",
-        "startTime": 51.606305,
-        "endTime": 51.952444
+        "startTime": 51.605233,
+        "endTime": 51.998187
       },
       {
         "text": "thương",
-        "startTime": 51.952444,
-        "endTime": 51.952444
+        "startTime": 51.998187,
+        "endTime": 51.998187
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 52.577555,
-    "endTime": 55.249525,
+    "section": "bridge",
+    "startTime": 52.653041,
+    "endTime": 55.201163,
     "text": "Nên em đừng lo đến anh. Lo đến anh!",
     "words": [
       {
         "text": "Nên",
-        "startTime": 52.577555,
-        "endTime": 52.841309
+        "startTime": 52.653041,
+        "endTime": 52.86972
       },
       {
         "text": "em",
-        "startTime": 52.841309,
-        "endTime": 53.064239
+        "startTime": 52.86972,
+        "endTime": 53.114283
       },
       {
         "text": "đừng",
-        "startTime": 53.064239,
-        "endTime": 53.263958
+        "startTime": 53.114283,
+        "endTime": 53.244495
       },
       {
         "text": "lo",
-        "startTime": 53.263958,
-        "endTime": 53.694929
+        "startTime": 53.244495,
+        "endTime": 53.7661
       },
       {
         "text": "đến",
-        "startTime": 53.694929,
-        "endTime": 53.900062
+        "startTime": 53.7661,
+        "endTime": 53.932161
       },
       {
         "text": "anh.",
-        "startTime": 53.900062,
-        "endTime": 54.530768
+        "startTime": 53.932161,
+        "endTime": 54.535454
       },
       {
         "text": "Lo",
-        "startTime": 54.530768,
-        "endTime": 55.056293
+        "startTime": 54.535454,
+        "endTime": 55.041674
       },
       {
         "text": "đến",
-        "startTime": 55.056293,
-        "endTime": 55.249525
+        "startTime": 55.041674,
+        "endTime": 55.201163
       },
       {
         "text": "anh!",
-        "startTime": 55.249525,
-        "endTime": 55.249525
+        "startTime": 55.201163,
+        "endTime": 55.201163
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 55.935542,
-    "endTime": 57.25548,
+    "section": "bridge",
+    "startTime": 55.927379,
+    "endTime": 57.141259,
     "text": "Em hãy cứ vui đi",
     "words": [
       {
         "text": "Em",
-        "startTime": 55.935542,
-        "endTime": 56.294576
+        "startTime": 55.927379,
+        "endTime": 56.239976
       },
       {
         "text": "hãy",
-        "startTime": 56.294576,
-        "endTime": 56.559383
+        "startTime": 56.239976,
+        "endTime": 56.587536
       },
       {
         "text": "cứ",
-        "startTime": 56.559383,
-        "endTime": 56.881919
+        "startTime": 56.587536,
+        "endTime": 56.933188
       },
       {
         "text": "vui",
-        "startTime": 56.881919,
-        "endTime": 57.25548
+        "startTime": 56.933188,
+        "endTime": 57.141259
       },
       {
         "text": "đi",
-        "startTime": 57.25548,
-        "endTime": 57.25548
+        "startTime": 57.141259,
+        "endTime": 57.141259
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 57.906775,
-    "endTime": 59.91744,
+    "section": "bridge",
+    "startTime": 57.865051,
+    "endTime": 59.870935,
     "text": "Yêu ai lắm khi thế giới diệu kì",
     "words": [
       {
         "text": "Yêu",
-        "startTime": 57.906775,
-        "endTime": 58.110146
+        "startTime": 57.865051,
+        "endTime": 58.216277
       },
       {
         "text": "ai",
-        "startTime": 58.110146,
-        "endTime": 58.447943
+        "startTime": 58.216277,
+        "endTime": 58.464722
       },
       {
         "text": "lắm",
-        "startTime": 58.447943,
-        "endTime": 58.648848
+        "startTime": 58.464722,
+        "endTime": 58.584779
       },
       {
         "text": "khi",
-        "startTime": 58.648848,
-        "endTime": 58.987268
+        "startTime": 58.584779,
+        "endTime": 58.971125
       },
       {
         "text": "thế",
-        "startTime": 58.987268,
-        "endTime": 59.300326
+        "startTime": 58.971125,
+        "endTime": 59.262469
       },
       {
         "text": "giới",
-        "startTime": 59.300326,
-        "endTime": 59.592037
+        "startTime": 59.262469,
+        "endTime": 59.584032
       },
       {
         "text": "diệu",
-        "startTime": 59.592037,
-        "endTime": 59.91744
+        "startTime": 59.584032,
+        "endTime": 59.870935
       },
       {
         "text": "kì",
-        "startTime": 59.91744,
-        "endTime": 59.91744
+        "startTime": 59.870935,
+        "endTime": 59.870935
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 60.591557,
-    "endTime": 62.554806,
+    "section": "bridge",
+    "startTime": 60.58255,
+    "endTime": 62.612014,
     "text": "Không có gì có thể cản ngăn em",
     "words": [
       {
         "text": "Không",
-        "startTime": 60.591557,
-        "endTime": 60.813299
+        "startTime": 60.58255,
+        "endTime": 60.871694
       },
       {
         "text": "có",
-        "startTime": 60.813299,
-        "endTime": 61.11722
+        "startTime": 60.871694,
+        "endTime": 61.101031
       },
       {
         "text": "gì",
-        "startTime": 61.11722,
-        "endTime": 61.332413
+        "startTime": 61.101031,
+        "endTime": 61.291289
       },
       {
         "text": "có",
-        "startTime": 61.332413,
-        "endTime": 61.590636
+        "startTime": 61.291289,
+        "endTime": 61.630711
       },
       {
         "text": "thể",
-        "startTime": 61.590636,
-        "endTime": 61.911069
+        "startTime": 61.630711,
+        "endTime": 61.967041
       },
       {
         "text": "cản",
-        "startTime": 61.911069,
-        "endTime": 62.24209
+        "startTime": 61.967041,
+        "endTime": 62.286021
       },
       {
         "text": "ngăn",
-        "startTime": 62.24209,
-        "endTime": 62.554806
+        "startTime": 62.286021,
+        "endTime": 62.612014
       },
       {
         "text": "em",
-        "startTime": 62.554806,
-        "endTime": 62.554806
+        "startTime": 62.612014,
+        "endTime": 62.612014
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 63.226377,
-    "endTime": 65.867688,
+    "section": "bridge",
+    "startTime": 63.251218,
+    "endTime": 65.79241,
     "text": "Nên em hãy cứ bước đi, cứ bước đi",
     "words": [
       {
         "text": "Nên",
-        "startTime": 63.226377,
-        "endTime": 63.459294
+        "startTime": 63.251218,
+        "endTime": 63.449036
       },
       {
         "text": "em",
-        "startTime": 63.459294,
-        "endTime": 63.792812
+        "startTime": 63.449036,
+        "endTime": 63.70516
       },
       {
         "text": "hãy",
-        "startTime": 63.792812,
-        "endTime": 63.978442
+        "startTime": 63.70516,
+        "endTime": 63.952275
       },
       {
         "text": "cứ",
-        "startTime": 63.978442,
-        "endTime": 64.388714
+        "startTime": 63.952275,
+        "endTime": 64.351899
       },
       {
         "text": "bước",
-        "startTime": 64.388714,
-        "endTime": 64.57369
+        "startTime": 64.351899,
+        "endTime": 64.564791
       },
       {
         "text": "đi,",
-        "startTime": 64.57369,
-        "endTime": 65.202228
+        "startTime": 64.564791,
+        "endTime": 65.209884
       },
       {
         "text": "cứ",
-        "startTime": 65.202228,
-        "endTime": 65.678597
+        "startTime": 65.209884,
+        "endTime": 65.65362
       },
       {
         "text": "bước",
-        "startTime": 65.678597,
-        "endTime": 65.867688
+        "startTime": 65.65362,
+        "endTime": 65.79241
       },
       {
         "text": "đi",
-        "startTime": 65.867688,
-        "endTime": 65.867688
+        "startTime": 65.79241,
+        "endTime": 65.79241
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 66.323369,
-    "endTime": 66.624481,
+    "section": "bridge",
+    "startTime": 66.161204,
+    "endTime": 66.480323,
     "text": "Em à!",
     "words": [
       {
         "text": "Em",
-        "startTime": 66.323369,
-        "endTime": 66.624481
+        "startTime": 66.161204,
+        "endTime": 66.480323
       },
       {
         "text": "à!",
-        "startTime": 66.624481,
-        "endTime": 66.624481
+        "startTime": 66.480323,
+        "endTime": 66.480323
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 66.624481,
-    "endTime": 66.624481,
-    "text": "#Rap",
-    "words": [
-      {
-        "text": "#Rap",
-        "startTime": null,
-        "endTime": null
-      }
-    ]
-  },
-  {
-    "section": "Verse",
-    "startTime": 66.933532,
-    "endTime": 69.228336,
+    "section": "rap",
+    "startTime": 66.74949,
+    "endTime": 68.966625,
     "text": "Em là loài hoa đẹp nhất, dù cho cỏ dại phủ quanh",
     "words": [
       {
         "text": "Em",
-        "startTime": 66.933532,
-        "endTime": 67.110826
+        "startTime": 66.74949,
+        "endTime": 66.993846
       },
       {
         "text": "là",
-        "startTime": 67.110826,
-        "endTime": 67.445259
+        "startTime": 66.993846,
+        "endTime": 67.196419
       },
       {
         "text": "loài",
-        "startTime": 67.445259,
-        "endTime": 67.627232
+        "startTime": 67.196419,
+        "endTime": 67.516876
       },
       {
         "text": "hoa",
-        "startTime": 67.627232,
-        "endTime": 67.807534
+        "startTime": 67.516876,
+        "endTime": 67.685996
       },
       {
         "text": "đẹp",
-        "startTime": 67.807534,
-        "endTime": 67.986372
+        "startTime": 67.685996,
+        "endTime": 67.845074
       },
       {
         "text": "nhất,",
-        "startTime": 67.986372,
-        "endTime": 68.262266
+        "startTime": 67.845074,
+        "endTime": 68.031915
       },
       {
         "text": "dù",
-        "startTime": 68.262266,
-        "endTime": 68.463013
+        "startTime": 68.031915,
+        "endTime": 68.210729
       },
       {
         "text": "cho",
-        "startTime": 68.463013,
-        "endTime": 68.548499
+        "startTime": 68.210729,
+        "endTime": 68.377327
       },
       {
         "text": "cỏ",
-        "startTime": 68.548499,
-        "endTime": 68.816942
+        "startTime": 68.377327,
+        "endTime": 68.530541
       },
       {
         "text": "dại",
-        "startTime": 68.816942,
-        "endTime": 69.017288
+        "startTime": 68.530541,
+        "endTime": 68.735066
       },
       {
         "text": "phủ",
-        "startTime": 69.017288,
-        "endTime": 69.228336
+        "startTime": 68.735066,
+        "endTime": 68.966625
       },
       {
         "text": "quanh",
-        "startTime": 69.228336,
-        "endTime": 69.228336
+        "startTime": 68.966625,
+        "endTime": 68.966625
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 69.447956,
-    "endTime": 71.927081,
+    "section": "rap",
+    "startTime": 69.234353,
+    "endTime": 71.340687,
     "text": "Anh đi tìm em giữa ngàn đau đớn ở trong cuộc đời của anh",
     "words": [
       {
         "text": "Anh",
-        "startTime": 69.447956,
-        "endTime": 69.637119
+        "startTime": 69.234353,
+        "endTime": 69.420628
       },
       {
         "text": "đi",
-        "startTime": 69.637119,
-        "endTime": 69.820222
+        "startTime": 69.420628,
+        "endTime": 69.588322
       },
       {
         "text": "tìm",
-        "startTime": 69.820222,
-        "endTime": 69.995192
+        "startTime": 69.588322,
+        "endTime": 69.743275
       },
       {
         "text": "em",
-        "startTime": 69.995192,
-        "endTime": 70.145426
+        "startTime": 69.743275,
+        "endTime": 69.906993
       },
       {
         "text": "giữa",
-        "startTime": 70.145426,
-        "endTime": 70.296977
+        "startTime": 69.906993,
+        "endTime": 70.062275
       },
       {
         "text": "ngàn",
-        "startTime": 70.296977,
-        "endTime": 70.474312
+        "startTime": 70.062275,
+        "endTime": 70.228464
       },
       {
         "text": "đau",
-        "startTime": 70.474312,
-        "endTime": 70.688805
+        "startTime": 70.228464,
+        "endTime": 70.392992
       },
       {
         "text": "đớn",
-        "startTime": 70.688805,
-        "endTime": 70.865725
+        "startTime": 70.392992,
+        "endTime": 70.555097
       },
       {
         "text": "ở",
-        "startTime": 70.865725,
-        "endTime": 71.040016
+        "startTime": 70.555097,
+        "endTime": 70.705903
       },
       {
         "text": "trong",
-        "startTime": 71.040016,
-        "endTime": 71.229414
+        "startTime": 70.705903,
+        "endTime": 70.868314
       },
       {
         "text": "cuộc",
-        "startTime": 71.229414,
-        "endTime": 71.385604
+        "startTime": 70.868314,
+        "endTime": 71.033784
       },
       {
         "text": "đời",
-        "startTime": 71.385604,
-        "endTime": 71.57377
+        "startTime": 71.033784,
+        "endTime": 71.212395
       },
       {
         "text": "của",
-        "startTime": 71.57377,
-        "endTime": 71.927081
+        "startTime": 71.212395,
+        "endTime": 71.340687
       },
       {
         "text": "anh",
-        "startTime": 71.927081,
-        "endTime": 71.927081
+        "startTime": 71.340687,
+        "endTime": 71.340687
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 72.109201,
-    "endTime": 74.52771,
+    "section": "rap",
+    "startTime": 71.609949,
+    "endTime": 73.896523,
     "text": "Anh đã từng tin mình đủ bản lĩnh và là vị vua của thời gian",
     "words": [
       {
         "text": "Anh",
-        "startTime": 72.109201,
-        "endTime": 72.28245
+        "startTime": 71.609949,
+        "endTime": 71.750267
       },
       {
         "text": "đã",
-        "startTime": 72.28245,
-        "endTime": 72.464588
+        "startTime": 71.750267,
+        "endTime": 71.963191
       },
       {
         "text": "từng",
-        "startTime": 72.464588,
-        "endTime": 72.638239
+        "startTime": 71.963191,
+        "endTime": 72.123113
       },
       {
         "text": "tin",
-        "startTime": 72.638239,
-        "endTime": 72.750715
+        "startTime": 72.123113,
+        "endTime": 72.287203
       },
       {
         "text": "mình",
-        "startTime": 72.750715,
-        "endTime": 72.98135
+        "startTime": 72.287203,
+        "endTime": 72.442318
       },
       {
         "text": "đủ",
-        "startTime": 72.98135,
-        "endTime": 73.148482
+        "startTime": 72.442318,
+        "endTime": 72.592418
       },
       {
         "text": "bản",
-        "startTime": 73.148482,
-        "endTime": 73.329766
+        "startTime": 72.592418,
+        "endTime": 72.774503
       },
       {
         "text": "lĩnh",
-        "startTime": 73.329766,
-        "endTime": 73.478319
+        "startTime": 72.774503,
+        "endTime": 72.946366
       },
       {
         "text": "và",
-        "startTime": 73.478319,
-        "endTime": 73.673979
+        "startTime": 72.946366,
+        "endTime": 73.083998
       },
       {
         "text": "là",
-        "startTime": 73.673979,
-        "endTime": 73.814859
+        "startTime": 73.083998,
+        "endTime": 73.255065
       },
       {
         "text": "vị",
-        "startTime": 73.814859,
-        "endTime": 73.993025
+        "startTime": 73.255065,
+        "endTime": 73.38626
       },
       {
         "text": "vua",
-        "startTime": 73.993025,
-        "endTime": 74.161277
+        "startTime": 73.38626,
+        "endTime": 73.580625
       },
       {
         "text": "của",
-        "startTime": 74.161277,
-        "endTime": 74.335634
+        "startTime": 73.580625,
+        "endTime": 73.739536
       },
       {
         "text": "thời",
-        "startTime": 74.335634,
-        "endTime": 74.52771
+        "startTime": 73.739536,
+        "endTime": 73.896523
       },
       {
         "text": "gian",
-        "startTime": 74.52771,
-        "endTime": 74.52771
+        "startTime": 73.896523,
+        "endTime": 73.896523
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 74.684563,
-    "endTime": 77.074099,
+    "section": "rap",
+    "startTime": 74.226759,
+    "endTime": 76.539926,
     "text": "Trước khi nhận ra thế giới của em cách xa cả triệu năm ánh sáng",
     "words": [
       {
         "text": "Trước",
-        "startTime": 74.684563,
-        "endTime": 74.878483
+        "startTime": 74.226759,
+        "endTime": 74.408999
       },
       {
         "text": "khi",
-        "startTime": 74.878483,
-        "endTime": 75.040686
+        "startTime": 74.408999,
+        "endTime": 74.603803
       },
       {
         "text": "nhận",
-        "startTime": 75.040686,
-        "endTime": 75.209789
+        "startTime": 74.603803,
+        "endTime": 74.753322
       },
       {
         "text": "ra",
-        "startTime": 75.209789,
-        "endTime": 75.37855
+        "startTime": 74.753322,
+        "endTime": 74.770546
       },
       {
         "text": "thế",
-        "startTime": 75.37855,
-        "endTime": 75.556761
+        "startTime": 74.770546,
+        "endTime": 75.045275
       },
       {
         "text": "giới",
-        "startTime": 75.556761,
-        "endTime": 75.71655
+        "startTime": 75.045275,
+        "endTime": 75.229283
       },
       {
         "text": "của",
-        "startTime": 75.71655,
-        "endTime": 75.879481
+        "startTime": 75.229283,
+        "endTime": 75.384716
       },
       {
         "text": "em",
-        "startTime": 75.879481,
-        "endTime": 76.05146
+        "startTime": 75.384716,
+        "endTime": 75.558623
       },
       {
         "text": "cách",
-        "startTime": 76.05146,
-        "endTime": 76.212737
+        "startTime": 75.558623,
+        "endTime": 75.720542
       },
       {
         "text": "xa",
-        "startTime": 76.212737,
-        "endTime": 76.404987
+        "startTime": 75.720542,
+        "endTime": 75.837919
       },
       {
         "text": "cả",
-        "startTime": 76.404987,
-        "endTime": 76.551884
+        "startTime": 75.837919,
+        "endTime": 76.05925
       },
       {
         "text": "triệu",
-        "startTime": 76.551884,
-        "endTime": 76.734566
+        "startTime": 76.05925,
+        "endTime": 76.233775
       },
       {
         "text": "năm",
-        "startTime": 76.734566,
-        "endTime": 76.902433
+        "startTime": 76.233775,
+        "endTime": 76.345313
       },
       {
         "text": "ánh",
-        "startTime": 76.902433,
-        "endTime": 77.074099
+        "startTime": 76.345313,
+        "endTime": 76.539926
       },
       {
         "text": "sáng",
-        "startTime": 77.074099,
-        "endTime": 77.074099
+        "startTime": 76.539926,
+        "endTime": 76.539926
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 77.23442,
-    "endTime": 78.442998,
+    "section": "rap",
+    "startTime": 76.931951,
+    "endTime": 78.088314,
     "text": "Còn lời yêu nào em che đậy?",
     "words": [
       {
         "text": "Còn",
-        "startTime": 77.23442,
-        "endTime": 77.40636
+        "startTime": 76.931951,
+        "endTime": 77.07447
       },
       {
         "text": "lời",
-        "startTime": 77.40636,
-        "endTime": 77.613239
+        "startTime": 77.07447,
+        "endTime": 77.240332
       },
       {
         "text": "yêu",
-        "startTime": 77.613239,
-        "endTime": 78.126305
+        "startTime": 77.240332,
+        "endTime": 77.424818
       },
       {
         "text": "nào",
-        "startTime": 78.126305,
-        "endTime": 78.151107
+        "startTime": 77.424818,
+        "endTime": 77.752004
       },
       {
         "text": "em",
-        "startTime": 78.151107,
-        "endTime": 78.151107
+        "startTime": 77.752004,
+        "endTime": 77.91943
       },
       {
         "text": "che",
-        "startTime": 78.151107,
-        "endTime": 78.442998
+        "startTime": 77.91943,
+        "endTime": 78.088314
       },
       {
         "text": "đậy?",
-        "startTime": 78.442998,
-        "endTime": 78.442998
+        "startTime": 78.088314,
+        "endTime": 78.088314
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 78.819003,
-    "endTime": 79.893294,
+    "section": "rap",
+    "startTime": 78.518983,
+    "endTime": 79.491322,
     "text": "Anh đã thật mong mình hơn vậy",
     "words": [
       {
         "text": "Anh",
-        "startTime": 78.819003,
-        "endTime": 79.037655
+        "startTime": 78.518983,
+        "endTime": 78.691401
       },
       {
         "text": "đã",
-        "startTime": 79.037655,
-        "endTime": 79.210762
+        "startTime": 78.691401,
+        "endTime": 78.836926
       },
       {
         "text": "thật",
-        "startTime": 79.210762,
-        "endTime": 79.391966
+        "startTime": 78.836926,
+        "endTime": 79.010317
       },
       {
         "text": "mong",
-        "startTime": 79.391966,
-        "endTime": 79.566107
+        "startTime": 79.010317,
+        "endTime": 79.183085
       },
       {
         "text": "mình",
-        "startTime": 79.566107,
-        "endTime": 79.721758
+        "startTime": 79.183085,
+        "endTime": 79.301574
       },
       {
         "text": "hơn",
-        "startTime": 79.721758,
-        "endTime": 79.893294
+        "startTime": 79.301574,
+        "endTime": 79.491322
       },
       {
         "text": "vậy",
-        "startTime": 79.893294,
-        "endTime": 79.893294
+        "startTime": 79.491322,
+        "endTime": 79.491322
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 80.072419,
-    "endTime": 82.262863,
+    "section": "rap",
+    "startTime": 79.86538,
+    "endTime": 82.095268,
     "text": "Anh thấy mệt mỏi khi phải giữ mình tỉnh táo trong từng cơn say",
     "words": [
       {
         "text": "Anh",
-        "startTime": 80.072419,
-        "endTime": 80.250578
+        "startTime": 79.86538,
+        "endTime": 80.059475
       },
       {
         "text": "thấy",
-        "startTime": 80.250578,
-        "endTime": 80.428637
+        "startTime": 80.059475,
+        "endTime": 80.220987
       },
       {
         "text": "mệt",
-        "startTime": 80.428637,
-        "endTime": 80.592832
+        "startTime": 80.220987,
+        "endTime": 80.38024
       },
       {
         "text": "mỏi",
-        "startTime": 80.592832,
-        "endTime": 80.776544
+        "startTime": 80.38024,
+        "endTime": 80.551426
       },
       {
         "text": "khi",
-        "startTime": 80.776544,
-        "endTime": 80.943672
+        "startTime": 80.551426,
+        "endTime": 80.70989
       },
       {
         "text": "phải",
-        "startTime": 80.943672,
-        "endTime": 81.106722
+        "startTime": 80.70989,
+        "endTime": 80.853665
       },
       {
         "text": "giữ",
-        "startTime": 81.106722,
-        "endTime": 81.292019
+        "startTime": 80.853665,
+        "endTime": 81.082175
       },
       {
         "text": "mình",
-        "startTime": 81.292019,
-        "endTime": 81.445663
+        "startTime": 81.082175,
+        "endTime": 81.246847
       },
       {
         "text": "tỉnh",
-        "startTime": 81.445663,
-        "endTime": 81.604809
+        "startTime": 81.246847,
+        "endTime": 81.420428
       },
       {
         "text": "táo",
-        "startTime": 81.604809,
-        "endTime": 81.795536
+        "startTime": 81.420428,
+        "endTime": 81.607595
       },
       {
         "text": "trong",
-        "startTime": 81.795536,
-        "endTime": 81.925545
+        "startTime": 81.607595,
+        "endTime": 81.767382
       },
       {
         "text": "từng",
-        "startTime": 81.925545,
-        "endTime": 82.127102
+        "startTime": 81.767382,
+        "endTime": 81.880582
       },
       {
         "text": "cơn",
-        "startTime": 82.127102,
-        "endTime": 82.262863
+        "startTime": 81.880582,
+        "endTime": 82.095268
       },
       {
         "text": "say",
-        "startTime": 82.262863,
-        "endTime": 82.262863
+        "startTime": 82.095268,
+        "endTime": 82.095268
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 82.497561,
-    "endTime": 84.551065,
+    "section": "rap",
+    "startTime": 82.502366,
+    "endTime": 84.592929,
     "text": "Anh đã từng mong mình có thể đến ôm lấy em vào lòng",
     "words": [
       {
         "text": "Anh",
-        "startTime": 82.497561,
-        "endTime": 82.662831
+        "startTime": 82.502366,
+        "endTime": 82.675115
       },
       {
         "text": "đã",
-        "startTime": 82.662831,
-        "endTime": 82.847497
+        "startTime": 82.675115,
+        "endTime": 82.831996
       },
       {
         "text": "từng",
-        "startTime": 82.847497,
-        "endTime": 83.022981
+        "startTime": 82.831996,
+        "endTime": 83.002602
       },
       {
         "text": "mong",
-        "startTime": 83.022981,
-        "endTime": 83.172207
+        "startTime": 83.002602,
+        "endTime": 83.171862
       },
       {
         "text": "mình",
-        "startTime": 83.172207,
-        "endTime": 83.358887
+        "startTime": 83.171862,
+        "endTime": 83.335119
       },
       {
         "text": "có",
-        "startTime": 83.358887,
-        "endTime": 83.517578
+        "startTime": 83.335119,
+        "endTime": 83.509196
       },
       {
         "text": "thể",
-        "startTime": 83.517578,
-        "endTime": 83.689889
+        "startTime": 83.509196,
+        "endTime": 83.635771
       },
       {
         "text": "đến",
-        "startTime": 83.689889,
-        "endTime": 83.851828
+        "startTime": 83.635771,
+        "endTime": 83.86685
       },
       {
         "text": "ôm",
-        "startTime": 83.851828,
-        "endTime": 84.043389
+        "startTime": 83.86685,
+        "endTime": 84.04203
       },
       {
         "text": "lấy",
-        "startTime": 84.043389,
-        "endTime": 84.212653
+        "startTime": 84.04203,
+        "endTime": 84.207332
       },
       {
         "text": "em",
-        "startTime": 84.212653,
-        "endTime": 84.400561
+        "startTime": 84.207332,
+        "endTime": 84.35646
       },
       {
         "text": "vào",
-        "startTime": 84.400561,
-        "endTime": 84.551065
+        "startTime": 84.35646,
+        "endTime": 84.592929
       },
       {
         "text": "lòng",
-        "startTime": 84.551065,
-        "endTime": 84.551065
+        "startTime": 84.592929,
+        "endTime": 84.592929
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 84.949376,
-    "endTime": 85.865675,
+    "section": "rap",
+    "startTime": 85.063964,
+    "endTime": 85.993794,
     "text": "Anh chỉ còn lại chân thành",
     "words": [
       {
         "text": "Anh",
-        "startTime": 84.949376,
-        "endTime": 85.12963
+        "startTime": 85.063964,
+        "endTime": 85.182474
       },
       {
         "text": "chỉ",
-        "startTime": 85.12963,
-        "endTime": 85.338515
+        "startTime": 85.182474,
+        "endTime": 85.353987
       },
       {
         "text": "còn",
-        "startTime": 85.338515,
-        "endTime": 85.518306
+        "startTime": 85.353987,
+        "endTime": 85.609045
       },
       {
         "text": "lại",
-        "startTime": 85.518306,
-        "endTime": 85.701218
+        "startTime": 85.609045,
+        "endTime": 85.842736
       },
       {
         "text": "chân",
-        "startTime": 85.701218,
-        "endTime": 85.865675
+        "startTime": 85.842736,
+        "endTime": 85.993794
       },
       {
         "text": "thành",
-        "startTime": 85.865675,
-        "endTime": 85.865675
+        "startTime": 85.993794,
+        "endTime": 85.993794
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 86.116532,
-    "endTime": 87.221292,
+    "section": "rap",
+    "startTime": 86.238315,
+    "endTime": 87.400346,
     "text": "Vậy em còn bận tâm nào không?",
     "words": [
       {
         "text": "Vậy",
-        "startTime": 86.116532,
-        "endTime": 86.302368
+        "startTime": 86.238315,
+        "endTime": 86.401319
       },
       {
         "text": "em",
-        "startTime": 86.302368,
-        "endTime": 86.484027
+        "startTime": 86.401319,
+        "endTime": 86.567518
       },
       {
         "text": "còn",
-        "startTime": 86.484027,
-        "endTime": 86.670817
+        "startTime": 86.567518,
+        "endTime": 86.742419
       },
       {
         "text": "bận",
-        "startTime": 86.670817,
-        "endTime": 86.844078
+        "startTime": 86.742419,
+        "endTime": 86.937919
       },
       {
         "text": "tâm",
-        "startTime": 86.844078,
-        "endTime": 87.012996
+        "startTime": 86.937919,
+        "endTime": 87.225524
       },
       {
         "text": "nào",
-        "startTime": 87.012996,
-        "endTime": 87.221292
+        "startTime": 87.225524,
+        "endTime": 87.400346
       },
       {
         "text": "không?",
-        "startTime": 87.221292,
-        "endTime": 87.221292
+        "startTime": 87.400346,
+        "endTime": 87.400346
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 87.629055,
-    "endTime": 89.204067,
+    "section": "rap",
+    "startTime": 87.807253,
+    "endTime": 89.697202,
     "text": "Chuyện đã cũ y hệt như ngày hôm qua",
     "words": [
       {
         "text": "Chuyện",
-        "startTime": 87.629055,
-        "endTime": 87.806996
+        "startTime": 87.807253,
+        "endTime": 87.917827
       },
       {
         "text": "đã",
-        "startTime": 87.806996,
-        "endTime": 87.997534
+        "startTime": 87.917827,
+        "endTime": 88.0724
       },
       {
         "text": "cũ",
-        "startTime": 87.997534,
-        "endTime": 88.163594
+        "startTime": 88.0724,
+        "endTime": 88.371808
       },
       {
         "text": "y",
-        "startTime": 88.163594,
-        "endTime": 88.358581
+        "startTime": 88.371808,
+        "endTime": 88.54945
       },
       {
         "text": "hệt",
-        "startTime": 88.358581,
-        "endTime": 88.545277
+        "startTime": 88.54945,
+        "endTime": 88.720624
       },
       {
         "text": "như",
-        "startTime": 88.545277,
-        "endTime": 88.730545
+        "startTime": 88.720624,
+        "endTime": 88.955184
       },
       {
         "text": "ngày",
-        "startTime": 88.730545,
-        "endTime": 88.893718
+        "startTime": 88.955184,
+        "endTime": 89.218395
       },
       {
         "text": "hôm",
-        "startTime": 88.893718,
-        "endTime": 89.204067
+        "startTime": 89.218395,
+        "endTime": 89.697202
       },
       {
         "text": "qua",
-        "startTime": 89.204067,
-        "endTime": 89.204067
+        "startTime": 89.697202,
+        "endTime": 89.697202
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 89.802279,
-    "endTime": 92.175815,
+    "section": "rap",
+    "startTime": 89.866208,
+    "endTime": 91.589129,
     "text": "Nhưng tận sâu ở trái tim vẫn xem người là món quà",
     "words": [
       {
         "text": "Nhưng",
-        "startTime": 89.802279,
-        "endTime": 89.928625
+        "startTime": 89.866208,
+        "endTime": 90.027787
       },
       {
         "text": "tận",
-        "startTime": 89.928625,
-        "endTime": 90.147175
+        "startTime": 90.027787,
+        "endTime": 90.211338
       },
       {
         "text": "sâu",
-        "startTime": 90.147175,
-        "endTime": 90.332545
+        "startTime": 90.211338,
+        "endTime": 90.379171
       },
       {
         "text": "ở",
-        "startTime": 90.332545,
-        "endTime": 90.522919
+        "startTime": 90.379171,
+        "endTime": 90.541962
       },
       {
         "text": "trái",
-        "startTime": 90.522919,
-        "endTime": 90.703217
+        "startTime": 90.541962,
+        "endTime": 90.691788
       },
       {
         "text": "tim",
-        "startTime": 90.703217,
-        "endTime": 90.873628
+        "startTime": 90.691788,
+        "endTime": 90.853581
       },
       {
         "text": "vẫn",
-        "startTime": 90.873628,
-        "endTime": 91.056648
+        "startTime": 90.853581,
+        "endTime": 90.950961
       },
       {
         "text": "xem",
-        "startTime": 91.056648,
-        "endTime": 91.238597
+        "startTime": 90.950961,
+        "endTime": 91.164771
       },
       {
         "text": "người",
-        "startTime": 91.238597,
-        "endTime": 91.3998
+        "startTime": 91.164771,
+        "endTime": 91.31103
       },
       {
         "text": "là",
-        "startTime": 91.3998,
-        "endTime": 91.591839
+        "startTime": 91.31103,
+        "endTime": 91.479711
       },
       {
         "text": "món",
-        "startTime": 91.591839,
-        "endTime": 92.175815
+        "startTime": 91.479711,
+        "endTime": 91.589129
       },
       {
         "text": "quà",
-        "startTime": 92.175815,
-        "endTime": 92.175815
+        "startTime": 91.589129,
+        "endTime": 91.589129
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 92.949115,
-    "endTime": 94.509343,
+    "section": "rap",
+    "startTime": 92.794936,
+    "endTime": 94.422217,
     "text": "Nói đi! Nếu em sắp phải đi xa?",
     "words": [
       {
         "text": "Nói",
-        "startTime": 92.949115,
-        "endTime": 93.169492
+        "startTime": 92.794936,
+        "endTime": 92.933954
       },
       {
         "text": "đi!",
-        "startTime": 93.169492,
-        "endTime": 93.421455
+        "startTime": 92.933954,
+        "endTime": 93.324853
       },
       {
         "text": "Nếu",
-        "startTime": 93.421455,
-        "endTime": 93.656022
+        "startTime": 93.324853,
+        "endTime": 93.584488
       },
       {
         "text": "em",
-        "startTime": 93.656022,
-        "endTime": 93.86574
+        "startTime": 93.584488,
+        "endTime": 93.806181
       },
       {
         "text": "sắp",
-        "startTime": 93.86574,
-        "endTime": 94.050999
+        "startTime": 93.806181,
+        "endTime": 93.984154
       },
       {
         "text": "phải",
-        "startTime": 94.050999,
-        "endTime": 94.297284
+        "startTime": 93.984154,
+        "endTime": 94.182061
       },
       {
         "text": "đi",
-        "startTime": 94.297284,
-        "endTime": 94.509343
+        "startTime": 94.182061,
+        "endTime": 94.422217
       },
       {
         "text": "xa?",
-        "startTime": 94.509343,
-        "endTime": 94.509343
+        "startTime": 94.422217,
+        "endTime": 94.422217
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 95.075665,
-    "endTime": 97.192387,
+    "section": "rap",
+    "startTime": 95.050844,
+    "endTime": 97.143139,
     "text": "Xin hãy thiêu đốt từng đêm từng đêm như sativa",
     "words": [
       {
         "text": "Xin",
-        "startTime": 95.075665,
-        "endTime": 95.195304
+        "startTime": 95.050844,
+        "endTime": 95.251337
       },
       {
         "text": "hãy",
-        "startTime": 95.195304,
-        "endTime": 95.592791
+        "startTime": 95.251337,
+        "endTime": 95.577169
       },
       {
         "text": "thiêu",
-        "startTime": 95.592791,
-        "endTime": 95.789332
+        "startTime": 95.577169,
+        "endTime": 95.842311
       },
       {
         "text": "đốt",
-        "startTime": 95.789332,
-        "endTime": 96.103711
+        "startTime": 95.842311,
+        "endTime": 96.240979
       },
       {
         "text": "từng",
-        "startTime": 96.103711,
-        "endTime": 96.269618
+        "startTime": 96.240979,
+        "endTime": 96.388714
       },
       {
         "text": "đêm",
-        "startTime": 96.269618,
-        "endTime": 96.436341
+        "startTime": 96.388714,
+        "endTime": 96.549163
       },
       {
         "text": "từng",
-        "startTime": 96.436341,
-        "endTime": 96.655044
+        "startTime": 96.549163,
+        "endTime": 96.71333
       },
       {
         "text": "đêm",
-        "startTime": 96.655044,
-        "endTime": 96.952735
+        "startTime": 96.71333,
+        "endTime": 96.951237
       },
       {
         "text": "như",
-        "startTime": 96.952735,
-        "endTime": 97.192387
+        "startTime": 96.951237,
+        "endTime": 97.143139
       },
       {
         "text": "sativa",
-        "startTime": 97.192387,
-        "endTime": 97.192387
+        "startTime": 97.143139,
+        "endTime": 97.143139
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 98.233258,
-    "endTime": 99.787061,
+    "section": "rap",
+    "startTime": 98.301877,
+    "endTime": 99.679542,
     "text": "Em ơi! Em đừng vội tin",
     "words": [
       {
         "text": "Em",
-        "startTime": 98.233258,
-        "endTime": 98.394478
+        "startTime": 98.301877,
+        "endTime": 98.439943
       },
       {
         "text": "ơi!",
-        "startTime": 98.394478,
-        "endTime": 98.68958
+        "startTime": 98.439943,
+        "endTime": 98.764622
       },
       {
         "text": "Em",
-        "startTime": 98.68958,
-        "endTime": 99.278097
+        "startTime": 98.764622,
+        "endTime": 99.370993
       },
       {
         "text": "đừng",
-        "startTime": 99.278097,
-        "endTime": 99.461542
+        "startTime": 99.370993,
+        "endTime": 99.535051
       },
       {
         "text": "vội",
-        "startTime": 99.461542,
-        "endTime": 99.787061
+        "startTime": 99.535051,
+        "endTime": 99.679542
       },
       {
         "text": "tin",
-        "startTime": 99.787061,
-        "endTime": 99.787061
+        "startTime": 99.679542,
+        "endTime": 99.679542
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 100.532125,
-    "endTime": 103.673661,
+    "section": "rap",
+    "startTime": 100.528768,
+    "endTime": 102.668176,
     "text": "Những đêm cô đơn kéo đến anh không thể đánh mất mình",
     "words": [
       {
         "text": "Những",
-        "startTime": 100.532125,
-        "endTime": 100.748971
+        "startTime": 100.528768,
+        "endTime": 100.690714
       },
       {
         "text": "đêm",
-        "startTime": 100.748971,
-        "endTime": 100.916087
+        "startTime": 100.690714,
+        "endTime": 100.866471
       },
       {
         "text": "cô",
-        "startTime": 100.916087,
-        "endTime": 101.095376
+        "startTime": 100.866471,
+        "endTime": 101.029623
       },
       {
         "text": "đơn",
-        "startTime": 101.095376,
-        "endTime": 101.282698
+        "startTime": 101.029623,
+        "endTime": 101.183652
       },
       {
         "text": "kéo",
-        "startTime": 101.282698,
-        "endTime": 101.654313
+        "startTime": 101.183652,
+        "endTime": 101.366073
       },
       {
         "text": "đến",
-        "startTime": 101.654313,
-        "endTime": 101.777722
+        "startTime": 101.366073,
+        "endTime": 101.713331
       },
       {
         "text": "anh",
-        "startTime": 101.777722,
-        "endTime": 102.011893
+        "startTime": 101.713331,
+        "endTime": 101.893022
       },
       {
         "text": "không",
-        "startTime": 102.011893,
-        "endTime": 102.270252
+        "startTime": 101.893022,
+        "endTime": 102.060578
       },
       {
         "text": "thể",
-        "startTime": 102.270252,
-        "endTime": 102.53705
+        "startTime": 102.060578,
+        "endTime": 102.345423
       },
       {
         "text": "đánh",
-        "startTime": 102.53705,
-        "endTime": 103.107301
+        "startTime": 102.345423,
+        "endTime": 102.526085
       },
       {
         "text": "mất",
-        "startTime": 103.107301,
-        "endTime": 103.673661
+        "startTime": 102.526085,
+        "endTime": 102.668176
       },
       {
         "text": "mình",
-        "startTime": 103.673661,
-        "endTime": 103.673661
+        "startTime": 102.668176,
+        "endTime": 102.668176
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 103.871614,
-    "endTime": 105.797778,
+    "section": "rap",
+    "startTime": 103.541759,
+    "endTime": 105.518063,
     "text": "Nếu đêm nay chỉ còn lại là giấc mơ",
     "words": [
       {
         "text": "Nếu",
-        "startTime": 103.871614,
-        "endTime": 104.025953
+        "startTime": 103.541759,
+        "endTime": 103.733056
       },
       {
         "text": "đêm",
-        "startTime": 104.025953,
-        "endTime": 104.290972
+        "startTime": 103.733056,
+        "endTime": 103.88927
       },
       {
         "text": "nay",
-        "startTime": 104.290972,
-        "endTime": 104.466173
+        "startTime": 103.88927,
+        "endTime": 104.223091
       },
       {
         "text": "chỉ",
-        "startTime": 104.466173,
-        "endTime": 104.589619
+        "startTime": 104.223091,
+        "endTime": 104.458115
       },
       {
         "text": "còn",
-        "startTime": 104.589619,
-        "endTime": 104.877891
+        "startTime": 104.458115,
+        "endTime": 104.631445
       },
       {
         "text": "lại",
-        "startTime": 104.877891,
-        "endTime": 105.022845
+        "startTime": 104.631445,
+        "endTime": 104.795475
       },
       {
         "text": "là",
-        "startTime": 105.022845,
-        "endTime": 105.258475
+        "startTime": 104.795475,
+        "endTime": 105.026445
       },
       {
         "text": "giấc",
-        "startTime": 105.258475,
-        "endTime": 105.797778
+        "startTime": 105.026445,
+        "endTime": 105.518063
       },
       {
         "text": "mơ",
-        "startTime": 105.797778,
-        "endTime": 105.797778
+        "startTime": 105.518063,
+        "endTime": 105.518063
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 105.959202,
-    "endTime": 108.285211,
+    "section": "rap",
+    "startTime": 105.917662,
+    "endTime": 108.250034,
     "text": "Xin hãy đừng lo đến anh vì chuyện chúng ta đâu còn bất ngờ",
     "words": [
       {
         "text": "Xin",
-        "startTime": 105.959202,
-        "endTime": 106.157384
+        "startTime": 105.917662,
+        "endTime": 106.092651
       },
       {
         "text": "hãy",
-        "startTime": 106.157384,
-        "endTime": 106.34252
+        "startTime": 106.092651,
+        "endTime": 106.234702
       },
       {
         "text": "đừng",
-        "startTime": 106.34252,
-        "endTime": 106.536211
+        "startTime": 106.234702,
+        "endTime": 106.459425
       },
       {
         "text": "lo",
-        "startTime": 106.536211,
-        "endTime": 106.68191
+        "startTime": 106.459425,
+        "endTime": 106.624177
       },
       {
         "text": "đến",
-        "startTime": 106.68191,
-        "endTime": 106.898111
+        "startTime": 106.624177,
+        "endTime": 106.80213
       },
       {
         "text": "anh",
-        "startTime": 106.898111,
-        "endTime": 107.047617
+        "startTime": 106.80213,
+        "endTime": 106.992748
       },
       {
         "text": "vì",
-        "startTime": 107.047617,
-        "endTime": 107.242698
+        "startTime": 106.992748,
+        "endTime": 107.168824
       },
       {
         "text": "chuyện",
-        "startTime": 107.242698,
-        "endTime": 107.422721
+        "startTime": 107.168824,
+        "endTime": 107.366421
       },
       {
         "text": "chúng",
-        "startTime": 107.422721,
-        "endTime": 107.612143
+        "startTime": 107.366421,
+        "endTime": 107.537048
       },
       {
         "text": "ta",
-        "startTime": 107.612143,
-        "endTime": 107.765084
+        "startTime": 107.537048,
+        "endTime": 107.720269
       },
       {
         "text": "đâu",
-        "startTime": 107.765084,
-        "endTime": 107.951277
+        "startTime": 107.720269,
+        "endTime": 107.922021
       },
       {
         "text": "còn",
-        "startTime": 107.951277,
-        "endTime": 108.118663
+        "startTime": 107.922021,
+        "endTime": 108.079029
       },
       {
         "text": "bất",
-        "startTime": 108.118663,
-        "endTime": 108.285211
+        "startTime": 108.079029,
+        "endTime": 108.250034
       },
       {
         "text": "ngờ",
-        "startTime": 108.285211,
-        "endTime": 108.285211
+        "startTime": 108.250034,
+        "endTime": 108.250034
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 108.285211,
-    "endTime": 108.285211,
-    "text": "#Chorus",
-    "words": [
-      {
-        "text": "#Chorus",
-        "startTime": null,
-        "endTime": null
-      }
-    ]
-  },
-  {
-    "section": "Verse",
-    "startTime": 108.930215,
-    "endTime": 111.009342,
+    "section": "chorus",
+    "startTime": 109.009323,
+    "endTime": 110.527566,
     "text": "You say don’t fall in love",
     "words": [
       {
         "text": "You",
-        "startTime": 108.930215,
-        "endTime": 109.259499
+        "startTime": 109.009323,
+        "endTime": 109.260758
       },
       {
         "text": "say",
-        "startTime": 109.259499,
-        "endTime": 109.64045
+        "startTime": 109.260758,
+        "endTime": 109.665333
       },
       {
         "text": "don’t",
-        "startTime": 109.64045,
-        "endTime": 110.155828
+        "startTime": 109.665333,
+        "endTime": 109.832167
       },
       {
         "text": "fall",
-        "startTime": 110.155828,
-        "endTime": 110.482906
+        "startTime": 109.832167,
+        "endTime": 110.235208
       },
       {
         "text": "in",
-        "startTime": 110.482906,
-        "endTime": 111.009342
+        "startTime": 110.235208,
+        "endTime": 110.527566
       },
       {
         "text": "love",
-        "startTime": 111.009342,
-        "endTime": 111.009342
+        "startTime": 110.527566,
+        "endTime": 110.527566
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 111.642021,
-    "endTime": 113.112453,
+    "section": "chorus",
+    "startTime": 111.549025,
+    "endTime": 113.126844,
     "text": "Vì giờ đây em quên hết rồi",
     "words": [
       {
         "text": "Vì",
-        "startTime": 111.642021,
-        "endTime": 111.822515
+        "startTime": 111.549025,
+        "endTime": 111.739724
       },
       {
         "text": "giờ",
-        "startTime": 111.822515,
-        "endTime": 112.036192
+        "startTime": 111.739724,
+        "endTime": 111.909396
       },
       {
         "text": "đây",
-        "startTime": 112.036192,
-        "endTime": 112.378826
+        "startTime": 111.909396,
+        "endTime": 112.342814
       },
       {
         "text": "em",
-        "startTime": 112.378826,
-        "endTime": 112.568286
+        "startTime": 112.342814,
+        "endTime": 112.521671
       },
       {
         "text": "quên",
-        "startTime": 112.568286,
-        "endTime": 112.831389
+        "startTime": 112.521671,
+        "endTime": 112.869738
       },
       {
         "text": "hết",
-        "startTime": 112.831389,
-        "endTime": 113.112453
+        "startTime": 112.869738,
+        "endTime": 113.126844
       },
       {
         "text": "rồi",
-        "startTime": 113.112453,
-        "endTime": 113.112453
+        "startTime": 113.126844,
+        "endTime": 113.126844
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 114.403495,
-    "endTime": 116.921502,
+    "section": "chorus",
+    "startTime": 114.291972,
+    "endTime": 116.861935,
     "text": "Mặc kệ lời yêu mỗi đêm vẫn chờ đợi",
     "words": [
       {
         "text": "Mặc",
-        "startTime": 114.403495,
-        "endTime": 114.661622
+        "startTime": 114.291972,
+        "endTime": 114.614486
       },
       {
         "text": "kệ",
-        "startTime": 114.661622,
-        "endTime": 114.930155
+        "startTime": 114.614486,
+        "endTime": 114.915448
       },
       {
         "text": "lời",
-        "startTime": 114.930155,
-        "endTime": 115.283101
+        "startTime": 114.915448,
+        "endTime": 115.234162
       },
       {
         "text": "yêu",
-        "startTime": 115.283101,
-        "endTime": 115.597901
+        "startTime": 115.234162,
+        "endTime": 115.557175
       },
       {
         "text": "mỗi",
-        "startTime": 115.597901,
-        "endTime": 115.921928
+        "startTime": 115.557175,
+        "endTime": 115.88862
       },
       {
         "text": "đêm",
-        "startTime": 115.921928,
-        "endTime": 116.274396
+        "startTime": 115.88862,
+        "endTime": 116.222874
       },
       {
         "text": "vẫn",
-        "startTime": 116.274396,
-        "endTime": 116.618698
+        "startTime": 116.222874,
+        "endTime": 116.532255
       },
       {
         "text": "chờ",
-        "startTime": 116.618698,
-        "endTime": 116.921502
+        "startTime": 116.532255,
+        "endTime": 116.861935
       },
       {
         "text": "đợi",
-        "startTime": 116.921502,
-        "endTime": 116.921502
+        "startTime": 116.861935,
+        "endTime": 116.861935
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 119.710942,
-    "endTime": 121.070312,
+    "section": "chorus",
+    "startTime": 119.494169,
+    "endTime": 121.113199,
     "text": "Vậy thì xin em hãy đừng lo",
     "words": [
       {
         "text": "Vậy",
-        "startTime": 119.710942,
-        "endTime": 119.863794
+        "startTime": 119.494169,
+        "endTime": 119.726716
       },
       {
         "text": "thì",
-        "startTime": 119.863794,
-        "endTime": 120.045394
+        "startTime": 119.726716,
+        "endTime": 119.869602
       },
       {
         "text": "xin",
-        "startTime": 120.045394,
-        "endTime": 120.35119
+        "startTime": 119.869602,
+        "endTime": 120.322079
       },
       {
         "text": "em",
-        "startTime": 120.35119,
-        "endTime": 120.490919
+        "startTime": 120.322079,
+        "endTime": 120.498764
       },
       {
         "text": "hãy",
-        "startTime": 120.490919,
-        "endTime": 120.74652
+        "startTime": 120.498764,
+        "endTime": 120.826804
       },
       {
         "text": "đừng",
-        "startTime": 120.74652,
-        "endTime": 121.070312
+        "startTime": 120.826804,
+        "endTime": 121.113199
       },
       {
         "text": "lo",
-        "startTime": 121.070312,
-        "endTime": 121.070312
+        "startTime": 121.113199,
+        "endTime": 121.113199
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 122.344314,
-    "endTime": 123.681227,
+    "section": "chorus",
+    "startTime": 122.348905,
+    "endTime": 123.736663,
     "text": "Về mọi thứ mà ta từng có",
     "words": [
       {
         "text": "Về",
-        "startTime": 122.344314,
-        "endTime": 122.511372
+        "startTime": 122.348905,
+        "endTime": 122.470424
       },
       {
         "text": "mọi",
-        "startTime": 122.511372,
-        "endTime": 122.652547
+        "startTime": 122.470424,
+        "endTime": 122.619455
       },
       {
         "text": "thứ",
-        "startTime": 122.652547,
-        "endTime": 122.948765
+        "startTime": 122.619455,
+        "endTime": 122.94957
       },
       {
         "text": "mà",
-        "startTime": 122.948765,
-        "endTime": 123.092394
+        "startTime": 122.94957,
+        "endTime": 123.115563
       },
       {
         "text": "ta",
-        "startTime": 123.092394,
-        "endTime": 123.423352
+        "startTime": 123.115563,
+        "endTime": 123.422047
       },
       {
         "text": "từng",
-        "startTime": 123.423352,
-        "endTime": 123.681227
+        "startTime": 123.422047,
+        "endTime": 123.736663
       },
       {
         "text": "có",
-        "startTime": 123.681227,
-        "endTime": 123.681227
+        "startTime": 123.736663,
+        "endTime": 123.736663
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 125.005443,
-    "endTime": 126.8365,
+    "section": "chorus",
+    "startTime": 124.918666,
+    "endTime": 127.051443,
     "text": "Trả lại cho em con tim tự do",
     "words": [
       {
         "text": "Trả",
-        "startTime": 125.005443,
-        "endTime": 125.092909
+        "startTime": 124.918666,
+        "endTime": 125.062667
       },
       {
         "text": "lại",
-        "startTime": 125.092909,
-        "endTime": 125.306647
+        "startTime": 125.062667,
+        "endTime": 125.261797
       },
       {
         "text": "cho",
-        "startTime": 125.306647,
-        "endTime": 125.593373
+        "startTime": 125.261797,
+        "endTime": 125.639875
       },
       {
         "text": "em",
-        "startTime": 125.593373,
-        "endTime": 125.760879
+        "startTime": 125.639875,
+        "endTime": 125.828514
       },
       {
         "text": "con",
-        "startTime": 125.760879,
-        "endTime": 125.957567
+        "startTime": 125.828514,
+        "endTime": 126.066421
       },
       {
         "text": "tim",
-        "startTime": 125.957567,
-        "endTime": 126.373822
+        "startTime": 126.066421,
+        "endTime": 126.451394
       },
       {
         "text": "tự",
-        "startTime": 126.373822,
-        "endTime": 126.8365
+        "startTime": 126.451394,
+        "endTime": 127.051443
       },
       {
         "text": "do",
-        "startTime": 126.8365,
-        "endTime": 126.8365
+        "startTime": 127.051443,
+        "endTime": 127.051443
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 127.459133,
-    "endTime": 129.058232,
+    "section": "chorus",
+    "startTime": 127.646617,
+    "endTime": 129.602111,
     "text": "Rồi tất cả sẽ hoá thành tàn tro",
     "words": [
       {
         "text": "Rồi",
-        "startTime": 127.459133,
-        "endTime": 127.64707
+        "startTime": 127.646617,
+        "endTime": 127.82778
       },
       {
         "text": "tất",
-        "startTime": 127.64707,
-        "endTime": 127.813643
+        "startTime": 127.82778,
+        "endTime": 128.003457
       },
       {
         "text": "cả",
-        "startTime": 127.813643,
-        "endTime": 127.967027
+        "startTime": 128.003457,
+        "endTime": 128.352594
       },
       {
         "text": "sẽ",
-        "startTime": 127.967027,
-        "endTime": 128.298147
+        "startTime": 128.352594,
+        "endTime": 128.515128
       },
       {
         "text": "hoá",
-        "startTime": 128.298147,
-        "endTime": 128.439759
+        "startTime": 128.515128,
+        "endTime": 128.856946
       },
       {
         "text": "thành",
-        "startTime": 128.439759,
-        "endTime": 128.761549
+        "startTime": 128.856946,
+        "endTime": 129.201016
       },
       {
         "text": "tàn",
-        "startTime": 128.761549,
-        "endTime": 129.058232
+        "startTime": 129.201016,
+        "endTime": 129.602111
       },
       {
         "text": "tro",
-        "startTime": 129.058232,
-        "endTime": 129.058232
+        "startTime": 129.602111,
+        "endTime": 129.602111
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 129.058232,
-    "endTime": 129.058232,
-    "text": "#Verse",
-    "words": [
-      {
-        "text": "#Verse",
-        "startTime": null,
-        "endTime": null
-      }
-    ]
-  },
-  {
-    "section": "Verse",
-    "startTime": 129.83771,
-    "endTime": 131.612961,
+    "section": "verse",
+    "startTime": 130.161588,
+    "endTime": 131.863276,
     "text": "Em ơi sỏi đá thì chẳng biết đau",
     "words": [
       {
         "text": "Em",
-        "startTime": 129.83771,
-        "endTime": 130.007989
+        "startTime": 130.161588,
+        "endTime": 130.364568
       },
       {
         "text": "ơi",
-        "startTime": 130.007989,
-        "endTime": 130.219748
+        "startTime": 130.364568,
+        "endTime": 130.573165
       },
       {
         "text": "sỏi",
-        "startTime": 130.219748,
-        "endTime": 130.556552
+        "startTime": 130.573165,
+        "endTime": 130.738563
       },
       {
         "text": "đá",
-        "startTime": 130.556552,
-        "endTime": 130.712796
+        "startTime": 130.738563,
+        "endTime": 131.046258
       },
       {
         "text": "thì",
-        "startTime": 130.712796,
-        "endTime": 131.010886
+        "startTime": 131.046258,
+        "endTime": 131.312737
       },
       {
         "text": "chẳng",
-        "startTime": 131.010886,
-        "endTime": 131.291732
+        "startTime": 131.312737,
+        "endTime": 131.600578
       },
       {
         "text": "biết",
-        "startTime": 131.291732,
-        "endTime": 131.612961
+        "startTime": 131.600578,
+        "endTime": 131.863276
       },
       {
         "text": "đau",
-        "startTime": 131.612961,
-        "endTime": 131.612961
+        "startTime": 131.863276,
+        "endTime": 131.863276
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 131.874688,
-    "endTime": 134.584628,
+    "section": "verse",
+    "startTime": 132.358906,
+    "endTime": 134.565592,
     "text": "Nên có gì để em phải đáng tiếc đâu?",
     "words": [
       {
         "text": "Nên",
-        "startTime": 131.874688,
-        "endTime": 132.582991
+        "startTime": 132.358906,
+        "endTime": 132.636143
       },
       {
         "text": "có",
-        "startTime": 132.582991,
-        "endTime": 132.746379
+        "startTime": 132.636143,
+        "endTime": 132.96798
       },
       {
         "text": "gì",
-        "startTime": 132.746379,
-        "endTime": 133.053019
+        "startTime": 132.96798,
+        "endTime": 133.163013
       },
       {
         "text": "để",
-        "startTime": 133.053019,
-        "endTime": 133.208559
+        "startTime": 133.163013,
+        "endTime": 133.333639
       },
       {
         "text": "em",
-        "startTime": 133.208559,
-        "endTime": 133.569424
+        "startTime": 133.333639,
+        "endTime": 133.613721
       },
       {
         "text": "phải",
-        "startTime": 133.569424,
-        "endTime": 133.8861
+        "startTime": 133.613721,
+        "endTime": 133.878043
       },
       {
         "text": "đáng",
-        "startTime": 133.8861,
-        "endTime": 134.273862
+        "startTime": 133.878043,
+        "endTime": 134.212953
       },
       {
         "text": "tiếc",
-        "startTime": 134.273862,
-        "endTime": 134.584628
+        "startTime": 134.212953,
+        "endTime": 134.565592
       },
       {
         "text": "đâu?",
-        "startTime": 134.584628,
-        "endTime": 134.584628
+        "startTime": 134.565592,
+        "endTime": 134.565592
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 135.273945,
-    "endTime": 137.272538,
+    "section": "verse",
+    "startTime": 135.186614,
+    "endTime": 137.246949,
     "text": "Anh thích tự đón nhận những tổn thương",
     "words": [
       {
         "text": "Anh",
-        "startTime": 135.273945,
-        "endTime": 135.502572
+        "startTime": 135.186614,
+        "endTime": 135.333611
       },
       {
         "text": "thích",
-        "startTime": 135.502572,
-        "endTime": 135.744396
+        "startTime": 135.333611,
+        "endTime": 135.600138
       },
       {
         "text": "tự",
-        "startTime": 135.744396,
-        "endTime": 135.913352
+        "startTime": 135.600138,
+        "endTime": 135.823294
       },
       {
         "text": "đón",
-        "startTime": 135.913352,
-        "endTime": 136.269865
+        "startTime": 135.823294,
+        "endTime": 136.274275
       },
       {
         "text": "nhận",
-        "startTime": 136.269865,
-        "endTime": 136.61601
+        "startTime": 136.274275,
+        "endTime": 136.610953
       },
       {
         "text": "những",
-        "startTime": 136.61601,
-        "endTime": 136.915277
+        "startTime": 136.610953,
+        "endTime": 136.933749
       },
       {
         "text": "tổn",
-        "startTime": 136.915277,
-        "endTime": 137.272538
+        "startTime": 136.933749,
+        "endTime": 137.246949
       },
       {
         "text": "thương",
-        "startTime": 137.272538,
-        "endTime": 137.272538
+        "startTime": 137.246949,
+        "endTime": 137.246949
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 137.931318,
-    "endTime": 140.557209,
+    "section": "verse",
+    "startTime": 137.869935,
+    "endTime": 140.540362,
     "text": "Nên em đừng lo đến anh. Lo đến anh!",
     "words": [
       {
         "text": "Nên",
-        "startTime": 137.931318,
-        "endTime": 138.193145
+        "startTime": 137.869935,
+        "endTime": 138.13115
       },
       {
         "text": "em",
-        "startTime": 138.193145,
-        "endTime": 138.425444
+        "startTime": 138.13115,
+        "endTime": 138.313892
       },
       {
         "text": "đừng",
-        "startTime": 138.425444,
-        "endTime": 138.611221
+        "startTime": 138.313892,
+        "endTime": 138.56904
       },
       {
         "text": "lo",
-        "startTime": 138.611221,
-        "endTime": 139.064122
+        "startTime": 138.56904,
+        "endTime": 139.160045
       },
       {
         "text": "đến",
-        "startTime": 139.064122,
-        "endTime": 139.258972
+        "startTime": 139.160045,
+        "endTime": 139.319604
       },
       {
         "text": "anh.",
-        "startTime": 139.258972,
-        "endTime": 139.876206
+        "startTime": 139.319604,
+        "endTime": 139.871316
       },
       {
         "text": "Lo",
-        "startTime": 139.876206,
-        "endTime": 140.377875
+        "startTime": 139.871316,
+        "endTime": 140.344864
       },
       {
         "text": "đến",
-        "startTime": 140.377875,
-        "endTime": 140.557209
+        "startTime": 140.344864,
+        "endTime": 140.540362
       },
       {
         "text": "anh!",
-        "startTime": 140.557209,
-        "endTime": 140.557209
+        "startTime": 140.540362,
+        "endTime": 140.540362
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 141.260148,
-    "endTime": 142.603861,
+    "section": "verse",
+    "startTime": 141.305274,
+    "endTime": 142.505331,
     "text": "Em hãy cứ vui đi",
     "words": [
       {
         "text": "Em",
-        "startTime": 141.260148,
-        "endTime": 141.602539
+        "startTime": 141.305274,
+        "endTime": 141.621159
       },
       {
         "text": "hãy",
-        "startTime": 141.602539,
-        "endTime": 141.883427
+        "startTime": 141.621159,
+        "endTime": 141.877665
       },
       {
         "text": "cứ",
-        "startTime": 141.883427,
-        "endTime": 142.309906
+        "startTime": 141.877665,
+        "endTime": 142.191977
       },
       {
         "text": "vui",
-        "startTime": 142.309906,
-        "endTime": 142.603861
+        "startTime": 142.191977,
+        "endTime": 142.505331
       },
       {
         "text": "đi",
-        "startTime": 142.603861,
-        "endTime": 142.603861
+        "startTime": 142.505331,
+        "endTime": 142.505331
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 143.217827,
-    "endTime": 145.249855,
+    "section": "verse",
+    "startTime": 143.218933,
+    "endTime": 145.240812,
     "text": "Yêu ai lắm khi thế giới diệu kì",
     "words": [
       {
         "text": "Yêu",
-        "startTime": 143.217827,
-        "endTime": 143.396536
+        "startTime": 143.218933,
+        "endTime": 143.444883
       },
       {
         "text": "ai",
-        "startTime": 143.396536,
-        "endTime": 143.764441
+        "startTime": 143.444883,
+        "endTime": 143.620812
       },
       {
         "text": "lắm",
-        "startTime": 143.764441,
-        "endTime": 143.93673
+        "startTime": 143.620812,
+        "endTime": 143.93087
       },
       {
         "text": "khi",
-        "startTime": 143.93673,
-        "endTime": 144.297159
+        "startTime": 143.93087,
+        "endTime": 144.346546
       },
       {
         "text": "thế",
-        "startTime": 144.297159,
-        "endTime": 144.627859
+        "startTime": 144.346546,
+        "endTime": 144.656099
       },
       {
         "text": "giới",
-        "startTime": 144.627859,
-        "endTime": 144.936754
+        "startTime": 144.656099,
+        "endTime": 144.953374
       },
       {
         "text": "diệu",
-        "startTime": 144.936754,
-        "endTime": 145.249855
+        "startTime": 144.953374,
+        "endTime": 145.240812
       },
       {
         "text": "kì",
-        "startTime": 145.249855,
-        "endTime": 145.249855
+        "startTime": 145.240812,
+        "endTime": 145.240812
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 145.931098,
-    "endTime": 147.936755,
+    "section": "verse",
+    "startTime": 145.950921,
+    "endTime": 147.925229,
     "text": "Không có gì có thể cản ngăn em",
     "words": [
       {
         "text": "Không",
-        "startTime": 145.931098,
-        "endTime": 146.165817
+        "startTime": 145.950921,
+        "endTime": 146.139199
       },
       {
         "text": "có",
-        "startTime": 146.165817,
-        "endTime": 146.458626
+        "startTime": 146.139199,
+        "endTime": 146.510802
       },
       {
         "text": "gì",
-        "startTime": 146.458626,
-        "endTime": 146.641898
+        "startTime": 146.510802,
+        "endTime": 146.706209
       },
       {
         "text": "có",
-        "startTime": 146.641898,
-        "endTime": 146.920164
+        "startTime": 146.706209,
+        "endTime": 147.056436
       },
       {
         "text": "thể",
-        "startTime": 146.920164,
-        "endTime": 147.284143
+        "startTime": 147.056436,
+        "endTime": 147.335469
       },
       {
         "text": "cản",
-        "startTime": 147.284143,
-        "endTime": 147.608246
+        "startTime": 147.335469,
+        "endTime": 147.660436
       },
       {
         "text": "ngăn",
-        "startTime": 147.608246,
-        "endTime": 147.936755
+        "startTime": 147.660436,
+        "endTime": 147.925229
       },
       {
         "text": "em",
-        "startTime": 147.936755,
-        "endTime": 147.936755
+        "startTime": 147.925229,
+        "endTime": 147.925229
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 148.569304,
-    "endTime": 151.27563,
+    "section": "verse",
+    "startTime": 148.536302,
+    "endTime": 150.887276,
     "text": "Nên em hãy cứ bước đi, cứ bước đi",
     "words": [
       {
         "text": "Nên",
-        "startTime": 148.569304,
-        "endTime": 148.764694
+        "startTime": 148.536302,
+        "endTime": 148.790577
       },
       {
         "text": "em",
-        "startTime": 148.764694,
-        "endTime": 149.084767
+        "startTime": 148.790577,
+        "endTime": 149.118325
       },
       {
         "text": "hãy",
-        "startTime": 149.084767,
-        "endTime": 149.274223
+        "startTime": 149.118325,
+        "endTime": 149.308184
       },
       {
         "text": "cứ",
-        "startTime": 149.274223,
-        "endTime": 149.729262
+        "startTime": 149.308184,
+        "endTime": 149.77455
       },
       {
         "text": "bước",
-        "startTime": 149.729262,
-        "endTime": 149.895185
+        "startTime": 149.77455,
+        "endTime": 149.965272
       },
       {
         "text": "đi,",
-        "startTime": 149.895185,
-        "endTime": 150.53537
+        "startTime": 149.965272,
+        "endTime": 150.527647
       },
       {
         "text": "cứ",
-        "startTime": 150.53537,
-        "endTime": 151.112669
+        "startTime": 150.527647,
+        "endTime": 150.707513
       },
       {
         "text": "bước",
-        "startTime": 151.112669,
-        "endTime": 151.27563
+        "startTime": 150.707513,
+        "endTime": 150.887276
       },
       {
         "text": "đi",
-        "startTime": 151.27563,
-        "endTime": 151.27563
+        "startTime": 150.887276,
+        "endTime": 150.887276
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 151.75758,
-    "endTime": 152.387367,
+    "section": "verse",
+    "startTime": 151.324229,
+    "endTime": 151.929824,
     "text": "Cứ bước đi!",
     "words": [
       {
         "text": "Cứ",
-        "startTime": 151.75758,
-        "endTime": 152.103327
+        "startTime": 151.324229,
+        "endTime": 151.558348
       },
       {
         "text": "bước",
-        "startTime": 152.103327,
-        "endTime": 152.387367
+        "startTime": 151.558348,
+        "endTime": 151.929824
       },
       {
         "text": "đi!",
-        "startTime": 152.387367,
-        "endTime": 152.387367
+        "startTime": 151.929824,
+        "endTime": 151.929824
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 152.387367,
-    "endTime": 152.387367,
-    "text": "#Chorus",
-    "words": [
-      {
-        "text": "#Chorus",
-        "startTime": null,
-        "endTime": null
-      }
-    ]
-  },
-  {
-    "section": "Verse",
-    "startTime": 152.719981,
-    "endTime": 154.143375,
+    "section": "chorus",
+    "startTime": 152.177513,
+    "endTime": 153.765087,
     "text": "You say don’t fall in love",
     "words": [
       {
         "text": "You",
-        "startTime": 152.719981,
-        "endTime": 152.980351
+        "startTime": 152.177513,
+        "endTime": 152.398852
       },
       {
         "text": "say",
-        "startTime": 152.980351,
-        "endTime": 153.295374
+        "startTime": 152.398852,
+        "endTime": 152.769431
       },
       {
         "text": "don’t",
-        "startTime": 153.295374,
-        "endTime": 153.495148
+        "startTime": 152.769431,
+        "endTime": 153.098861
       },
       {
         "text": "fall",
-        "startTime": 153.495148,
-        "endTime": 153.674213
+        "startTime": 153.098861,
+        "endTime": 153.220968
       },
       {
         "text": "in",
-        "startTime": 153.674213,
-        "endTime": 154.143375
+        "startTime": 153.220968,
+        "endTime": 153.765087
       },
       {
         "text": "love",
-        "startTime": 154.143375,
-        "endTime": 154.143375
+        "startTime": 153.765087,
+        "endTime": 153.765087
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 154.492871,
-    "endTime": 155.803458,
+    "section": "chorus",
+    "startTime": 154.438283,
+    "endTime": 156.084376,
     "text": "Vì giờ đây em quên hết rồi",
     "words": [
       {
         "text": "Vì",
-        "startTime": 154.492871,
-        "endTime": 154.641226
+        "startTime": 154.438283,
+        "endTime": 154.617935
       },
       {
         "text": "giờ",
-        "startTime": 154.641226,
-        "endTime": 154.820477
+        "startTime": 154.617935,
+        "endTime": 154.723226
       },
       {
         "text": "đây",
-        "startTime": 154.820477,
-        "endTime": 155.005108
+        "startTime": 154.723226,
+        "endTime": 155.07925
       },
       {
         "text": "em",
-        "startTime": 155.005108,
-        "endTime": 155.146229
+        "startTime": 155.07925,
+        "endTime": 155.413719
       },
       {
         "text": "quên",
-        "startTime": 155.146229,
-        "endTime": 155.337973
+        "startTime": 155.413719,
+        "endTime": 155.762333
       },
       {
         "text": "hết",
-        "startTime": 155.337973,
-        "endTime": 155.803458
+        "startTime": 155.762333,
+        "endTime": 156.084376
       },
       {
         "text": "rồi",
-        "startTime": 155.803458,
-        "endTime": 155.803458
+        "startTime": 156.084376,
+        "endTime": 156.084376
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 156.834678,
-    "endTime": 159.56695,
+    "section": "chorus",
+    "startTime": 156.912169,
+    "endTime": 159.62633,
     "text": "Mặc kệ lời yêu mỗi đêm vẫn chờ đợi",
     "words": [
       {
         "text": "Mặc",
-        "startTime": 156.834678,
-        "endTime": 157.186227
+        "startTime": 156.912169,
+        "endTime": 157.260052
       },
       {
         "text": "kệ",
-        "startTime": 157.186227,
-        "endTime": 157.76393
+        "startTime": 157.260052,
+        "endTime": 157.598072
       },
       {
         "text": "lời",
-        "startTime": 157.76393,
-        "endTime": 157.991529
+        "startTime": 157.598072,
+        "endTime": 157.945211
       },
       {
         "text": "yêu",
-        "startTime": 157.991529,
-        "endTime": 158.32138
+        "startTime": 157.945211,
+        "endTime": 158.275527
       },
       {
         "text": "mỗi",
-        "startTime": 158.32138,
-        "endTime": 158.627712
+        "startTime": 158.275527,
+        "endTime": 158.608231
       },
       {
         "text": "đêm",
-        "startTime": 158.627712,
-        "endTime": 158.973968
+        "startTime": 158.608231,
+        "endTime": 158.935649
       },
       {
         "text": "vẫn",
-        "startTime": 158.973968,
-        "endTime": 159.235603
+        "startTime": 158.935649,
+        "endTime": 159.135045
       },
       {
         "text": "chờ",
-        "startTime": 159.235603,
-        "endTime": 159.56695
+        "startTime": 159.135045,
+        "endTime": 159.62633
       },
       {
         "text": "đợi",
-        "startTime": 159.56695,
-        "endTime": 159.56695
+        "startTime": 159.62633,
+        "endTime": 159.62633
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 162.435292,
-    "endTime": 163.753671,
+    "section": "chorus",
+    "startTime": 162.328067,
+    "endTime": 163.659368,
     "text": "Vậy thì xin em hãy đừng lo",
     "words": [
       {
         "text": "Vậy",
-        "startTime": 162.435292,
-        "endTime": 162.629062
+        "startTime": 162.328067,
+        "endTime": 162.516176
       },
       {
         "text": "thì",
-        "startTime": 162.629062,
-        "endTime": 162.779441
+        "startTime": 162.516176,
+        "endTime": 162.679422
       },
       {
         "text": "xin",
-        "startTime": 162.779441,
-        "endTime": 162.952574
+        "startTime": 162.679422,
+        "endTime": 162.990884
       },
       {
         "text": "em",
-        "startTime": 162.952574,
-        "endTime": 162.979988
+        "startTime": 162.990884,
+        "endTime": 163.163112
       },
       {
         "text": "hãy",
-        "startTime": 162.979988,
-        "endTime": 163.372862
+        "startTime": 163.163112,
+        "endTime": 163.417689
       },
       {
         "text": "đừng",
-        "startTime": 163.372862,
-        "endTime": 163.753671
+        "startTime": 163.417689,
+        "endTime": 163.659368
       },
       {
         "text": "lo",
-        "startTime": 163.753671,
-        "endTime": 163.753671
+        "startTime": 163.659368,
+        "endTime": 163.659368
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 164.766104,
-    "endTime": 166.331726,
+    "section": "chorus",
+    "startTime": 164.800029,
+    "endTime": 166.410817,
     "text": "Về mọi thứ mà ta từng có",
     "words": [
       {
         "text": "Về",
-        "startTime": 164.766104,
-        "endTime": 164.949181
+        "startTime": 164.800029,
+        "endTime": 164.980543
       },
       {
         "text": "mọi",
-        "startTime": 164.949181,
-        "endTime": 165.099586
+        "startTime": 164.980543,
+        "endTime": 165.139933
       },
       {
         "text": "thứ",
-        "startTime": 165.099586,
-        "endTime": 165.54164
+        "startTime": 165.139933,
+        "endTime": 165.598401
       },
       {
         "text": "mà",
-        "startTime": 165.54164,
-        "endTime": 165.716307
+        "startTime": 165.598401,
+        "endTime": 165.7714
       },
       {
         "text": "ta",
-        "startTime": 165.716307,
-        "endTime": 166.039712
+        "startTime": 165.7714,
+        "endTime": 166.08124
       },
       {
         "text": "từng",
-        "startTime": 166.039712,
-        "endTime": 166.331726
+        "startTime": 166.08124,
+        "endTime": 166.410817
       },
       {
         "text": "có",
-        "startTime": 166.331726,
-        "endTime": 166.331726
+        "startTime": 166.410817,
+        "endTime": 166.410817
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 167.54374,
-    "endTime": 170.081727,
+    "section": "chorus",
+    "startTime": 167.598253,
+    "endTime": 169.437245,
     "text": "Trả lại cho em con tim tự do",
     "words": [
       {
         "text": "Trả",
-        "startTime": 167.54374,
-        "endTime": 167.714401
+        "startTime": 167.598253,
+        "endTime": 167.77336
       },
       {
         "text": "lại",
-        "startTime": 167.714401,
-        "endTime": 167.8991
+        "startTime": 167.77336,
+        "endTime": 167.955081
       },
       {
         "text": "cho",
-        "startTime": 167.8991,
-        "endTime": 168.177542
+        "startTime": 167.955081,
+        "endTime": 168.192889
       },
       {
         "text": "em",
-        "startTime": 168.177542,
-        "endTime": 168.348773
+        "startTime": 168.192889,
+        "endTime": 168.423496
       },
       {
         "text": "con",
-        "startTime": 168.348773,
-        "endTime": 168.702996
+        "startTime": 168.423496,
+        "endTime": 168.823311
       },
       {
         "text": "tim",
-        "startTime": 168.702996,
-        "endTime": 169.065614
+        "startTime": 168.823311,
+        "endTime": 169.150622
       },
       {
         "text": "tự",
-        "startTime": 169.065614,
-        "endTime": 170.081727
+        "startTime": 169.150622,
+        "endTime": 169.437245
       },
       {
         "text": "do",
-        "startTime": 170.081727,
-        "endTime": 170.081727
+        "startTime": 169.437245,
+        "endTime": 169.437245
       }
     ]
   },
   {
-    "section": "Verse",
-    "startTime": 170.354547,
-    "endTime": 173.602393,
+    "section": "chorus",
+    "startTime": 170.177383,
+    "endTime": 173.647409,
     "text": "Rồi tất cả sẽ hoá thành tàn tro",
     "words": [
       {
         "text": "Rồi",
-        "startTime": 170.354547,
-        "endTime": 170.580751
+        "startTime": 170.177383,
+        "endTime": 170.385959
       },
       {
         "text": "tất",
-        "startTime": 170.580751,
-        "endTime": 170.801505
+        "startTime": 170.385959,
+        "endTime": 170.595286
       },
       {
         "text": "cả",
-        "startTime": 170.801505,
-        "endTime": 170.972869
+        "startTime": 170.595286,
+        "endTime": 170.918237
       },
       {
         "text": "sẽ",
-        "startTime": 170.972869,
-        "endTime": 171.305042
+        "startTime": 170.918237,
+        "endTime": 171.313543
       },
       {
         "text": "hoá",
-        "startTime": 171.305042,
-        "endTime": 173.105958
+        "startTime": 171.313543,
+        "endTime": 173.106897
       },
       {
         "text": "thành",
-        "startTime": 173.105958,
-        "endTime": 173.321844
+        "startTime": 173.106897,
+        "endTime": 173.356809
       },
       {
         "text": "tàn",
-        "startTime": 173.321844,
-        "endTime": 173.602393
+        "startTime": 173.356809,
+        "endTime": 173.647409
       },
       {
         "text": "tro",
-        "startTime": 173.602393,
-        "endTime": 173.602393
+        "startTime": 173.647409,
+        "endTime": 173.647409
       }
     ]
   }
