@@ -23,6 +23,7 @@ dist/
 .temp/
 
 # IDE
+.claude/
 .vscode/
 .idea/
 *.swp
