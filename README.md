@@ -1,4 +1,4 @@
-# CineVerse Authentication System
+# An Kun Studio Digital Music Distribution
 
 Một hệ thống xác thực hoàn chỉnh dựa trên Supabase cho Next.js, được trích xuất từ dự án CineVerse. Hệ thống này bao gồm tất cả các thành phần cần thiết để triển khai xác thực người dùng trong ứng dụng web của bạn.
 
