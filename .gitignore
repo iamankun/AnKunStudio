@@ -23,8 +23,8 @@ dist/
 .temp/
 
 # IDE
-.claude/
-.vscode/
+.claude
+.vscode
 .codesandbox
 .idea/
 *.swp

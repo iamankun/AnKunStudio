@@ -1,0 +1,112 @@
+/* Lyrics Display Styles */
+
+/* Word highlighting for minimized view */
+.lyrics-word {
+  display: inline-block;
+  margin: 0 0.125rem;
+  transition: colors 100ms, background-image 100ms;
+  font-weight: 600;
+}
+
+.lyrics-word-upcoming {
+  background-image: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: rgba(148, 163, 184, 0.6); /* Fallback for older browsers */
+  color: rgba(148, 163, 184, 0.6); /* Fallback for older browsers */
+}
+
+@supports (color: color-mix(in oklch, white, black)) {
+  .lyrics-word-upcoming {
+    -webkit-text-fill-color: color-mix(in oklch, var(--color-foreground) 40%, transparent);
+    color: color-mix(in oklch, var(--color-foreground) 40%, transparent);
+  }
+}
+
+.lyrics-word-active {
+  background-image: linear-gradient(
+    90deg, 
+    var(--color-primary) var(--progress, 0%), 
+    rgba(148, 163, 184, 0.6) var(--progress, 0%) /* Fallback for older browsers */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Fallback for older browsers */
+  color: var(--color-primary);
+}
+
+@supports (color: color-mix(in oklch, white, black)) {
+  .lyrics-word-active {
+    background-image: linear-gradient(
+      90deg, 
+      var(--color-primary) var(--progress, 0%), 
+      color-mix(in oklch, var(--color-foreground) 40%, transparent) var(--progress, 0%)
+    );
+  }
+}
+
+/* Word highlighting for expanded view */
+.lyrics-word-expanded {
+  display: inline-block;
+  margin: 0 0.125rem 0 0.25rem;
+  transition: all 150ms;
+}
+
+.lyrics-word-expanded-upcoming {
+  opacity: 0.3;
+  background-image: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: currentColor;
+  color: currentColor;
+}
+
+.lyrics-word-expanded-active {
+  opacity: 1;
+  background-image: linear-gradient(
+    90deg, 
+    var(--color-primary) var(--progress, 0%), 
+    rgba(148, 163, 184, 0.5) var(--progress, 0%) /* Fallback for older browsers */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Fallback for older browsers */
+  color: var(--color-primary);
+}
+
+@supports (color: color-mix(in oklch, white, black)) {
+  .lyrics-word-expanded-active {
+    background-image: linear-gradient(
+      90deg, 
+      var(--color-primary) var(--progress, 0%), 
+      color-mix(in oklch, var(--color-foreground) 50%, transparent) var(--progress, 0%)
+    );
+  }
+}
+
+/* Dynamic progress using predefined classes */
+.lyrics-word-progress-0 { --progress: 0%; }
+.lyrics-word-progress-10 { --progress: 10%; }
+.lyrics-word-progress-20 { --progress: 20%; }
+.lyrics-word-progress-30 { --progress: 30%; }
+.lyrics-word-progress-40 { --progress: 40%; }
+.lyrics-word-progress-50 { --progress: 50%; }
+.lyrics-word-progress-60 { --progress: 60%; }
+.lyrics-word-progress-70 { --progress: 70%; }
+.lyrics-word-progress-80 { --progress: 80%; }
+.lyrics-word-progress-90 { --progress: 90%; }
+.lyrics-word-progress-100 { --progress: 100%; }
+
+.lyrics-word-expanded-progress-0 { --progress: 0%; }
+.lyrics-word-expanded-progress-10 { --progress: 10%; }
+.lyrics-word-expanded-progress-20 { --progress: 20%; }
+.lyrics-word-expanded-progress-30 { --progress: 30%; }
+.lyrics-word-expanded-progress-40 { --progress: 40%; }
+.lyrics-word-expanded-progress-50 { --progress: 50%; }
+.lyrics-word-expanded-progress-60 { --progress: 60%; }
+.lyrics-word-expanded-progress-70 { --progress: 70%; }
+.lyrics-word-expanded-progress-80 { --progress: 80%; }
+.lyrics-word-expanded-progress-90 { --progress: 90%; }
+.lyrics-word-expanded-progress-100 { --progress: 100%; }

@@ -1,0 +1,66 @@
+/* Rich Text Editor Styles */
+.rich-editor-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: hsl(var(--background));
+}
+
+.rich-editor-content {
+  min-height: 400px;
+  padding: 1rem;
+  outline: none;
+}
+
+.rich-editor-content:focus {
+  outline: none;
+}
+
+.rich-editor-textarea {
+  min-height: 400px;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+
+.rich-editor-fullscreen .rich-editor-content {
+  height: calc(100vh - 200px);
+}
+
+.rich-editor-fullscreen .rich-editor-textarea {
+  height: calc(100vh - 200px);
+}
+
+/* Custom styles for content */
+.rich-editor-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rich-editor-content video {
+  max-width: 100%;
+}
+
+.rich-editor-content audio {
+  width: 100%;
+}
+
+.rich-editor-content blockquote {
+  border-left: 4px solid hsl(var(--border));
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.rich-editor-content hr {
+  border: none;
+  border-top: 1px solid hsl(var(--border));
+  margin: 1rem 0;
+}

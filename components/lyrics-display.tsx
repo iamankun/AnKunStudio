@@ -5,6 +5,7 @@ import { ChevronUp, ChevronDown, Mic2, Target } from 'lucide-react';
 import { getWordProgress } from '@/lib/lyrics-utils';
 import { useMusic } from '@/lib/music-context';
 import { useEffect, useRef, useState } from 'react';
+import '@/styles/lyrics-display.css';
 
 interface LyricsDisplayProps {
   currentTime: number;
@@ -15,7 +16,6 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
   const { 
     lyrics, 
     currentLine, 
-    currentWord, 
     isExpanded, 
     isLoading, 
     error,
@@ -52,7 +52,14 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
     if (isPlaying) {
       rafId = requestAnimationFrame(loop);
     } else {
-      setAnimationTime(getCurrentTime());
+      // Use setTimeout to avoid synchronous setState in effect
+      const timeoutId = setTimeout(() => {
+        setAnimationTime(getCurrentTime());
+      }, 0);
+      return () => {
+        clearTimeout(timeoutId);
+        if (rafId) cancelAnimationFrame(rafId);
+      };
     }
     return () => cancelAnimationFrame(rafId);
   }, [isPlaying, getCurrentTime]);
@@ -105,14 +112,7 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
                   return (
                     <span
                       key={idx}
-                      className="inline-block mx-0.5 transition-colors duration-100 font-semibold"
-                      style={{
-                        backgroundImage: isUpcoming 
-                          ? 'none' 
-                          : `linear-gradient(90deg, var(--color-primary) ${progress}%, color-mix(in oklch, var(--color-foreground) 40%, transparent) ${progress}%)`,
-                        WebkitBackgroundClip: isUpcoming ? 'none' : 'text',
-                        WebkitTextFillColor: isUpcoming ? 'color-mix(in oklch, var(--color-foreground) 40%, transparent)' : 'transparent',
-                      }}
+                      className={`lyrics-word ${isUpcoming ? 'lyrics-word-upcoming' : 'lyrics-word-active'} lyrics-word-progress-${Math.round(progress / 10) * 10}`}
                     >
                       {word.text}
                     </span>
@@ -122,7 +122,7 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
             </div>
           ) : (
             <p className="text-center text-muted-foreground text-sm">
-              ♪ Âm nhạc đang phát...
+              ♪ Nhạc đang phát...
             </p>
           )}
         </div>
@@ -166,7 +166,7 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
             }}
             className="p-2 rounded-full hover:bg-foreground/10 transition-colors text-primary"
             aria-label="Đồng bộ lời với nhạc"
-            title="Nhấn khi nghe thấy lời đầu tiên để đồng bộ"
+            title="Nhấn khi nghe loi dau tien de dong bo"
           >
             <Target className="w-5 h-5" />
           </button>
@@ -213,22 +213,12 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
                   
                   // Active line feathering and gradient processing
                   // Unsung words should be dim, sung words should be colored
-                  const isPassed = animationTime >= word.endTime;
                   const isUpcoming = animationTime < word.startTime;
                   
                   return (
                     <span
                       key={idx}
-                      className="inline-block mx-0.5 lg:mx-1 transition-all duration-150"
-                      style={isActive ? {
-                        // For the active line: upcoming words dim, sung words colored
-                        backgroundImage: isUpcoming 
-                          ? 'none' 
-                          : `linear-gradient(90deg, var(--color-primary) ${progress}%, color-mix(in oklch, var(--color-foreground) 50%, transparent) ${progress}%)`,
-                        WebkitBackgroundClip: isUpcoming ? 'none' : 'text',
-                        WebkitTextFillColor: isUpcoming ? 'currentColor' : 'transparent',
-                        opacity: isUpcoming ? 0.3 : 1,
-                      } : {}}
+                      className={`lyrics-word-expanded ${isActive ? (isUpcoming ? 'lyrics-word-expanded-upcoming' : 'lyrics-word-expanded-active') : ''} ${isActive ? `lyrics-word-expanded-progress-${Math.round(progress / 10) * 10}` : ''}`}
                     >
                       {word.text}
                     </span>

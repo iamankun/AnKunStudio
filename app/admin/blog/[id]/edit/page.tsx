@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -17,39 +17,116 @@ import {
 import RichTextEditor from '@/components/ui/rich-text-editor';
 import { ArrowLeft, Save, Eye, Upload } from 'lucide-react';
 import Link from 'next/link';
+import { layBaiVietTheoId, capNhatBaiViet, UpdateBaiViet } from '@/lib/baiviet';
+import Image from 'next/image';
+
+// Extended interface for post data that might include category and tags
+interface ExtendedBaiViet extends UpdateBaiViet {
+  category?: string;
+  tags?: string;
+}
 
 const categories = [
-  'Thông tin Ngành',
-  'Nghệ sĩ Tiêu biểu',
+  'Thông tin',
+  'Nghệ sĩ',
   'Mẹo & Hướng dẫn',
   'Sản xuất',
   'Tin tức',
   'Sự kiện',
 ];
 
-export default function NewBlogPostPage() {
+export default function EditBlogPostPage() {
   const router = useRouter();
-  const [formData, setFormData] = useState({
-    title: '',
-    excerpt: '',
-    content: '',
-    category: '',
-    featuredImage: '',
-    status: 'draft',
-    tags: '',
+  const params = useParams();
+  const [formData, setFormData] = useState<UpdateBaiViet>({
+    tieude: '',
+    noidung: '',
+    tomtat: '',
+    anh_dai_dien: '',
+    trang_thai: 'draft',
   });
+  const [category, setCategory] = useState('');
+  const [tags, setTags] = useState('');
   const [isSaving, setIsSaving] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [featuredImageWarning, setFeaturedImageWarning] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const postId = params.id as string;
+      
+      if (!postId) {
+        setError('Không có ID bài viết');
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const post = await layBaiVietTheoId(postId);
+        if (post) {
+          setFormData({
+            tieude: post.tieude || '',
+            noidung: post.noidung || '',
+            tomtat: post.tomtat || '',
+            anh_dai_dien: post.anh_dai_dien || '',
+            trang_thai: post.trang_thai || 'draft',
+          });
+          // Safely set category and tags using the extended interface
+          const extendedPost = post as ExtendedBaiViet;
+          setCategory(extendedPost.category || '');
+          setTags(extendedPost.tags || '');
+        } else {
+          setError('Bài viết không tồn tại');
+        }
+      } catch (err) {
+        console.error('Failed to fetch blog post:', err);
+        setError('Không thể tải bài viết');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
+  }, [params.id]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSaving(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSaving(false);
-    router.push('/admin/blog');
+    try {
+      if (!formData.tieude?.trim()) {
+        throw new Error('Tiêu đề không được để trống');
+      }
+      if (!formData.noidung?.trim()) {
+        throw new Error('Nội dung không được để trống');
+      }
+      
+      const postId = params.id as string;
+      if (!postId) {
+        throw new Error('Thông tin không hợp lệ');
+      }
+      
+      const updateData: UpdateBaiViet = {
+        ...formData,
+        trang_thai: formData.trang_thai as 'draft' | 'published' | 'archived',
+      };
+      
+      await capNhatBaiViet(postId, updateData);
+      router.push('/admin/blog');
+    } catch (error) {
+      console.error('Failed to update blog post:', error);
+      alert(`Lỗi khi cập nhật bài viết: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleInputChange = (field: keyof UpdateBaiViet, value: string) => {
+    setFormData((prev: UpdateBaiViet) => ({
+      ...prev,
+      [field]: value
+    }));
   };
 
   const validateFeaturedImage = (url: string): { isValid: boolean; warning?: string } => {
@@ -103,10 +180,31 @@ export default function NewBlogPostPage() {
   };
 
   const handleFeaturedImageChange = (value: string) => {
-    setFormData({ ...formData, featuredImage: value });
+    handleInputChange('anh_dai_dien', value);
     const validation = validateFeaturedImage(value);
     setFeaturedImageWarning(validation.warning || null);
   };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="text-muted-foreground">Đang tải thông tin bài viết...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="text-center">
+          <div className="text-destructive mb-4">{error}</div>
+          <Link href="/admin/blog">
+            <Button variant="outline">Quay lại</Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -117,8 +215,8 @@ export default function NewBlogPostPage() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Bài viết Blog Mới</h1>
-          <p className="text-muted-foreground mt-1">Tạo bài viết mới cho blog của bạn</p>
+          <h1 className="text-3xl font-bold text-foreground">Chỉnh sửa bài viết</h1>
+          <p className="text-muted-foreground mt-1">Cập nhật nội dung bài viết</p>
         </div>
       </div>
 
@@ -136,9 +234,10 @@ export default function NewBlogPostPage() {
                   <Input
                     id="title"
                     placeholder="Nhập tiêu đề bài viết..."
-                    value={formData.title}
-                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                    value={formData.tieude || ''}
+                    onChange={(e) => handleInputChange('tieude', e.target.value)}
                     className="text-lg"
+                    required
                   />
                 </div>
 
@@ -147,19 +246,46 @@ export default function NewBlogPostPage() {
                   <Textarea
                     id="excerpt"
                     placeholder="Mô tả ngắn về bài viết..."
-                    value={formData.excerpt}
-                    onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
-                    rows={2}
+                    value={formData.tomtat || ''}
+                    onChange={(e) => handleInputChange('tomtat', e.target.value)}
+                    rows={3}
                   />
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="content">Nội dung</Label>
                   <RichTextEditor
-                    value={formData.content}
-                    onChange={(value) => setFormData({ ...formData, content: value })}
-                    placeholder="Viết nội dung bài viết của bạn ở đây... (Hỗ trợ Markdown)"
-                    height="400px"
+                    value={formData.noidung || ''}
+                    onChange={(value) => handleInputChange('noidung', value)}
+                    placeholder="Viết nội dung bài viết tại đây..."
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>SEO & Meta</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="meta-title">Meta Title</Label>
+                  <Input
+                    id="meta-title"
+                    placeholder="Tiêu đề SEO (tối đa 60 ký tự)"
+                    value={formData.tieude?.substring(0, 60) || ''}
+                    maxLength={60}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="meta-description">Meta Description</Label>
+                  <Textarea
+                    id="meta-description"
+                    placeholder="Mô tả SEO (tối đa 160 ký tự)"
+                    value={formData.tomtat?.substring(0, 160) || ''}
+                    maxLength={160}
+                    rows={2}
                   />
                 </div>
               </CardContent>
@@ -178,20 +304,19 @@ export default function NewBlogPostPage() {
                     type="button"
                     variant="outline"
                     className="flex-1"
-                    onClick={handleSubmit}
+                    onClick={() => handleInputChange('trang_thai', 'draft')}
                     disabled={isSaving}
                   >
                     <Save className="h-4 w-4 mr-2" />
                     Lưu Nháp
                   </Button>
                   <Button
-                    type="button"
+                    type="submit"
                     className="flex-1"
-                    onClick={handleSubmit}
                     disabled={isSaving}
                   >
                     <Eye className="h-4 w-4 mr-2" />
-                    Xuất bản
+                    Cập nhật
                   </Button>
                 </div>
               </CardContent>
@@ -205,8 +330,8 @@ export default function NewBlogPostPage() {
                 <div className="space-y-2">
                   <Label htmlFor="category">Danh mục</Label>
                   <Select
-                    value={formData.category}
-                    onValueChange={(value) => setFormData({ ...formData, category: value })}
+                    value={category}
+                    onValueChange={setCategory}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Chọn danh mục" />
@@ -226,8 +351,8 @@ export default function NewBlogPostPage() {
                   <Input
                     id="tags"
                     placeholder="vd., nhạc, streaming, nghệ sĩ..."
-                    value={formData.tags}
-                    onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
+                    value={tags}
+                    onChange={(e) => setTags(e.target.value)}
                   />
                   <p className="text-xs text-muted-foreground">Phân cách các thẻ bằng dấu phẩy</p>
                 </div>
@@ -245,7 +370,7 @@ export default function NewBlogPostPage() {
                     <Input
                       id="featuredImage"
                       placeholder="https://example.com/image.jpg"
-                      value={formData.featuredImage}
+                      value={formData.anh_dai_dien || ''}
                       onChange={(e) => handleFeaturedImageChange(e.target.value)}
                     />
                     {featuredImageWarning && (
@@ -253,7 +378,7 @@ export default function NewBlogPostPage() {
                         ⚠️ {featuredImageWarning}
                       </div>
                     )}
-                    {formData.featuredImage && !featuredImageWarning && (
+                    {formData.anh_dai_dien && !featuredImageWarning && (
                       <div className="text-xs text-green-600 bg-green-50 p-2 rounded border border-green-200 mt-1">
                         ✅ URL hợp lệ và được phép
                       </div>
@@ -282,6 +407,7 @@ export default function NewBlogPostPage() {
                              // For now, create a local preview
                              const url = URL.createObjectURL(file);
                              handleFeaturedImageChange(url);
+                             // You would typically upload to Supabase Storage here
                              console.log('File selected for upload:', file);
                            }
                          };
@@ -296,11 +422,13 @@ export default function NewBlogPostPage() {
                     </p>
                   </div>
                   
-                  {formData.featuredImage && (
+                  {formData.anh_dai_dien && (
                     <div className="mt-3">
-                      <img 
-                        src={formData.featuredImage} 
+                      <Image 
+                        src={formData.anh_dai_dien} 
                         alt="Featured image preview" 
+                        width={320}
+                        height={128}
                         className="w-full h-32 object-cover rounded-lg border"
                         onError={(e) => {
                           e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjEzMCIgdmlld0JveD0iMCAwIDMyMCAxMzAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxMzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7Ekb25nIGjhu5QgY+G7oWk8L3RleHQ+PC9zdmc+';
