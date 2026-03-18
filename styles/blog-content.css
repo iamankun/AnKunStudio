@@ -1,0 +1,258 @@
+/* Blog Content Styling */
+
+/* Main content container */
+.blog-content {
+  color: hsl(var(--foreground));
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+/* Paragraphs with justified text */
+.blog-paragraph {
+  color: hsl(var(--foreground));
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  line-height: 1.75;
+  /* Fallback for browsers that don't support text-justify */
+  text-align-last: center;
+}
+
+/* Hide ONLY images inside paragraphs, keep all text */
+.blog-paragraph img {
+  display: none;
+}
+
+/* Force image containers to be visible */
+.blog-image-container {
+  display: flex !important;
+  justify-content: center;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+/* First paragraph special styling */
+.blog-paragraph:first-of-type {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-indent: 2rem;
+}
+
+/* Image containers */
+.blog-image-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.blog-image {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Large images - make them really big */
+.blog-image[src*="large"],
+.blog-image[src*="big"] {
+  width: 100%;
+  max-width: 100%;
+  min-height: 500px;
+  object-fit: cover;
+}
+
+/* Medium images */
+.blog-image[src*="medium"] {
+  width: 100%;
+  max-width: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+/* Small images - make them bigger than before */
+.blog-image[src*="small"],
+.blog-image[src*="thumb"] {
+  width: 100%;
+  max-width: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+/* Standard images (like 300x168) - make them much bigger */
+.blog-image:not([src*="large"]):not([src*="big"]):not([src*="medium"]):not([src*="small"]):not([src*="thumb"]) {
+  width: 100%;
+  max-width: 100%;
+  min-height: 350px;
+  object-fit: cover;
+}
+
+/* Very wide images (like 300x168 aspect ratio) - make them big */
+.blog-image[style*="width: 300px"],
+.blog-image[width="300"] {
+  width: 100%;
+  max-width: 100%;
+  min-height: 350px;
+  object-fit: cover;
+}
+
+/* Headings inside content */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content h1 { font-size: 1.875rem; }
+.blog-content h2 { font-size: 1.5rem; }
+.blog-content h3 { font-size: 1.25rem; }
+.blog-content h4 { font-size: 1.125rem; }
+.blog-content h5 { font-size: 1rem; }
+.blog-content h6 { font-size: 0.875rem; }
+
+/* Lists */
+.blog-content ul,
+.blog-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+.blog-content blockquote {
+  border-left: 4px solid hsl(var(--primary));
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Links */
+.blog-content a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.blog-content a:hover {
+  color: hsl(var(--primary) / 0.8);
+}
+
+/* Code blocks */
+.blog-content code {
+  background-color: hsl(var(--muted));
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.blog-content pre {
+  background-color: hsl(var(--muted));
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.blog-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Tables */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.blog-content th {
+  background-color: hsl(var(--muted));
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .blog-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  
+  .blog-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .blog-paragraph:first-of-type {
+    text-indent: 1rem;
+  }
+  
+  .blog-image {
+    width: 100%;
+    max-width: 100%;
+    min-height: 250px !important; /* Smaller on mobile */
+  }
+  
+  .blog-image[src*="large"],
+  .blog-image[src*="big"] {
+    min-height: 300px !important;
+  }
+  
+  .blog-image[src*="medium"] {
+    min-height: 250px !important;
+  }
+  
+  .blog-image[src*="small"],
+  .blog-image[src*="thumb"] {
+    min-height: 200px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-image {
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px !important; /* Even smaller on very small screens */
+  }
+  
+  .blog-image[src*="large"],
+  .blog-image[src*="big"] {
+    min-height: 250px !important;
+  }
+  
+  .blog-image[src*="medium"] {
+    min-height: 200px !important;
+  }
+  
+  .blog-image[src*="small"],
+  .blog-image[src*="thumb"] {
+    min-height: 150px !important;
+  }
+}

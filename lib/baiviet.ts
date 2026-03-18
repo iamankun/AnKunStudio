@@ -117,6 +117,23 @@ export async function xoaBaiViet(id: string): Promise<void> {
   }
 }
 
+export async function layBaiVietTheoSlug(slug: string): Promise<BaiViet | null> {
+  const supabase = createClient();
+  
+  const { data, error } = await supabase
+    .from('baiviet')
+    .select('*')
+    .eq('slug', slug)
+    .single();
+    
+  if (error) {
+    console.error('Lỗi khi lấy bài viết theo slug:', error);
+    throw error;
+  }
+    
+  return data;
+}
+
 export async function layBaiVietsCuaAdmin(): Promise<BaiViet[]> {
   const supabase = createClient();
   

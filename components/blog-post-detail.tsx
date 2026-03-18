@@ -5,6 +5,56 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { layBaiVietTheoId, BaiViet } from '@/lib/baiviet';
+import '@/styles/blog-content.css';
+
+// Function to format blog content with proper HTML
+const formatBlogContent = (content: string): string => {
+  return content
+    // Convert double newlines to paragraphs
+    .split(/\n\n+/)
+    .map(paragraph => {
+      const trimmed = paragraph.trim();
+      
+      // Check if paragraph contains an image (including HTML img tags)
+      if (trimmed.includes('<img') || trimmed.match(/^https?:\/\/.+\.(jpg|jpeg|png|gif|webp)$/i)) {
+        // Extract image src if it's an HTML img tag
+        let imgSrc = '';
+        let imgAlt = 'Blog image';
+        
+        if (trimmed.includes('<img')) {
+          // Extract src from HTML img tag
+          const srcMatch = trimmed.match(/src="([^"]+)"/);
+          const altMatch = trimmed.match(/alt="([^"]*)"/);
+          imgSrc = srcMatch ? srcMatch[1] : '';
+          imgAlt = altMatch ? altMatch[1] : 'Blog image';
+          
+          // Extract text content from paragraph (if any)
+          const textContent = trimmed.replace(/<img[^>]*>/gi, '').trim();
+          
+          // Return both image and text if there's text content
+          if (textContent) {
+            return `<div class="blog-image-container">
+              <img src="${imgSrc}" alt="${imgAlt}" class="blog-image" loading="lazy" />
+            </div>
+            <p class="blog-paragraph">${textContent.replace(/\n/g, '<br>')}</p>`;
+          }
+        } else {
+          // It's a direct URL
+          imgSrc = trimmed;
+          imgAlt = 'Blog image';
+        }
+        
+        // Return just the image for standalone images
+        return `<div class="blog-image-container">
+          <img src="${imgSrc}" alt="${imgAlt}" class="blog-image" loading="lazy" />
+        </div>`;
+      }
+      
+      // Regular text paragraph
+      return `<p class="blog-paragraph">${trimmed.replace(/\n/g, '<br>')}</p>`;
+    })
+    .join('');
+};
 
 export function BlogPostDetail() {
   const params = useParams();
@@ -30,18 +80,9 @@ export function BlogPostDetail() {
         return;
       }
 
-      // Validate UUID format
-      const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-      if (!uuidRegex.test(params.slug)) {
-        console.error('❌ Invalid UUID format:', params.slug);
-        setError('ID bài viết không đúng định dạng');
-        setLoading(false);
-        return;
-      }
-
       try {
         console.log('📤 Attempting to fetch post:', params.slug);
-        const data = await layBaiVietTheoId(params.slug);
+        const data = await layBaiVietTheoId(params.slug as string);
         console.log('📥 Received data:', data);
         
         if (data && data.trang_thai === 'published') {
@@ -108,61 +149,50 @@ export function BlogPostDetail() {
   }
 
   return (
-    <section className="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Breadcrumb */}
-        <nav className="mb-8">
-          <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-            ← Quay lại blog
-          </Link>
-        </nav>
-
-        {/* Header */}
-        <header className="mb-12">
-          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-            <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
-              Thông tin Ngành
-            </span>
-            <span>{getReadTime(post.noidung)}</span>
-          </div>
+    <section className="w-full pb-20 sm:pb-32">
+      {/* Featured Image with Title Overlay - Reduced Height */}
+      {post.anh_dai_dien && (
+        <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden group">
+          <Image 
+            src={post.anh_dai_dien} 
+            alt={post.tieude}
+            fill
+            priority
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          {/* No Overlay Gradient to keep image clean */}
           
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
-            {post.tieude}
-          </h1>
-          
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <span className="text-lg font-medium text-primary">A</span>
-              </div>
-              <div>
-                <div className="font-medium text-foreground">Admin</div>
-                <div className="text-sm text-muted-foreground">An Kun Studio</div>
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-sm text-muted-foreground">{formatDate(post.created_at)}</div>
-              {post.published_at && (
-                <div className="text-xs text-muted-foreground">
-                  Xuất bản: {formatDate(post.published_at)}
+          {/* Title Overlay with semi-transparent background for readability */}
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white bg-linear-to-t from-black/80 to-transparent">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4 drop-shadow-lg">
+                {post.tieude}
+              </h1>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm opacity-90">
+                <div className="flex items-center gap-4">
+                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm font-medium">
+                    Thông tin Ngành
+                  </span>
+                  <span>{getReadTime(post.noidung)}</span>
                 </div>
-              )}
+                <div className="flex flex-col sm:flex-row items-center gap-4 text-xs">
+                  <div className="text-center">
+                    <div>An Kun Studio</div>
+                  </div>
+                  <div className="text-right">
+                    {post.published_at && (
+                      <div>Xuất bản ngày: {formatDate(post.published_at)}</div>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </header>
+        </div>
+      )}
 
-        {/* Featured Image */}
-        {post.anh_dai_dien && (
-          <div className="aspect-video overflow-hidden rounded-2xl mb-12">
-            <Image 
-              src={post.anh_dai_dien} 
-              alt={post.tieude}
-              width={1200}
-              height={675}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
 
         {/* Excerpt */}
         {post.tomtat && (
@@ -176,9 +206,9 @@ export function BlogPostDetail() {
         {/* Content */}
         <article className="prose prose-lg max-w-none">
           <div 
-            className="text-foreground leading-relaxed space-y-6"
+            className="blog-content text-foreground leading-relaxed space-y-6"
             dangerouslySetInnerHTML={{ 
-              __html: post.noidung.replace(/\n/g, '<br>') 
+              __html: formatBlogContent(post.noidung) 
             }}
           />
         </article>
@@ -199,6 +229,7 @@ export function BlogPostDetail() {
             </div>
           </div>
         </footer>
+        </div>
       </div>
     </section>
   );

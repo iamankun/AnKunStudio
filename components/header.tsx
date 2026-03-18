@@ -6,12 +6,22 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { UserProfileButton } from '@/components/auth/UserProfileButton';
 import { createClient } from '@/utils/supabase/client';
+import { User } from '@supabase/supabase-js';
 
-export function Header() {
+export function Header({ transparent = false }: { transparent?: boolean }) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 0);
@@ -30,7 +40,7 @@ export function Header() {
 
     const supabase = createClient();
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event: any, session: any) => {
+      (_event, session) => {
         console.log('🔍 [Header] Auth state changed:', { session: !!session?.user, email: session?.user?.email });
         setUser(session?.user ?? null);
       }
@@ -41,8 +51,12 @@ export function Header() {
 
   if (!mounted) return null;
 
+  const headerBg = transparent 
+    ? (isScrolled ? 'bg-background/95 backdrop-blur border-b border-border' : 'bg-transparent border-transparent')
+    : 'bg-background/95 backdrop-blur border-b border-border';
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 transition-all duration-300">
+    <header className={`sticky top-0 z-40 w-full transition-all duration-300 ${headerBg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center group">
