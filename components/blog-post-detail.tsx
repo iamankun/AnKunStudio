@@ -225,6 +225,22 @@ export function BlogPostDetail() {
           />
         </article>
 
+        {/* Tags */}
+        {post.tags && (
+          <div className="mt-12 pt-8 border-t border-border">
+            <div className="flex flex-wrap gap-2">
+              {post.tags.split(',').map((tag: string, index: number) => (
+                <span 
+                  key={index}
+                  className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
+                >
+                  #{tag.trim()}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
