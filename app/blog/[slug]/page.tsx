@@ -1,5 +1,6 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { getServerSession } from "@/utils/supabase/server-session";
 import { BlogPostDetail } from '@/components/blog-post-detail';
 import { AnimatedBackground } from '@/components/animated-background';
 import { layBaiVietTheoId } from '@/lib/baiviet-server';
@@ -39,6 +40,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   
+  // Check if user is logged in
+  const { user } = await getServerSession();
+  
   let post;
   try {
     post = await layBaiVietTheoId(slug);
@@ -72,7 +76,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <AnimatedBackground />
       <Header />
       <main>
-        <BlogPostDetail post={post} />
+        <BlogPostDetail post={post} currentUser={user} />
       </main>
       <Footer />
     </div>
