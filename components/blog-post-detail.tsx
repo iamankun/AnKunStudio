@@ -1,10 +1,6 @@
-'use client';
-
-import { useState, useEffect } from 'react';
+import { BaiViet } from '@/lib/baiviet';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
-import { layBaiVietTheoId, BaiViet } from '@/lib/baiviet';
 import '@/styles/blog-content.css';
 
 // Function to format blog content with proper HTML
@@ -56,54 +52,11 @@ const formatBlogContent = (content: string): string => {
     .join('');
 };
 
-export function BlogPostDetail() {
-  const params = useParams();
-  const [post, setPost] = useState<BaiViet | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+interface BlogPostDetailProps {
+  post: BaiViet;
+}
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      console.log('🔍 Fetching post with slug:', params.slug);
-      
-      if (!params.slug) {
-        console.error('❌ No slug provided');
-        setError('Không có ID bài viết');
-        setLoading(false);
-        return;
-      }
-
-      if (typeof params.slug !== 'string') {
-        console.error('❌ Invalid slug type:', typeof params.slug);
-        setError('ID bài viết không hợp lệ');
-        setLoading(false);
-        return;
-      }
-
-      try {
-        console.log('📤 Attempting to fetch post:', params.slug);
-        const data = await layBaiVietTheoId(params.slug as string);
-        console.log('📥 Received data:', data);
-        
-        if (data && data.trang_thai === 'published') {
-          setPost(data);
-        } else if (data) {
-          console.error('❌ Post not published:', data.trang_thai);
-          setError('Bài viết chưa được xuất bản');
-        } else {
-          console.error('❌ No data received');
-          setError('Bài viết không tồn tại');
-        }
-      } catch (err) {
-        console.error('❌ Failed to fetch blog post:', err);
-        setError('Không thể tải bài viết');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPost();
-  }, [params.slug]);
+export function BlogPostDetail({ post }: BlogPostDetailProps) {
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('vi-VN', {
@@ -119,34 +72,6 @@ export function BlogPostDetail() {
     const readTime = Math.ceil(words / wordsPerMinute);
     return `${readTime} phút đọc`;
   };
-
-  if (loading) {
-    return (
-      <section className="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center h-64">
-            <div className="text-muted-foreground">Đang tải bài viết...</div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (error || !post) {
-    return (
-      <section className="w-full py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl font-bold text-foreground mb-4">Bài viết không tồn tại</h1>
-          <p className="text-muted-foreground mb-8">{error}</p>
-          <Link href="/blog">
-            <button className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">
-              Quay lại blog
-            </button>
-          </Link>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="w-full pb-20 sm:pb-32">

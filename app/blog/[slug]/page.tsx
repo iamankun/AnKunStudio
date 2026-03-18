@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { BlogPostDetail } from '@/components/blog-post-detail';
 import { AnimatedBackground } from '@/components/animated-background';
 import { layBaiVietTheoId } from '@/lib/baiviet';
+import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   try {
@@ -35,13 +36,43 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-export default function BlogPostPage() {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  
+  let post;
+  try {
+    post = await layBaiVietTheoId(slug);
+    
+    if (!post) {
+      notFound();
+    }
+  } catch (error) {
+    console.error('Error loading blog post:', error);
+    notFound();
+  }
+  
+  if (post.trang_thai !== 'published') {
+    return (
+      <div className="min-h-screen bg-background relative">
+        <AnimatedBackground />
+        <Header />
+        <main className="container mx-auto px-4 py-20">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-foreground mb-4">Bài viết chưa được xuất bản</h1>
+            <p className="text-muted-foreground">Bài viết này đang ở trạng thái nháp và chưa được công bố.</p>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+  
   return (
     <div className="min-h-screen bg-background relative">
       <AnimatedBackground />
       <Header />
       <main>
-        <BlogPostDetail />
+        <BlogPostDetail post={post} />
       </main>
       <Footer />
     </div>
