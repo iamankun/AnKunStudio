@@ -7,13 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import RichTextEditor from '@/components/ui/rich-text-editor';
 import { ArrowLeft, Save, Eye, Upload } from 'lucide-react';
 import Link from 'next/link';
@@ -25,15 +18,6 @@ interface ExtendedBaiViet extends UpdateBaiViet {
   category?: string;
   tags?: string;
 }
-
-const categories = [
-  'Thông tin',
-  'Nghệ sĩ',
-  'Mẹo & Hướng dẫn',
-  'Sản xuất',
-  'Tin tức',
-  'Sự kiện',
-];
 
 export default function EditBlogPostPage() {
   const router = useRouter();
@@ -110,6 +94,8 @@ export default function EditBlogPostPage() {
       const updateData: UpdateBaiViet = {
         ...formData,
         trang_thai: formData.trang_thai as 'draft' | 'published' | 'archived',
+        category: category,
+        tags: tags,
       };
       
       await capNhatBaiViet(postId, updateData);
@@ -144,36 +130,8 @@ export default function EditBlogPostPage() {
         return { isValid: false, warning: 'Chỉ chấp nhận HTTP và HTTPS URLs' };
       }
       
-      const allowedDomains = [
-        'exsoflgvdreikabvhvkg.supabase.co',
-        'images.unsplash.com',
-        'i.imgur.com',
-        'i.ibb.co',
-        'placehold.co',
-        'localhost',
-        '127.0.0.1',
-        'va.vercel-scripts.com'
-      ];
-      
-      // Check for exact matches
-      if (allowedDomains.includes(urlObj.hostname)) {
-        return { isValid: true };
-      }
-      
-      // Check for wildcard patterns
-      for (const domain of allowedDomains) {
-        if (domain.startsWith('*.')) {
-          const baseDomain = domain.slice(2);
-          if (urlObj.hostname === baseDomain || urlObj.hostname.endsWith('.' + baseDomain)) {
-            return { isValid: true };
-          }
-        }
-      }
-      
-      return { 
-        isValid: true, 
-        warning: `Domain "${urlObj.hostname}" không có trong danh sách cho phép. Ảnh có thể không hiển thị do CSP.` 
-      };
+      // Allow all domains - no restrictions
+      return { isValid: true };
     } catch {
       return { isValid: false, warning: 'URL không hợp lệ' };
     }
@@ -275,6 +233,7 @@ export default function EditBlogPostPage() {
                     placeholder="Tiêu đề SEO (tối đa 60 ký tự)"
                     value={formData.tieude?.substring(0, 60) || ''}
                     maxLength={60}
+                    readOnly
                   />
                 </div>
 
@@ -286,6 +245,7 @@ export default function EditBlogPostPage() {
                     value={formData.tomtat?.substring(0, 160) || ''}
                     maxLength={160}
                     rows={2}
+                    readOnly
                   />
                 </div>
               </CardContent>
@@ -329,21 +289,12 @@ export default function EditBlogPostPage() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="category">Danh mục</Label>
-                  <Select
+                  <Input
+                    id="category"
+                    placeholder="Nhập danh mục..."
                     value={category}
-                    onValueChange={setCategory}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Chọn danh mục" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {categories.map((cat) => (
-                        <SelectItem key={cat} value={cat}>
-                          {cat}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                    onChange={(e) => setCategory(e.target.value)}
+                  />
                 </div>
 
                 <div className="space-y-2">
@@ -383,16 +334,6 @@ export default function EditBlogPostPage() {
                         ✅ URL hợp lệ và được phép
                       </div>
                     )}
-                  </div>
-                  
-                  <div className="text-xs text-muted-foreground">
-                    <p className="font-semibold mb-1">Các domain được phép:</p>
-                    <div className="flex flex-wrap gap-1">
-                      <span className="bg-secondary px-2 py-1 rounded text-xs">supabase.co</span>
-                      <span className="bg-secondary px-2 py-1 rounded text-xs">unsplash.com</span>
-                      <span className="bg-secondary px-2 py-1 rounded text-xs">imgur.com</span>
-                      <span className="bg-secondary px-2 py-1 rounded text-xs">ibb.co</span>
-                    </div>
                   </div>
                   
                   <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors cursor-pointer"

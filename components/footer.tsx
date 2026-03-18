@@ -44,7 +44,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              Biến ước mơ thành ngôi sao
+              Send Gift Your Song To The World
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 An Kun Studio. Đã đăng ký bản quyền.
+            © 2025 An Kun Studio. Tất cả quyền được bảo lưu.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <Link href="#" className="hover:text-primary transition-colors">Chính sách bảo mật</Link>

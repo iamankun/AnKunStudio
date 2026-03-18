@@ -40,15 +40,14 @@ export function BlogList() {
     return `${readTime} phút đọc`;
   };
 
-  const getCategory = () => {
-    // For now, return a default category since we don't have category field in database
-    return 'Thông tin Ngành';
+  const getCategory = (post: BaiViet) => {
+    // Return the actual category from the post, or default if not set
+    return post.category || 'Thông tin Ngành';
   };
 
-  const filteredPosts = posts.filter(() => {
+  const filteredPosts = posts.filter((post) => {
     if (selectedCategory === 'Tất cả') return true;
-    // For now, all posts are in "Thông tin Ngành" category
-    return selectedCategory === 'Thông tin Ngành';
+    return getCategory(post) === selectedCategory;
   });
 
   const featuredPosts = filteredPosts.slice(0, 2); // Show first 2 as featured
@@ -131,7 +130,7 @@ export function BlogList() {
                       <div className="p-6 space-y-4">
                         <div className="flex items-center gap-4 text-sm">
                           <span className="px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
-                            {getCategory()}
+                            {getCategory(post)}
                           </span>
                           <span className="text-muted-foreground">{getReadTime(post.noidung)}</span>
                         </div>
@@ -183,7 +182,7 @@ export function BlogList() {
                       <div className="p-5 space-y-3">
                         <div className="flex items-center gap-3 text-xs">
                           <span className="px-2 py-1 rounded-full bg-secondary text-secondary-foreground font-medium">
-                            {getCategory()}
+                            {getCategory(post)}
                           </span>
                           <span className="text-muted-foreground">{getReadTime(post.noidung)}</span>
                         </div>

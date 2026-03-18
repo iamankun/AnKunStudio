@@ -171,10 +171,22 @@ export function BlogPostDetail() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm opacity-90">
                 <div className="flex items-center gap-4">
                   <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm font-medium">
-                    Thông tin Ngành
+                    {post.category || 'Thông tin Ngành'}
                   </span>
                   <span>{getReadTime(post.noidung)}</span>
                 </div>
+                {post.tags && (
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    {post.tags.split(',').map((tag: string, index: number) => (
+                      <span 
+                        key={index}
+                        className="px-2 py-1 rounded-full bg-white/10 backdrop-blur-sm text-white/80"
+                      >
+                        #{tag.trim()}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <div className="flex flex-col sm:flex-row items-center gap-4 text-xs">
                   <div className="text-center">
                     <div>An Kun Studio</div>
@@ -221,7 +233,7 @@ export function BlogPostDetail() {
             </div>
             <div className="flex gap-4">
               <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Blog
+                Bài Viết
               </Link>
               <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Liên hệ

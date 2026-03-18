@@ -7,25 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import RichTextEditor from '@/components/ui/rich-text-editor';
 import { ArrowLeft, Save, Eye, Upload } from 'lucide-react';
 import Link from 'next/link';
-
-const categories = [
-  'Thông tin Ngành',
-  'Nghệ sĩ Tiêu biểu',
-  'Mẹo & Hướng dẫn',
-  'Sản xuất',
-  'Tin tức',
-  'Sự kiện',
-];
 
 export default function NewBlogPostPage() {
   const router = useRouter();
@@ -45,11 +29,36 @@ export default function NewBlogPostPage() {
     e.preventDefault();
     setIsSaving(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSaving(false);
-    router.push('/admin/blog');
+    try {
+      // Get current user
+      const { createClient } = await import('@/utils/supabase/client');
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        throw new Error('Bạn cần đăng nhập để tạo bài viết');
+      }
+      
+      // Create blog post
+      const { taoBaiViet } = await import('@/lib/baiviet');
+      await taoBaiViet({
+        tieude: formData.title,
+        noidung: formData.content,
+        tomtat: formData.excerpt,
+        anh_dai_dien: formData.featuredImage,
+        category: formData.category,
+        tags: formData.tags,
+        trang_thai: formData.status as 'draft' | 'published',
+        admin_id: user.id
+      });
+      
+      router.push('/admin/blog');
+    } catch (error) {
+      console.error('Error creating blog post:', error);
+      alert(`Lỗi khi tạo bài viết: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   const validateFeaturedImage = (url: string): { isValid: boolean; warning?: string } => {
@@ -67,36 +76,8 @@ export default function NewBlogPostPage() {
         return { isValid: false, warning: 'Chỉ chấp nhận HTTP và HTTPS URLs' };
       }
       
-      const allowedDomains = [
-        'exsoflgvdreikabvhvkg.supabase.co',
-        'images.unsplash.com',
-        'i.imgur.com',
-        'i.ibb.co',
-        'placehold.co',
-        'localhost',
-        '127.0.0.1',
-        'va.vercel-scripts.com'
-      ];
-      
-      // Check for exact matches
-      if (allowedDomains.includes(urlObj.hostname)) {
-        return { isValid: true };
-      }
-      
-      // Check for wildcard patterns
-      for (const domain of allowedDomains) {
-        if (domain.startsWith('*.')) {
-          const baseDomain = domain.slice(2);
-          if (urlObj.hostname === baseDomain || urlObj.hostname.endsWith('.' + baseDomain)) {
-            return { isValid: true };
-          }
-        }
-      }
-      
-      return { 
-        isValid: true, 
-        warning: `Domain "${urlObj.hostname}" không có trong danh sách cho phép. Ảnh có thể không hiển thị do CSP.` 
-      };
+      // Allow all domains - no restrictions
+      return { isValid: true };
     } catch {
       return { isValid: false, warning: 'URL không hợp lệ' };
     }
@@ -204,21 +185,12 @@ export default function NewBlogPostPage() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="category">Danh mục</Label>
-                  <Select
+                  <Input
+                    id="category"
+                    placeholder="Nhập danh mục..."
                     value={formData.category}
-                    onValueChange={(value) => setFormData({ ...formData, category: value })}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Chọn danh mục" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {categories.map((cat) => (
-                        <SelectItem key={cat} value={cat}>
-                          {cat}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                  />
                 </div>
 
                 <div className="space-y-2">
@@ -258,16 +230,6 @@ export default function NewBlogPostPage() {
                         ✅ URL hợp lệ và được phép
                       </div>
                     )}
-                  </div>
-                  
-                  <div className="text-xs text-muted-foreground">
-                    <p className="font-semibold mb-1">Các domain được phép:</p>
-                    <div className="flex flex-wrap gap-1">
-                      <span className="bg-secondary px-2 py-1 rounded text-xs">supabase.co</span>
-                      <span className="bg-secondary px-2 py-1 rounded text-xs">unsplash.com</span>
-                      <span className="bg-secondary px-2 py-1 rounded text-xs">imgur.com</span>
-                      <span className="bg-secondary px-2 py-1 rounded text-xs">ibb.co</span>
-                    </div>
                   </div>
                   
                   <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors cursor-pointer"

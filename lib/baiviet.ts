@@ -41,13 +41,15 @@ export async function layBaiVietTheoId(id: string): Promise<BaiViet | null> {
 export async function taoBaiViet(baiViet: CreateBaiViet): Promise<BaiViet> {
   const supabase = createClient();
   
-  console.log('📝 Creating blog post with data:', baiViet);
+  console.log('📝 Đang tạo dữ liệu bài viết:', baiViet);
   
   const insertData: CreateBaiViet = {
     tieude: baiViet.tieude,
     noidung: baiViet.noidung,
     tomtat: baiViet.tomtat,
     anh_dai_dien: baiViet.anh_dai_dien,
+    category: baiViet.category,
+    tags: baiViet.tags,
     trang_thai: baiViet.trang_thai,
     admin_id: baiViet.admin_id,
     published_at: baiViet.trang_thai === 'published' ? new Date().toISOString() : null
@@ -72,7 +74,7 @@ export async function taoBaiViet(baiViet: CreateBaiViet): Promise<BaiViet> {
     throw error;
   }
     
-  console.log('✅ Blog post created successfully:', data);
+  console.log('✅ Bài viết đã được tạo thành công:', data);
   return data;
 }
 
@@ -84,6 +86,8 @@ export async function capNhatBaiViet(id: string, baiViet: UpdateBaiViet): Promis
     noidung: baiViet.noidung,
     tomtat: baiViet.tomtat,
     anh_dai_dien: baiViet.anh_dai_dien,
+    category: baiViet.category,
+    tags: baiViet.tags,
     trang_thai: baiViet.trang_thai,
     published_at: baiViet.trang_thai === 'published' && !baiViet.published_at ? new Date().toISOString() : baiViet.published_at
   };
