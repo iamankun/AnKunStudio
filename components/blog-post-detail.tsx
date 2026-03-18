@@ -196,9 +196,9 @@ export function BlogPostDetail() {
 
         {/* Excerpt */}
         {post.tomtat && (
-          <div className="bg-muted/50 rounded-xl p-6 mb-12">
-            <p className="text-lg text-muted-foreground italic leading-relaxed">
-              {post.tomtat}
+          <div className="mb-12 text-center px-8 py-6">
+            <p className="text-lg text-muted-foreground italic leading-relaxed max-w-3xl mx-auto">
+              &ldquo;{post.tomtat}&rdquo;
             </p>
           </div>
         )}
