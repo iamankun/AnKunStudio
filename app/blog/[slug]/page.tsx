@@ -6,6 +6,34 @@ import { AnimatedBackground } from '@/components/animated-background';
 import { layBaiVietTheoId } from '@/lib/baiviet-server';
 import { notFound } from 'next/navigation';
 
+// Static generation - build-time data fetching
+export async function generateStaticParams() {
+  // For static generation, we need to use client-side approach
+  // or fallback to dynamic rendering
+  try {
+    // Create a simple client without cookies for build time
+    const { createClient: createBrowserClient } = await import('@/utils/supabase/client');
+    const supabase = createBrowserClient();
+    
+    const { data: posts } = await supabase
+      .from('baiviet')
+      .select('id')
+      .eq('trang_thai', 'published');
+
+    if (!posts) {
+      return [];
+    }
+
+    return posts.map((post: { id: string }) => ({
+      slug: post.id,
+    }));
+  } catch (error) {
+    console.log('🔍 [BLOG] Static params generation failed, falling back to dynamic:', error);
+    // Return empty array to fallback to dynamic rendering
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   try {
     const { slug } = await params;
