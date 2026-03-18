@@ -8,12 +8,24 @@ import { notFound } from 'next/navigation';
 
 // Static generation - build-time data fetching
 export async function generateStaticParams() {
-  // For static generation, we need to use client-side approach
-  // or fallback to dynamic rendering
+  // Use server client with service role key for build-time data fetching
   try {
-    // Create a simple client without cookies for build time
-    const { createClient: createBrowserClient } = await import('@/utils/supabase/client');
-    const supabase = createBrowserClient();
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    
+    if (!supabaseUrl || !supabaseServiceKey) {
+      console.log('🔍 [BLOG] Missing environment variables for static generation');
+      return [];
+    }
+    
+    // Create server client with service role for build-time access
+    const { createServerClient } = await import('@supabase/ssr');
+    const supabase = createServerClient(supabaseUrl, supabaseServiceKey, {
+      cookies: {
+        getAll() { return []; },
+        setAll() { return; }
+      }
+    });
     
     const { data: posts } = await supabase
       .from('baiviet')
@@ -24,6 +36,7 @@ export async function generateStaticParams() {
       return [];
     }
 
+    console.log(`🔍 [BLOG] Generated ${posts.length} static params`);
     return posts.map((post: { id: string }) => ({
       slug: post.id,
     }));
