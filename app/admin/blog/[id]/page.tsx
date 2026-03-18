@@ -6,21 +6,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Edit, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { layBaiVietTheoId } from '@/lib/baiviet';
-
-interface BlogPost {
-  id: string;
-  tieude: string;
-  tomtat?: string;
-  noidung: string;
-  trang_thai: 'draft' | 'published' | 'archived';
-  created_at: string;
-  updated_at: string;
-}
+import { BaiViet, layBaiVietTheoIdClient } from '@/lib/baiviet';
 
 export default function BlogPostDetailPage() {
   const params = useParams();
-  const [post, setPost] = useState<BlogPost | null>(null);
+  const [post, setPost] = useState<BaiViet | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -35,7 +25,7 @@ export default function BlogPostDetailPage() {
       }
 
       try {
-        const postData = await layBaiVietTheoId(postId);
+        const postData = await layBaiVietTheoIdClient(postId);
         if (postData) {
           setPost(postData);
         } else {

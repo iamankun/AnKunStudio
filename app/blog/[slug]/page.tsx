@@ -2,7 +2,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { BlogPostDetail } from '@/components/blog-post-detail';
 import { AnimatedBackground } from '@/components/animated-background';
-import { layBaiVietTheoId } from '@/lib/baiviet';
+import { layBaiVietTheoId } from '@/lib/baiviet-server';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {

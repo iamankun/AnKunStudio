@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { layBaiVietTheoId } from '@/lib/baiviet';
+import { layBaiVietTheoIdClient } from '@/lib/baiviet';
 import { useParams } from 'next/navigation';
 
 interface BlogPost {
@@ -35,7 +35,7 @@ export default function BlogPostActionPage() {
       }
 
       try {
-        const postData = await layBaiVietTheoId(postId);
+        const postData = await layBaiVietTheoIdClient(postId);
         if (postData) {
           setPost(postData);
         } else {

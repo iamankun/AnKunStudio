@@ -10,7 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import RichTextEditor from '@/components/ui/rich-text-editor';
 import { ArrowLeft, Save, Eye, Upload } from 'lucide-react';
 import Link from 'next/link';
-import { layBaiVietTheoId, capNhatBaiViet, UpdateBaiViet } from '@/lib/baiviet';
+import { layBaiVietTheoIdClient, capNhatBaiViet, UpdateBaiViet } from '@/lib/baiviet';
 import Image from 'next/image';
 
 // Extended interface for post data that might include category and tags
@@ -47,7 +47,7 @@ export default function EditBlogPostPage() {
       }
 
       try {
-        const post = await layBaiVietTheoId(postId);
+        const post = await layBaiVietTheoIdClient(postId);
         if (post) {
           setFormData({
             tieude: post.tieude || '',
