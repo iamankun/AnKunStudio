@@ -1,4 +1,5 @@
 import { createClient } from '@/utils/supabase/client';
+import { createClient as createServerClient } from '@/utils/supabase/server';
 import { Database } from '@/utils/supabase/generated-types';
 
 export type BaiViet = Database['public']['Tables']['baiviet']['Row'];
@@ -21,8 +22,9 @@ export async function layBaiViets(): Promise<BaiViet[]> {
   return data || [];
 }
 
+// Server-side version for server components
 export async function layBaiVietTheoId(id: string): Promise<BaiViet | null> {
-  const supabase = createClient();
+  const supabase = await createServerClient();
   
   const { data, error } = await supabase
     .from('baiviet')

@@ -12,14 +12,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     
     if (!post) {
       return {
-        title: 'Bài viết không tìm thấy | Blog An Kun Studio',
+        title: 'Bài viết không tìm thấy | Bài viết trên An Kun Studio',
         description: 'Bài viết bạn tìm kiếm không tồn tại.',
       };
     }
 
     return {
-      title: `${post.tieude} | Blog An Kun Studio`,
-      description: post.tomtat || 'Đọc bài viết trên blog An Kun Studio',
+      title: `${post.tieude} | Bài viết trên An Kun Studio`,
+      description: post.tomtat || 'Đọc bài viết trên An Kun Studio',
       openGraph: {
         title: post.tieude,
         description: post.tomtat,
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Lỗi | Blog An Kun Studio',
+      title: 'Lỗi | Bài viết trên An Kun Studio',
       description: 'Có lỗi xảy ra khi tải bài viết.',
     };
   }
@@ -47,7 +47,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       notFound();
     }
   } catch (error) {
-    console.error('Error loading blog post:', error);
+    console.error('Lỗi khi tải bài viết:', error);
     notFound();
   }
   
