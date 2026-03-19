@@ -54,10 +54,9 @@ const formatBlogContent = (content: string): string => {
 
 interface BlogPostDetailProps {
   post: BaiViet;
-  currentUser?: any;
 }
 
-export function BlogPostDetail({ post, currentUser }: BlogPostDetailProps) {
+export function BlogPostDetail({ post }: BlogPostDetailProps) {
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('vi-VN', {
@@ -173,16 +172,7 @@ export function BlogPostDetail({ post, currentUser }: BlogPostDetailProps) {
             <div className="text-sm text-muted-foreground">
               © 2026 An Kun Studio. Tất cả quyền được bảo lưu.
             </div>
-            <div className="flex gap-4 items-center">
-              {/* Admin Edit Button */}
-              {currentUser && (
-                <Link 
-                  href={`/admin/blog/${post.id}/edit`}
-                  className="text-sm bg-orange-600 hover:bg-orange-700 text-white px-3 py-1 rounded transition-colors"
-                >
-                  Chỉnh sửa
-                </Link>
-              )}
+            <div className="flex gap-4">
               <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Bài Viết
               </Link>
