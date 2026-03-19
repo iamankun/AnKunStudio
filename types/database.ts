@@ -46,6 +46,33 @@ export type ProfileRow = Profile;
 export type ProfileInsert = Omit<Profile, 'id' | 'created_at' | 'updated_at'>;
 export type ProfileUpdate = Partial<Pick<Profile, 'id' | 'created_at'>>;
 
+// Artist types
+export interface Artist {
+  id: string;
+  name: string;
+  slug: string;
+  bio?: string;
+  avatar_url?: string;
+  cover_image_url?: string;
+  genre?: string[];
+  social_links?: Record<string, string>;
+  monthly_listeners?: string;
+  followers?: string;
+  total_streams?: string;
+  top_chart?: string;
+  verified?: boolean;
+  is_active?: boolean;
+  country?: string;
+  city?: string;
+  label?: string;
+  created_at: string;
+  updated_at?: string;
+}
+
+export type ArtistRow = Artist;
+export type ArtistInsert = Omit<Artist, 'id' | 'created_at' | 'updated_at'>;
+export type ArtistUpdate = Partial<Artist>;
+
 // Database schema type
 export interface Database {
   public: {

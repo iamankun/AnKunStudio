@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
@@ -13,82 +13,53 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-
-const artistsData = [
-  {
-    id: '1',
-    name: 'Luna Echo',
-    genre: 'Electronic',
-    monthlyListeners: '2.5M',
-    totalStreams: '45.2M',
-    status: 'verified',
-    image: '/placeholder.svg?height=100&width=100',
-    joinedDate: 'Jan 2022',
-  },
-  {
-    id: '2',
-    name: 'Rising Sun',
-    genre: 'Pop',
-    monthlyListeners: '1.8M',
-    totalStreams: '32.1M',
-    status: 'verified',
-    image: '/placeholder.svg?height=100&width=100',
-    joinedDate: 'Mar 2022',
-  },
-  {
-    id: '3',
-    name: 'Urban Beats',
-    genre: 'Hip-Hop',
-    monthlyListeners: '3.2M',
-    totalStreams: '67.8M',
-    status: 'verified',
-    image: '/placeholder.svg?height=100&width=100',
-    joinedDate: 'Nov 2021',
-  },
-  {
-    id: '4',
-    name: 'Soul Harmony',
-    genre: 'R&B',
-    monthlyListeners: '2.1M',
-    totalStreams: '38.4M',
-    status: 'pending',
-    image: '/placeholder.svg?height=100&width=100',
-    joinedDate: 'Jun 2023',
-  },
-  {
-    id: '5',
-    name: 'Wave Riders',
-    genre: 'Indie',
-    monthlyListeners: '1.4M',
-    totalStreams: '21.6M',
-    status: 'verified',
-    image: '/placeholder.svg?height=100&width=100',
-    joinedDate: 'Sep 2022',
-  },
-  {
-    id: '6',
-    name: 'Pure Notes',
-    genre: 'Classical',
-    monthlyListeners: '980K',
-    totalStreams: '15.3M',
-    status: 'pending',
-    image: '/placeholder.svg?height=100&width=100',
-    joinedDate: 'Feb 2024',
-  },
-];
+import { layDanhSachArtists, xoaArtist } from '@/lib/artists';
 
 export default function AdminArtistsPage() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [artists, setArtists] = useState(artistsData);
+  const [artists, setArtists] = useState<Array<Record<string, unknown>>>([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredArtists = artists.filter(artist =>
-    artist.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    artist.genre.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  useEffect(() => {
+    const fetchArtists = async () => {
+      try {
+        const data = await layDanhSachArtists();
+        setArtists(data);
+      } catch (error) {
+        console.error('Error fetching artists:', error);
+        setArtists([]);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const handleDelete = (id: string) => {
-    setArtists(artists.filter(artist => artist.id !== id));
+    fetchArtists();
+  }, []);
+
+  const filteredArtists = artists.filter((artist: Record<string, unknown>) => {
+    return (artist.name as string)?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (artist.genre as string[])?.some((g: string) => g.toLowerCase().includes(searchQuery.toLowerCase()))
+  });
+
+  const handleDelete = async (id: string) => {
+    try {
+      await xoaArtist(id);
+      setArtists(artists.filter(artist => artist.id !== id));
+    } catch (error) {
+      console.error('Error deleting artist:', error);
+    }
   };
+
+  if (loading) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center justify-center py-20">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+          <p className="ml-4 text-muted-foreground">Đang tải danh sách nghệ sĩ...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -123,52 +94,52 @@ export default function AdminArtistsPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredArtists.map((artist) => (
               <div
-                key={artist.id}
+                key={artist.id as string}
                 className="flex items-start gap-4 p-4 rounded-lg border border-border hover:border-primary/50 transition-colors"
               >
-                <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0">
                   <Image
-                    src={artist.image}
-                    alt={artist.name}
+                    src={(artist.avatar_url as string) || '/placeholder.svg?height=100&width=100'}
+                    alt={artist.name as string}
                     fill
                     className="object-cover"
                   />
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className="shrink-0">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-foreground truncate">{artist.name}</h3>
-                    {artist.status === 'verified' && (
-                      <CheckCircle className="h-4 w-4 text-blue-500 flex-shrink-0" />
+                    <h3 className="font-semibold text-foreground truncate">{artist.name as string}</h3>
+                    {artist.verified as boolean && (
+                      <CheckCircle className="h-4 w-4 text-blue-500 shrink-0" />
                     )}
                   </div>
-                  <p className="text-sm text-muted-foreground">{artist.genre}</p>
+                  <p className="text-sm text-muted-foreground">{(artist.genre as string[])?.[0] || 'Unknown'}</p>
                   <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
-                    <span>{artist.monthlyListeners} hàng tháng</span>
-                    <span>{artist.totalStreams} lượt stream</span>
+                    <span>{(artist.monthly_listeners as string) || '0'} hàng tháng</span>
+                    <span>{(artist.total_streams as string) || '0'} lượt stream</span>
                   </div>
                 </div>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="icon" className="flex-shrink-0">
+                    <Button variant="ghost" size="icon" className="shrink-0">
                       <MoreHorizontal className="h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem asChild>
-                      <Link href={`/artists/${artist.id}`}>
+                      <Link href={`/artists/${artist.slug}`}>
                         <Eye className="h-4 w-4 mr-2" />
                         Xem Hồ sơ
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href={`/admin/artists/${artist.id}`}>
+                      <Link href={`/admin/artists/${artist.id}/edit`}>
                         <Edit className="h-4 w-4 mr-2" />
                         Chỉnh sửa
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem
                       className="text-destructive"
-                      onClick={() => handleDelete(artist.id)}
+                      onClick={() => handleDelete(artist.id as string)}
                     >
                       <Trash2 className="h-4 w-4 mr-2" />
                       Xóa

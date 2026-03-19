@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -16,7 +16,8 @@ import {
 } from '@/components/ui/select';
 import { ArrowLeft, Save, Upload, Instagram, Twitter, Music2, Globe } from 'lucide-react';
 import Link from 'next/link';
-import { taoArtist, layArtistTheoSlug } from '@/lib/artists';
+import { capNhatArtist, layDanhSachArtists } from '@/lib/artists';
+import { Artist } from '@/types/database';
 
 const genres = [
   'Pop',
@@ -33,8 +34,11 @@ const genres = [
   'Reggae',
 ];
 
-export default function NewArtistPage() {
+export default function EditArtistPage() {
   const router = useRouter();
+  const params = useParams();
+  const artistId = params.id as string;
+  
   const [formData, setFormData] = useState({
     name: '',
     genre: '',
@@ -49,6 +53,44 @@ export default function NewArtistPage() {
   });
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchArtist = async () => {
+      try {
+        const artists = await layDanhSachArtists();
+        const artist = artists.find((a: Artist) => a.id === artistId);
+        
+        if (!artist) {
+          setError('Không tìm thấy nghệ sĩ.');
+          return;
+        }
+
+        // Extract social links
+        const socialLinks = artist.social_links || {};
+        
+        setFormData({
+          name: artist.name || '',
+          genre: (artist.genre && artist.genre.length > 0) ? artist.genre[0] : '',
+          bio: artist.bio || '',
+          country: artist.country || '',
+          city: artist.city || '',
+          website: socialLinks.website || '',
+          instagram: socialLinks.instagram || '',
+          twitter: socialLinks.twitter || '',
+          spotify: socialLinks.spotify || '',
+          label: artist.label || '',
+        });
+      } catch (error) {
+        console.error('Error fetching artist:', error);
+        setError('Không thể tải thông tin nghệ sĩ.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArtist();
+  }, [artistId]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,54 +104,67 @@ export default function NewArtistPage() {
       const { data: { user } } = await supabase.auth.getUser();
       
       if (!user) {
-        setError('Bạn cần đăng nhập để tạo nghệ sĩ mới.');
+        setError('Bạn cần đăng nhập để cập nhật nghệ sĩ.');
         return;
       }
 
-      // Generate slug from name
-      const slug = formData.name
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)/g, '');
+      // Prepare artist data
+      const artistData = {
+        name: formData.name.trim(),
+        bio: formData.bio.trim(),
+        genre: formData.genre ? [formData.genre] : [],
+        social_links: {
+          website: formData.website.trim(),
+          instagram: formData.instagram.trim(),
+          twitter: formData.twitter.trim(),
+          spotify: formData.spotify.trim(),
+        },
+        country: formData.country.trim(),
+        city: formData.city.trim(),
+        label: formData.label.trim(),
+      };
       
-      // Check if slug already exists
-      const existingArtist = await layArtistTheoSlug(slug);
-      if (existingArtist) {
-        setError(`Nghệ sĩ với tên "${formData.name}" đã tồn tại. Vui lòng chọn tên khác.`);
+      // Validate required fields
+      if (!artistData.name) {
+        setError('Tên nghệ sĩ không được để trống.');
         return;
       }
       
-      // Prepare artist data
-      const artistData = {
-        name: formData.name,
-        slug: slug,
-        bio: formData.bio,
-        genre: formData.genre ? [formData.genre] : [],
-        social_links: {
-          website: formData.website,
-          instagram: formData.instagram,
-          twitter: formData.twitter,
-          spotify: formData.spotify,
-        },
-        monthly_listeners: '0',
-        followers: '0',
-        total_streams: '0',
-        verified: false,
-        is_active: true,
-      };
+      console.log('Updating artist with ID:', artistId);
+      console.log('Update data:', artistData);
       
-      // Create artist in Supabase
-      await taoArtist(artistData);
+      // Update artist in Supabase
+      await capNhatArtist(artistId, artistData);
       
       // Redirect to artists list
       router.push('/admin/artists');
     } catch (error) {
-      console.error('Error creating artist:', error);
-      setError('Không thể tạo nghệ sĩ. Vui lòng thử lại.');
+      console.error('Error updating artist:', error);
+      
+      // Extract error message from the error object
+      let errorMessage = 'Không thể cập nhật nghệ sĩ. Vui lòng thử lại.';
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (typeof error === 'object' && error !== null) {
+        errorMessage = (error as { message?: string }).message || errorMessage;
+      }
+      
+      setError(errorMessage);
     } finally {
       setIsSaving(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center justify-center py-20">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+          <p className="ml-4 text-muted-foreground">Đang tải thông tin nghệ sĩ...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -120,8 +175,8 @@ export default function NewArtistPage() {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Thêm Nghệ sĩ Mới</h1>
-          <p className="text-muted-foreground mt-1">Tạo hồ sơ nghệ sĩ mới</p>
+          <h1 className="text-3xl font-bold text-foreground">Chỉnh sửa Nghệ sĩ</h1>
+          <p className="text-muted-foreground mt-1">Cập nhật thông tin nghệ sĩ</p>
         </div>
       </div>
 
@@ -289,7 +344,7 @@ export default function NewArtistPage() {
               <CardContent className="space-y-4">
                 <Button type="submit" className="w-full" disabled={isSaving}>
                   <Save className="h-4 w-4 mr-2" />
-                  {isSaving ? 'Đang lưu...' : 'Lưu Nghệ sĩ'}
+                  {isSaving ? 'Đang lưu...' : 'Lưu Thay đổi'}
                 </Button>
                 <Button type="button" variant="outline" className="w-full" asChild>
                   <Link href="/admin/artists">Hủy</Link>

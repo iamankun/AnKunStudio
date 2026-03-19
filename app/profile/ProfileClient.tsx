@@ -2,10 +2,21 @@
 
 import { useState, useRef } from "react";
 import { createClient } from "@/utils/supabase/client";
+import Image from "next/image";
 
 interface ProfileClientProps {
-  user: any;
-  profile: any;
+  user: {
+    email: string;
+    id?: string;
+  };
+  profile: {
+    username?: string;
+    full_name?: string;
+    bio?: string;
+    website?: string;
+    location?: string;
+    avatar_url?: string;
+  } | null;
 }
 
 export default function ProfileClient({ user, profile }: ProfileClientProps) {
@@ -46,7 +57,7 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
           website: formData.website,
           location: formData.location
         })
-        .eq("id", user.id);
+        .eq("id", user.id!);
 
       if (error) throw error;
 
@@ -56,8 +67,8 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
       setTimeout(() => {
         window.location.reload();
       }, 1000);
-    } catch (error: any) {
-      setMessage(error.message || "Cập nhật thất bại");
+    } catch (error: unknown) {
+      setMessage((error as Error).message || "Cập nhật thất bại");
     } finally {
       setIsLoading(false);
     }
@@ -109,8 +120,8 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
       setTimeout(() => {
         setPasswordMessage("");
       }, 3000);
-    } catch (error: any) {
-      setPasswordMessage(error.message || "Đổi mật khẩu thất bại");
+    } catch (error: unknown) {
+      setPasswordMessage((error as Error).message || "Đổi mật khẩu thất bại");
     } finally {
       setIsLoading(false);
     }
@@ -118,7 +129,7 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
 
   const handleAvatarUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (!file) return;
+    if (!file || !user.id) return;
 
     setIsUploadingAvatar(true);
     setMessage("");
@@ -144,8 +155,8 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
       setTimeout(() => {
         window.location.reload();
       }, 1000);
-    } catch (error: any) {
-      setMessage(error.message || "Upload avatar thất bại");
+    } catch (error: unknown) {
+      setMessage((error as Error).message || "Upload avatar thất bại");
     } finally {
       setIsUploadingAvatar(false);
     }
@@ -279,9 +290,11 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
                   <label className="block text-sm font-medium text-gray-300">Ảnh đại diện</label>
                   <div className="mt-1 flex items-center space-x-4">
                     <div className="relative">
-                      <img
+                      <Image
                         src={profile?.avatar_url || `https://ui-avatars.com/api/?name=${profile?.full_name || user?.email}&background=1f2937&color=fff&size=100`}
                         alt="Avatar"
+                        width={80}
+                        height={80}
                         className="h-20 w-20 rounded-full object-cover border-2 border-gray-600"
                       />
                       <button
@@ -289,6 +302,7 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
                         onClick={() => fileInputRef.current?.click()}
                         disabled={isUploadingAvatar}
                         className="absolute bottom-0 right-0 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white p-1 rounded-full transition-colors"
+                        title="Thay đổi avatar"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -302,6 +316,8 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
                         accept="image/*"
                         onChange={handleAvatarUpload}
                         className="hidden"
+                        title="Tải lên avatar"
+                        placeholder="Chọn file avatar"
                       />
                       <p className="text-sm text-gray-400">
                         {isUploadingAvatar ? "Đang upload..." : "Click để thay đổi avatar"}
@@ -444,10 +460,12 @@ export default function ProfileClient({ user, profile }: ProfileClientProps) {
 
           <div className="px-6 py-6">
             <div className="flex items-start space-x-6">
-              <div className="flex-shrink-0">
-                <img
+              <div className="shrink-0">
+                <Image
                   src={profile?.avatar_url || `https://ui-avatars.com/api/?name=${profile?.full_name || user?.email}&background=1f2937&color=fff&size=120`}
                   alt="Avatar"
+                  width={96}
+                  height={96}
                   className="h-24 w-24 rounded-full object-cover border-2 border-gray-600"
                 />
               </div>

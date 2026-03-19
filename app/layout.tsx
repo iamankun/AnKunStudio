@@ -7,9 +7,9 @@ import { MusicPlayer } from '@/components/music-player'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'An Kun Studio | Công ty Âm nhạc Toàn cầu',
+  title: 'An Kun Studio | Digital Music Distribution',
   description: 'Biến giấc mơ thành hiện thực. Chúng tôi hỗ trợ nghệ sĩ, nhạc sĩ, nhà sản xuất và tất cả những người làm âm nhạc',
-  generator: 'v0.app',
+  generator: 'ankun.dev',
   icons: {
     icon: [
       {
