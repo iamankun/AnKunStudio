@@ -39,7 +39,7 @@ const MusicContext = createContext<MusicContextType | null>(null);
 // Sample tracks with placeholder audio
 const sampleTracks: Track[] = [
   {
-    id: '0',
+    id: '1',
     title: 'Cứ Bước Đi',
     artist: 'Congtri_ ft. QUYEN.',
     album: 'Single',
@@ -49,7 +49,7 @@ const sampleTracks: Track[] = [
     lyricUrl: '/tracks/cubuocdi.json'
   },
   {
-    id: '1',
+    id: '2',
     title: 'Đừng Lo Đến Anh',
     artist: 'Willdawind ft. Xesi',
     album: 'Single',
@@ -59,22 +59,14 @@ const sampleTracks: Track[] = [
     lyricUrl: '/tracks/dunglodenanh.json'
   },
   {
-    id: '2',
-    title: 'Electric Soul',
-    artist: 'Rising Sun',
-    album: 'City Nights',
-    duration: 198,
-    cover: '/tracks/electric-soul.jpg',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-  },
-  {
     id: '3',
-    title: 'Neon Nights',
-    artist: 'Urban Beats',
-    album: 'Street Stories',
+    title: 'Nếu Như (OST Short Film WHAT IF)',
+    artist: 'An Kun, Cinnamorolls, KC Phan',
+    album: 'WHAT IF',
     duration: 312,
-    cover: '/tracks/neon-nights.jpg',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+    cover: 'https://t2.genius.com/unsafe/344x344/https%3A%2F%2Fimages.genius.com%2F95435768cd84f1b6a7af36f182b20a54.500x500x1.jpg',
+    audioUrl: '/tracks/neunhu.wav',
+    lyricUrl: '/tracks/neunhu.json'
   },
   {
     id: '4',

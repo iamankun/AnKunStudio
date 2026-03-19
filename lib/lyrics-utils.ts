@@ -30,12 +30,36 @@ export async function loadJSONLyrics(url: string): Promise<LyricLine[]> {
   const json = await response.json();
   
   // Ensure we assign arbitrary IDs to JSON chunks if missing
-  return json.map((line: any, index: number) => ({
+  const lines: LyricLine[] = json.map((line: LyricLine & { id?: number }, index: number) => ({
     ...line,
     id: line.id || index + 1,
     section: line.section || 'Verse',
     words: line.words || [],
   }));
+
+  // Fix: Extend last word's endTime to next line's startTime (max 5s cap)
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const nextLine = lines[i + 1];
+    
+    if (line.words && line.words.length > 0) {
+      const lastWord = line.words[line.words.length - 1];
+      // If last word has no duration or ends too early, extend it
+      const nextStartTime = nextLine ? nextLine.startTime : (line.endTime || lastWord.startTime + 5);
+      const maxEndTime = lastWord.startTime + 5; // 5 second max cap
+      
+      if (lastWord.endTime <= lastWord.startTime || lastWord.endTime > nextStartTime) {
+        // Word has zero duration or extends past next line - fix it
+        lastWord.endTime = Math.min(nextStartTime, maxEndTime);
+      }
+      
+      // IMPORTANT: Also update the line's endTime to match the last word's extended endTime
+      // so getCurrentLine keeps this line active during the word's animation
+      line.endTime = lastWord.endTime;
+    }
+  }
+  
+  return lines;
 }
 
 /**
