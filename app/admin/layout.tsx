@@ -56,7 +56,7 @@ export default function AdminLayout({
           {/* Logo */}
           <div className="flex items-center justify-between h-16 px-4 border-b border-border">
             <Link href="/admin/dashboard" className="flex items-center gap-2">
-              <span className="text-xl font-bold rainbow-text">An Kun Studio Admin</span>
+              <span className="text-xl font-bold rainbow-text">An Kun Studio v2.0</span>
             </Link>
             <Button
               variant="ghost"

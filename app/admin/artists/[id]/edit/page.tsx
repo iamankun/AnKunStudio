@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { ArrowLeft, Save, Upload, Instagram, Twitter, Music2, Globe } from 'lucide-react';
+import { ArrowLeft, Save, Instagram, Twitter, Music2, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { capNhatArtist, layDanhSachArtists } from '@/lib/artists';
 import { Artist } from '@/types/database';
@@ -50,6 +50,8 @@ export default function EditArtistPage() {
     twitter: '',
     spotify: '',
     label: '',
+    avatar_url: '',
+    cover_image_url: '',
   });
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState('');
@@ -80,6 +82,8 @@ export default function EditArtistPage() {
           twitter: socialLinks.twitter || '',
           spotify: socialLinks.spotify || '',
           label: artist.label || '',
+          avatar_url: artist.avatar_url || '',
+          cover_image_url: artist.cover_image_url || '',
         });
       } catch (error) {
         console.error('Error fetching artist:', error);
@@ -122,6 +126,8 @@ export default function EditArtistPage() {
         country: formData.country.trim(),
         city: formData.city.trim(),
         label: formData.label.trim(),
+        avatar_url: formData.avatar_url.trim(),
+        cover_image_url: formData.cover_image_url.trim(),
       };
       
       // Validate required fields
@@ -356,15 +362,28 @@ export default function EditArtistPage() {
               <CardHeader>
                 <CardTitle>Ảnh Hồ sơ</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors cursor-pointer">
-                  <Upload className="h-8 w-8 mx-auto text-muted-foreground mb-2" />
-                  <p className="text-sm text-muted-foreground">
-                    Nhấp để tải lên
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Khuyến nghị ảnh vuông
-                  </p>
+              <CardContent className="space-y-4">
+                {formData.avatar_url && (
+                  <div className="aspect-square rounded-lg overflow-hidden bg-muted">
+                    <img
+                      src={formData.avatar_url}
+                      alt="Avatar preview"
+                      className="w-full h-full object-cover"
+                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                    />
+                  </div>
+                )}
+                <div className="space-y-2">
+                  <Label htmlFor="avatar_url">Link ảnh hồ sơ</Label>
+                  <Input
+                    id="avatar_url"
+                    placeholder="https://..."
+                    value={formData.avatar_url}
+                    onChange={(e) => setFormData({ ...formData, avatar_url: e.target.value })}
+                  />
+                </div>
+                <div className="border-2 border-dashed border-border rounded-lg p-4 text-center text-muted-foreground text-xs">
+                  <p>Khuyến nghị ảnh vuông</p>
                 </div>
               </CardContent>
             </Card>
@@ -373,15 +392,28 @@ export default function EditArtistPage() {
               <CardHeader>
                 <CardTitle>Ảnh Bìa</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors cursor-pointer">
-                  <Upload className="h-8 w-8 mx-auto text-muted-foreground mb-2" />
-                  <p className="text-sm text-muted-foreground">
-                    Nhấp để tải lên
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Khuyến nghị 1920x1080
-                  </p>
+              <CardContent className="space-y-4">
+                {formData.cover_image_url && (
+                  <div className="aspect-video rounded-lg overflow-hidden bg-muted">
+                    <img
+                      src={formData.cover_image_url}
+                      alt="Cover preview"
+                      className="w-full h-full object-cover"
+                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                    />
+                  </div>
+                )}
+                <div className="space-y-2">
+                  <Label htmlFor="cover_image_url">Link ảnh bìa</Label>
+                  <Input
+                    id="cover_image_url"
+                    placeholder="https://..."
+                    value={formData.cover_image_url}
+                    onChange={(e) => setFormData({ ...formData, cover_image_url: e.target.value })}
+                  />
+                </div>
+                <div className="border-2 border-dashed border-border rounded-lg p-4 text-center text-muted-foreground text-xs">
+                  <p>Khuyến nghị 1920x1080</p>
                 </div>
               </CardContent>
             </Card>
