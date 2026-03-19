@@ -20,21 +20,42 @@ export const layDanhSachArtists = async () => {
 };
 
 export const layArtistTheoSlug = async (slug: string) => {
-  const supabase = createClient();
-  
-  const { data, error } = await (supabase as any)
-    .from('artists')
-    .select('*')
-    .eq('slug', slug)
-    .eq('is_active', true)
-    .single();
+  try {
+    console.log('[layArtistTheoSlug] Starting, slug:', slug);
     
-  if (error) {
-    console.error('Lỗi khi lấy nghệ sĩ:', error);
+    const supabase = createClient();
+    console.log('[layArtistTheoSlug] Client created');
+    
+    const { data, error } = await (supabase as any)
+      .from('artists')
+      .select('slug')
+      .eq('slug', slug)
+      .eq('is_active', true)
+      .limit(1);
+      
+    if (error) {
+      console.error('[layArtistTheoSlug] Supabase error:', error);
+      
+      if (error.code === 'PGRST116') {
+        console.log('[layArtistTheoSlug] Not found (normal)');
+        return null;
+      }
+      
+      return null;
+    }
+      
+    console.log('[layArtistTheoSlug] Success, found:', data?.length > 0);
+    return data?.length > 0 ? data[0] : null;
+  } catch (err) {
+    console.error('[layArtistTheoSlug] Exception caught:', err);
+    console.error('[layArtistTheoSlug] Exception type:', typeof err);
+    console.error('[layArtistTheoSlug] Exception string:', String(err));
+    if (err instanceof Error) {
+      console.error('[layArtistTheoSlug] Error message:', err.message);
+      console.error('[layArtistTheoSlug] Error stack:', err.stack);
+    }
     return null;
   }
-    
-  return data;
 };
 
 export const laySoundsTheoArtist = async (artistId: string) => {

@@ -127,7 +127,7 @@ export function ArtistList() {
                         </h3>
                         {artist.verified && (
                           <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-14 0 7 7 0 0114 0z" />
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                           </svg>
                         )}
                       </div>
@@ -166,7 +166,7 @@ export function ArtistList() {
                   {artist.verified && (
                     <div className="absolute bottom-1 right-1 w-6 h-6 rounded-full bg-background border border-border flex items-center justify-center">
                       <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M16 7a4 4 0 11-8 0 4 4 4 4 4m6 2a9 9 0 0114 0z" />
+                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                       </svg>
                     </div>
                   )}
