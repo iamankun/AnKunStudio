@@ -1,0 +1,316 @@
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import RichTextEditor from '@/components/ui/rich-text-editor';
+import { ArrowLeft, Save, Eye, Upload } from 'lucide-react';
+import Link from 'next/link';
+import { capNhatBaiViet, UpdateBaiViet } from '@/lib/baiviet';
+import { BaiViet } from '@/lib/baiviet-server';
+import Image from 'next/image';
+
+interface ExtendedBaiViet extends BaiViet {
+  category?: string | null;
+  tags?: string | null;
+}
+
+interface BlogEditFormProps {
+  post: ExtendedBaiViet;
+}
+
+export function BlogEditForm({ post }: BlogEditFormProps) {
+  const router = useRouter();
+  const postId = post.id;
+  
+  const [formData, setFormData] = useState<UpdateBaiViet>({
+    tieude: post.tieude || '',
+    noidung: post.noidung || '',
+    tomtat: post.tomtat || '',
+    anh_dai_dien: post.anh_dai_dien || '',
+    trang_thai: post.trang_thai || 'draft',
+  });
+  
+  const [category, setCategory] = useState(post.category || '');
+  const [tags, setTags] = useState(post.tags || '');
+  const [isSaving, setIsSaving] = useState(false);
+  const [featuredImageWarning, setFeaturedImageWarning] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSaving(true);
+    
+    try {
+      if (!formData.tieude?.trim()) {
+        throw new Error('Tiêu đề không được để trống');
+      }
+      if (!formData.noidung?.trim()) {
+        throw new Error('Nội dung không được để trống');
+      }
+      
+      const updateData: UpdateBaiViet = {
+        ...formData,
+        trang_thai: formData.trang_thai as 'draft' | 'published' | 'archived',
+        category: category,
+        tags: tags,
+      };
+      
+      await capNhatBaiViet(postId, updateData);
+      router.push('/admin/blog');
+    } catch (error) {
+      console.error('Failed to update blog post:', error);
+      alert(`Lỗi khi cập nhật bài viết: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleInputChange = (field: keyof UpdateBaiViet, value: string) => {
+    setFormData((prev: UpdateBaiViet) => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const validateFeaturedImage = (url: string): { isValid: boolean; warning?: string } => {
+    if (!url) return { isValid: true };
+    if (url.startsWith('data:')) return { isValid: true };
+    
+    try {
+      const urlObj = new URL(url);
+      if (!['http:', 'https:'].includes(urlObj.protocol)) {
+        return { isValid: false, warning: 'Chỉ chấp nhận HTTP và HTTPS URLs' };
+      }
+      return { isValid: true };
+    } catch {
+      return { isValid: false, warning: 'URL không hợp lệ' };
+    }
+  };
+
+  const handleFeaturedImageChange = (value: string) => {
+    handleInputChange('anh_dai_dien', value);
+    const validation = validateFeaturedImage(value);
+    setFeaturedImageWarning(validation.warning || null);
+  };
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center gap-4">
+        <Link href="/admin/blog">
+          <Button variant="ghost" size="icon">
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        </Link>
+        <div>
+          <h1 className="text-3xl font-bold text-foreground">Chỉnh sửa bài viết</h1>
+          <p className="text-muted-foreground mt-1">Cập nhật nội dung bài viết</p>
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit}>
+        <div className="grid gap-6 lg:grid-cols-3">
+          <div className="lg:col-span-2 space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Nội dung</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="title">Tiêu đề</Label>
+                  <Input
+                    id="title"
+                    placeholder="Nhập tiêu đề bài viết..."
+                    value={formData.tieude || ''}
+                    onChange={(e) => handleInputChange('tieude', e.target.value)}
+                    className="text-lg"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="excerpt">Tóm tắt</Label>
+                  <Textarea
+                    id="excerpt"
+                    placeholder="Mô tả ngắn về bài viết..."
+                    value={formData.tomtat || ''}
+                    onChange={(e) => handleInputChange('tomtat', e.target.value)}
+                    rows={3}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="content">Nội dung</Label>
+                  <RichTextEditor
+                    value={formData.noidung || ''}
+                    onChange={(value) => handleInputChange('noidung', value)}
+                    placeholder="Viết nội dung bài viết tại đây..."
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>SEO & Meta</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="meta-title">Meta Title</Label>
+                  <Input
+                    id="meta-title"
+                    placeholder="Tiêu đề SEO (tối đa 60 ký tự)"
+                    value={formData.tieude?.substring(0, 60) || ''}
+                    maxLength={60}
+                    readOnly
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="meta-description">Meta Description</Label>
+                  <Textarea
+                    id="meta-description"
+                    placeholder="Mô tả SEO (tối đa 160 ký tự)"
+                    value={formData.tomtat?.substring(0, 160) || ''}
+                    maxLength={160}
+                    rows={2}
+                    readOnly
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Xuất bản</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex gap-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="flex-1"
+                    onClick={() => handleInputChange('trang_thai', 'draft')}
+                    disabled={isSaving}
+                  >
+                    <Save className="h-4 w-4 mr-2" />
+                    Lưu Nháp
+                  </Button>
+                  <Button
+                    type="submit"
+                    className="flex-1"
+                    disabled={isSaving}
+                  >
+                    <Eye className="h-4 w-4 mr-2" />
+                    Cập nhật
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Chi tiết</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="category">Danh mục</Label>
+                  <Input
+                    id="category"
+                    placeholder="Nhập danh mục..."
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="tags">Thẻ</Label>
+                  <Input
+                    id="tags"
+                    placeholder="vd., nhạc, streaming, nghệ sĩ..."
+                    value={tags}
+                    onChange={(e) => setTags(e.target.value)}
+                  />
+                  <p className="text-xs text-muted-foreground">Phân cách các thẻ bằng dấu phẩy</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Ảnh Nổi bật</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div>
+                    <Label htmlFor="featuredImage">URL ảnh đại diện</Label>
+                    <Input
+                      id="featuredImage"
+                      placeholder="https://example.com/image.jpg"
+                      value={formData.anh_dai_dien || ''}
+                      onChange={(e) => handleFeaturedImageChange(e.target.value)}
+                    />
+                    {featuredImageWarning && (
+                      <div className="text-xs text-amber-600 bg-amber-50 p-2 rounded border border-amber-200 mt-1">
+                        ⚠️ {featuredImageWarning}
+                      </div>
+                    )}
+                    {formData.anh_dai_dien && !featuredImageWarning && (
+                      <div className="text-xs text-green-600 bg-green-50 p-2 rounded border border-green-200 mt-1">
+                        ✅ URL hợp lệ và được phép
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors cursor-pointer"
+                       onClick={() => {
+                         const input = document.createElement('input');
+                         input.type = 'file';
+                         input.accept = 'image/*';
+                         input.onchange = (e) => {
+                           const file = (e.target as HTMLInputElement).files?.[0];
+                           if (file) {
+                             const url = URL.createObjectURL(file);
+                             handleFeaturedImageChange(url);
+                             console.log('File selected for upload:', file);
+                           }
+                         };
+                         input.click();
+                       }}>
+                    <Upload className="h-8 w-8 mx-auto text-muted-foreground mb-2" />
+                    <p className="text-sm text-muted-foreground">
+                      Nhấp để tải lên hoặc kéo thả
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      PNG, JPG, GIF tối đa 10MB
+                    </p>
+                  </div>
+                  
+                  {formData.anh_dai_dien && (
+                    <div className="mt-3">
+                      <Image 
+                        src={formData.anh_dai_dien} 
+                        alt="Featured image preview" 
+                        width={320}
+                        height={128}
+                        className="w-full h-32 object-cover rounded-lg border"
+                        onError={(e) => {
+                          e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjEzMCIgdmlld0JveD0iMCAwIDMyMCAxMzAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxMzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7Ekb25nIGjhu5QgY+G7oWk8L3RleHQ+PC9zdmc+';
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}

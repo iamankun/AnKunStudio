@@ -64,7 +64,7 @@ export default async function ArtistDetailPage({ params }: { params: Promise<{ s
       <AnimatedBackground />
       <Header />
       <main>
-        <ArtistDetail slug={slug} />
+        <ArtistDetail artist={artist} />
       </main>
       <Footer />
     </div>

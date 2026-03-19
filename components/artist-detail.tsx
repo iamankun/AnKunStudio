@@ -1,65 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { layArtistTheoSlug } from '@/lib/artists';
 import { Artist } from '@/types/database';
 
 interface ArtistDetailProps {
-  slug: string;
+  artist: Artist;
 }
 
-export function ArtistDetail({ slug }: ArtistDetailProps) {
-  const [artist, setArtist] = useState<Artist | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchArtist = async () => {
-      try {
-        const data = await layArtistTheoSlug(slug);
-        if (!data) {
-          setError('Không tìm thấy nghệ sĩ');
-        } else {
-          setArtist(data);
-        }
-      } catch (err) {
-        console.error('Error fetching artist:', err);
-        setError('Lỗi khi tải thông tin nghệ sĩ');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchArtist();
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <div className="w-full min-h-[60vh] flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-          <p className="mt-4 text-muted-foreground">Đang tải thông tin nghệ sĩ...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !artist) {
-    return (
-      <div className="w-full min-h-[60vh] flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 rounded-full bg-destructive/10 mx-auto mb-4 flex items-center justify-center">
-            <svg className="w-8 h-8 text-destructive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-          </div>
-          <p className="text-lg text-muted-foreground">{error || 'Không tìm thấy nghệ sĩ'}</p>
-        </div>
-      </div>
-    );
-  }
-
+export function ArtistDetail({ artist }: ArtistDetailProps) {
   const socialLinks = artist.social_links || {};
 
   return (

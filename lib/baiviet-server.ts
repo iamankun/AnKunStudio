@@ -5,6 +5,45 @@ export type BaiViet = Database['public']['Tables']['baiviet']['Row'];
 export type CreateBaiViet = Database['public']['Tables']['baiviet']['Insert'];
 export type UpdateBaiViet = Database['public']['Tables']['baiviet']['Update'];
 
+// Get all blog post IDs for static generation of edit pages
+export async function layTatCaIdBaiViet(): Promise<string[]> {
+  console.log('🔍 [BLOG] Fetching all blog post IDs for static generation');
+  
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  
+  if (!supabaseUrl || !supabaseServiceKey) {
+    console.log('🔍 [BLOG] Missing environment variables for static IDs');
+    return [];
+  }
+  
+  try {
+    const { createServerClient } = await import('@supabase/ssr');
+    const supabase = createServerClient(supabaseUrl, supabaseServiceKey, {
+      cookies: {
+        getAll() { return []; },
+        setAll() { return; }
+      }
+    });
+    
+    const { data, error } = await supabase
+      .from('baiviet')
+      .select('id');
+      
+    if (error) {
+      console.error('🔍 [BLOG] Lỗi khi lấy danh sách IDs:', error);
+      return [];
+    }
+    
+    const ids = data?.map((b: { id: string }) => b.id) || [];
+    console.log(`🔍 [BLOG] Found ${ids.length} blog post IDs`);
+    return ids;
+  } catch (error) {
+    console.error('🔍 [BLOG] Error fetching IDs:', error);
+    return [];
+  }
+}
+
 // Static version for build-time generation (no cookies)
 export async function layBaiVietTheoIdStatic(id: string): Promise<BaiViet | null> {
   console.log('🔍 [BLOG] Fetching post with ID (static):', id);
