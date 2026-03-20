@@ -5,6 +5,24 @@ import * as RechartsPrimitive from 'recharts'
 
 import { cn } from '@/lib/utils'
 import '@/styles/chart-indicator.css'
+import './chart-styles.css'
+
+// Helper function to map color to predefined class
+const getColorClass = (color: string, type: 'indicator' | 'legend') => {
+  const colorMap: Record<string, number> = {
+    '#888888': 1,
+    '#82ca9d': 2,
+    '#8884d8': 3,
+    '#ffc658': 4,
+    '#ff7c7c': 5,
+    '#8dd1e1': 6,
+    '#d084d0': 7,
+    '#ffb347': 8,
+  }
+  
+  const colorIndex = colorMap[color] || 1
+  return `${type}-${colorIndex}`
+}
 
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: '', dark: '.dark' } as const
@@ -204,6 +222,7 @@ function ChartTooltipContent({
                       <div
                         className={cn(
                           'shrink-0 rounded-[2px] chart-indicator',
+                          getColorClass(indicatorColor || '#888888', 'indicator'),
                           {
                             'h-2.5 w-2.5': indicator === 'dot',
                             'w-1': indicator === 'line',
@@ -212,11 +231,6 @@ function ChartTooltipContent({
                             'my-0.5': nestLabel && indicator === 'dashed',
                           },
                         )}
-                        style={
-                          {
-                            '--indicator-color': indicatorColor,
-                          } as React.CSSProperties
-                        }
                       />
                     )
                   )}
@@ -290,10 +304,10 @@ function ChartLegendContent({
               <itemConfig.icon />
             ) : (
               <div
-                className="h-2 w-2 shrink-0 rounded-[2px] chart-legend-color"
-                style={{
-                  '--item-color': item.color,
-                } as React.CSSProperties}
+                className={cn(
+                  'h-2 w-2 shrink-0 rounded-[2px] chart-legend-color',
+                  getColorClass(item.color || '#888888', 'legend')
+                )}
               />
             )}
             {itemConfig?.label}

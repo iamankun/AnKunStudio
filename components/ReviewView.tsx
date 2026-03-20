@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, CheckCircle2, AlertCircle, ChevronLeft, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { StepProgress } from './StepProgress';
 
 export const ReviewView: React.FC<{ onBack: () => void; onSubmit: () => void }> = ({ onBack, onSubmit }) => {
   return (
@@ -15,6 +16,7 @@ export const ReviewView: React.FC<{ onBack: () => void; onSubmit: () => void }> 
         </div>
         <h1 className="text-3xl font-extrabold tracking-tighter mb-2">Kiểm tra cuối cùng</h1>
         <p className="text-on-surface-variant font-medium">Hãy rà soát lại toàn bộ thông tin trước khi gửi bản phát hành đi kiểm duyệt.</p>
+        <StepProgress currentStep={5} />
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { List, Music, GripVertical, Plus, ChevronRight, ChevronLeft, Edit2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { StepProgress } from './StepProgress';
 
 export const TracklistView: React.FC<{ onNext: () => void; onBack: () => void }> = ({ onNext, onBack }) => {
   const tracks = [
@@ -18,6 +19,7 @@ export const TracklistView: React.FC<{ onNext: () => void; onBack: () => void }>
       <header className="mb-8">
         <h1 className="text-3xl font-extrabold tracking-tighter mb-2">Danh sách bài hát</h1>
         <p className="text-on-surface-variant font-medium">Sắp xếp thứ tự và chỉnh sửa thông tin chi tiết cho từng bài hát.</p>
+        <StepProgress currentStep={3} />
       </header>
 
       <div className="bg-surface-container-low p-6 rounded-xl space-y-4">

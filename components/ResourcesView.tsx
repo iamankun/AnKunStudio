@@ -9,6 +9,7 @@ import {
   PlusCircle
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { StepProgress } from './StepProgress';
 
 interface ResourcesViewProps {
   onNext: () => void;
@@ -28,21 +29,14 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ onNext, onBack }) 
       animate={{ opacity: 1, x: 0 }}
       className="space-y-8"
     >
-      <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div>
-          <h1 className="text-3xl font-extrabold tracking-tighter mb-2">Tài nguyên bản phát hành</h1>
-          <p className="text-on-surface-variant font-medium">Quản lý tệp âm thanh và hình ảnh cho dự án của bạn.</p>
-        </div>
-        
-        <div className="bg-surface-container-low p-4 rounded-xl min-w-[240px]">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Trạng thái hoàn thiện</span>
-            <span className="text-primary font-bold">65%</span>
-          </div>
-          <div className="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-            <div className="h-full bg-linear-to-r from-primary-dim to-primary w-[65%]"></div>
+      <header className="mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h1 className="text-3xl font-extrabold tracking-tighter mb-2">Tài nguyên bản phát hành</h1>
+            <p className="text-on-surface-variant font-medium">Quản lý tệp âm thanh và hình ảnh cho dự án của bạn.</p>
           </div>
         </div>
+        <StepProgress currentStep={2} />
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

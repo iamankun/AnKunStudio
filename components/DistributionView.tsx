@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Globe, Calendar, ShoppingBag, CheckCircle2, ChevronRight, ChevronLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { StepProgress } from './StepProgress';
 
 export const DistributionView: React.FC<{ onNext: () => void; onBack: () => void }> = ({ onNext, onBack }) => {
   const stores = [
@@ -22,6 +23,7 @@ export const DistributionView: React.FC<{ onNext: () => void; onBack: () => void
       <header className="mb-8">
         <h1 className="text-3xl font-extrabold tracking-tighter mb-2">Cấu hình phân phối</h1>
         <p className="text-on-surface-variant font-medium">Chọn nơi và thời điểm âm nhạc của bạn sẽ được ra mắt thế giới.</p>
+        <StepProgress currentStep={4} />
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

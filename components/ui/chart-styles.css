@@ -1,0 +1,17 @@
+.chart-indicator-1 { --indicator-color: #888888; }
+.chart-indicator-2 { --indicator-color: #82ca9d; }
+.chart-indicator-3 { --indicator-color: #8884d8; }
+.chart-indicator-4 { --indicator-color: #ffc658; }
+.chart-indicator-5 { --indicator-color: #ff7c7c; }
+.chart-indicator-6 { --indicator-color: #8dd1e1; }
+.chart-indicator-7 { --indicator-color: #d084d0; }
+.chart-indicator-8 { --indicator-color: #ffb347; }
+
+.chart-legend-1 { --item-color: #888888; }
+.chart-legend-2 { --item-color: #82ca9d; }
+.chart-legend-3 { --item-color: #8884d8; }
+.chart-legend-4 { --item-color: #ffc658; }
+.chart-legend-5 { --item-color: #ff7c7c; }
+.chart-legend-6 { --item-color: #8dd1e1; }
+.chart-legend-7 { --item-color: #d084d0; }
+.chart-legend-8 { --item-color: #ffb347; }

@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { StepProgress } from './StepProgress';
 
 export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) => {
   return (
@@ -26,21 +27,12 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
             <h2 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-none">Tạo một bản phát hành mới</h2>
             <p className="mt-4 text-on-surface-variant max-w-2xl text-lg">Chúng tôi sẽ hướng dẫn bạn qua mọi công đoạn — từ chọn bản nhạc đến hoàn thiện siêu dữ liệu.</p>
           </div>
-          <div className="flex items-center gap-8 mb-2">
-            <div className="text-right">
-              <p className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Tiến trình</p>
-              <p className="text-2xl font-bold">Bước 1 / 5</p>
-            </div>
-            <div className="h-16 w-px bg-outline-variant/30"></div>
-            <div className="flex gap-2">
-              <div className="w-12 h-1 bg-primary"></div>
-              <div className="w-12 h-1 bg-surface-container-highest"></div>
-              <div className="w-12 h-1 bg-surface-container-highest"></div>
-              <div className="w-12 h-1 bg-surface-container-highest"></div>
-              <div className="w-12 h-1 bg-surface-container-highest"></div>
-            </div>
+          <div className="text-right">
+            <p className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Tiến trình</p>
+            <p className="text-2xl font-bold">Bước 1 / 5</p>
           </div>
         </div>
+        <StepProgress currentStep={1} />
       </header>
 
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-12">
