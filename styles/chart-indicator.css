@@ -1,0 +1,8 @@
+.chart-indicator {
+  background-color: var(--indicator-color);
+  border-color: var(--indicator-color);
+}
+
+.chart-legend-color {
+  background-color: var(--item-color);
+}

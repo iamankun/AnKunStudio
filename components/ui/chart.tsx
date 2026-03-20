@@ -4,6 +4,7 @@ import * as React from 'react'
 import * as RechartsPrimitive from 'recharts'
 
 import { cn } from '@/lib/utils'
+import '@/styles/chart-indicator.css'
 
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: '', dark: '.dark' } as const
@@ -173,7 +174,7 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        'border-border/50 bg-background grid min-w-[8rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl',
+        'border-border/50 bg-background grid min-w-32 items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl',
         className,
       )}
     >
@@ -202,7 +203,7 @@ function ChartTooltipContent({
                     !hideIndicator && (
                       <div
                         className={cn(
-                          'shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)',
+                          'shrink-0 rounded-[2px] chart-indicator',
                           {
                             'h-2.5 w-2.5': indicator === 'dot',
                             'w-1': indicator === 'line',
@@ -213,8 +214,7 @@ function ChartTooltipContent({
                         )}
                         style={
                           {
-                            '--color-bg': indicatorColor,
-                            '--color-border': indicatorColor,
+                            '--indicator-color': indicatorColor,
                           } as React.CSSProperties
                         }
                       />
@@ -290,10 +290,10 @@ function ChartLegendContent({
               <itemConfig.icon />
             ) : (
               <div
-                className="h-2 w-2 shrink-0 rounded-[2px]"
+                className="h-2 w-2 shrink-0 rounded-[2px] chart-legend-color"
                 style={{
-                  backgroundColor: item.color,
-                }}
+                  '--item-color': item.color,
+                } as React.CSSProperties}
               />
             )}
             {itemConfig?.label}

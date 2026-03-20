@@ -1,7 +1,5 @@
 import React from 'react';
 import { 
-  Info, 
-  ChevronRight, 
   ChevronDown, 
   Plus, 
   Trash2, 
@@ -10,6 +8,7 @@ import {
   Save,
   ArrowRight
 } from 'lucide-react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) => {
@@ -32,7 +31,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
               <p className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Tiến trình</p>
               <p className="text-2xl font-bold">Bước 1 / 5</p>
             </div>
-            <div className="h-16 w-[1px] bg-outline-variant/30"></div>
+            <div className="h-16 w-px bg-outline-variant/30"></div>
             <div className="flex gap-2">
               <div className="w-12 h-1 bg-primary"></div>
               <div className="w-12 h-1 bg-surface-container-highest"></div>
@@ -54,7 +53,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
               <span className="text-[10px] text-on-surface-variant tracking-widest">Bắt buộc *</span>
             </div>
             <div className="relative">
-              <select defaultValue="" className="w-full bg-surface-container-low border border-outline-variant/30 py-4 px-4 text-sm font-medium appearance-none outline-none focus:ring-1 focus:ring-primary transition-all">
+              <select aria-label="Chọn bản nhạc" defaultValue="" className="w-full bg-surface-container-low border border-outline-variant/30 py-4 px-4 text-sm font-medium appearance-none outline-none focus:ring-1 focus:ring-primary transition-all">
                 <option disabled value="">Chọn các bản nhạc hiện có hoặc tải lên các bản nhạc mới</option>
                 <option>Bản nhạc 01</option>
                 <option>Bản nhạc 02</option>
@@ -76,12 +75,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
                 <p className="text-xs text-on-surface-variant">Hỗ trợ JPG, JPEG, PNG, JFIF (Tối thiểu 1400px)</p>
               </div>
               <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <img 
-                  className="w-full h-full object-cover" 
-                  src="https://picsum.photos/seed/cover-art/800/800" 
-                  alt="Artwork Placeholder"
-                  referrerPolicy="no-referrer"
-                />
+                <Image src="https://picsum.photos/seed/cover-art/800/800" alt="Artwork Placeholder" width={800} height={800} className="w-full h-full object-cover" unoptimized />
               </div>
             </div>
           </section>
@@ -126,7 +120,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Ngôn ngữ siêu dữ liệu *</label>
                   <div className="relative">
-                    <select defaultValue="Vietnamese" className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium appearance-none rounded-lg focus:ring-1 focus:ring-primary outline-none">
+                    <select aria-label="Ngôn ngữ siêu dữ liệu" defaultValue="Vietnamese" className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium appearance-none rounded-lg focus:ring-1 focus:ring-primary outline-none">
                       <option>Vietnamese</option>
                       <option>English</option>
                       <option>Japanese</option>
@@ -173,7 +167,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Thể loại chính *</label>
                   <div className="relative">
-                    <select defaultValue="" className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium appearance-none rounded-lg focus:ring-1 focus:ring-primary outline-none">
+                    <select aria-label="Thể loại chính" defaultValue="" className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium appearance-none rounded-lg focus:ring-1 focus:ring-primary outline-none">
                       <option disabled value="">Chọn thể loại</option>
                       <option>Electronic</option>
                       <option>Lo-Fi</option>
@@ -200,7 +194,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Lịch sử phát hành *</label>
-                    <input className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium text-on-surface-variant rounded-lg focus:ring-1 focus:ring-primary outline-none" type="date" />
+                    <input aria-label="Lịch sử phát hành" className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium text-on-surface-variant rounded-lg focus:ring-1 focus:ring-primary outline-none" type="date" />
                     <p className="text-[8px] text-on-surface-variant mt-1">Nó đã được phát hành trước đó chưa?</p>
                   </div>
                   <div className="space-y-2">
@@ -255,7 +249,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
               </button>
               <button 
                 onClick={onNext}
-                className="flex-1 md:flex-none bg-gradient-to-r from-primary to-primary-dim py-4 px-12 text-[10px] font-bold uppercase tracking-[0.2em] text-background font-black hover:opacity-90 transition-opacity flex items-center justify-center gap-2 rounded-lg shadow-lg shadow-primary/20"
+                className="flex-1 md:flex-none bg-linear-to-r from-primary to-primary-dim py-4 px-12 text-[10px] font-bold uppercase tracking-[0.2em] text-background hover:opacity-90 transition-opacity flex items-center justify-center gap-2 rounded-lg shadow-lg shadow-primary/20"
               >
                 Tiếp theo: Tài nguyên
                 <ArrowRight size={16} />

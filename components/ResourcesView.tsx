@@ -40,7 +40,7 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ onNext, onBack }) 
             <span className="text-primary font-bold">65%</span>
           </div>
           <div className="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-            <div className="h-full bg-linear-gradient-to-r from-primary-dim to-primary" style={{ width: '65%' }}></div>
+            <div className="h-full bg-linear-to-r from-primary-dim to-primary w-[65%]"></div>
           </div>
         </div>
       </header>

@@ -7,7 +7,6 @@ import {
   CheckCircle2, 
   RefreshCw,
   ChevronRight,
-  ShieldCheck,
   PlusCircle,
   Album,
   ListMusic,
@@ -59,7 +58,7 @@ export const NewReleaseView: React.FC<{ onBack: () => void }> = ({ onBack }) => 
                   <span className="text-primary font-bold">65%</span>
                 </div>
                 <div className="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
-                  <div className="h-full bg-linear-to-r from-primary-dim to-primary" style={{ width: '65%' }}></div>
+                  <div className="h-full bg-linear-to-r from-primary-dim to-primary w-[65%]"></div>
                 </div>
               </div>
             </header>

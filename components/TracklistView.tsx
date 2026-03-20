@@ -86,7 +86,7 @@ export const TracklistView: React.FC<{ onNext: () => void; onBack: () => void }>
         </button>
         <button 
           onClick={onNext}
-          className="px-12 py-3 bg-gradient-to-r from-primary to-primary-dim text-background font-bold rounded-md transition-all active:scale-95 shadow-lg shadow-primary/10 flex items-center gap-2"
+          className="px-12 py-3 bg-linear-to-r from-primary to-primary-dim text-background font-bold rounded-md transition-all active:scale-95 shadow-lg shadow-primary/10 flex items-center gap-2"
         >
           Tiếp theo: Phân phối
           <ChevronRight size={18} />
