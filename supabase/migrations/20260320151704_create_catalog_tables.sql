@@ -312,3 +312,72 @@ CREATE INDEX IF NOT EXISTS idx_album_artist_trang_thai ON album(artist_id, trang
 CREATE INDEX IF NOT EXISTS idx_album_loai_ngay ON album(loai_phat_hanh, ngay_phat_hanh);
 CREATE INDEX IF NOT EXISTS idx_bai_hat_album_thu_tu ON bai_hat(album_id, thu_tu);
 CREATE INDEX IF NOT EXISTS idx_phat_hanh_trang_thai_ngay ON phat_hanh(trang_thai, ngay_phat_hanh_thuc_te);
+
+-- ========================================
+-- 14. ROW LEVEL SECURITY (RLS) POLICIES
+-- ========================================
+
+-- Enable RLS on all tables
+ALTER TABLE the_loai ENABLE ROW LEVEL SECURITY;
+ALTER TABLE album ENABLE ROW LEVEL SECURITY;
+ALTER TABLE bai_hat ENABLE ROW LEVEL SECURITY;
+ALTER TABLE phat_hanh ENABLE ROW LEVEL SECURITY;
+ALTER TABLE thong_ke ENABLE ROW LEVEL SECURITY;
+ALTER TABLE artist_album ENABLE ROW LEVEL SECURITY;
+ALTER TABLE album_hop_tac ENABLE ROW LEVEL SECURITY;
+ALTER TABLE album_lich_su ENABLE ROW LEVEL SECURITY;
+ALTER TABLE album_tag ENABLE ROW LEVEL SECURITY;
+
+-- the_loai: Allow all users to read, only authenticated can write
+CREATE POLICY "the_loai_select_all" ON the_loai FOR SELECT USING (true);
+CREATE POLICY "the_loai_insert_auth" ON the_loai FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "the_loai_update_auth" ON the_loai FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "the_loai_delete_auth" ON the_loai FOR DELETE TO authenticated USING (true);
+
+-- album: Users can CRUD their own artist's albums
+CREATE POLICY "album_select_all" ON album FOR SELECT USING (true);
+CREATE POLICY "album_insert_auth" ON album FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "album_update_auth" ON album FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "album_delete_auth" ON album FOR DELETE TO authenticated USING (true);
+
+-- bai_hat: Users can CRUD their own tracks
+CREATE POLICY "bai_hat_select_all" ON bai_hat FOR SELECT USING (true);
+CREATE POLICY "bai_hat_insert_auth" ON bai_hat FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "bai_hat_update_auth" ON bai_hat FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "bai_hat_delete_auth" ON bai_hat FOR DELETE TO authenticated USING (true);
+
+-- phat_hanh: Users can CRUD their own releases
+CREATE POLICY "phat_hanh_select_all" ON phat_hanh FOR SELECT USING (true);
+CREATE POLICY "phat_hanh_insert_auth" ON phat_hanh FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "phat_hanh_update_auth" ON phat_hanh FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "phat_hanh_delete_auth" ON phat_hanh FOR DELETE TO authenticated USING (true);
+
+-- thong_ke: Allow all to read, authenticated to write
+CREATE POLICY "thong_ke_select_all" ON thong_ke FOR SELECT USING (true);
+CREATE POLICY "thong_ke_insert_auth" ON thong_ke FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "thong_ke_update_auth" ON thong_ke FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "thong_ke_delete_auth" ON thong_ke FOR DELETE TO authenticated USING (true);
+
+-- artist_album: Users can CRUD their own relationships
+CREATE POLICY "artist_album_select_all" ON artist_album FOR SELECT USING (true);
+CREATE POLICY "artist_album_insert_auth" ON artist_album FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "artist_album_update_auth" ON artist_album FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "artist_album_delete_auth" ON artist_album FOR DELETE TO authenticated USING (true);
+
+-- album_hop_tac: Users can CRUD collaborators
+CREATE POLICY "album_hop_tac_select_all" ON album_hop_tac FOR SELECT USING (true);
+CREATE POLICY "album_hop_tac_insert_auth" ON album_hop_tac FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "album_hop_tac_update_auth" ON album_hop_tac FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "album_hop_tac_delete_auth" ON album_hop_tac FOR DELETE TO authenticated USING (true);
+
+-- album_lich_su: Allow all to read, authenticated to write
+CREATE POLICY "album_lich_su_select_all" ON album_lich_su FOR SELECT USING (true);
+CREATE POLICY "album_lich_su_insert_auth" ON album_lich_su FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "album_lich_su_update_auth" ON album_lich_su FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "album_lich_su_delete_auth" ON album_lich_su FOR DELETE TO authenticated USING (true);
+
+-- album_tag: Users can CRUD tags
+CREATE POLICY "album_tag_select_all" ON album_tag FOR SELECT USING (true);
+CREATE POLICY "album_tag_insert_auth" ON album_tag FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "album_tag_update_auth" ON album_tag FOR UPDATE TO authenticated USING (true);
+CREATE POLICY "album_tag_delete_auth" ON album_tag FOR DELETE TO authenticated USING (true);

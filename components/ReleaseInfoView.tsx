@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ChevronDown, 
   Plus, 
@@ -11,8 +11,146 @@ import {
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { StepProgress } from './StepProgress';
+import { createClient } from '@/utils/supabase/client';
+
+interface Artist {
+  id: string;
+  name: string;
+  slug: string;
+  bio: string | null;
+  avatar_url: string | null;
+  cover_image_url: string | null;
+  genre: string[] | null;
+  social_links: Record<string, string> | null;
+  monthly_listeners: string | null;
+  followers: string | null;
+  total_streams: string | null;
+  top_chart: string | null;
+  verified: boolean | null;
+  is_active: boolean | null;
+  country: string | null;
+  city: string | null;
+  label: string | null;
+  created_at: string;
+  updated_at: string | null;
+}
+
+interface TheLoai {
+  id: number;
+  ten_the_loai: string;
+  mo_ta: string | null;
+  trang_thai: string;
+  ngay_tao: string;
+}
+
+interface ReleaseFormData {
+  ten_album: string;
+  artist_id: string;
+  loai_phat_hanh: 'album' | 'single' | 'ep';
+  ngay_phat_hanh: string;
+  nha_phan_phoi: string;
+  the_loai_ids: number[];
+  upc: string;
+  iswc: string;
+  mo_ta: string;
+  mo_ta_ngan: string;
+  ngon_ngu: 'vi' | 'en';
+  trang_chu: boolean;
+}
 
 export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) => {
+  const [formData, setFormData] = useState<ReleaseFormData>({
+    ten_album: '',
+    artist_id: '',
+    loai_phat_hanh: 'album',
+    ngay_phat_hanh: '',
+    nha_phan_phoi: '',
+    the_loai_ids: [],
+    upc: '',
+    iswc: '',
+    mo_ta: '',
+    mo_ta_ngan: '',
+    ngon_ngu: 'vi',
+    trang_chu: false
+  });
+  
+  const [artists, setArtists] = useState<Artist[]>([]);
+  const [theLoais, setTheLoais] = useState<TheLoai[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const supabase = createClient();
+        
+        // Fetch artists from public schema
+        const { data: artistsData, error: artistsError } = await supabase
+          .from('artists')
+          .select('id, name, slug, avatar_url, is_active')
+          .eq('is_active', true)
+          .order('name');
+          
+        if (artistsError) {
+          console.error('Artists error:', artistsError);
+          setArtists([]);
+        } else {
+          setArtists((artistsData || []) as Artist[]);
+        }
+        
+        // Fetch genres
+        const { data: theLoaiData, error: theLoaiError } = await supabase
+          .from('the_loai')
+          .select('*')
+          .eq('trang_thai', 'hoat_dong')
+          .order('ten_the_loai');
+          
+        if (theLoaiError) throw theLoaiError;
+        setTheLoais((theLoaiData || []) as TheLoai[]);
+        
+      } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
+        setError(errorMessage);
+      }
+    };
+    
+    fetchData();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const supabase = createClient();
+      
+      // Generate unique album code
+      const maAlbum = `ALB-${Date.now()}-${Math.random().toString(36).substr(2, 5).toUpperCase()}`;
+      
+      const { data, error } = await supabase
+        .from('album')
+        .insert({
+          ...formData,
+          ma_album: maAlbum,
+          ngay_phat_hanh: formData.ngay_phat_hanh || null,
+          the_loai_ids: formData.the_loai_ids
+        })
+        .select()
+        .single();
+        
+      if (error) throw error;
+      
+      // Navigate to next step with album data
+      onNext();
+      
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
+        setError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -45,12 +183,20 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
               <span className="text-[10px] text-on-surface-variant tracking-widest">Bắt buộc *</span>
             </div>
             <div className="relative">
-              <select aria-label="Chọn bản nhạc" defaultValue="" className="w-full bg-surface-container-low border border-outline-variant/30 py-4 px-4 text-sm font-medium appearance-none outline-none focus:ring-1 focus:ring-primary transition-all">
-                <option disabled value="">Chọn các bản nhạc hiện có hoặc tải lên các bản nhạc mới</option>
-                <option>Bản nhạc 01</option>
-                <option>Bản nhạc 02</option>
+              <select 
+                aria-label="Chọn nghệ sĩ" 
+                value={formData.artist_id}
+                onChange={(e) => setFormData(prev => ({ ...prev, artist_id: e.target.value }))}
+                className="w-full bg-surface-container-low border border-outline-variant/30 py-4 px-4 text-sm font-medium appearance-none outline-none focus:ring-1 focus:ring-primary transition-all"
+              >
+                <option value="">Chọn nghệ sĩ</option>
+                {artists.map((artist) => (
+                  <option key={artist.id} value={artist.id}>
+                    {artist.name}
+                  </option>
+                ))}
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" size={20} />
+              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none" size={16} />
             </div>
           </section>
 
@@ -75,7 +221,13 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
 
         {/* Right Column: Metadata Form */}
         <div className="xl:col-span-8">
-          <section className="bg-surface-container-low p-8 md:p-12 border border-outline-variant/10 rounded-2xl">
+          <form onSubmit={handleSubmit} className="bg-surface-container-low p-8 md:p-12 border border-outline-variant/10 rounded-2xl">
+            {error && (
+              <div className="mb-6 p-4 bg-error/10 border border-error/30 rounded-lg">
+                <p className="text-error text-sm">{error}</p>
+              </div>
+            )}
+            
             <div className="flex items-center justify-between mb-10">
               <h3 className="text-2xl font-bold tracking-tight">Thông tin siêu dữ liệu bản nhạc</h3>
               <div className="flex items-center gap-3">
@@ -86,168 +238,126 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
               </div>
             </div>
 
-            <form className="space-y-10">
-              {/* Album / Compilation Section */}
-              <div className="space-y-4">
-                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Album/Compilation *</label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <label className="flex items-center gap-3 bg-surface-container-highest/50 p-4 border border-outline-variant/10 cursor-pointer rounded-lg hover:bg-surface-container-highest transition-colors">
-                    <input defaultChecked className="text-primary focus:ring-primary bg-transparent border-outline-variant" name="compilation" type="radio" />
-                    <span className="text-sm font-medium">Không</span>
-                  </label>
-                  <label className="flex items-center gap-3 bg-surface-container-highest/50 p-4 border border-outline-variant/10 cursor-pointer rounded-lg hover:bg-surface-container-highest transition-colors">
-                    <input className="text-primary focus:ring-primary bg-transparent border-outline-variant" name="compilation" type="radio" />
-                    <span className="text-sm font-medium">Có (Tuyển tập nhiều nghệ sĩ)</span>
-                  </label>
-                </div>
-                <p className="text-[10px] text-on-surface-variant tracking-wide px-1">Bật nếu bản phát hành này có từ 4 nghệ sĩ chính trở lên</p>
-              </div>
-
+            <div className="space-y-10">
               {/* Basic Identity Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-outline-variant/10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Tiêu đề bản phát hành *</label>
-                  <input className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" placeholder="Ví dụ: Tên Album hoặc Tên Single" type="text" />
+                  <input 
+                    value={formData.ten_album}
+                    onChange={(e) => setFormData(prev => ({ ...prev, ten_album: e.target.value }))}
+                    className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" 
+                    placeholder="Ví dụ: Tên Album hoặc Tên Single" 
+                    type="text" 
+                    required
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Ngôn ngữ siêu dữ liệu *</label>
                   <div className="relative">
-                    <select aria-label="Ngôn ngữ siêu dữ liệu" defaultValue="Vietnamese" className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium appearance-none rounded-lg focus:ring-1 focus:ring-primary outline-none">
-                      <option>Vietnamese</option>
-                      <option>English</option>
-                      <option>Japanese</option>
-                      <option>Spanish</option>
+                    <select 
+                      value={formData.ngon_ngu}
+                      onChange={(e) => setFormData(prev => ({ ...prev, ngon_ngu: e.target.value as 'vi' | 'en' }))}
+                      className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium appearance-none rounded-lg focus:ring-1 focus:ring-primary outline-none"
+                    >
+                      <option value="vi">Vietnamese</option>
+                      <option value="en">English</option>
                     </select>
                     <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" size={18} />
                   </div>
                 </div>
               </div>
 
-              {/* Artists Section */}
-              <div className="space-y-4">
-                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Nghệ sĩ chính & Người đóng góp</label>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4 bg-surface-container-highest py-3 px-4 rounded-lg">
-                    <div className="flex-1 flex items-center gap-3">
-                      <User className="text-primary" size={16} />
-                      <span className="text-sm font-medium">Nghệ sĩ chính</span>
-                    </div>
-                    <input className="bg-transparent border-none text-sm w-1/2 text-right focus:ring-0 text-on-surface" placeholder="Tên nghệ sĩ" type="text" />
-                    <button title="Xóa nghệ sĩ" className="text-on-surface-variant hover:text-red-400 transition-colors">
-                      <Trash2 size={18} />
-                    </button>
-                  </div>
-                  <div className="flex flex-wrap gap-4 mt-4">
-                    <button className="flex items-center gap-2 text-primary text-[10px] font-bold uppercase tracking-widest group" type="button">
-                      <span className="w-6 h-6 flex items-center justify-center bg-primary/10 group-hover:bg-primary/20 transition-colors rounded">
-                        <Plus size={14} />
-                      </span>
-                      Thêm nghệ sĩ chính
-                    </button>
-                    <button className="flex items-center gap-2 text-on-surface-variant text-[10px] font-bold uppercase tracking-widest group" type="button">
-                      <span className="w-6 h-6 flex items-center justify-center bg-outline-variant/10 group-hover:bg-outline-variant/20 transition-colors rounded">
-                        <Plus size={14} />
-                      </span>
-                      Thêm người biểu diễn
-                    </button>
-                  </div>
+              {/* Release Type */}
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Loại phát hành *</label>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {['album', 'single', 'ep'].map((type) => (
+                    <label key={type} className="flex items-center gap-3 bg-surface-container-highest/50 p-4 border border-outline-variant/10 cursor-pointer rounded-lg hover:bg-surface-container-highest transition-colors">
+                      <input 
+                        type="radio" 
+                        name="loai_phat_hanh"
+                        value={type}
+                        checked={formData.loai_phat_hanh === type}
+                        onChange={(e) => setFormData(prev => ({ ...prev, loai_phat_hanh: e.target.value as 'album' | 'single' | 'ep' }))}
+                        className="text-primary focus:ring-primary bg-transparent border-outline-variant" 
+                      />
+                      <span className="text-sm font-medium capitalize">{type === 'album' ? 'Album' : type === 'single' ? 'Single' : 'EP'}</span>
+                    </label>
+                  ))}
                 </div>
               </div>
 
-              {/* Genre & Label Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-outline-variant/10">
+              {/* Release Date */}
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Ngày phát hành *</label>
+                <input 
+                  value={formData.ngay_phat_hanh}
+                  onChange={(e) => setFormData(prev => ({ ...prev, ngay_phat_hanh: e.target.value }))}
+                  className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" 
+                  type="date" 
+                />
+              </div>
+
+              {/* Description */}
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Mô tả bản phát hành</label>
+                <textarea 
+                  value={formData.mo_ta}
+                  onChange={(e) => setFormData(prev => ({ ...prev, mo_ta: e.target.value }))}
+                  className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium resize-none rounded-lg focus:ring-1 focus:ring-primary outline-none" 
+                  placeholder="Cung cấp một bản tóm tắt ngắn gọn về bản phát hành của bạn..." 
+                  rows={3}
+                />
+                <p className="text-[8px] text-on-surface-variant italic">Thông tin này sẽ được gửi đến các nền tảng hỗ trợ mô tả.</p>
+              </div>
+
+              {/* Additional Fields */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Thể loại chính *</label>
-                  <div className="relative">
-                    <select aria-label="Thể loại chính" defaultValue="" className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium appearance-none rounded-lg focus:ring-1 focus:ring-primary outline-none">
-                      <option disabled value="">Chọn thể loại</option>
-                      <option>Electronic</option>
-                      <option>Lo-Fi</option>
-                      <option>Classical</option>
-                      <option>Jazz</option>
-                      <option>V-Pop</option>
-                    </select>
-                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" size={18} />
-                  </div>
+                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">UPC / EAN</label>
+                  <input 
+                    value={formData.upc}
+                    onChange={(e) => setFormData(prev => ({ ...prev, upc: e.target.value }))}
+                    className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" 
+                    placeholder="Để trống để tự động tạo" 
+                    type="text" 
+                  />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Tên hãng thu âm</label>
-                  <input className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" placeholder="Ví dụ: Archive Records" type="text" />
+                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">ISWC</label>
+                  <input 
+                    value={formData.iswc}
+                    onChange={(e) => setFormData(prev => ({ ...prev, iswc: e.target.value }))}
+                    className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" 
+                    placeholder="Để trống để tự động tạo" 
+                    type="text" 
+                  />
                 </div>
               </div>
-
-              {/* Secondary Metadata */}
-              <div className="space-y-8 pt-6 border-t border-outline-variant/10">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Mô tả bản phát hành</label>
-                  <textarea className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium resize-none rounded-lg focus:ring-1 focus:ring-primary outline-none" placeholder="Cung cấp một bản tóm tắt ngắn gọn về bản phát hành của bạn..." rows={3}></textarea>
-                  <p className="text-[8px] text-on-surface-variant italic">Thông tin này sẽ được gửi đến các nền tảng hỗ trợ mô tả.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Lịch sử phát hành *</label>
-                    <input aria-label="Lịch sử phát hành" className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium text-on-surface-variant rounded-lg focus:ring-1 focus:ring-primary outline-none" type="date" />
-                    <p className="text-[8px] text-on-surface-variant mt-1">Nó đã được phát hành trước đó chưa?</p>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">UPC / EAN</label>
-                    <input className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" placeholder="Để trống để tự động tạo" type="text" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">ID danh mục</label>
-                    <input className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" placeholder="Thêm ID tham chiếu nội bộ" type="text" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Copyright Info */}
-              <div className="space-y-4 pt-6 border-t border-outline-variant/10">
-                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Bản quyền (C) & (P) *</label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex bg-surface-container-highest items-center rounded-lg overflow-hidden">
-                      <span className="px-4 text-sm text-on-surface-variant font-bold">©</span>
-                      <select aria-label="Năm bản quyền" className="bg-transparent border-none text-xs py-4 px-0 w-20 outline-none">
-                        <option>2024</option>
-                        <option>2023</option>
-                      </select>
-                      <input className="bg-transparent border-none flex-1 py-4 text-sm outline-none" placeholder="Tên chủ sở hữu bản quyền" type="text" />
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex bg-surface-container-highest items-center rounded-lg overflow-hidden">
-                      <span className="px-4 text-sm text-on-surface-variant font-bold">℗</span>
-                      <select aria-label="Năm bản ghi âm" className="bg-transparent border-none text-xs py-4 px-0 w-20 outline-none">
-                        <option>2024</option>
-                        <option>2023</option>
-                      </select>
-                      <input className="bg-transparent border-none flex-1 py-4 text-sm outline-none" placeholder="Tên chủ sở hữu bản ghi âm" type="text" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </section>
-
-          {/* Form Footer Actions */}
-          <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-6">
-            <button className="text-on-surface-variant hover:text-white transition-colors text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
-              <Save size={16} />
-              Lưu bản nháp
-            </button>
-            <div className="flex items-center gap-4 w-full md:w-auto">
-              <button className="flex-1 md:flex-none border border-outline-variant/30 py-4 px-10 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-surface-container-high transition-colors rounded-lg">
-                Quay lại
-              </button>
-              <button 
-                onClick={onNext}
-                className="flex-1 md:flex-none bg-linear-to-r from-primary to-primary-dim py-4 px-12 text-[10px] font-bold uppercase tracking-[0.2em] text-background hover:opacity-90 transition-opacity flex items-center justify-center gap-2 rounded-lg shadow-lg shadow-primary/20"
-              >
-                Tiếp theo: Tài nguyên
-                <ArrowRight size={16} />
-              </button>
             </div>
-          </div>
+
+            {/* Form Actions */}
+            <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+              <button type="button" className="text-on-surface-variant hover:text-white transition-colors text-[10px] font-bold uppercase tracking-widest flex items-center gap-2">
+                <Save size={16} />
+                Lưu bản nháp
+              </button>
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <button type="button" className="flex-1 md:flex-none border border-outline-variant/30 py-4 px-10 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-surface-container-high transition-colors rounded-lg">
+                  Quay lại
+                </button>
+                <button 
+                  type="submit"
+                  disabled={loading}
+                  className="flex-1 md:flex-none bg-primary py-4 px-12 text-[10px] font-bold uppercase tracking-[0.2em] text-background hover:opacity-90 transition-opacity flex items-center justify-center gap-2 rounded-lg shadow-lg shadow-primary/20 disabled:opacity-50"
+                >
+                  {loading ? 'Đang xử lý...' : 'Tiếp theo: Tài nguyên'}
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </motion.div>
