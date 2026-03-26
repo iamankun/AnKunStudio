@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script' // 1. Import thêm Script từ Next.js
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { MusicProvider } from '@/lib/music-context'
@@ -44,6 +45,22 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <body className="font-sans antialiased">
+        {/* 2. Google Tag (gtag.js) - Tải thư viện từ Google */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YP2SVBS3NK"
+          strategy="afterInteractive"
+        />
+        {/* 3. Khởi tạo cấu hình cho GA4 */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-YP2SVBS3NK');
+          `}
+        </Script>
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
