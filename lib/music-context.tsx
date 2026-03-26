@@ -71,7 +71,7 @@ const sampleTracks: Track[] = [
   {
     id: '4',
     title: 'Destiny',
-    artist: 'Willdawind'ft 'Bảo Hân Helia',
+    artist: 'Willdawind ft. Bảo Hân Helia',
     album: 'Amor Fati',
     duration: 276,
     cover: '/tracks/Willdawind - DESTINY ft Bao Han Helia.jpg',
