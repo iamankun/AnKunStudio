@@ -46,7 +46,7 @@ export default function AdminArtistsPage() {
       await xoaArtist(id);
       setArtists(artists.filter(artist => artist.id !== id));
     } catch (error) {
-      console.error('Error deleting artist:', error);
+      console.error('Lỗi khi xoá hồ sơ này:', error);
     }
   };
 
@@ -71,7 +71,7 @@ export default function AdminArtistsPage() {
         <Link href="/admin/artists/new">
           <Button>
             <Plus className="h-4 w-4 mr-2" />
-            Thêm Nghệ sĩ
+            Thêm hồ sơ nghệ sĩ
           </Button>
         </Link>
       </div>
@@ -82,7 +82,7 @@ export default function AdminArtistsPage() {
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Tìm kiếm nghệ sĩ..."
+                placeholder="Tìm hồ sơ nghệ sĩ"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10"
@@ -99,7 +99,7 @@ export default function AdminArtistsPage() {
               >
                 <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0">
                   <Image
-                    src={(artist.avatar_url as string) || '/placeholder.svg?height=100&width=100'}
+                    src={(artist.avatar_url as string) || '/anhdaidientrong.svg?height=100&width=100'}
                     alt={artist.name as string}
                     fill
                     className="object-cover"
@@ -112,10 +112,10 @@ export default function AdminArtistsPage() {
                       <CheckCircle className="h-4 w-4 text-blue-500 shrink-0" />
                     )}
                   </div>
-                  <p className="text-sm text-muted-foreground">{(artist.genre as string[])?.[0] || 'Unknown'}</p>
+                  <p className="text-sm text-muted-foreground">{(artist.genre as string[])?.[0] || 'Không có thông tin '}</p>
                   <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
                     <span>{(artist.monthly_listeners as string) || '0'} hàng tháng</span>
-                    <span>{(artist.total_streams as string) || '0'} lượt stream</span>
+                    <span>{(artist.total_streams as string) || '0'} lượt nghe</span>
                   </div>
                 </div>
                 <DropdownMenu>
@@ -128,7 +128,7 @@ export default function AdminArtistsPage() {
                     <DropdownMenuItem asChild>
                       <Link href={`/artists/${artist.slug}`}>
                         <Eye className="h-4 w-4 mr-2" />
-                        Xem Hồ sơ
+                        Xem hồ sơ
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
