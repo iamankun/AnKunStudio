@@ -7,10 +7,10 @@ import { ArtistEditForm } from '@/components/artist-edit-form';
 export async function generateStaticParams() {
   try {
     const ids = await layTatCaIdArtists();
-    console.log(`🎵 [ARTIST EDIT] Generated ${ids.length} static params`);
+    console.log(`🎵 [THÔNG BÁO CHO NGHỆ SĨ] Đã tạo ${ids.length} trang tĩnh`);
     return ids.map((id) => ({ id }));
   } catch (error) {
-    console.log('🎵 [ARTIST EDIT] Static params generation failed:', error);
+    console.log('🎵 [THÔNG BÁO CHO NGHỆ SĨ] Tạo ra trang tĩnh thất bại:', error);
     return [];
   }
 }
@@ -23,16 +23,16 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     
     if (!artist) {
       return {
-        title: 'Không tìm thấy nghệ sĩ | An Kun Studio Admin',
+        title: 'Không tìm thấy nghệ sĩ | An Kun Studio',
       };
     }
 
     return {
-      title: `Chỉnh sửa ${artist.name} | An Kun Studio Admin`,
+      title: `Chỉnh sửa ${artist.name} | An Kun Studio`,
     };
   } catch {
     return {
-      title: 'Chỉnh sửa Nghệ sĩ | An Kun Studio Admin',
+      title: 'Chỉnh sửa Nghệ sĩ | An Kun Studio',
     };
   }
 }
