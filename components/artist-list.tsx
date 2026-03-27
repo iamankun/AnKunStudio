@@ -101,7 +101,7 @@ export function ArtistList() {
         {/* Featured Artists */}
         {featuredArtists.length > 0 && (
           <>
-            <h2 className="text-2xl font-bold text-foreground mb-6">Nghệ sĩ Tiêu biểu</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Nghệ sĩ tiêu biểu</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {featuredArtists.map((artist, idx) => (
                 <Link
@@ -112,7 +112,7 @@ export function ArtistList() {
                   <article className="relative overflow-hidden rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl">
                     <div className="aspect-square overflow-hidden">
                       <Image 
-                        src={artist.avatar_url || '/placeholder.svg?height=400&width=400'} 
+                        src={artist.avatar_url || '/anhdaidiennghesi.jpg?height=400&width=400'} 
                         alt={artist.name}
                         width={400}
                         height={400}

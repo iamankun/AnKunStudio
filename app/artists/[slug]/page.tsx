@@ -10,12 +10,12 @@ import { notFound } from 'next/navigation';
 export async function generateStaticParams() {
   try {
     const slugs = await layTatCaSlugArtists();
-    console.log(`🎵 [ARTIST] Generated ${slugs.length} static params`);
+    console.log(`🎵 [NGHỆ SĨ] Hoàn thành tạo ${slugs.length} trang tĩnh`);
     return slugs.map((slug) => ({
       slug: slug,
     }));
   } catch (error) {
-    console.log('🎵 [ARTIST] Static params generation failed, falling back to dynamic:', error);
+    console.log('🎵 [NGHỆ SĨ] Tạo các trang tĩnh thất bại, chuyển sang tạo động sẽ lỗi 404 trên môi trường sản xuất:', error);
     return [];
   }
 }

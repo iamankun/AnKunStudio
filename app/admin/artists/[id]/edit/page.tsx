@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     
     if (!artist) {
       return {
-        title: 'Không tìm thấy nghệ sĩ | An Kun Studio',
+        title: 'Không tìm thấy hồ sơ nghệ sĩ | An Kun Studio',
       };
     }
 
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     };
   } catch {
     return {
-      title: 'Chỉnh sửa Nghệ sĩ | An Kun Studio',
+      title: 'Chỉnh sửa hồ sơ nghệ sĩ | An Kun Studio',
     };
   }
 }

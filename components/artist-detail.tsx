@@ -31,7 +31,7 @@ export function ArtistDetail({ artist }: ArtistDetailProps) {
             <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-background shadow-2xl bg-linear-to-br from-primary/30 to-primary/10 flex items-center justify-center shrink-0">
               {artist.avatar_url ? (
                 <Image
-                  src={artist.avatar_url}
+                  src={artist.avatar_url || "/anhdaidiennghesi.jpg"}
                   alt={artist.name}
                   width={208}
                   height={208}

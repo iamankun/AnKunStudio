@@ -87,14 +87,14 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
       };
       
       if (!artistData.name) {
-        setError('Tên nghệ sĩ không được để trống.');
+        setError('Tên nghệ danh không được để trống.');
         return;
       }
       
       await capNhatArtist(artistId, artistData);
       router.push('/admin/artists');
     } catch (err) {
-      console.error('Error updating artist:', err);
+      console.error('Lỗi khi cập nhật hồ sơ nghệ sĩ:', err);
       let errorMessage = 'Không thể cập nhật nghệ sĩ. Vui lòng thử lại.';
       if (err instanceof Error) {
         errorMessage = err.message;
@@ -114,8 +114,8 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
           </Button>
         </Link>
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Chỉnh sửa Nghệ sĩ</h1>
-          <p className="text-muted-foreground mt-1">Cập nhật thông tin nghệ sĩ</p>
+          <h1 className="text-3xl font-bold text-foreground">Chỉnh sửa hồ sơ</h1>
+          <p className="text-muted-foreground mt-1">Cập nhật hồ sơ nghệ sĩ</p>
         </div>
       </div>
 
@@ -135,10 +135,10 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
               <CardContent className="space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Tên Nghệ sĩ *</Label>
+                    <Label htmlFor="name">Nghệ danh *</Label>
                     <Input
                       id="name"
-                      placeholder="Nhập tên nghệ sĩ..."
+                      placeholder="Nhập nghệ danh..."
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
@@ -166,10 +166,10 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="bio">Tiểu sử</Label>
+                  <Label htmlFor="bio">Thông tin nghệ sĩ</Label>
                   <Textarea
                     id="bio"
-                    placeholder="Kể câu chuyện về nghệ sĩ..."
+                    placeholder="Kể câu chuyện của nghệ sĩ..."
                     value={formData.bio}
                     onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
                     rows={6}
@@ -181,7 +181,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                     <Label htmlFor="country">Quốc gia</Label>
                     <Input
                       id="country"
-                      placeholder="vd., Việt Nam"
+                      placeholder="Việt Nam"
                       value={formData.country}
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                     />
@@ -190,7 +190,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                     <Label htmlFor="city">Thành phố</Label>
                     <Input
                       id="city"
-                      placeholder="vd., Hà Nội"
+                      placeholder="Hà Nội"
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                     />
@@ -201,7 +201,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                   <Label htmlFor="label">Hãng Thu âm</Label>
                   <Input
                     id="label"
-                    placeholder="vd., An Kun Studio"
+                    placeholder="An Kun Studio"
                     value={formData.label}
                     onChange={(e) => setFormData({ ...formData, label: e.target.value })}
                   />
@@ -211,11 +211,11 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
 
             <Card>
               <CardHeader>
-                <CardTitle>Liên kết Mạng xã hội</CardTitle>
+                <CardTitle>Liên kết các nền tảng</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="website">Trang web</Label>
+                  <Label htmlFor="website">Trang</Label>
                   <div className="relative">
                     <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
@@ -234,7 +234,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                     <Instagram className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="instagram"
-                      placeholder="@username"
+                      placeholder="Hãy nhập đúng @username"
                       value={formData.instagram}
                       onChange={(e) => setFormData({ ...formData, instagram: e.target.value })}
                       className="pl-10"
@@ -248,7 +248,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                     <Twitter className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="twitter"
-                      placeholder="@username"
+                      placeholder="Hãy nhập đúng @username"
                       value={formData.twitter}
                       onChange={(e) => setFormData({ ...formData, twitter: e.target.value })}
                       className="pl-10"
@@ -257,12 +257,12 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="spotify">ID Nghệ sĩ Spotify</Label>
+                  <Label htmlFor="spotify">ID nghệ sĩ Spotify</Label>
                   <div className="relative">
                     <Music2 className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="spotify"
-                      placeholder="ID nghệ sĩ từ Spotify"
+                      placeholder="ID trang nghệ sĩ từ Spotify"
                       value={formData.spotify}
                       onChange={(e) => setFormData({ ...formData, spotify: e.target.value })}
                       className="pl-10"
@@ -281,7 +281,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
               <CardContent className="space-y-4">
                 <Button type="submit" className="w-full" disabled={isSaving}>
                   <Save className="h-4 w-4 mr-2" />
-                  {isSaving ? 'Đang lưu...' : 'Lưu Thay đổi'}
+                  {isSaving ? 'Đang tạo hồ sơ...' : 'Lưu hồ sơ'}
                 </Button>
                 <Button type="button" variant="outline" className="w-full" asChild>
                   <Link href="/admin/artists">Hủy</Link>
@@ -298,17 +298,17 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                   <div className="aspect-square rounded-lg overflow-hidden bg-muted">
                     <img
                       src={formData.avatar_url}
-                      alt="Avatar preview"
+                      alt="Xem trước ảnh đại diện"
                       className="w-full h-full object-cover"
                       onError={(e) => { e.currentTarget.style.display = 'none'; }}
                     />
                   </div>
                 )}
                 <div className="space-y-2">
-                  <Label htmlFor="avatar_url">Link ảnh hồ sơ</Label>
+                  <Label htmlFor="avatar_url">Liên kết ảnh hồ sơ nghệ sĩ</Label>
                   <Input
                     id="avatar_url"
-                    placeholder="https://..."
+                    placeholder="Có thẻ dán liên kết ảnh trực tiếp"
                     value={formData.avatar_url}
                     onChange={(e) => setFormData({ ...formData, avatar_url: e.target.value })}
                   />
@@ -321,30 +321,30 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
 
             <Card>
               <CardHeader>
-                <CardTitle>Ảnh Bìa</CardTitle>
+                <CardTitle>Ảnh bìa nghệ sĩ</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {formData.cover_image_url && (
                   <div className="aspect-video rounded-lg overflow-hidden bg-muted">
                     <img
                       src={formData.cover_image_url}
-                      alt="Cover preview"
+                      alt="Xem trước ảnh bìa"
                       className="w-full h-full object-cover"
                       onError={(e) => { e.currentTarget.style.display = 'none'; }}
                     />
                   </div>
                 )}
                 <div className="space-y-2">
-                  <Label htmlFor="cover_image_url">Link ảnh bìa</Label>
+                  <Label htmlFor="cover_image_url">Liên kết ảnh bìa nghệ sĩ</Label>
                   <Input
                     id="cover_image_url"
-                    placeholder="https://..."
+                    placeholder="Có thẻ dán liên kết ảnh trực tiếp"
                     value={formData.cover_image_url}
                     onChange={(e) => setFormData({ ...formData, cover_image_url: e.target.value })}
                   />
                 </div>
                 <div className="border-2 border-dashed border-border rounded-lg p-4 text-center text-muted-foreground text-xs">
-                  <p>Khuyến nghị 1920x1080</p>
+                  <p>Khuyến nghị 9:16</p>
                 </div>
               </CardContent>
             </Card>
