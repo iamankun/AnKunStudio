@@ -13,7 +13,7 @@ export async function generateStaticParams() {
     const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     
     if (!supabaseUrl || !supabaseServiceKey) {
-      console.log('🔍 [BLOG] Missing environment variables for static generation');
+      console.log('🔍 [BÀI VIẾT] Không tìm thấy env, vui lòng kiểm tra đối với khu vực trang Bài Viết');
       return [];
     }
     
@@ -35,12 +35,12 @@ export async function generateStaticParams() {
       return [];
     }
 
-    console.log(`🔍 [BLOG] Generated ${posts.length} static params`);
+    console.log(`🔍 [BÀI VIẾT] Đã tạo ra ${posts.length} tĩnh`);
     return posts.map((post: { id: string }) => ({
       slug: post.id,
     }));
   } catch (error) {
-    console.log('🔍 [BLOG] Static params generation failed, falling back to dynamic:', error);
+    console.log('🔍 [BÀI VIẾT] Tạo ra trang tĩnh thất bại, quay trở lại chế độ động sẽ gây lỗi 404 trên môi trường Production - Sản xuất:', error);
     // Return empty array to fallback to dynamic rendering
     return [];
   }
@@ -53,8 +53,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     
     if (!post) {
       return {
-        title: 'Bài viết không tìm thấy | Bài viết trên An Kun Studio',
-        description: 'Bài viết bạn tìm kiếm không tồn tại.',
+        title: 'Không tìm thấy bài viết trên An Kun Studio',
+        description: 'Bài viết bạn tìm kiếm không tồn tại hoặc đã xoá. Hãy tìm đọc bài viết khác nhé.',
       };
     }
 
@@ -72,7 +72,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     console.error('Error generating metadata:', error);
     return {
       title: 'Lỗi | Bài viết trên An Kun Studio',
-      description: 'Có lỗi xảy ra khi tải bài viết.',
+      description: 'Có lỗi xảy ra khi tải bài viết, hãy kiểm tra có phải trang tĩnh (static) hay không.',
     };
   }
 }
@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <Header />
         <main className="container mx-auto px-4 py-20">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-foreground mb-4">Bài viết chưa được xuất bản</h1>
+            <h1 className="text-2xl font-bold text-foreground mb-4">Bài viết chưa được tác giả xuất bản</h1>
             <p className="text-muted-foreground">Bài viết này đang ở trạng thái nháp và chưa được công bố.</p>
           </div>
         </main>

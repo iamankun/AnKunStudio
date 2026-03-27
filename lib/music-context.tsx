@@ -70,12 +70,13 @@ const sampleTracks: Track[] = [
   },
   {
     id: '4',
-    title: 'Golden Hour',
-    artist: 'Soul Harmony',
-    album: 'Heartfelt',
+    title: 'Destiny',
+    artist: 'Willdawind ft. Bảo Hân Helia',
+    album: 'Amor Fati',
     duration: 276,
-    cover: '/tracks/golden-hour.jpg',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+    cover: '/tracks/Willdawind - DESTINY ft Bao Han Helia.jpg',
+    audioUrl: '/tracks/Destiny - Willdawind x Bảo Hân Helia - Prod. by Pawn by Willdawind.wav',
+    lyricUrl: '/tracks/Willdawind - Destiny ft Bao Han Helia.json'
   },
   {
     id: '5',

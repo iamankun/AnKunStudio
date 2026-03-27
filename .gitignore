@@ -23,9 +23,9 @@ dist/
 .temp/
 
 # IDE
-.claude
-.vscode
-.codesandbox
+.claude/
+.vscode/
+.codesandbox/
 .idea/
 *.swp
 *.swo
