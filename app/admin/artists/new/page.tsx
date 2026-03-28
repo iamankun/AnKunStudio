@@ -308,7 +308,7 @@ export default function NewArtistPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {formData.avatar_url && (
-              <div className="aspect-square rounded-lg overflow-hidden bg-muted">
+              <div className="relative aspect-square rounded-lg overflow-hidden bg-muted">
                 <Image
                   src={formData.avatar_url}
                   alt="Ảnh xem trước"
@@ -337,7 +337,7 @@ export default function NewArtistPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {formData.cover_image_url && (
-                  <div className="aspect-video rounded-lg overflow-hidden bg-muted">
+                  <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
                     <Image
                       src={formData.cover_image_url}
                       alt="Ảnh xem trước"

@@ -327,7 +327,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
               </CardHeader>
               <CardContent className="space-y-4">
                 {formData.cover_image_url && (
-                  <div className="aspect-video rounded-lg overflow-hidden bg-muted">
+                  <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
                     <Image
                       src={formData.cover_image_url}
                       alt="Xem trước ảnh bìa"
