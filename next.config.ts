@@ -1,6 +1,7 @@
-import { NextConfig } from "next/dist/server/config";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Giữ lại cấu hình domain hình ảnh của bạn
   images: {
     remotePatterns: [
       {
@@ -11,26 +12,13 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "**.supabase.co",
       },
-      {
-        protocol: "https",
-        hostname: "t2.genius.com",
-      },
-      {
-        protocol: "https",
-        hostname: "**.genius.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.genius.com",
-      },
     ],
   },
+  // Giữ lại cấu hình tối ưu gói
   experimental: {
     optimizePackageImports: ["@heroui/react"],
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // Đã xóa bỏ phần ignoreBuildErrors để đảm bảo TypeScript check lỗi khi build
   async headers() {
     return [
       {
@@ -38,7 +26,10 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https: va.vercel-scripts.com; script-src-elem 'self' 'unsafe-inline' https: va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https: exsoflgvdreikabvhvkg.supabase.co https: *.supabase.co https: images.unsplash.com https: i.imgur.com https: i.ibb.co https: placehold.co https: localhost https: 127.0.0.1; font-src 'self' data:; connect-src 'self' https: exsoflgvdreikabvhvkg.supabase.co https: *.supabase.co https: va.vercel-scripts.com;",
+            // Đã loại bỏ 'unsafe-eval'
+            // Đã sửa lại đúng định dạng URL (thêm //) cho tất cả các domain
+            // Đã gộp thêm các cấu hình frame-src từ tệp mjs cũ sang
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; script-src-elem 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://exsoflgvdreikabvhvkg.supabase.co https://*.supabase.co https://images.unsplash.com https://i.imgur.com https://i.ibb.co https://placehold.co; font-src 'self' data:; connect-src 'self' https://exsoflgvdreikabvhvkg.supabase.co https://*.supabase.co https://va.vercel-scripts.com; media-src 'self' https://www.soundhelix.com; frame-src 'self' https://www.youtube.com;",
           },
         ],
       },
