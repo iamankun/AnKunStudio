@@ -1,6 +1,6 @@
 {
   "name": "ankunstudio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An Kun Studio là trang bài viết về âm nhạc, phim ảnh và phát hành âm nhạc cũng như các hoạt động nghệ thuật khác.",
   "private": true,
   "type": "module",
@@ -63,7 +63,7 @@
     "framer-motion": "^12.23.26",
     "input-otp": "1.4.2",
     "lucide-react": "^0.564.0",
-    "next": "^16.1.1",
+    "next": "^16.2.1",
     "next-themes": "^0.4.6",
     "postcss": "^8.5.8",
     "react": "^18.3.1",
@@ -83,7 +83,7 @@
   },
   "devDependencies": {
     "eslint": "^9.0.0",
-    "eslint-config-next": "^16.1.1",
+    "eslint-config-next": "^16.2.1",
     "supabase": "^2.0.0"
   },
   "keywords": [
@@ -93,6 +93,6 @@
     "react",
     "typescript"
   ],
-  "author": "An Kun của An Kun Studio, LLC.",
+  "author": "An Kun",
   "license": "MIT"
 }

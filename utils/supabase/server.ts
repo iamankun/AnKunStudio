@@ -1,35 +1,19 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { env } from "../env"; // Đã import env được Zod xác thực
 
 /**
- * Especially important if using Fluid compute: Don't put this client in a
- * global variable. Always create a new client within each function when using
- * it.
+ * Đặc biệt quan trọng nếu sử dụng Fluid compute: Không đặt client này trong
+ * một biến toàn cục. Luôn tạo một client mới bên trong mỗi hàm khi sử dụng nó.
  */
 export async function createClient() {
   const cookieStore = await cookies();
 
-  // Use only NEXT_PUBLIC variants like CineVerse
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // Sử dụng biến môi trường đã được cấu hình và xác thực qua Zod
+  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.error("🔍 [MÁY CHỦ AN KUN STUDIO] Missing Supabase environment variables:", {
-      url: !!supabaseUrl,
-      key: !!supabaseAnonKey,
-      nextPublicUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
-      nextPublicKey: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-      nodeEnv: process.env.NODE_ENV
-    });
-    throw new Error("Missing Supabase environment variables");
-  }
-
-  // Environment validation
-  if (!supabaseUrl?.startsWith('https://')) {
-    console.error("🔍 [MÁY CHỦ AN KUN STUDIO] URL Supabase không hợp lệ:", supabaseUrl);
-    throw new Error("URL Supabase không hợp lệ: phải bắt đầu bằng https://");
-  }
-
+  // Kiểm tra độ dài khóa ẩn danh (Bảo vệ thêm ngoài Zod)
   if (supabaseAnonKey.length < 100) {
     console.error("🔍 [MÁY CHỦ AN KUN STUDIO] Độ dài khóa ẩn danh Supabase không hợp lệ");
     throw new Error("Khóa ẩn danh Supabase không hợp lệ: quá ngắn");
@@ -49,9 +33,8 @@ export async function createClient() {
               cookieStore.set(name, value, options),
             );
           } catch {
-            // The `setAll` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
+            // Phương thức `setAll` được gọi từ một Server Component.
+            // Có thể bỏ qua lỗi này nếu bạn có middleware làm mới phiên người dùng.
           }
         },
       },
