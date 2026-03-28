@@ -11,6 +11,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "**.supabase.co",
       },
+      {
+        protocol: "https",
+        hostname: "t2.genius.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.genius.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.genius.com",
+      },
     ],
   },
   experimental: {
