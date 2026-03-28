@@ -1,3 +1,5 @@
+import type { TablesInsert, TablesUpdate } from '@/utils/supabase/generated-types';
+
 // Database types for CineVerse
 export interface Profile {
   id: string;
@@ -46,32 +48,43 @@ export type ProfileRow = Profile;
 export type ProfileInsert = Omit<Profile, 'id' | 'created_at' | 'updated_at'>;
 export type ProfileUpdate = Partial<Pick<Profile, 'id' | 'created_at'>>;
 
+// Social Links type
+export interface SocialLinks {
+  spotify?: string;
+  instagram?: string;
+  twitter?: string;
+  website?: string;
+  apple_music?: string;
+  soundcloud?: string;
+  youtube?: string;
+}
+
 // Artist types
 export interface Artist {
   id: string;
   name: string;
   slug: string;
-  bio?: string;
-  avatar_url?: string;
-  cover_image_url?: string;
-  genre?: string[];
-  social_links?: Record<string, string>;
-  monthly_listeners?: string;
-  followers?: string;
-  total_streams?: string;
-  top_chart?: string;
-  verified?: boolean;
-  is_active?: boolean;
-  country?: string;
-  city?: string;
-  label?: string;
+  bio: string | null;
+  avatar_url: string | null;
+  cover_image_url: string | null;
+  genre: string[] | null;
+  social_links: SocialLinks | null;
+  monthly_listeners: string | null;
+  followers: string | null;
+  total_streams: string | null;
+  top_chart: string | null;
+  verified: boolean | null;
+  is_active: boolean | null;
+  country: string | null;
+  city: string | null;
+  label: string | null;
   created_at: string;
-  updated_at?: string;
+  updated_at: string | null;
 }
 
 export type ArtistRow = Artist;
-export type ArtistInsert = Omit<Artist, 'id' | 'created_at' | 'updated_at'>;
-export type ArtistUpdate = Partial<Artist>;
+export type ArtistInsert = TablesInsert<'artists'>;
+export type ArtistUpdate = TablesUpdate<'artists'>;
 
 // Database schema type
 export interface Database {
@@ -81,6 +94,11 @@ export interface Database {
         Row: ProfileRow;
         Insert: ProfileInsert;
         Update: ProfileUpdate;
+      };
+      artists: {
+        Row: ArtistRow;
+        Insert: ArtistInsert;
+        Update: ArtistUpdate;
       };
       comments: {
         Row: CommentRow;

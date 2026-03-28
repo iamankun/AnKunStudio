@@ -5,22 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { layBaiVietTheoIdClient } from '@/lib/baiviet';
+// Import thêm kiểu BaiViet từ lib/baiviet
+import { layBaiVietTheoIdClient, type BaiViet } from '@/lib/baiviet';
 import { useParams } from 'next/navigation';
 
-interface BlogPost {
-  id: string;
-  tieude: string;
-  tomtat?: string;
-  noidung: string;
-  trang_thai: 'draft' | 'published' | 'archived';
-  created_at: string;
-  updated_at: string;
-}
+// Đã xóa bỏ hoàn toàn interface BlogPost tự định nghĩa gây lỗi
 
 export default function BlogPostActionPage() {
   const params = useParams();
-  const [post, setPost] = useState<BlogPost | null>(null);
+  // Sử dụng kiểu BaiViet chuẩn từ cấu trúc Database
+  const [post, setPost] = useState<BaiViet | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

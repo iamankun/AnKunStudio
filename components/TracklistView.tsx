@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Music, GripVertical, Plus, ChevronRight, ChevronLeft, Edit2 } from 'lucide-react';
+import { List, GripVertical, Plus, ChevronRight, ChevronLeft, Edit2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { StepProgress } from './StepProgress';
 
@@ -45,7 +45,7 @@ export const TracklistView: React.FC<{ onNext: () => void; onBack: () => void }>
               </div>
               <div className="flex items-center gap-6">
                 <span className="text-xs font-mono text-on-surface-variant">{track.duration}</span>
-                <button className="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                <button aria-label={`Chỉnh sửa ${track.title}`} className="p-2 text-on-surface-variant hover:text-primary transition-colors">
                   <Edit2 size={16} />
                 </button>
               </div>

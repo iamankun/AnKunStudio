@@ -312,6 +312,8 @@ export default function NewArtistPage() {
                 <Image
                   src={formData.avatar_url}
                   alt="Ảnh xem trước"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -341,6 +343,8 @@ export default function NewArtistPage() {
                     <Image
                       src={formData.cover_image_url}
                       alt="Ảnh xem trước"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="w-full h-full object-cover"
                     />
                   </div>

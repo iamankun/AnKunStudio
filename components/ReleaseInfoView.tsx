@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   ChevronDown, 
-  Plus, 
-  Trash2, 
   UploadCloud,
-  User,
   Save,
   ArrowRight
 } from 'lucide-react';
@@ -128,7 +125,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
       // Generate unique album code
       const maAlbum = `ALB-${Date.now()}-${Math.random().toString(36).substr(2, 5).toUpperCase()}`;
       
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('album')
         .insert({
           ...formData,
@@ -259,6 +256,7 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
                       value={formData.ngon_ngu}
                       onChange={(e) => setFormData(prev => ({ ...prev, ngon_ngu: e.target.value as 'vi' | 'en' }))}
                       className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium appearance-none rounded-lg focus:ring-1 focus:ring-primary outline-none"
+                      aria-label="Chọn ngôn ngữ"
                     >
                       <option value="vi">Vietnamese</option>
                       <option value="en">English</option>
@@ -296,7 +294,32 @@ export const ReleaseInfoView: React.FC<{ onNext: () => void }> = ({ onNext }) =>
                   onChange={(e) => setFormData(prev => ({ ...prev, ngay_phat_hanh: e.target.value }))}
                   className="w-full bg-surface-container-highest border-none py-4 px-4 text-sm font-medium rounded-lg focus:ring-1 focus:ring-primary outline-none" 
                   type="date" 
+                  aria-label="Chọn ngày phát hành"
                 />
+              </div>
+
+              {/* Genre Selection */}
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant block">Thể loại</label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                  {theLoais.map((theLoai) => (
+                    <label key={theLoai.id} className="flex items-center gap-2 bg-surface-container-highest/50 p-3 border border-outline-variant/10 cursor-pointer rounded-lg hover:bg-surface-container-highest transition-colors">
+                      <input 
+                        type="checkbox"
+                        checked={formData.the_loai_ids.includes(theLoai.id)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setFormData(prev => ({ ...prev, the_loai_ids: [...prev.the_loai_ids, theLoai.id] }));
+                          } else {
+                            setFormData(prev => ({ ...prev, the_loai_ids: prev.the_loai_ids.filter(id => id !== theLoai.id) }));
+                          }
+                        }}
+                        className="text-primary focus:ring-primary bg-transparent border-outline-variant" 
+                      />
+                      <span className="text-sm font-medium">{theLoai.ten_the_loai}</span>
+                    </label>
+                  ))}
+                </div>
               </div>
 
               {/* Description */}

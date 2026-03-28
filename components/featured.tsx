@@ -1,26 +1,39 @@
 'use client';
 
 import { useMusic, sampleTracks, Track } from '@/lib/music-context';
+import { layDanhSachArtists } from '@/lib/artists';
+import type { Artist } from '@/types/database';
 import { Play, Pause, Heart, Plus } from 'lucide-react';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export function Featured() {
   const { currentTrack, isPlaying, playTrack, pause, resume, setIsPlayerVisible } = useMusic();
+  const [artists, setArtists] = useState<Artist[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchArtists = async () => {
+      try {
+        const data = await layDanhSachArtists();
+        setArtists(data.slice(0, 6)); // Lấy 6 nghệ sĩ đầu tiên
+      } catch (error) {
+        console.error('Error fetching artists:', error);
+        setArtists([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArtists();
+  }, []);
 
   const featuredTracks: (Track & { plays: string; durationFormatted: string })[] = sampleTracks.map((track, idx) => ({
     ...track,
     plays: ['5.5M', '4.2M', '3.8M', '5.1M', '2.9M', '3.5M'][idx] || '1.0M',
     durationFormatted: formatDuration(track.duration),
   }));
-
-  const artists = [
-    { name: 'Luna Echo', genre: 'Electronic', plays: '2.5M', image: '/artists/luna-echo.jpg' },
-    { name: 'Rising Sun', genre: 'Pop', plays: '1.8M', image: '/artists/rising-sun.jpg' },
-    { name: 'Urban Beats', genre: 'Hip-Hop', plays: '3.2M', image: '/artists/urban-beats.jpg' },
-    { name: 'Soul Harmony', genre: 'R&B', plays: '2.1M', image: '/artists/soul-harmony.jpg' },
-    { name: 'Wave Riders', genre: 'Indie', plays: '1.4M', image: '/artists/wave-riders.jpg' },
-    { name: 'Pure Notes', genre: 'Classical', plays: '980K', image: '/artists/pure-notes.jpg' },
-  ];
 
   function formatDuration(seconds: number): string {
     const mins = Math.floor(seconds / 60);
@@ -181,34 +194,52 @@ export function Featured() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {artists.map((artist, idx) => (
-              <div
-                key={idx}
-                className={`group relative overflow-hidden rounded-xl bg-linear-to-br from-primary/20 to-primary/5 border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer animate-fade-in-up animate-delay-[${Math.floor((0.1 + idx * 0.08) * 1000)}ms]`}
-              >
-                <div className="relative w-full h-32 overflow-hidden rounded-t-xl">
-                  <Image
-                    src={artist.image}
-                    alt={artist.name}
-                    fill
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
-                </div>
-
-                <div className="relative p-3 space-y-1">
-                  <h4 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1">
-                    {artist.name}
-                  </h4>
-                  <p className="text-xs text-muted-foreground">{artist.genre}</p>
-                  <div className="pt-2 border-t border-primary/10 group-hover:border-primary/30 transition-colors duration-300">
-                    <p className="text-xs font-medium text-primary">{artist.plays} lượt nghe</p>
+            {loading ? (
+              // Loading skeleton
+              Array.from({ length: 6 }).map((_, idx) => (
+                <div key={idx} className="animate-pulse">
+                  <div className="h-32 bg-secondary rounded-t-xl"></div>
+                  <div className="p-3 space-y-2">
+                    <div className="h-4 bg-secondary rounded w-3/4"></div>
+                    <div className="h-3 bg-secondary rounded w-1/2"></div>
                   </div>
                 </div>
-
-                <div className="absolute inset-0 bg-linear-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+              ))
+            ) : artists.length === 0 ? (
+              <div className="col-span-full text-center py-8 text-muted-foreground">
+                Chưa có nghệ sĩ nào
               </div>
-            ))}
+            ) : (
+              artists.map((artist, idx) => (
+                <Link
+                  key={artist.id}
+                  href={`/artists/${artist.slug}`}
+                  className={`group relative overflow-hidden rounded-xl bg-linear-to-br from-primary/20 to-primary/5 border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer animate-fade-in-up animate-delay-[${Math.floor((0.1 + idx * 0.08) * 1000)}ms]`}
+                >
+                  <div className="relative w-full h-32 overflow-hidden rounded-t-xl">
+                    <Image
+                      src={artist.avatar_url || '/artists/luna-echo.jpg'}
+                      alt={artist.name}
+                      fill
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                  </div>
+
+                  <div className="relative p-3 space-y-1">
+                    <h4 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                      {artist.name}
+                    </h4>
+                    <p className="text-xs text-muted-foreground">{artist.genre?.[0] || 'Unknown'}</p>
+                    <div className="pt-2 border-t border-primary/10 group-hover:border-primary/30 transition-colors duration-300">
+                      <p className="text-xs font-medium text-primary">{artist.monthly_listeners || '0'} người nghe/tháng</p>
+                    </div>
+                  </div>
+
+                  <div className="absolute inset-0 bg-linear-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                </Link>
+              ))
+            )}
           </div>
         </div>
 

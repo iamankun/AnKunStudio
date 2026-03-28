@@ -7,13 +7,13 @@ export type UpdateBaiViet = Database['public']['Tables']['baiviet']['Update'];
 
 // Get all blog post IDs for static generation of edit pages
 export async function layTatCaIdBaiViet(): Promise<string[]> {
-  console.log('🔍 [BLOG] Fetching all blog post IDs for static generation');
+  console.log('🔍 [BÀI VIẾT] Đang tải tất cả bài viết và tạo trang tĩnh');
   
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   
   if (!supabaseUrl || !supabaseServiceKey) {
-    console.log('🔍 [BLOG] Missing environment variables for static IDs');
+    console.log('🔍 [BÀI VIẾT] Không tìm thấy biến môi trường');
     return [];
   }
   
@@ -31,29 +31,29 @@ export async function layTatCaIdBaiViet(): Promise<string[]> {
       .select('id');
       
     if (error) {
-      console.error('🔍 [BLOG] Lỗi khi lấy danh sách IDs:', error);
+      console.error('🔍 [BÀI VIẾT] Lỗi khi lấy danh sách ID:', error);
       return [];
     }
     
     const ids = data?.map((b: { id: string }) => b.id) || [];
-    console.log(`🔍 [BLOG] Found ${ids.length} blog post IDs`);
+    console.log(`🔍 [BÀI VIẾT] Không thấy ${ids.length} bài viết`);
     return ids;
   } catch (error) {
-    console.error('🔍 [BLOG] Error fetching IDs:', error);
+    console.error('🔍 [BÀI VIẾT] Lỗi khi lấy danh sách ID:', error);
     return [];
   }
 }
 
 // Static version for build-time generation (no cookies)
 export async function layBaiVietTheoIdStatic(id: string): Promise<BaiViet | null> {
-  console.log('🔍 [BLOG] Fetching post with ID (static):', id);
+  console.log('🔍 [BÀI VIẾT] Đang tải bài viết với ID (tĩnh):', id);
   
   // Use service role key for build-time access
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   
   if (!supabaseUrl || !supabaseServiceKey) {
-    console.log('🔍 [BLOG] Missing environment variables for static fetch');
+    console.log('🔍 [BÀI VIẾT] Lỗi: Không tìm thấy biến môi trường');
     return null;
   }
   
@@ -71,14 +71,14 @@ export async function layBaiVietTheoIdStatic(id: string): Promise<BaiViet | null
     .eq('id', id)
     .single();
     
-  console.log('🔍 [BLOG] Static query result:', {
+  console.log('🔍 [BÀI VIẾT] Kết quả truy vấn tĩnh:', {
     data: data ? 'Found' : 'Not found',
     error: error?.message,
     postId: id
   });
     
   if (error) {
-    console.error('🔍 [BLOG] Lỗi khi lấy bài viết (static):', error);
+    console.error('🔍 [BÀI VIẾT] Lỗi khi lấy bài viết (tĩnh):', error);
     return null;
   }
     
@@ -87,11 +87,11 @@ export async function layBaiVietTheoIdStatic(id: string): Promise<BaiViet | null
 
 // Server-side version for server components
 export async function layBaiVietTheoId(id: string): Promise<BaiViet | null> {
-  console.log('🔍 [BLOG] Fetching post with ID:', id);
+  console.log('🔍 [BÀI VIẾT] Đang tải bài viết với ID:', id);
   
   const supabase = await createClient();
   
-  console.log('🔍 [BLOG] Supabase client created');
+  console.log('🔍 [BÀI VIẾT] Supabase đang tạo dịch vụ khách');
   
   const { data, error } = await supabase
     .from('baiviet')
@@ -99,14 +99,14 @@ export async function layBaiVietTheoId(id: string): Promise<BaiViet | null> {
     .eq('id', id)
     .single();
     
-  console.log('🔍 [BLOG] Query result:', {
+  console.log('🔍 [BÀI VIẾT] Kết quả truy vấn:', {
     data: data ? 'Found' : 'Not found',
     error: error?.message,
     postId: id
   });
     
   if (error) {
-    console.error('🔍 [BLOG] Lỗi khi lấy bài viết:', error);
+    console.error('🔍 [BÀI VIẾT]LOG] Lỗi khi lấy bài viết:', error);
     throw error;
   }
     

@@ -114,7 +114,10 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ onNext, onBack }) 
                         {file.status === 'uploaded' ? 'Đã tải lên' : 'Đang xử lý'}
                       </span>
                     </div>
-                    <button className="text-on-surface-variant hover:text-red-400 transition-colors">
+                    <button 
+                      className="text-on-surface-variant hover:text-red-400 transition-colors"
+                      aria-label="Xóa file"
+                    >
                       <Trash2 size={18} />
                     </button>
                   </div>

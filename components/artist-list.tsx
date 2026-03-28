@@ -4,13 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { layDanhSachArtists } from '@/lib/artists';
+import { Artist } from '@/types/database';
 
 const genres = ['Tất cả', 'Electronic', 'Pop', 'Hip-Hop', 'R&B', 'Indie', 'Classical', 'Synthwave', 'Folk', 'EDM', 'Jazz', 'Rock', 'Reggae'];
 
 export function ArtistList() {
   const [selectedGenre, setSelectedGenre] = useState('Tất cả');
   const [searchQuery, setSearchQuery] = useState('');
-  const [artists, setArtists] = useState<any[]>([]);
+  const [artists, setArtists] = useState<Artist[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

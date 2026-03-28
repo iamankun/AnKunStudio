@@ -15,10 +15,10 @@ export const TopBar: React.FC = () => {
 
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-4 border-r border-outline-variant/20 pr-6">
-          <button className="text-on-surface-variant hover:text-primary transition-colors">
+          <button aria-label="Notifications" className="text-on-surface-variant hover:text-primary transition-colors">
             <Bell size={20} />
           </button>
-          <button className="text-on-surface-variant hover:text-primary transition-colors">
+          <button aria-label="Settings" className="text-on-surface-variant hover:text-primary transition-colors">
             <Settings size={20} />
           </button>
         </div>

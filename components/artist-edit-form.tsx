@@ -296,16 +296,17 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
               </CardHeader>
               <CardContent className="space-y-4">
   {formData.avatar_url && (
-    // Bắt buộc thêm class 'relative' để Image fill hoạt động
-    <div className="relative aspect-square rounded-lg overflow-hidden bg-muted">
-            <Image
-              src={formData.avatar_url}
-              alt="Xem trước ảnh đại diện"
-              fill
-              className="object-cover"
-            />
-          </div>
-        )}
+                  // Bắt buộc thêm class 'relative' để Image fill hoạt động
+                  <div className="relative aspect-square rounded-lg overflow-hidden bg-muted">
+                          <Image
+                            src={formData.avatar_url}
+                            alt="Xem trước ảnh đại diện"
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover"
+                          />
+                        </div>
+                      )}
                 <div className="space-y-2">
                   <Label htmlFor="avatar_url">Liên kết ảnh hồ sơ nghệ sĩ</Label>
                   <Input
@@ -332,6 +333,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                       src={formData.cover_image_url}
                       alt="Xem trước ảnh bìa"
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover"
                     />
                   </div>

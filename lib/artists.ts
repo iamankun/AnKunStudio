@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from '@/utils/supabase/client';
+import type { Artist, ArtistInsert, ArtistUpdate } from '@/types/database';
 
-// Simple wrapper functions with type assertion to bypass TypeScript errors
-export const layDanhSachArtists = async () => {
+export const layDanhSachArtists = async (): Promise<Artist[]> => {
   const supabase = createClient();
   
-  const { data, error } = await (supabase as any)
+  // Không còn cần (supabase as any) nữa
+  const { data, error } = await supabase
     .from('artists')
     .select('*')
     .eq('is_active', true)
@@ -16,142 +16,59 @@ export const layDanhSachArtists = async () => {
     throw error;
   }
     
-  return data || [];
+  return (data || []) as Artist[];
 };
 
-export const layArtistTheoSlug = async (slug: string) => {
+export const layArtistTheoSlug = async (slug: string): Promise<Artist | null> => {
   try {
-    console.log('[layArtistTheoSlug] Starting, slug:', slug);
-    
     const supabase = createClient();
-    console.log('[layArtistTheoSlug] Client created');
     
-    const { data, error } = await (supabase as any)
+    const { data, error } = await supabase
       .from('artists')
-      .select('slug')
+      .select('*') // Lấy toàn bộ thông tin thay vì chỉ 'slug'
       .eq('slug', slug)
       .eq('is_active', true)
       .limit(1);
       
     if (error) {
-      console.error('[layArtistTheoSlug] Supabase error:', error);
-      
-      if (error.code === 'PGRST116') {
-        console.log('[layArtistTheoSlug] Not found (normal)');
-        return null;
-      }
-      
+      if (error.code === 'PGRST116') return null;
       return null;
     }
       
-    console.log('[layArtistTheoSlug] Success, found:', data?.length > 0);
-    return data?.length > 0 ? data[0] : null;
+    return (data && data.length > 0 ? data[0] : null) as Artist | null;
   } catch (err) {
-    console.error('[layArtistTheoSlug] Exception caught:', err);
-    console.error('[layArtistTheoSlug] Exception type:', typeof err);
-    console.error('[layArtistTheoSlug] Exception string:', String(err));
-    if (err instanceof Error) {
-      console.error('[layArtistTheoSlug] Error message:', err.message);
-      console.error('[layArtistTheoSlug] Error stack:', err.stack);
-    }
+    console.error('Exception caught:', err);
     return null;
   }
 };
 
-export const laySoundsTheoArtist = async (artistId: string) => {
-  const supabase = createClient();
-  
-  const { data, error } = await (supabase as any)
-    .from('sounds')
-    .select('*')
-    .eq('artist_id', artistId)
-    .eq('is_published', true)
-    .order('release_date', { ascending: false });
-    
-  if (error) {
-    console.error('Lỗi khi lấy sounds:', error);
-    return [];
-  }
-    
-  return data || [];
-};
-
-export const layAlbumsTheoArtist = async (artistId: string) => {
-  const supabase = createClient();
-  
-  const { data, error } = await (supabase as any)
-    .from('albums')
-    .select('*')
-    .eq('artist_id', artistId)
-    .eq('is_published', true)
-    .order('release_year', { ascending: false });
-    
-  if (error) {
-    console.error('Lỗi khi lấy albums:', error);
-    return [];
-  }
-    
-  return data || [];
-};
-
-export const layEventsTheoArtist = async (artistId: string) => {
-  const supabase = createClient();
-  
-  const { data, error } = await (supabase as any)
-    .from('events')
-    .select('*')
-    .eq('artist_id', artistId)
-    .eq('is_published', true)
-    .order('event_date', { ascending: true });
-    
-  if (error) {
-    console.error('Lỗi khi lấy events:', error);
-    return [];
-  }
-    
-  return data || [];
-};
-
-export const taoArtist = async (artist: any) => {
+// Đã đổi artist: any thành kiểu ArtistInsert chuẩn xác
+export const taoArtist = async (artist: ArtistInsert): Promise<Artist> => {
   const supabase = createClient();
   
   try {
-    console.log('Creating artist with data:', artist);
-    
-    const { data, error } = await (supabase as any)
+    const { data, error } = await supabase
       .from('artists')
       .insert(artist)
       .select()
       .single();
     
-    console.log('Supabase response:', { data, error });
-    
     if (error) {
-      console.error('Supabase error details:', error);
-      console.error('Error type:', typeof error);
-      console.error('Error keys:', Object.keys(error));
-      console.error('Full error object:', JSON.stringify(error, null, 2));
-      
-      // Handle case where error is an empty object
-      if (typeof error === 'object' && Object.keys(error).length === 0) {
-        throw new Error('Lỗi khi tạo nghệ sĩ: Database constraint violation - possibly missing required fields or duplicate slug');
-      }
-      
-      throw new Error(`Lỗi khi tạo nghệ sĩ: ${error?.message || error?.details || 'Unknown error'}`);
+      throw new Error(`Lỗi khi tạo nghệ sĩ: ${error.message || 'Unknown error'}`);
     }
     
-    console.log('Artist created successfully:', data);
-    return data;
+    return data as Artist;
   } catch (err) {
     console.error('Unexpected error in taoArtist:', err);
     throw err;
   }
 };
 
-export const capNhatArtist = async (id: string, artist: any) => {
+// Đã đổi artist: any thành kiểu ArtistUpdate chuẩn xác
+export const capNhatArtist = async (id: string, artist: ArtistUpdate): Promise<Artist> => {
   const supabase = createClient();
   
-  const { data, error } = await (supabase as any)
+  const { data, error } = await supabase
     .from('artists')
     .update(artist)
     .eq('id', id)
@@ -159,26 +76,16 @@ export const capNhatArtist = async (id: string, artist: any) => {
     .single();
     
   if (error) {
-    console.error('Supabase update error details:', error);
-    console.error('Error type:', typeof error);
-    console.error('Error keys:', Object.keys(error));
-    console.error('Full error object:', JSON.stringify(error, null, 2));
-    
-    // Handle case where error is an empty object
-    if (typeof error === 'object' && Object.keys(error).length === 0) {
-      throw new Error('Lỗi khi cập nhật nghệ sĩ: Database constraint violation - possibly missing required fields or insufficient permissions');
-    }
-    
-    throw new Error(`Lỗi khi cập nhật nghệ sĩ: ${error?.message || error?.details || 'Unknown error'}`);
+    throw new Error(`Lỗi khi cập nhật nghệ sĩ: ${error.message || 'Unknown error'}`);
   }
     
-  return data;
+  return data as Artist;
 };
 
-export const xoaArtist = async (id: string) => {
+export const xoaArtist = async (id: string): Promise<void> => {
   const supabase = createClient();
   
-  const { error } = await (supabase as any)
+  const { error } = await supabase
     .from('artists')
     .delete()
     .eq('id', id);
