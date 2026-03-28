@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { layBaiViets, BaiViet } from '@/lib/baiviet';
 
-const categories = ['Tất cả', 'Thông tin Ngành', 'Nghệ sĩ Tiêu biểu', 'Sản xuất', 'Kinh doanh', 'Tin công ty', 'Công nghệ'];
+const categories = ['Tất cả', 'Thông tin ngành', 'Nghệ sĩ tiêu biểu', 'Sản xuất', 'Kinh doanh', 'Tin công ty', 'Công nghệ'];
 
 export function BlogList() {
   const [posts, setPosts] = useState<BaiViet[]>([]);

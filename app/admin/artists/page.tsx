@@ -42,11 +42,30 @@ export default function AdminArtistsPage() {
   });
 
   const handleDelete = async (id: string) => {
+    if (!confirm('Bạn có chắc chắn muốn xóa nghệ sĩ này?')) {
+      return;
+    }
+
     try {
+      // Check if user is authenticated
+      const { createClient } = await import('@/utils/supabase/client');
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        alert('Bạn chưa đăng nhập. Vui lòng đăng nhập để tiếp tục.');
+        return;
+      }
+
+      console.log('🎵 [DELETE] Đang xóa nghệ sĩ ID:', id);
       await xoaArtist(id);
+      console.log('🎵 [DELETE] Xóa thành công');
+      
       setArtists(artists.filter(artist => artist.id !== id));
+      alert('Xóa nghệ sĩ thành công!');
     } catch (error) {
       console.error('Lỗi khi xoá hồ sơ này:', error);
+      alert('Không thể xóa nghệ sĩ. Vui lòng thử lại.');
     }
   };
 

@@ -70,6 +70,16 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
     setError('');
     
     try {
+      // Check if user is authenticated
+      const { createClient } = await import('@/utils/supabase/client');
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        setError('Bạn chưa đăng nhập. Vui lòng đăng nhập để tiếp tục.');
+        return;
+      }
+
       const artistData = {
         name: formData.name.trim(),
         bio: formData.bio.trim(),
@@ -92,7 +102,10 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
         return;
       }
       
-      await capNhatArtist(artistId, artistData);
+      console.log('🎵 [EDIT] Đang cập nhật nghệ sĩ:', artistId, artistData);
+      const result = await capNhatArtist(artistId, artistData);
+      console.log('🎵 [EDIT] Cập nhật thành công:', result);
+      
       router.push('/admin/artists');
     } catch (err) {
       console.error('Lỗi khi cập nhật hồ sơ nghệ sĩ:', err);

@@ -68,6 +68,9 @@ export const taoArtist = async (artist: ArtistInsert): Promise<Artist> => {
 export const capNhatArtist = async (id: string, artist: ArtistUpdate): Promise<Artist> => {
   const supabase = createClient();
   
+  console.log(' [DB] Bắt đầu cập nhật nghệ sĩ ID:', id);
+  console.log(' [DB] Dữ liệu cập nhật:', artist);
+  
   const { data, error } = await supabase
     .from('artists')
     .update(artist)
@@ -76,22 +79,48 @@ export const capNhatArtist = async (id: string, artist: ArtistUpdate): Promise<A
     .single();
     
   if (error) {
+    console.error(' [DB] Lỗi Supabase:', error);
     throw new Error(`Lỗi khi cập nhật nghệ sĩ: ${error.message || 'Unknown error'}`);
   }
-    
+  
+  console.log(' [DB] Cập nhật thành công, kết quả:', data);
   return data as Artist;
 };
 
 export const xoaArtist = async (id: string): Promise<void> => {
   const supabase = createClient();
   
-  const { error } = await supabase
+  console.log('🎵 [DB] Bắt đầu xóa nghệ sĩ ID:', id);
+  
+  // Kiểm tra nghệ sĩ tồn tại trước khi xóa
+  const { data: existingArtist, error: checkError } = await supabase
+    .from('artists')
+    .select('id, name')
+    .eq('id', id)
+    .single();
+    
+  if (checkError) {
+    console.error('🎵 [DB] Lỗi khi kiểm tra nghệ sĩ:', checkError);
+    throw new Error(`Không tìm thấy nghệ sĩ: ${checkError.message || 'Unknown error'}`);
+  }
+  
+  if (!existingArtist) {
+    console.error('🎵 [DB] Không tìm thấy nghệ sĩ với ID:', id);
+    throw new Error('Không tìm thấy nghệ sĩ để xóa');
+  }
+  
+  console.log('🎵 [DB] Tìm thấy nghệ sĩ:', existingArtist);
+  
+  // Thực hiện xóa hard delete
+  const { error: deleteError } = await supabase
     .from('artists')
     .delete()
     .eq('id', id);
     
-  if (error) {
-    console.error('Lỗi khi xóa nghệ sĩ:', error);
-    throw error;
+  if (deleteError) {
+    console.error('🎵 [DB] Lỗi khi xóa nghệ sĩ:', deleteError);
+    throw new Error(`Lỗi khi xóa nghệ sĩ: ${deleteError.message || 'Unknown error'}`);
   }
+  
+  console.log('🎵 [DB] Xóa nghệ sĩ thành công');
 };
