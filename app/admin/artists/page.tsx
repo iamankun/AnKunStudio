@@ -99,7 +99,7 @@ export default function AdminArtistsPage() {
               >
                 <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0">
                   <Image
-                    src={(artist.avatar_url as string) || '/anhdaidiennghesi.jpg?height=100&width=100'}
+                    src={(artist.avatar_url as string) || '/anhdaidiennghesi.jpg'}
                     alt={artist.name as string}
                     fill
                     className="object-cover"
