@@ -80,6 +80,7 @@ export interface Artist {
   label: string | null;
   created_at: string;
   updated_at: string | null;
+  [key: string]: unknown;
 }
 
 export type ArtistRow = Artist;

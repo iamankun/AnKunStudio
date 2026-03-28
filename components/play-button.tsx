@@ -12,7 +12,7 @@ interface PlayButtonProps {
 }
 
 export function PlayButton({ track, variant = 'default', size = 'icon', className }: PlayButtonProps) {
-  const { currentTrack, isPlaying, play, pause, resume } = useMusic();
+  const { currentTrack, isPlaying, playTrack, pause, resume } = useMusic();
   
   const targetTrack = track || sampleTracks[0];
   const isCurrentTrack = currentTrack?.id === targetTrack.id;
@@ -26,7 +26,7 @@ export function PlayButton({ track, variant = 'default', size = 'icon', classNam
         resume();
       }
     } else {
-      play(targetTrack);
+      playTrack(targetTrack);
     }
   };
 
@@ -48,11 +48,11 @@ export function PlayButton({ track, variant = 'default', size = 'icon', classNam
 
 // Component to play all tracks
 export function PlayAllButton({ className }: { className?: string }) {
-  const { play, setQueue } = useMusic();
+  const { playTrack, setQueue } = useMusic();
 
   const handlePlayAll = () => {
     setQueue(sampleTracks);
-    play(sampleTracks[0]);
+    playTrack(sampleTracks[0]);
   };
 
   return (

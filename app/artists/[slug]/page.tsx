@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: artist.bio || `Khám phá âm nhạc từ ${artist.name} trên An Kun Studio`,
       openGraph: {
         title: artist.name,
-        description: artist.bio,
+        description: artist.bio || undefined,
         images: artist.avatar_url ? [artist.avatar_url] : [],
       },
     };

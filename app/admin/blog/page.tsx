@@ -131,20 +131,20 @@ export default function AdminBlogPage() {
                   <tr key={post.id} className="border-b border-border hover:bg-secondary/50 transition-colors">
                     <td className="py-4 px-4">
                       <div>
-                        <p className="font-medium text-foreground line-clamp-1">{post.tieude}</p>
-                        <p className="text-sm text-muted-foreground mt-1">{formatDate(post.created_at)}</p>
+                        <p className="font-medium text-foreground line-clamp-1">{post.tieude || 'Untitled'}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{formatDate(post.created_at || '')}</p>
                       </div>
                     </td>
                     <td className="py-4 px-4 hidden md:table-cell text-muted-foreground">
                       <p className="line-clamp-2">{post.tomtat || 'Không có tóm tắt'}</p>
                     </td>
                     <td className="py-4 px-4">
-                      <span className={`px-2 py-1 text-xs rounded-full ${getStatusColor(post.trang_thai)}`}>
-                        {getStatusText(post.trang_thai)}
+                      <span className={`px-2 py-1 text-xs rounded-full ${getStatusColor(post.trang_thai || 'draft')}`}>
+                        {getStatusText(post.trang_thai || 'draft')}
                       </span>
                     </td>
                     <td className="py-4 px-4 hidden sm:table-cell text-muted-foreground">
-                      {formatDate(post.created_at)}
+                      {formatDate(post.created_at || '')}
                     </td>
                     <td className="py-4 px-4 text-right">
                       <DropdownMenu>

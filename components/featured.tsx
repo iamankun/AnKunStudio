@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export function Featured() {
   const { currentTrack, isPlaying, playTrack, pause, resume, setIsPlayerVisible } = useMusic();
-  const [artists, setArtists] = useState<Artist[]>([]);
+  const [artists, setArtists] = useState<Artist[]>([] as Artist[]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

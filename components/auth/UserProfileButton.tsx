@@ -10,7 +10,7 @@ import { Avatar } from "@heroui/react";
 
 export function UserProfileButton() {
   const [user, setUser] = useState<{ id: string; email?: string; user_metadata?: { full_name?: string; username?: string } } | null>(null);
-  const [profile, setProfile] = useState<{ role?: string; full_name?: string; avatar_url?: string | null; verify?: string } | null>(null);
+  const [profile, setProfile] = useState<{ role?: string | null; full_name?: string | null; avatar_url?: string | null; verify?: string | null } | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 

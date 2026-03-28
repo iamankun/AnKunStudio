@@ -15,8 +15,8 @@ import { BaiViet } from '@/lib/baiviet-server';
 import Image from 'next/image';
 
 interface ExtendedBaiViet extends BaiViet {
-  category?: string | null;
-  tags?: string | null;
+  category: string | null;
+  tags: string | null;
 }
 
 interface BlogEditFormProps {

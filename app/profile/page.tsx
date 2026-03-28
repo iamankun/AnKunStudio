@@ -54,14 +54,25 @@ export default async function ProfilePage() {
           .eq("id", user.id)
           .single();
         
-        return <ProfileClient user={user} profile={newProfile} />;
+        // Create properly typed user object
+        const typedUser = {
+          id: user.id,
+          email: user.email || '',
+        };
+        
+        return <ProfileClient user={typedUser} profile={newProfile} />;
       }
       
       redirect("/auth/login");
     }
 
     console.log("🔍 [PROFILES PAGE] Profile found");
-    return <ProfileClient user={user} profile={profile} />;
+    // Create properly typed user object
+    const typedUser = {
+      id: user.id,
+      email: user.email || '',
+    };
+    return <ProfileClient user={typedUser} profile={profile} />;
     
   } catch (error: unknown) {
     console.error("🔍 [PROFILES PAGE] Unexpected error:", error);

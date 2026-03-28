@@ -76,7 +76,7 @@ const songsData = [
 export default function AdminSongsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [songs, setSongs] = useState(songsData);
-  const { currentTrack, isPlaying, play, pause, resume } = useMusic();
+  const { currentTrack, isPlaying, playTrack, pause, resume } = useMusic();
 
   const filteredSongs = songs.filter(song =>
     song.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -97,7 +97,7 @@ export default function AdminSongsPage() {
           resume();
         }
       } else {
-        play(track);
+        playTrack(track);
       }
     }
   };
