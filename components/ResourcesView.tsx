@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { StepProgress } from './StepProgress';
-
+import Image from 'next/image';
 interface ResourcesViewProps {
   onNext: () => void;
   onBack: () => void;
@@ -48,7 +48,7 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({ onNext, onBack }) 
             </div>
             
             <div className="relative aspect-square w-full bg-surface-container-highest rounded-lg overflow-hidden flex flex-col items-center justify-center border-2 border-dashed border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer">
-              <img 
+              <Image 
                 src="https://picsum.photos/seed/cover/800/800" 
                 alt="Album Art Preview" 
                 className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"

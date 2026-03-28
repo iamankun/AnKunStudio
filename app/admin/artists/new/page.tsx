@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -307,15 +308,14 @@ export default function NewArtistPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {formData.avatar_url && (
-                  <div className="aspect-square rounded-lg overflow-hidden bg-muted">
-                    <img
-                      src={formData.avatar_url}
-                      alt="Ảnh xem trước"
-                      className="w-full h-full object-cover"
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    />
-                  </div>
-                )}
+              <div className="aspect-square rounded-lg overflow-hidden bg-muted">
+                <Image
+                  src={formData.avatar_url}
+                  alt="Ảnh xem trước"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              )}
                 <div className="space-y-2">
                   <Label htmlFor="avatar_url">Liên kết hình ảnh cho nghệ sĩ</Label>
                   <Input
@@ -338,11 +338,10 @@ export default function NewArtistPage() {
               <CardContent className="space-y-4">
                 {formData.cover_image_url && (
                   <div className="aspect-video rounded-lg overflow-hidden bg-muted">
-                    <img
+                    <Image
                       src={formData.cover_image_url}
                       alt="Ảnh xem trước"
                       className="w-full h-full object-cover"
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
                     />
                   </div>
                 )}

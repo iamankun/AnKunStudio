@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -294,16 +295,17 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                 <CardTitle>Ảnh Hồ sơ</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {formData.avatar_url && (
-                  <div className="aspect-square rounded-lg overflow-hidden bg-muted">
-                    <img
-                      src={formData.avatar_url}
-                      alt="Xem trước ảnh đại diện"
-                      className="w-full h-full object-cover"
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    />
-                  </div>
-                )}
+  {formData.avatar_url && (
+    // Bắt buộc thêm class 'relative' để Image fill hoạt động
+    <div className="relative aspect-square rounded-lg overflow-hidden bg-muted">
+            <Image
+              src={formData.avatar_url}
+              alt="Xem trước ảnh đại diện"
+              fill
+              className="object-cover"
+            />
+          </div>
+        )}
                 <div className="space-y-2">
                   <Label htmlFor="avatar_url">Liên kết ảnh hồ sơ nghệ sĩ</Label>
                   <Input
@@ -314,7 +316,7 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
                   />
                 </div>
                 <div className="border-2 border-dashed border-border rounded-lg p-4 text-center text-muted-foreground text-xs">
-                  <p>Khuyến nghị ảnh vuông</p>
+                  <p>Khuyến khích ảnh tỉ lệ 1:1</p>
                 </div>
               </CardContent>
             </Card>
@@ -326,11 +328,11 @@ export function ArtistEditForm({ artist }: ArtistEditFormProps) {
               <CardContent className="space-y-4">
                 {formData.cover_image_url && (
                   <div className="aspect-video rounded-lg overflow-hidden bg-muted">
-                    <img
+                    <Image
                       src={formData.cover_image_url}
                       alt="Xem trước ảnh bìa"
-                      className="w-full h-full object-cover"
-                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 )}
