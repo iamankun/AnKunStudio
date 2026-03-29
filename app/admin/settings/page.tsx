@@ -114,7 +114,7 @@ export default function AdminSettingsPage() {
             {settings.youtubeVideoId && (
               <div className="aspect-video rounded-lg overflow-hidden bg-secondary">
                 <iframe
-                  src={`https://www.youtube.com/embed/${settings.youtubeVideoId}?autoplay=0&mute=1`}
+                  src={`https://www.youtube-nocookie.com/embed/${settings.youtubeVideoId}?autoplay=0&mute=1`}
                   className="w-full h-full"
                   title="YouTube video preview"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

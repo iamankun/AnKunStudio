@@ -20,6 +20,8 @@ interface MusicContextType {
   volume: number;
   queue: Track[];
   isPlayerVisible: boolean;
+  isLoading: boolean;
+  error: string | null;
   getCurrentTime: () => number;
   playTrack: (track: Track) => void;
   pause: () => void;
@@ -32,6 +34,7 @@ interface MusicContextType {
   setQueue: (tracks: Track[]) => void;
   closePlayer: () => void;
   setIsPlayerVisible: (visible: boolean) => void;
+  clearError: () => void;
 }
 
 const MusicContext = createContext<MusicContextType | null>(null);
@@ -96,8 +99,12 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const [volume, setVolumeState] = useState(0.7);
   const [queue, setQueueState] = useState<Track[]>(sampleTracks);
   const [isPlayerVisible, setIsPlayerVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const playTrackRef = useRef<(track: Track) => void>(() => { });
+  const retryCountRef = useRef(0);
+  const maxRetries = 3;
 
   const nextTrack = useCallback(() => {
     if (!currentTrack || queue.length === 0) return;
@@ -110,31 +117,34 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     playTrackRef.current = (track: Track) => {
       console.log('Playing track:', track.title, 'URL:', track.audioUrl);
+      setError(null);
+      setIsLoading(true);
+      retryCountRef.current = 0;
 
       // If same track is already playing, don't recreate audio
       if (audioRef.current && currentTrack?.id === track.id) {
         console.log('Track already playing, resuming...');
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
-          playPromise.catch(error => {
-            if (error.name === 'AbortError') {
-              return;
-            }
-            console.error('Audio resume failed:', error);
-          });
+          playPromise
+            .then(() => {
+              setIsLoading(false);
+              setIsPlaying(true);
+            })
+            .catch(error => {
+              setIsLoading(false);
+              if (error.name === 'AbortError') {
+                return;
+              }
+              if (error.name === 'NotAllowedError') {
+                setError('Vui lòng tương tác với trang để phát nhạc (chạm vào màn hình)');
+              }
+              console.error('Audio resume failed:', error);
+            });
         }
-        setIsPlaying(true);
         return;
       }
 
-      // Get actual audio duration dynamically
-      const handleLoadedMetadata = () => {
-        if (audioRef.current) {
-          const actualDuration = audioRef.current.duration;
-          console.log('🎵 Actual audio duration:', actualDuration, 'seconds');
-          // You can store this and use it for progress calculation
-        }
-      };
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.removeEventListener('timeupdate', () => { });
@@ -144,6 +154,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       // Create new audio element to avoid conflicts
       const newAudio = new Audio();
       newAudio.volume = volume;
+      newAudio.preload = 'metadata';
 
       // Set up event listeners for new audio
       newAudio.addEventListener('timeupdate', () => {
@@ -156,10 +167,44 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         nextTrack();
       });
 
+      newAudio.addEventListener('canplaythrough', () => {
+        setIsLoading(false);
+      });
+
       newAudio.addEventListener('error', (e) => {
+        setIsLoading(false);
         console.error('Audio error:', e);
         console.error('Audio error code:', newAudio.error);
-        setIsPlaying(false);
+        
+        const errorCode = newAudio.error?.code;
+        let errorMessage = 'Không thể phát bài hát';
+        
+        switch (errorCode) {
+          case 1:
+            errorMessage = 'Quá trình tải bài hát bị gián đoạn. Vui lòng thử lại.';
+            break;
+          case 2:
+            errorMessage = 'Lỗi mạng. Vui lòng kiểm tra kết nối internet.';
+            break;
+          case 3:
+            errorMessage = 'Định dạng audio không được hỗ trợ.';
+            break;
+          case 4:
+            errorMessage = 'Không thể tải bài hát. File có thể bị lỗi hoặc không tồn tại.';
+            break;
+        }
+        
+        // Retry logic for network errors
+        if (retryCountRef.current < maxRetries && (errorCode === 2 || errorCode === 4)) {
+          retryCountRef.current += 1;
+          console.log(`Retrying audio load (attempt ${retryCountRef.current}/${maxRetries})...`);
+          setTimeout(() => {
+            newAudio.load();
+          }, 1000 * retryCountRef.current);
+        } else {
+          setError(errorMessage);
+          setIsPlaying(false);
+        }
       });
 
       // Set source and play
@@ -177,14 +222,25 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           playPromise
             .then(() => {
               console.log('Audio playing successfully');
+              setIsLoading(false);
               setIsPlaying(true);
+              retryCountRef.current = 0;
             })
             .catch(error => {
+              setIsLoading(false);
               // AbortError is expected when play is interrupted by pause
               if (error.name === 'AbortError') {
                 console.log('Audio play interrupted (AbortError - expected)');
                 return;
               }
+              
+              // Mobile-specific error handling
+              if (error.name === 'NotAllowedError') {
+                setError('Vui lòng chạm vào màn hình để phát nhạc');
+              } else {
+                setError('Không thể phát bài hát. Vui lòng thử lại.');
+              }
+              
               console.error('Audio play failed:', error);
               console.error('Error name:', error.name);
               console.error('Error message:', error.message);
@@ -192,6 +248,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
             });
         } else {
           console.log('Play promise is undefined');
+          setIsLoading(false);
           setIsPlaying(true);
         }
       }, 50);
@@ -256,6 +313,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
     if (audioRef.current && currentTrack) {
       console.log('Resuming audio...');
+      setIsLoading(true);
+      setError(null);
       // Small delay to ensure pause is fully processed
       setTimeout(() => {
         if (audioRef.current) {
@@ -265,13 +324,18 @@ export function MusicProvider({ children }: { children: ReactNode }) {
             playPromise
               .then(() => {
                 console.log('Audio resumed successfully');
+                setIsLoading(false);
                 setIsPlaying(true);
               })
               .catch(error => {
+                setIsLoading(false);
                 // AbortError is expected when play is interrupted by pause
                 if (error.name === 'AbortError') {
                   console.log('Audio resume interrupted (AbortError - expected)');
                   return;
+                }
+                if (error.name === 'NotAllowedError') {
+                  setError('Vui lòng chạm vào màn hình để tiếp tục phát nhạc');
                 }
                 console.error('Audio resume failed:', error);
               });
@@ -302,6 +366,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     setQueueState(tracks);
   }, []);
 
+  const clearError = useCallback(() => {
+    setError(null);
+    retryCountRef.current = 0;
+  }, []);
+
   const closePlayer = useCallback(() => {
     if (audioRef.current) {
       audioRef.current.pause();
@@ -309,6 +378,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     setIsPlaying(false);
     setIsPlayerVisible(false);
     setCurrentTrack(null);
+    setError(null);
+    retryCountRef.current = 0;
   }, []);
 
   return (
@@ -316,6 +387,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       value={{
         currentTrack,
         isPlaying,
+        isLoading,
+        error,
         progress,
         volume,
         queue,
@@ -332,6 +405,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         setQueue,
         closePlayer,
         setIsPlayerVisible,
+        clearError,
       }}
     >
       {children}

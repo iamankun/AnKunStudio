@@ -31,6 +31,8 @@ export function MusicPlayer() {
   const {
     currentTrack,
     isPlaying,
+    isLoading,
+    error,
     progress,
     volume,
     queue,
@@ -43,6 +45,7 @@ export function MusicPlayer() {
     seek,
     closePlayer,
     playTrack,
+    clearError,
   } = useMusic();
 
   const {
@@ -144,41 +147,59 @@ export function MusicPlayer() {
                     {currentTrack.title}
                   </p>
                   <p className="text-xs text-muted-foreground truncate">
-                    {currentTrack.artist}
+                    {isLoading ? 'Đang tải...' : error ? 'Lỗi phát nhạc' : currentTrack.artist}
                   </p>
                 </div>
               </button>
 
               {/* Controls */}
               <div className="flex items-center gap-2">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10 rounded-full"
-                  onClick={previous}
-                >
-                  <SkipBack className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="default"
-                  size="icon"
-                  className="h-12 w-12 rounded-full"
-                  onClick={isPlaying ? pause : resume}
-                >
-                  {isPlaying ? (
-                    <Pause className="h-5 w-5" />
-                  ) : (
-                    <Play className="h-5 w-5 ml-0.5" />
-                  )}
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10 rounded-full"
-                  onClick={nextTrack}
-                >
-                  <SkipForward className="h-4 w-4" />
-                </Button>
+                {error ? (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-10 w-10 rounded-full text-destructive"
+                    onClick={clearError}
+                    title={error}
+                  >
+                    <span className="text-xs">!</span>
+                  </Button>
+                ) : isLoading ? (
+                  <div className="h-12 w-12 rounded-full flex items-center justify-center">
+                    <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                  </div>
+                ) : (
+                  <>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-10 w-10 rounded-full"
+                      onClick={previous}
+                    >
+                      <SkipBack className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="default"
+                      size="icon"
+                      className="h-12 w-12 rounded-full"
+                      onClick={isPlaying ? pause : resume}
+                    >
+                      {isPlaying ? (
+                        <Pause className="h-5 w-5" />
+                      ) : (
+                        <Play className="h-5 w-5 ml-0.5" />
+                      )}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-10 w-10 rounded-full"
+                      onClick={nextTrack}
+                    >
+                      <SkipForward className="h-4 w-4" />
+                    </Button>
+                  </>
+                )}
               </div>
 
               {/* Progress (desktop) */}
@@ -299,7 +320,31 @@ export function MusicPlayer() {
                     <h2 className="text-xl font-bold text-foreground">
                       {currentTrack.title}
                     </h2>
-                    <p className="text-muted-foreground">{currentTrack.artist}</p>
+                    <p className="text-muted-foreground">
+                      {isLoading ? 'Đang tải...' : error ? currentTrack.artist : currentTrack.artist}
+                    </p>
+                    {error && (
+                      <div className="mt-2 p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+                        <p className="text-sm text-destructive">{error}</p>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="mt-2"
+                          onClick={() => {
+                            clearError();
+                            resume();
+                          }}
+                        >
+                          Thử lại
+                        </Button>
+                      </div>
+                    )}
+                    {isLoading && (
+                      <div className="mt-2 flex items-center justify-center gap-2 text-muted-foreground">
+                        <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                        <span className="text-sm">Đang tải bài hát...</span>
+                      </div>
+                    )}
                     <p className="text-sm text-muted-foreground/70">
                       {currentTrack.album}
                     </p>
@@ -321,34 +366,58 @@ export function MusicPlayer() {
 
                   {/* Controls */}
                   <div className="flex items-center gap-4">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-12 w-12 rounded-full"
-                      onClick={previous}
-                    >
-                      <SkipBack className="h-6 w-6" />
-                    </Button>
-                    <Button
-                      variant="default"
-                      size="icon"
-                      className="h-16 w-16 rounded-full"
-                      onClick={isPlaying ? pause : resume}
-                    >
-                      {isPlaying ? (
-                        <Pause className="h-8 w-8" />
-                      ) : (
+                    {!error && !isLoading && (
+                      <>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-12 w-12 rounded-full"
+                          onClick={previous}
+                        >
+                          <SkipBack className="h-6 w-6" />
+                        </Button>
+                      </>
+                    )}
+                    {isLoading ? (
+                      <div className="h-16 w-16 rounded-full flex items-center justify-center bg-primary/10">
+                        <div className="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin" />
+                      </div>
+                    ) : error ? (
+                      <Button
+                        variant="default"
+                        size="icon"
+                        className="h-16 w-16 rounded-full"
+                        onClick={() => {
+                          clearError();
+                          resume();
+                        }}
+                      >
                         <Play className="h-8 w-8 ml-1" />
-                      )}
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-12 w-12 rounded-full"
-                      onClick={nextTrack}
-                    >
-                      <SkipForward className="h-6 w-6" />
-                    </Button>
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="default"
+                        size="icon"
+                        className="h-16 w-16 rounded-full"
+                        onClick={isPlaying ? pause : resume}
+                      >
+                        {isPlaying ? (
+                          <Pause className="h-8 w-8" />
+                        ) : (
+                          <Play className="h-8 w-8 ml-1" />
+                        )}
+                      </Button>
+                    )}
+                    {!error && !isLoading && (
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-12 w-12 rounded-full"
+                        onClick={nextTrack}
+                      >
+                        <SkipForward className="h-6 w-6" />
+                      </Button>
+                    )}
                   </div>
 
                   {/* Volume */}
