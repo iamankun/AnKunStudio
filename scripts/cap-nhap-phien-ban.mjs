@@ -24,7 +24,7 @@ const logoAnKun = `
 ██╔══██║██║╚██╗██║    ██╔═██╗ ██║   ██║██║╚██╗██║
 ██║  ██║██║ ╚████║    ██║  ██╗╚██████╔╝██║ ╚████║
 ╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-                S T U D I O  b y  A N K U N  S T U D I O,  L L C
+            |____S T U D I O  b y  A N K U N  S T U D I O,  L L C
 `;
 
 async function initAnKunStudio() {
