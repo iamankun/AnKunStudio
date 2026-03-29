@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "prebuild": "node scripts/cap-nhap-phien-ban.mjs",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint . --fix",
     "sb-start": "supabase start --debug --ignore-health-check",
