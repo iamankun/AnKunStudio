@@ -23,6 +23,7 @@ export function ArtistDetail({ artist }: ArtistDetailProps) {
             src={artist.cover_image_url}
             alt={`${artist.name} cover`}
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -34,13 +35,15 @@ export function ArtistDetail({ artist }: ArtistDetailProps) {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-end gap-8">
             <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-background shadow-2xl bg-linear-to-br from-primary/30 to-primary/10 flex items-center justify-center shrink-0">
               {artist.avatar_url ? (
-                <Image
-                  src={artist.avatar_url || "/anhdaidiennghesi.jpg"}
-                  alt={`Nghệ sĩ '${artist.name}`}
-                  width={208}
-                  height={208}
-                  className="w-full h-full object-cover"
-                />
+                <div className="relative w-16 h-16 rounded-full overflow-hidden shrink-0">
+                  <Image
+                    src={(artist.avatar_url as string) || '/anhdaidiennghesi.jpg'}
+                    alt={artist.name as string}
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </div>
               ) : (
                 <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

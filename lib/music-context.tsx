@@ -107,11 +107,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const maxRetries = 3;
 
   const nextTrack = useCallback(() => {
-    if (!currentTrack || queue.length === 0) return;
-    const currentIndex = queue.findIndex(t => t.id === currentTrack.id);
-    const nextIndex = (currentIndex + 1) % queue.length;
-    playTrackRef.current(queue[nextIndex]);
-  }, [currentTrack, queue, playTrackRef]);
+    setQueueState(prevQueue => {
+      if (!currentTrack || prevQueue.length === 0) return prevQueue;
+      const currentIndex = prevQueue.findIndex(t => t.id === currentTrack.id);
+      const nextIndex = (currentIndex + 1) % prevQueue.length;
+      playTrackRef.current(prevQueue[nextIndex]);
+      return prevQueue;
+    });
+  }, [currentTrack]); // Remove playTrackRef from deps as it's a stable ref
 
   // Initialize playTrack function in useEffect to avoid render-time ref access
   useEffect(() => {
@@ -121,8 +124,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       setIsLoading(true);
       retryCountRef.current = 0;
 
+      // Get current state from closure instead of depending on currentTrack in deps
+      const currentTrackId = audioRef.current ? currentTrack?.id : null;
+      
       // If same track is already playing, don't recreate audio
-      if (audioRef.current && currentTrack?.id === track.id) {
+      if (audioRef.current && currentTrackId === track.id) {
         console.log('Track already playing, resuming...');
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
@@ -157,21 +163,31 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       newAudio.preload = 'metadata';
 
       // Set up event listeners for new audio
-      newAudio.addEventListener('timeupdate', () => {
+      const handleTimeUpdate = () => {
         if (newAudio.duration) {
           setProgress((newAudio.currentTime / newAudio.duration) * 100);
         }
-      });
-
-      newAudio.addEventListener('ended', () => {
-        nextTrack();
-      });
-
-      newAudio.addEventListener('canplaythrough', () => {
+      };
+      
+      const handleEnded = () => {
+        // Use functional update to avoid dependency issues
+        setQueueState(prevQueue => {
+          if (!prevQueue.length) return prevQueue;
+          const currentIndex = prevQueue.findIndex(t => t.id === track.id);
+          const nextIndex = (currentIndex + 1) % prevQueue.length;
+          // Schedule next track
+          setTimeout(() => {
+            playTrackRef.current(prevQueue[nextIndex]);
+          }, 0);
+          return prevQueue;
+        });
+      };
+      
+      const handleCanPlayThrough = () => {
         setIsLoading(false);
-      });
-
-      newAudio.addEventListener('error', (e) => {
+      };
+      
+      const handleError = (e: Event) => {
         setIsLoading(false);
         console.error('Audio error:', e);
         console.error('Audio error code:', newAudio.error);
@@ -205,7 +221,12 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           setError(errorMessage);
           setIsPlaying(false);
         }
-      });
+      };
+
+      newAudio.addEventListener('timeupdate', handleTimeUpdate);
+      newAudio.addEventListener('ended', handleEnded);
+      newAudio.addEventListener('canplaythrough', handleCanPlayThrough);
+      newAudio.addEventListener('error', handleError);
 
       // Set source and play
       newAudio.src = track.audioUrl;
@@ -253,14 +274,17 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         }
       }, 50);
     };
-  }, [volume, nextTrack, currentTrack?.id, isPlaying]);
+  }, [volume, currentTrack?.id]); // Only depend on volume and currentTrack.id for same-track detection
 
   const previous = useCallback(() => {
-    if (!currentTrack || queue.length === 0) return;
-    const currentIndex = queue.findIndex(t => t.id === currentTrack.id);
-    const prevIndex = currentIndex === 0 ? queue.length - 1 : currentIndex - 1;
-    playTrackRef.current(queue[prevIndex]);
-  }, [currentTrack, queue, playTrackRef]);
+    setQueueState(prevQueue => {
+      if (!currentTrack || prevQueue.length === 0) return prevQueue;
+      const currentIndex = prevQueue.findIndex(t => t.id === currentTrack.id);
+      const prevIndex = currentIndex === 0 ? prevQueue.length - 1 : currentIndex - 1;
+      playTrackRef.current(prevQueue[prevIndex]);
+      return prevQueue;
+    });
+  }, [currentTrack]);
 
   useEffect(() => {
     // Don't create audio here - it's created in playTrackRef.current

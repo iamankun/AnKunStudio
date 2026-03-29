@@ -139,6 +139,7 @@ export function MusicPlayer() {
                     src={currentTrack.cover}
                     alt={currentTrack.title}
                     fill
+                    sizes="48px"
                     className="object-cover"
                   />
                 </div>
@@ -311,6 +312,7 @@ export function MusicPlayer() {
                       src={currentTrack.cover}
                       alt={currentTrack.title}
                       fill
+                      sizes="(max-width: 768px) 192px, 256px"
                       className="object-cover"
                     />
                   </div>
@@ -465,6 +467,7 @@ export function MusicPlayer() {
                                 src={track.cover}
                                 alt={track.title}
                                 fill
+                                sizes="40px"
                                 className="object-cover"
                               />
                             </div>

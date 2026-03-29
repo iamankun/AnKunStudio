@@ -177,6 +177,7 @@ export default function AdminSongsPage() {
                         src={song.cover}
                         alt={song.title}
                         fill
+                        sizes="40px"
                         className="object-cover"
                       />
                     </div>

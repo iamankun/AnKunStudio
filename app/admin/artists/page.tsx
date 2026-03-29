@@ -121,6 +121,7 @@ export default function AdminArtistsPage() {
                     src={(artist.avatar_url as string) || '/anhdaidiennghesi.jpg'}
                     alt={artist.name as string}
                     fill
+                    sizes="64px"
                     className="object-cover"
                   />
                 </div>

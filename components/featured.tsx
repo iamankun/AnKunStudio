@@ -96,6 +96,7 @@ export function Featured() {
                         src={track.cover}
                         alt={track.title}
                         fill
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
@@ -221,6 +222,7 @@ export function Featured() {
                       src={artist.avatar_url || '/artists/luna-echo.jpg'}
                       alt={artist.name}
                       fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 16vw, 12vw"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
