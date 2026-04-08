@@ -91,13 +91,14 @@ export function Featured() {
                   className="group cursor-pointer animate-fade-in-up animate-delay-[0ms]"
                 >
                   <div className="relative overflow-hidden rounded-xl mb-4">
-                    <div className="aspect-square relative overflow-hidden bg-secondary">
+                    <div className="aspect-square relative w-full overflow-hidden bg-secondary">
                       <Image
                         src={track.cover}
                         alt={track.title}
                         fill
                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading={parseInt(track.id) <= 2 ? "eager" : "lazy"}
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                         <button

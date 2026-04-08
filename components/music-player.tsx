@@ -141,6 +141,7 @@ export function MusicPlayer() {
                     fill
                     sizes="48px"
                     className="object-cover"
+                    loading="eager"
                   />
                 </div>
                 <div className="min-w-0">

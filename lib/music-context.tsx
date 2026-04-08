@@ -119,7 +119,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   // Initialize playTrack function in useEffect to avoid render-time ref access
   useEffect(() => {
     playTrackRef.current = (track: Track) => {
-      console.log('Playing track:', track.title, 'URL:', track.audioUrl);
+      console.log('Đang chơi nhạc:', track.title, 'URL:', track.audioUrl);
       setError(null);
       setIsLoading(true);
       retryCountRef.current = 0;
@@ -129,7 +129,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       
       // If same track is already playing, don't recreate audio
       if (audioRef.current && currentTrackId === track.id) {
-        console.log('Track already playing, resuming...');
+        console.log('Bài hát đang phát, tiếp tục...');
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
           playPromise
