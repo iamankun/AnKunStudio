@@ -51,9 +51,12 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
 
   if (!mounted) return null;
 
+  // Optimized header background - lighter blur for Safari mobile
   const headerBg = transparent 
-    ? (isScrolled ? 'bg-background/95 backdrop-blur border-b border-border' : 'bg-transparent border-transparent')
-    : 'bg-background/95 backdrop-blur border-b border-border';
+    ? (isScrolled 
+        ? 'bg-background/98 border-b border-border supports-[backdrop-filter]:backdrop-blur-sm' 
+        : 'bg-transparent border-transparent')
+    : 'bg-background/98 border-b border-border supports-[backdrop-filter]:backdrop-blur-sm';
 
   return (
     <header className={`sticky top-0 z-40 w-full transition-all duration-300 ${headerBg}`}>

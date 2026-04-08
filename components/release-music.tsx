@@ -159,7 +159,7 @@ export function ReleaseMusic() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <div className="inline-block animate-fade-in-down">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/25">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm font-medium text-primary">Dành cho Nghệ sĩ</span>
               </div>

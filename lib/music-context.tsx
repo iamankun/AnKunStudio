@@ -145,7 +145,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
               if (error.name === 'NotAllowedError') {
                 setError('Vui lòng tương tác với trang để phát nhạc (chạm vào màn hình)');
               }
-              console.error('Audio resume failed:', error);
+              console.error('Âm thanh thất bại khi phát lại:', error);
             });
         }
         return;
@@ -189,8 +189,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       
       const handleError = (e: Event) => {
         setIsLoading(false);
-        console.error('Audio error:', e);
-        console.error('Audio error code:', newAudio.error);
+        console.error('Lỗi khi phát audio:', e);
+        console.error('Mã lỗi audio:', newAudio.error);
         
         const errorCode = newAudio.error?.code;
         let errorMessage = 'Không thể phát bài hát';
@@ -203,7 +203,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
             errorMessage = 'Lỗi mạng. Vui lòng kiểm tra kết nối internet.';
             break;
           case 3:
-            errorMessage = 'Định dạng audio không được hỗ trợ.';
+            errorMessage = 'Định dạng âm thanh không được hỗ trợ.';
             break;
           case 4:
             errorMessage = 'Không thể tải bài hát. File có thể bị lỗi hoặc không tồn tại.';
@@ -213,7 +213,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         // Retry logic for network errors
         if (retryCountRef.current < maxRetries && (errorCode === 2 || errorCode === 4)) {
           retryCountRef.current += 1;
-          console.log(`Retrying audio load (attempt ${retryCountRef.current}/${maxRetries})...`);
+          console.log(`Đang thử lại tải audio (lần ${retryCountRef.current}/${maxRetries})...`);
           setTimeout(() => {
             newAudio.load();
           }, 1000 * retryCountRef.current);
@@ -242,7 +242,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
-              console.log('Audio playing successfully');
+              console.log('Âm thanh đang phát thành công');
               setIsLoading(false);
               setIsPlaying(true);
               retryCountRef.current = 0;
@@ -251,7 +251,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
               setIsLoading(false);
               // AbortError is expected when play is interrupted by pause
               if (error.name === 'AbortError') {
-                console.log('Audio play interrupted (AbortError - expected)');
+                console.log('Âm thanh bị gián đoạn (AbortError - expected)');
                 return;
               }
               
@@ -262,9 +262,9 @@ export function MusicProvider({ children }: { children: ReactNode }) {
                 setError('Không thể phát bài hát. Vui lòng thử lại.');
               }
               
-              console.error('Audio play failed:', error);
-              console.error('Error name:', error.name);
-              console.error('Error message:', error.message);
+              console.error('Âm thanh thất bại khi phát:', error);
+              console.error('Tên lỗi:', error.name);
+              console.error('Thông báo lỗi:', error.message);
               setIsPlaying(false);
             });
         } else {

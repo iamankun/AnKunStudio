@@ -2,45 +2,73 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+// Utility to detect mobile/touch devices - safe for SSR
+const isTouchDevice = () => {
+  if (typeof window === 'undefined') return false;
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+};
+
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  // Initialize with SSR-safe default, then hydrate correctly
+  const [isMobile] = useState(() => {
+    // This runs once during client hydration, safe for SSR
+    if (typeof window === 'undefined') return false;
+    return isTouchDevice();
+  });
 
+  // Optimized parallax effect with RAF throttling
   useEffect(() => {
+    if (isMobile) return; // Disable parallax on mobile
+    
     const container = containerRef.current;
     if (!container) return;
 
+    let rafId: number | null = null;
+    let mouseX = 0;
+    let mouseY = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
       const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const elements = container.querySelectorAll('.parallax-element');
-      elements.forEach((element: Element, index: number) => {
-        const speed = (index + 1) * 2;
-        const offsetX = (x - rect.width / 2) / speed;
-        const offsetY = (y - rect.height / 2) / speed;
-        (element as HTMLElement).style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-      });
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+      
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          const elements = container.querySelectorAll('.parallax-element');
+          elements.forEach((element: Element, index: number) => {
+            const speed = (index + 1) * 2;
+            const offsetX = (mouseX - rect.width / 2) / speed;
+            const offsetY = (mouseY - rect.height / 2) / speed;
+            (element as HTMLElement).style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
+          });
+          rafId = null;
+        });
+      }
     };
 
     container.addEventListener('mousemove', handleMouseMove);
-    return () => container.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+    return () => {
+      container.removeEventListener('mousemove', handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [isMobile]);
 
   return (
     <section
       ref={containerRef}
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* YouTube Video Background */}
+      {/* YouTube Video Background - No autoplay on mobile */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <iframe
           className="absolute top-1/2 left-1/2 w-[120%] h-[120%] min-w-[120%] min-h-[120%] -translate-x-1/2 -translate-y-1/2"
-          src={`https://www.youtube-nocookie.com/embed/woXlYnl0V6U?autoplay=1&mute=${isMuted ? '1' : '0'}&loop=1&playlist=woXlYnl0V6U&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1`}
+          src={`https://www.youtube-nocookie.com/embed/woXlYnl0V6U?${isMobile ? '' : 'autoplay=1&'}mute=1&loop=1&playlist=woXlYnl0V6U&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1`}
           allow="autoplay; encrypted-media"
           allowFullScreen={false}
           title="Background video"
+          loading="eager"
         />
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-background/70" />
@@ -68,9 +96,9 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-16 sm:py-24">
           {/* Left content */}
           <div className="space-y-8">
-            {/* Animated badge */}
+            {/* Animated badge - backdrop blur disabled on mobile for performance */}
             <div className="inline-block animate-fade-in-down">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/30">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm font-medium text-primary">Chào mừng đến với An Kun Studio</span>
               </div>

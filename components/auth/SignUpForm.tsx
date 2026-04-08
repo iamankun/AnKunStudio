@@ -131,7 +131,7 @@ export function SignUpForm() {
         className="relative z-10 w-full max-w-md"
       >
         <motion.div
-          className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 shadow-2xl"
+          className="bg-white/15 rounded-3xl border border-white/20 p-8 shadow-2xl supports-backdrop-filter:backdrop-blur-md"
           whileHover={{ scale: 1.02 }}
         >
           {/* Logo/Brand Section */}

@@ -2,8 +2,8 @@
 @tailwind utilities;
 
 /* Import component styles */
-@import './styles/sidebar.css';
-@import './styles/animations.css';
+@import "./styles/sidebar.css";
+@import "./styles/animations.css";
 
 /* UserProfileButton avatar loading */
 .user-profile-avatar {
@@ -69,21 +69,47 @@
   transform: translate(-50%, -50%) scale(0.8);
 }
 
-/* Glassmorphism Effect */
+/* Glassmorphism Effect - Optimized for Safari mobile */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Only apply blur on devices that support it well */
+@supports (backdrop-filter: blur(8px)) and (not (-webkit-touch-callout: none)) {
+  .glass-effect {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* For touch devices (iOS Safari), use lighter effect */
+@supports (-webkit-touch-callout: none) {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.12);
+    /* Skip heavy blur on iOS Safari */
+  }
 }
 
 /* Enhanced Glassmorphism for Auth Forms */
 .auth-glass {
-  background: rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+@supports (backdrop-filter: blur(12px)) and (not (-webkit-touch-callout: none)) {
+  .auth-glass {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .auth-glass {
+    background: rgba(255, 255, 255, 0.15);
+    /* Reduced blur on iOS */
+  }
 }
 
 /* Gradient Text */
@@ -109,45 +135,64 @@
 
 /* Animation Classes */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
-  50% { box-shadow: 0 0 40px rgba(236, 72, 153, 0.8); }
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.8);
+  }
 }
 
 @keyframes slide-up {
-  0% { 
+  0% {
     opacity: 0;
     transform: translateY(30px);
   }
-  100% { 
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes slide-in-left {
-  0% { 
+  0% {
     opacity: 0;
     transform: translateX(-20px);
   }
-  100% { 
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes scale-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 .float-animation {
@@ -219,7 +264,9 @@
 
 /* Loading Animation */
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-spinner {
@@ -322,8 +369,13 @@
 
 /* Sound Wave Animation */
 @keyframes sound-wave {
-  0%, 100% { height: 20px; }
-  50% { height: 40px; }
+  0%,
+  100% {
+    height: 20px;
+  }
+  50% {
+    height: 40px;
+  }
 }
 
 .sound-wave {
@@ -348,18 +400,31 @@
 
 /* Background Animation Classes */
 .bg-animated-purple {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.1) 0%,
+    transparent 50%
+  );
   animation: bg-shift 8s ease-in-out infinite;
 }
 
 .bg-animated-blue {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 50%
+  );
   animation: bg-shift 8s ease-in-out infinite;
 }
 
 @keyframes bg-shift {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* Error and Success States */
@@ -375,17 +440,28 @@
   color: #86efac;
 }
 
-/* Form Container Styles */
+/* Form Container Styles - Mobile Safari Optimized */
 .form-container {
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+@supports (backdrop-filter: blur(12px)) and (not (-webkit-touch-callout: none)) {
+  .form-container {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .form-container {
+    background: rgba(255, 255, 255, 0.18);
+    /* Reduced blur on iOS - performance optimization */
+  }
 }
 
 /* Remove default focus outlines */
 *:focus {
   outline: none;
 }
-

@@ -142,7 +142,7 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
   };
 
   return (
-    <div className={`fixed inset-0 z-50 backdrop-blur-2xl flex flex-col transition-colors duration-1000 ${getSectionBackground(currentLine?.section)}`}>
+    <div className={`fixed inset-0 z-50 flex flex-col transition-colors duration-1000 supports-backdrop-filter:backdrop-blur-md ${getSectionBackground(currentLine?.section)}`}>
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-border/50">
         <div className="flex items-center">

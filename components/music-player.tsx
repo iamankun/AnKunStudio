@@ -105,10 +105,10 @@ export function MusicPlayer() {
 
   return (
     <>
-      {/* Backdrop for expanded view */}
+      {/* Backdrop for expanded view - reduced blur for mobile performance */}
       {isExpanded && (
         <div
-          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+          className="fixed inset-0 bg-background/90 z-40 supports-backdrop-filter:backdrop-blur-[2px]"
           onClick={() => setIsExpanded(false)}
         />
       )}
@@ -122,7 +122,7 @@ export function MusicPlayer() {
         }`}
       >
         <div
-          className={`h-full bg-card/95 backdrop-blur-xl border-t border-border shadow-2xl ${
+          className={`h-full bg-card/98 border-t border-border shadow-2xl supports-backdrop-filter:backdrop-blur-sm ${
             isExpanded ? 'rounded-t-3xl' : ''
           }`}
         >

@@ -19,7 +19,7 @@ export function Careers() {
           ].map((stat, idx) => (
             <div 
               key={idx}
-              className="space-y-2 p-6 bg-card/50 rounded-lg backdrop-blur-sm hover:bg-card/70 transition-all duration-300 animate-fade-in-up hover:scale-105 border border-primary/20 animate-careers-${idx + 1}"
+              className="space-y-2 p-6 bg-card/60 rounded-lg hover:bg-card/80 transition-all duration-300 animate-fade-in-up hover:scale-105 border border-primary/20 animate-careers-${idx + 1}"
             >
               <p className="text-3xl font-bold">{stat.value}</p>
               <p className="text-sm opacity-80">{stat.label}</p>

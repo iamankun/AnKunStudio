@@ -68,7 +68,7 @@ export const NewReleaseView: React.FC<{ onBack: () => void }> = ({ onBack }) => 
                       className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="relative z-10 flex flex-col items-center p-8 text-center bg-background/40 backdrop-blur-md rounded-xl m-8">
+                    <div className="relative z-10 flex flex-col items-center p-8 text-center bg-background/50 rounded-xl m-8 supports-backdrop-filter:backdrop-blur-sm">
                       <CloudUpload className="text-primary mb-4" size={40} />
                       <button className="px-6 py-2 bg-linear-to-r from-primary to-primary-dim text-background font-bold rounded-md mb-3 active:scale-95 transition-all">
                         Tải lên ảnh bìa mới

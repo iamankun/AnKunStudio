@@ -95,7 +95,7 @@ export function BlogPostDetail({ post }: BlogPostDetailProps) {
               </h1>
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm opacity-90">
                 <div className="flex items-center gap-4">
-                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm font-medium">
+                  <span className="px-3 py-1 rounded-full bg-white/25 font-medium">
                     {post.category || 'Thông tin Ngành'}
                   </span>
                   <span>{getReadTime(post.noidung)}</span>
@@ -105,7 +105,7 @@ export function BlogPostDetail({ post }: BlogPostDetailProps) {
                     {post.tags.split(',').map((tag: string, index: number) => (
                       <span 
                         key={index}
-                        className="px-2 py-1 rounded-full bg-white/10 backdrop-blur-sm text-white/80"
+                        className="px-2 py-1 rounded-full bg-white/15 text-white/80"
                       >
                         #{tag.trim()}
                       </span>

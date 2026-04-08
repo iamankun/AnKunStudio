@@ -3,7 +3,7 @@ import { Search, Bell, Settings } from 'lucide-react';
 
 export const TopBar: React.FC = () => {
   return (
-    <header className="fixed top-0 right-0 left-64 h-16 z-40 bg-background/70 backdrop-blur-xl flex justify-between items-center px-8">
+    <header className="fixed top-0 right-0 left-64 h-16 z-40 bg-background/80 flex justify-between items-center px-8 supports-backdrop-filter:backdrop-blur-sm">
       <div className="relative w-96">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" size={16} />
         <input 
