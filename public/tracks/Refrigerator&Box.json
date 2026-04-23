@@ -1,0 +1,1956 @@
+[
+  {
+    "section": "intro",
+    "startTime": 0.710265,
+    "endTime": 0.710265,
+    "text": "Oh-oh-oh-oh-oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh-oh-oh-oh-oh",
+        "startTime": 0.710265,
+        "endTime": 0.710265
+      }
+    ]
+  },
+  {
+    "section": "intro",
+    "startTime": 4.100912,
+    "endTime": 4.100912,
+    "text": "Oh-oh-oh-oh-oh-oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh-oh-oh-oh-oh-oh",
+        "startTime": 4.100912,
+        "endTime": 4.100912
+      }
+    ]
+  },
+  {
+    "section": "intro",
+    "startTime": 7.742413,
+    "endTime": 7.742413,
+    "text": "Oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh",
+        "startTime": 7.742413,
+        "endTime": 7.742413
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 9.665774,
+    "endTime": 11.340614,
+    "text": "Found a fortune in the fridge",
+    "words": [
+      {
+        "text": "Found",
+        "startTime": 9.665774,
+        "endTime": 9.925245
+      },
+      {
+        "text": "a",
+        "startTime": 9.925245,
+        "endTime": 10.153594
+      },
+      {
+        "text": "fortune",
+        "startTime": 10.153594,
+        "endTime": 10.778247
+      },
+      {
+        "text": "in",
+        "startTime": 10.778247,
+        "endTime": 11.018432
+      },
+      {
+        "text": "the",
+        "startTime": 11.018432,
+        "endTime": 11.340614
+      },
+      {
+        "text": "fridge",
+        "startTime": 11.340614,
+        "endTime": 11.340614
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 13.233937,
+    "endTime": 14.709179,
+    "text": "Half a slice of garlic bread",
+    "words": [
+      {
+        "text": "Half",
+        "startTime": 13.233937,
+        "endTime": 13.514102
+      },
+      {
+        "text": "a",
+        "startTime": 13.514102,
+        "endTime": 13.916792
+      },
+      {
+        "text": "slice",
+        "startTime": 13.916792,
+        "endTime": 14.161245
+      },
+      {
+        "text": "of",
+        "startTime": 14.161245,
+        "endTime": 14.364579
+      },
+      {
+        "text": "garlic",
+        "startTime": 14.364579,
+        "endTime": 14.709179
+      },
+      {
+        "text": "bread",
+        "startTime": 14.709179,
+        "endTime": 14.709179
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 17.037885,
+    "endTime": 18.507242,
+    "text": "Last night’s pasta in a box",
+    "words": [
+      {
+        "text": "Last",
+        "startTime": 17.037885,
+        "endTime": 17.464507
+      },
+      {
+        "text": "night’s",
+        "startTime": 17.464507,
+        "endTime": 17.72048
+      },
+      {
+        "text": "pasta",
+        "startTime": 17.72048,
+        "endTime": 17.954131
+      },
+      {
+        "text": "in",
+        "startTime": 17.954131,
+        "endTime": 18.255505
+      },
+      {
+        "text": "a",
+        "startTime": 18.255505,
+        "endTime": 18.507242
+      },
+      {
+        "text": "box",
+        "startTime": 18.507242,
+        "endTime": 18.507242
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 20.82646,
+    "endTime": 22.091466,
+    "text": "Winning numbers for my head",
+    "words": [
+      {
+        "text": "Winning",
+        "startTime": 20.82646,
+        "endTime": 21.113239
+      },
+      {
+        "text": "numbers",
+        "startTime": 21.113239,
+        "endTime": 21.527164
+      },
+      {
+        "text": "for",
+        "startTime": 21.527164,
+        "endTime": 21.862706
+      },
+      {
+        "text": "my",
+        "startTime": 21.862706,
+        "endTime": 22.091466
+      },
+      {
+        "text": "head",
+        "startTime": 22.091466,
+        "endTime": 22.091466
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 23.459042,
+    "endTime": 26.073338,
+    "text": "I spin the shelf like a game show wheel",
+    "words": [
+      {
+        "text": "I",
+        "startTime": 23.459042,
+        "endTime": 23.759593
+      },
+      {
+        "text": "spin",
+        "startTime": 23.759593,
+        "endTime": 24.028161
+      },
+      {
+        "text": "the",
+        "startTime": 24.028161,
+        "endTime": 24.255847
+      },
+      {
+        "text": "shelf",
+        "startTime": 24.255847,
+        "endTime": 24.69333
+      },
+      {
+        "text": "like",
+        "startTime": 24.69333,
+        "endTime": 24.927497
+      },
+      {
+        "text": "a",
+        "startTime": 24.927497,
+        "endTime": 25.141138
+      },
+      {
+        "text": "game",
+        "startTime": 25.141138,
+        "endTime": 25.572009
+      },
+      {
+        "text": "show",
+        "startTime": 25.572009,
+        "endTime": 26.073338
+      },
+      {
+        "text": "wheel",
+        "startTime": 26.073338,
+        "endTime": 26.073338
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 27.506437,
+    "endTime": 28.019716,
+    "text": "Take a sniff",
+    "words": [
+      {
+        "text": "Take",
+        "startTime": 27.506437,
+        "endTime": 27.754554
+      },
+      {
+        "text": "a",
+        "startTime": 27.754554,
+        "endTime": 28.019716
+      },
+      {
+        "text": "sniff",
+        "startTime": 28.019716,
+        "endTime": 28.019716
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 28.426708,
+    "endTime": 29.822901,
+    "text": "Is this dream still real?",
+    "words": [
+      {
+        "text": "Is",
+        "startTime": 28.426708,
+        "endTime": 28.654958
+      },
+      {
+        "text": "this",
+        "startTime": 28.654958,
+        "endTime": 28.872864
+      },
+      {
+        "text": "dream",
+        "startTime": 28.872864,
+        "endTime": 29.352345
+      },
+      {
+        "text": "still",
+        "startTime": 29.352345,
+        "endTime": 29.822901
+      },
+      {
+        "text": "real?",
+        "startTime": 29.822901,
+        "endTime": 29.822901
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 31.210974,
+    "endTime": 33.881024,
+    "text": "I’m a gambler with a plastic fork",
+    "words": [
+      {
+        "text": "I’m",
+        "startTime": 31.210974,
+        "endTime": 31.653953
+      },
+      {
+        "text": "a",
+        "startTime": 31.653953,
+        "endTime": 32.182948
+      },
+      {
+        "text": "gambler",
+        "startTime": 32.182948,
+        "endTime": 32.435275
+      },
+      {
+        "text": "with",
+        "startTime": 32.435275,
+        "endTime": 32.994251
+      },
+      {
+        "text": "a",
+        "startTime": 32.994251,
+        "endTime": 33.4811
+      },
+      {
+        "text": "plastic",
+        "startTime": 33.4811,
+        "endTime": 33.881024
+      },
+      {
+        "text": "fork",
+        "startTime": 33.881024,
+        "endTime": 33.881024
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 34.364282,
+    "endTime": 35.731035,
+    "text": "High stakes on the second course",
+    "words": [
+      {
+        "text": "High",
+        "startTime": 34.364282,
+        "endTime": 34.573186
+      },
+      {
+        "text": "stakes",
+        "startTime": 34.573186,
+        "endTime": 34.91777
+      },
+      {
+        "text": "on",
+        "startTime": 34.91777,
+        "endTime": 35.241206
+      },
+      {
+        "text": "the",
+        "startTime": 35.241206,
+        "endTime": 35.485551
+      },
+      {
+        "text": "second",
+        "startTime": 35.485551,
+        "endTime": 35.731035
+      },
+      {
+        "text": "course",
+        "startTime": 35.731035,
+        "endTime": 35.731035
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 37.842184,
+    "endTime": 40.387845,
+    "text": "It’s the leftover lottery (hey!)",
+    "words": [
+      {
+        "text": "It’s",
+        "startTime": 37.842184,
+        "endTime": 38.475261
+      },
+      {
+        "text": "the",
+        "startTime": 38.475261,
+        "endTime": 38.84955
+      },
+      {
+        "text": "leftover",
+        "startTime": 38.84955,
+        "endTime": 40.061228
+      },
+      {
+        "text": "lottery",
+        "startTime": 40.061228,
+        "endTime": 40.387845
+      },
+      {
+        "text": "(hey!)",
+        "startTime": 40.387845,
+        "endTime": 40.387845
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 41.42642,
+    "endTime": 43.64564,
+    "text": "Everything’s a mystery meal to me",
+    "words": [
+      {
+        "text": "Everything’s",
+        "startTime": 41.42642,
+        "endTime": 42.196336
+      },
+      {
+        "text": "a",
+        "startTime": 42.196336,
+        "endTime": 42.587483
+      },
+      {
+        "text": "mystery",
+        "startTime": 42.587483,
+        "endTime": 42.962758
+      },
+      {
+        "text": "meal",
+        "startTime": 42.962758,
+        "endTime": 43.393807
+      },
+      {
+        "text": "to",
+        "startTime": 43.393807,
+        "endTime": 43.64564
+      },
+      {
+        "text": "me",
+        "startTime": 43.64564,
+        "endTime": 43.64564
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 45.264708,
+    "endTime": 45.785832,
+    "text": "Could be gold",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 45.264708,
+        "endTime": 45.492751
+      },
+      {
+        "text": "be",
+        "startTime": 45.492751,
+        "endTime": 45.785832
+      },
+      {
+        "text": "gold",
+        "startTime": 45.785832,
+        "endTime": 45.785832
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 46.222703,
+    "endTime": 46.720132,
+    "text": "Could be history",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 46.222703,
+        "endTime": 46.453756
+      },
+      {
+        "text": "be",
+        "startTime": 46.453756,
+        "endTime": 46.720132
+      },
+      {
+        "text": "history",
+        "startTime": 46.720132,
+        "endTime": 46.720132
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 49.034781,
+    "endTime": 50.690048,
+    "text": "But I heat it up and see",
+    "words": [
+      {
+        "text": "But",
+        "startTime": 49.034781,
+        "endTime": 49.315433
+      },
+      {
+        "text": "I",
+        "startTime": 49.315433,
+        "endTime": 49.541943
+      },
+      {
+        "text": "heat",
+        "startTime": 49.541943,
+        "endTime": 49.843725
+      },
+      {
+        "text": "it",
+        "startTime": 49.843725,
+        "endTime": 50.057661
+      },
+      {
+        "text": "up",
+        "startTime": 50.057661,
+        "endTime": 50.290665
+      },
+      {
+        "text": "and",
+        "startTime": 50.290665,
+        "endTime": 50.690048
+      },
+      {
+        "text": "see",
+        "startTime": 50.690048,
+        "endTime": 50.690048
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 52.066802,
+    "endTime": 52.066802,
+    "text": "Yeah",
+    "words": [
+      {
+        "text": "Yeah",
+        "startTime": 52.066802,
+        "endTime": 52.066802
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 52.887754,
+    "endTime": 55.075752,
+    "text": "The leftover lottery",
+    "words": [
+      {
+        "text": "The",
+        "startTime": 52.887754,
+        "endTime": 53.840376
+      },
+      {
+        "text": "leftover",
+        "startTime": 53.840376,
+        "endTime": 55.075752
+      },
+      {
+        "text": "lottery",
+        "startTime": 55.075752,
+        "endTime": 55.075752
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 56.606243,
+    "endTime": 58.759951,
+    "text": "Tiny risks in Tupperware glory",
+    "words": [
+      {
+        "text": "Tiny",
+        "startTime": 56.606243,
+        "endTime": 57.075531
+      },
+      {
+        "text": "risks",
+        "startTime": 57.075531,
+        "endTime": 57.408934
+      },
+      {
+        "text": "in",
+        "startTime": 57.408934,
+        "endTime": 57.66403
+      },
+      {
+        "text": "Tupperware",
+        "startTime": 57.66403,
+        "endTime": 58.759951
+      },
+      {
+        "text": "glory",
+        "startTime": 58.759951,
+        "endTime": 58.759951
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 60.21269,
+    "endTime": 61.233342,
+    "text": "If I wake up",
+    "words": [
+      {
+        "text": "If",
+        "startTime": 60.21269,
+        "endTime": 60.463135
+      },
+      {
+        "text": "I",
+        "startTime": 60.463135,
+        "endTime": 60.768329
+      },
+      {
+        "text": "wake",
+        "startTime": 60.768329,
+        "endTime": 61.233342
+      },
+      {
+        "text": "up",
+        "startTime": 61.233342,
+        "endTime": 61.233342
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 61.501577,
+    "endTime": 62.691233,
+    "text": "It was meant to be",
+    "words": [
+      {
+        "text": "It",
+        "startTime": 61.501577,
+        "endTime": 61.750809
+      },
+      {
+        "text": "was",
+        "startTime": 61.750809,
+        "endTime": 62.226038
+      },
+      {
+        "text": "meant",
+        "startTime": 62.226038,
+        "endTime": 62.466318
+      },
+      {
+        "text": "to",
+        "startTime": 62.466318,
+        "endTime": 62.691233
+      },
+      {
+        "text": "be",
+        "startTime": 62.691233,
+        "endTime": 62.691233
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 64.057579,
+    "endTime": 66.612937,
+    "text": "Rolling in the leftover lottery",
+    "words": [
+      {
+        "text": "Rolling",
+        "startTime": 64.057579,
+        "endTime": 64.303712
+      },
+      {
+        "text": "in",
+        "startTime": 64.303712,
+        "endTime": 64.536694
+      },
+      {
+        "text": "the",
+        "startTime": 64.536694,
+        "endTime": 65.866833
+      },
+      {
+        "text": "leftover",
+        "startTime": 65.866833,
+        "endTime": 66.612937
+      },
+      {
+        "text": "lottery",
+        "startTime": 66.612937,
+        "endTime": 66.612937
+      }
+    ]
+  },
+  {
+    "section": "hook",
+    "startTime": 68.447077,
+    "endTime": 68.447077,
+    "text": "Oh-oh-oh-oh-oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh-oh-oh-oh-oh",
+        "startTime": 68.447077,
+        "endTime": 68.447077
+      }
+    ]
+  },
+  {
+    "section": "hook",
+    "startTime": 71.668099,
+    "endTime": 71.668099,
+    "text": "Oh-oh-oh-oh-oh-oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh-oh-oh-oh-oh-oh",
+        "startTime": 71.668099,
+        "endTime": 71.668099
+      }
+    ]
+  },
+  {
+    "section": "hook",
+    "startTime": 75.228375,
+    "endTime": 75.228375,
+    "text": "Oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh",
+        "startTime": 75.228375,
+        "endTime": 75.228375
+      }
+    ]
+  },
+  {
+    "section": "hook",
+    "startTime": 79.119586,
+    "endTime": 79.119586,
+    "text": "Oh-oh-oh-oh-oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh-oh-oh-oh-oh",
+        "startTime": 79.119586,
+        "endTime": 79.119586
+      }
+    ]
+  },
+  {
+    "section": "hook",
+    "startTime": 82.823846,
+    "endTime": 82.823846,
+    "text": "Oh-oh-oh-oh-oh-oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh-oh-oh-oh-oh-oh",
+        "startTime": 82.823846,
+        "endTime": 82.823846
+      }
+    ]
+  },
+  {
+    "section": "hook",
+    "startTime": 83.428827,
+    "endTime": 83.428827,
+    "text": "Oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh",
+        "startTime": 83.428827,
+        "endTime": 83.428827
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 84.31957,
+    "endTime": 86.454999,
+    "text": "Label says “Tuesday?” but it’s smeared",
+    "words": [
+      {
+        "text": "Label",
+        "startTime": 84.31957,
+        "endTime": 84.81694
+      },
+      {
+        "text": "says",
+        "startTime": 84.81694,
+        "endTime": 85.390324
+      },
+      {
+        "text": "“Tuesday?”",
+        "startTime": 85.390324,
+        "endTime": 85.861531
+      },
+      {
+        "text": "but",
+        "startTime": 85.861531,
+        "endTime": 86.16652
+      },
+      {
+        "text": "it’s",
+        "startTime": 86.16652,
+        "endTime": 86.454999
+      },
+      {
+        "text": "smeared",
+        "startTime": 86.454999,
+        "endTime": 86.454999
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 88.313829,
+    "endTime": 88.827742,
+    "text": "Could be curry",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 88.313829,
+        "endTime": 88.555096
+      },
+      {
+        "text": "be",
+        "startTime": 88.555096,
+        "endTime": 88.827742
+      },
+      {
+        "text": "curry",
+        "startTime": 88.827742,
+        "endTime": 88.827742
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 89.345617,
+    "endTime": 89.828071,
+    "text": "Could be fear",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 89.345617,
+        "endTime": 89.571501
+      },
+      {
+        "text": "be",
+        "startTime": 89.571501,
+        "endTime": 89.828071
+      },
+      {
+        "text": "fear",
+        "startTime": 89.828071,
+        "endTime": 89.828071
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 91.996835,
+    "endTime": 92.54989,
+    "text": "One small bite",
+    "words": [
+      {
+        "text": "One",
+        "startTime": 91.996835,
+        "endTime": 92.237744
+      },
+      {
+        "text": "small",
+        "startTime": 92.237744,
+        "endTime": 92.54989
+      },
+      {
+        "text": "bite",
+        "startTime": 92.54989,
+        "endTime": 92.54989
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 92.999073,
+    "endTime": 94.328731,
+    "text": "Then I’m all in",
+    "words": [
+      {
+        "text": "Then",
+        "startTime": 92.999073,
+        "endTime": 93.232627
+      },
+      {
+        "text": "I’m",
+        "startTime": 93.232627,
+        "endTime": 93.468123
+      },
+      {
+        "text": "all",
+        "startTime": 93.468123,
+        "endTime": 94.328731
+      },
+      {
+        "text": "in",
+        "startTime": 94.328731,
+        "endTime": 94.328731
+      }
+    ]
+  },
+  {
+    "section": "verse",
+    "startTime": 95.925916,
+    "endTime": 97.472639,
+    "text": "Tastebuds praying as I grin",
+    "words": [
+      {
+        "text": "Tastebuds",
+        "startTime": 95.925916,
+        "endTime": 96.535191
+      },
+      {
+        "text": "praying",
+        "startTime": 96.535191,
+        "endTime": 96.849782
+      },
+      {
+        "text": "as",
+        "startTime": 96.849782,
+        "endTime": 97.206512
+      },
+      {
+        "text": "I",
+        "startTime": 97.206512,
+        "endTime": 97.472639
+      },
+      {
+        "text": "grin",
+        "startTime": 97.472639,
+        "endTime": 97.472639
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 98.722724,
+    "endTime": 99.270452,
+    "text": "Fries gone soft",
+    "words": [
+      {
+        "text": "Fries",
+        "startTime": 98.722724,
+        "endTime": 98.954579
+      },
+      {
+        "text": "gone",
+        "startTime": 98.954579,
+        "endTime": 99.270452
+      },
+      {
+        "text": "soft",
+        "startTime": 99.270452,
+        "endTime": 99.270452
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 99.714467,
+    "endTime": 101.089463,
+    "text": "But they still got charm",
+    "words": [
+      {
+        "text": "But",
+        "startTime": 99.714467,
+        "endTime": 99.920588
+      },
+      {
+        "text": "they",
+        "startTime": 99.920588,
+        "endTime": 100.144209
+      },
+      {
+        "text": "still",
+        "startTime": 100.144209,
+        "endTime": 100.591011
+      },
+      {
+        "text": "got",
+        "startTime": 100.591011,
+        "endTime": 101.089463
+      },
+      {
+        "text": "charm",
+        "startTime": 101.089463,
+        "endTime": 101.089463
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 102.514848,
+    "endTime": 104.847325,
+    "text": "Cold rice sticking to my arm",
+    "words": [
+      {
+        "text": "Cold",
+        "startTime": 102.514848,
+        "endTime": 102.770171
+      },
+      {
+        "text": "rice",
+        "startTime": 102.770171,
+        "endTime": 103.422239
+      },
+      {
+        "text": "sticking",
+        "startTime": 103.422239,
+        "endTime": 103.711746
+      },
+      {
+        "text": "to",
+        "startTime": 103.711746,
+        "endTime": 104.375456
+      },
+      {
+        "text": "my",
+        "startTime": 104.375456,
+        "endTime": 104.847325
+      },
+      {
+        "text": "arm",
+        "startTime": 104.847325,
+        "endTime": 104.847325
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 106.182887,
+    "endTime": 108.607368,
+    "text": "I raise a glass to the fridge-light glow",
+    "words": [
+      {
+        "text": "I",
+        "startTime": 106.182887,
+        "endTime": 106.456874
+      },
+      {
+        "text": "raise",
+        "startTime": 106.456874,
+        "endTime": 106.709632
+      },
+      {
+        "text": "a",
+        "startTime": 106.709632,
+        "endTime": 107.105914
+      },
+      {
+        "text": "glass",
+        "startTime": 107.105914,
+        "endTime": 107.417641
+      },
+      {
+        "text": "to",
+        "startTime": 107.417641,
+        "endTime": 107.631111
+      },
+      {
+        "text": "the",
+        "startTime": 107.631111,
+        "endTime": 108.062898
+      },
+      {
+        "text": "fridge-light",
+        "startTime": 108.062898,
+        "endTime": 108.607368
+      },
+      {
+        "text": "glow",
+        "startTime": 108.607368,
+        "endTime": 108.607368
+      }
+    ]
+  },
+  {
+    "section": "pre-chorus",
+    "startTime": 109.40468,
+    "endTime": 110.718303,
+    "text": "Every jackpot’s kinda gross",
+    "words": [
+      {
+        "text": "Every",
+        "startTime": 109.40468,
+        "endTime": 109.849204
+      },
+      {
+        "text": "jackpot’s",
+        "startTime": 109.849204,
+        "endTime": 110.17586
+      },
+      {
+        "text": "kinda",
+        "startTime": 110.17586,
+        "endTime": 110.718303
+      },
+      {
+        "text": "gross",
+        "startTime": 110.718303,
+        "endTime": 110.718303
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 112.813038,
+    "endTime": 115.606319,
+    "text": "It’s the leftover lottery (hey!)",
+    "words": [
+      {
+        "text": "It’s",
+        "startTime": 112.813038,
+        "endTime": 113.098455
+      },
+      {
+        "text": "the",
+        "startTime": 113.098455,
+        "endTime": 113.590528
+      },
+      {
+        "text": "leftover",
+        "startTime": 113.590528,
+        "endTime": 114.69405
+      },
+      {
+        "text": "lottery",
+        "startTime": 114.69405,
+        "endTime": 115.606319
+      },
+      {
+        "text": "(hey!)",
+        "startTime": 115.606319,
+        "endTime": 115.606319
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 116.938097,
+    "endTime": 119.049212,
+    "text": "Everything’s a mystery meal to me",
+    "words": [
+      {
+        "text": "Everything’s",
+        "startTime": 116.938097,
+        "endTime": 117.372385
+      },
+      {
+        "text": "a",
+        "startTime": 117.372385,
+        "endTime": 117.761659
+      },
+      {
+        "text": "mystery",
+        "startTime": 117.761659,
+        "endTime": 118.585439
+      },
+      {
+        "text": "meal",
+        "startTime": 118.585439,
+        "endTime": 118.830606
+      },
+      {
+        "text": "to",
+        "startTime": 118.830606,
+        "endTime": 119.049212
+      },
+      {
+        "text": "me",
+        "startTime": 119.049212,
+        "endTime": 119.049212
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 120.159002,
+    "endTime": 120.694957,
+    "text": "Could be gold",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 120.159002,
+        "endTime": 120.388454
+      },
+      {
+        "text": "be",
+        "startTime": 120.388454,
+        "endTime": 120.694957
+      },
+      {
+        "text": "gold",
+        "startTime": 120.694957,
+        "endTime": 120.694957
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 121.183371,
+    "endTime": 121.717055,
+    "text": "Could be history",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 121.183371,
+        "endTime": 121.397848
+      },
+      {
+        "text": "be",
+        "startTime": 121.397848,
+        "endTime": 121.717055
+      },
+      {
+        "text": "history",
+        "startTime": 121.717055,
+        "endTime": 121.717055
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 123.919261,
+    "endTime": 125.523491,
+    "text": "But I heat it up and see",
+    "words": [
+      {
+        "text": "But",
+        "startTime": 123.919261,
+        "endTime": 124.167723
+      },
+      {
+        "text": "I",
+        "startTime": 124.167723,
+        "endTime": 124.40969
+      },
+      {
+        "text": "heat",
+        "startTime": 124.40969,
+        "endTime": 124.706319
+      },
+      {
+        "text": "it",
+        "startTime": 124.706319,
+        "endTime": 124.980194
+      },
+      {
+        "text": "up",
+        "startTime": 124.980194,
+        "endTime": 125.233749
+      },
+      {
+        "text": "and",
+        "startTime": 125.233749,
+        "endTime": 125.523491
+      },
+      {
+        "text": "see",
+        "startTime": 125.523491,
+        "endTime": 125.523491
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 127.077232,
+    "endTime": 127.077232,
+    "text": "Yeah",
+    "words": [
+      {
+        "text": "Yeah",
+        "startTime": 127.077232,
+        "endTime": 127.077232
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 127.923994,
+    "endTime": 129.086026,
+    "text": "The leftover lottery",
+    "words": [
+      {
+        "text": "The",
+        "startTime": 127.923994,
+        "endTime": 128.134637
+      },
+      {
+        "text": "leftover",
+        "startTime": 128.134637,
+        "endTime": 129.086026
+      },
+      {
+        "text": "lottery",
+        "startTime": 129.086026,
+        "endTime": 129.086026
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 131.531672,
+    "endTime": 133.051281,
+    "text": "Tiny risks in Tupperware glory",
+    "words": [
+      {
+        "text": "Tiny",
+        "startTime": 131.531672,
+        "endTime": 131.790737
+      },
+      {
+        "text": "risks",
+        "startTime": 131.790737,
+        "endTime": 132.059476
+      },
+      {
+        "text": "in",
+        "startTime": 132.059476,
+        "endTime": 132.494367
+      },
+      {
+        "text": "Tupperware",
+        "startTime": 132.494367,
+        "endTime": 133.051281
+      },
+      {
+        "text": "glory",
+        "startTime": 133.051281,
+        "endTime": 133.051281
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 135.072333,
+    "endTime": 136.077866,
+    "text": "If I wake up",
+    "words": [
+      {
+        "text": "If",
+        "startTime": 135.072333,
+        "endTime": 135.330058
+      },
+      {
+        "text": "I",
+        "startTime": 135.330058,
+        "endTime": 135.644497
+      },
+      {
+        "text": "wake",
+        "startTime": 135.644497,
+        "endTime": 136.077866
+      },
+      {
+        "text": "up",
+        "startTime": 136.077866,
+        "endTime": 136.077866
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 136.381843,
+    "endTime": 137.576953,
+    "text": "It was meant to be",
+    "words": [
+      {
+        "text": "It",
+        "startTime": 136.381843,
+        "endTime": 136.583493
+      },
+      {
+        "text": "was",
+        "startTime": 136.583493,
+        "endTime": 137.03371
+      },
+      {
+        "text": "meant",
+        "startTime": 137.03371,
+        "endTime": 137.323827
+      },
+      {
+        "text": "to",
+        "startTime": 137.323827,
+        "endTime": 137.576953
+      },
+      {
+        "text": "be",
+        "startTime": 137.576953,
+        "endTime": 137.576953
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 139.025293,
+    "endTime": 142.92097,
+    "text": "Rolling in the leftover lottery",
+    "words": [
+      {
+        "text": "Rolling",
+        "startTime": 139.025293,
+        "endTime": 139.29025
+      },
+      {
+        "text": "in",
+        "startTime": 139.29025,
+        "endTime": 139.552494
+      },
+      {
+        "text": "the",
+        "startTime": 139.552494,
+        "endTime": 140.807277
+      },
+      {
+        "text": "leftover",
+        "startTime": 140.807277,
+        "endTime": 142.92097
+      },
+      {
+        "text": "lottery",
+        "startTime": 142.92097,
+        "endTime": 142.92097
+      }
+    ]
+  },
+  {
+    "section": "chorus",
+    "startTime": 144.553992,
+    "endTime": 144.553992,
+    "text": "Oh-oh-oh-oh",
+    "words": [
+      {
+        "text": "Oh-oh-oh-oh",
+        "startTime": 144.553992,
+        "endTime": 144.553992
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 145.326156,
+    "endTime": 147.363146,
+    "text": "Maybe life is just like this",
+    "words": [
+      {
+        "text": "Maybe",
+        "startTime": 145.326156,
+        "endTime": 145.598066
+      },
+      {
+        "text": "life",
+        "startTime": 145.598066,
+        "endTime": 146.023967
+      },
+      {
+        "text": "is",
+        "startTime": 146.023967,
+        "endTime": 146.398258
+      },
+      {
+        "text": "just",
+        "startTime": 146.398258,
+        "endTime": 146.859871
+      },
+      {
+        "text": "like",
+        "startTime": 146.859871,
+        "endTime": 147.363146
+      },
+      {
+        "text": "this",
+        "startTime": 147.363146,
+        "endTime": 147.363146
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 148.425343,
+    "endTime": 150.697904,
+    "text": "Little risks in plastic lids",
+    "words": [
+      {
+        "text": "Little",
+        "startTime": 148.425343,
+        "endTime": 148.97568
+      },
+      {
+        "text": "risks",
+        "startTime": 148.97568,
+        "endTime": 149.363333
+      },
+      {
+        "text": "in",
+        "startTime": 149.363333,
+        "endTime": 149.769164
+      },
+      {
+        "text": "plastic",
+        "startTime": 149.769164,
+        "endTime": 150.697904
+      },
+      {
+        "text": "lids",
+        "startTime": 150.697904,
+        "endTime": 150.697904
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 152.122369,
+    "endTime": 154.907062,
+    "text": "You don’t know till you take that bite",
+    "words": [
+      {
+        "text": "You",
+        "startTime": 152.122369,
+        "endTime": 152.369221
+      },
+      {
+        "text": "don’t",
+        "startTime": 152.369221,
+        "endTime": 152.912964
+      },
+      {
+        "text": "know",
+        "startTime": 152.912964,
+        "endTime": 153.377838
+      },
+      {
+        "text": "till",
+        "startTime": 153.377838,
+        "endTime": 153.852353
+      },
+      {
+        "text": "you",
+        "startTime": 153.852353,
+        "endTime": 154.103403
+      },
+      {
+        "text": "take",
+        "startTime": 154.103403,
+        "endTime": 154.453312
+      },
+      {
+        "text": "that",
+        "startTime": 154.453312,
+        "endTime": 154.907062
+      },
+      {
+        "text": "bite",
+        "startTime": 154.907062,
+        "endTime": 154.907062
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 154.998219,
+    "endTime": 155.607841,
+    "text": "Could be wrong",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 154.998219,
+        "endTime": 155.240415
+      },
+      {
+        "text": "be",
+        "startTime": 155.240415,
+        "endTime": 155.607841
+      },
+      {
+        "text": "wrong",
+        "startTime": 155.607841,
+        "endTime": 155.607841
+      }
+    ]
+  },
+  {
+    "section": "bridge",
+    "startTime": 156.028906,
+    "endTime": 157.377309,
+    "text": "Could be right (oh yeah)",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 156.028906,
+        "endTime": 156.267022
+      },
+      {
+        "text": "be",
+        "startTime": 156.267022,
+        "endTime": 156.51044
+      },
+      {
+        "text": "right",
+        "startTime": 156.51044,
+        "endTime": 156.924475
+      },
+      {
+        "text": "(oh",
+        "startTime": 156.924475,
+        "endTime": 157.377309
+      },
+      {
+        "text": "yeah)",
+        "startTime": 157.377309,
+        "endTime": 157.377309
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 157.803943,
+    "endTime": 160.473863,
+    "text": "It’s the leftover lottery (hey!)",
+    "words": [
+      {
+        "text": "It’s",
+        "startTime": 157.803943,
+        "endTime": 158.038783
+      },
+      {
+        "text": "the",
+        "startTime": 158.038783,
+        "endTime": 158.26125
+      },
+      {
+        "text": "leftover",
+        "startTime": 158.26125,
+        "endTime": 159.420136
+      },
+      {
+        "text": "lottery",
+        "startTime": 159.420136,
+        "endTime": 160.473863
+      },
+      {
+        "text": "(hey!)",
+        "startTime": 160.473863,
+        "endTime": 160.473863
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 161.393228,
+    "endTime": 163.855787,
+    "text": "Everything’s a mystery meal to me",
+    "words": [
+      {
+        "text": "Everything’s",
+        "startTime": 161.393228,
+        "endTime": 162.133672
+      },
+      {
+        "text": "a",
+        "startTime": 162.133672,
+        "endTime": 162.740687
+      },
+      {
+        "text": "mystery",
+        "startTime": 162.740687,
+        "endTime": 163.375089
+      },
+      {
+        "text": "meal",
+        "startTime": 163.375089,
+        "endTime": 163.600561
+      },
+      {
+        "text": "to",
+        "startTime": 163.600561,
+        "endTime": 163.855787
+      },
+      {
+        "text": "me",
+        "startTime": 163.855787,
+        "endTime": 163.855787
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 165.125635,
+    "endTime": 165.589516,
+    "text": "Could be gold",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 165.125635,
+        "endTime": 165.348058
+      },
+      {
+        "text": "be",
+        "startTime": 165.348058,
+        "endTime": 165.589516
+      },
+      {
+        "text": "gold",
+        "startTime": 165.589516,
+        "endTime": 165.589516
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 166.133668,
+    "endTime": 166.650233,
+    "text": "Could be history",
+    "words": [
+      {
+        "text": "Could",
+        "startTime": 166.133668,
+        "endTime": 166.394284
+      },
+      {
+        "text": "be",
+        "startTime": 166.394284,
+        "endTime": 166.650233
+      },
+      {
+        "text": "history",
+        "startTime": 166.650233,
+        "endTime": 166.650233
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 168.931612,
+    "endTime": 170.762201,
+    "text": "But I heat it up and see",
+    "words": [
+      {
+        "text": "But",
+        "startTime": 168.931612,
+        "endTime": 169.168651
+      },
+      {
+        "text": "I",
+        "startTime": 169.168651,
+        "endTime": 169.453065
+      },
+      {
+        "text": "heat",
+        "startTime": 169.453065,
+        "endTime": 169.700769
+      },
+      {
+        "text": "it",
+        "startTime": 169.700769,
+        "endTime": 169.968113
+      },
+      {
+        "text": "up",
+        "startTime": 169.968113,
+        "endTime": 170.254169
+      },
+      {
+        "text": "and",
+        "startTime": 170.254169,
+        "endTime": 170.762201
+      },
+      {
+        "text": "see",
+        "startTime": 170.762201,
+        "endTime": 170.762201
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 172.016475,
+    "endTime": 172.016475,
+    "text": "Yeah",
+    "words": [
+      {
+        "text": "Yeah",
+        "startTime": 172.016475,
+        "endTime": 172.016475
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 172.864365,
+    "endTime": 174.013982,
+    "text": "The leftover lottery",
+    "words": [
+      {
+        "text": "The",
+        "startTime": 172.864365,
+        "endTime": 173.134389
+      },
+      {
+        "text": "leftover",
+        "startTime": 173.134389,
+        "endTime": 174.013982
+      },
+      {
+        "text": "lottery",
+        "startTime": 174.013982,
+        "endTime": 174.013982
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 176.521528,
+    "endTime": 179.009356,
+    "text": "Tiny risks in Tupperware glory",
+    "words": [
+      {
+        "text": "Tiny",
+        "startTime": 176.521528,
+        "endTime": 176.836308
+      },
+      {
+        "text": "risks",
+        "startTime": 176.836308,
+        "endTime": 177.320362
+      },
+      {
+        "text": "in",
+        "startTime": 177.320362,
+        "endTime": 177.788719
+      },
+      {
+        "text": "Tupperware",
+        "startTime": 177.788719,
+        "endTime": 179.009356
+      },
+      {
+        "text": "glory",
+        "startTime": 179.009356,
+        "endTime": 179.009356
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 180.237171,
+    "endTime": 181.150791,
+    "text": "If I wake up",
+    "words": [
+      {
+        "text": "If",
+        "startTime": 180.237171,
+        "endTime": 180.497071
+      },
+      {
+        "text": "I",
+        "startTime": 180.497071,
+        "endTime": 180.735014
+      },
+      {
+        "text": "wake",
+        "startTime": 180.735014,
+        "endTime": 181.150791
+      },
+      {
+        "text": "up",
+        "startTime": 181.150791,
+        "endTime": 181.150791
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 181.391409,
+    "endTime": 182.758078,
+    "text": "It was meant to be",
+    "words": [
+      {
+        "text": "It",
+        "startTime": 181.391409,
+        "endTime": 181.6345
+      },
+      {
+        "text": "was",
+        "startTime": 181.6345,
+        "endTime": 182.117232
+      },
+      {
+        "text": "meant",
+        "startTime": 182.117232,
+        "endTime": 182.33032
+      },
+      {
+        "text": "to",
+        "startTime": 182.33032,
+        "endTime": 182.758078
+      },
+      {
+        "text": "be",
+        "startTime": 182.758078,
+        "endTime": 182.758078
+      }
+    ]
+  },
+  {
+    "section": "outro",
+    "startTime": 183.911324,
+    "endTime": 188.004798,
+    "text": "Guess I won the leftover lottery",
+    "words": [
+      {
+        "text": "Guess",
+        "startTime": 183.911324,
+        "endTime": 184.167262
+      },
+      {
+        "text": "I",
+        "startTime": 184.167262,
+        "endTime": 184.826413
+      },
+      {
+        "text": "won",
+        "startTime": 184.826413,
+        "endTime": 185.156224
+      },
+      {
+        "text": "the",
+        "startTime": 185.156224,
+        "endTime": 186.132568
+      },
+      {
+        "text": "leftover",
+        "startTime": 186.132568,
+        "endTime": 188.004798
+      },
+      {
+        "text": "lottery",
+        "startTime": 188.004798,
+        "endTime": 188.004798
+      }
+    ]
+  }
+]

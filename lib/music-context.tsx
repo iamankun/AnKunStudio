@@ -1,6 +1,14 @@
 "use client";
 
-import { createContext, useContext, useState, useRef, useCallback, ReactNode, useEffect } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useRef,
+  useCallback,
+  ReactNode,
+  useEffect,
+} from "react";
 
 export interface Track {
   id: string;
@@ -42,53 +50,56 @@ const MusicContext = createContext<MusicContextType | null>(null);
 // Sample tracks with placeholder audio
 const sampleTracks: Track[] = [
   {
-    id: '1',
-    title: 'Cứ Bước Đi',
-    artist: 'Congtri_ ft. QUYEN.',
-    album: 'Single',
+    id: "1",
+    title: "Refrigerator & Box",
+    artist: "An Kun",
+    album: "Single",
+    duration: 180,
+    cover: "/tracks/refrigerator&box.jpg",
+    audioUrl: "/tracks/refrigerator&box.mp3",
+    lyricUrl: "/tracks/refrigerator&box.json",
+  },
+  {
+    id: "2",
+    title: "Cứ Bước Đi",
+    artist: "Congtri_ ft. QUYEN.",
+    album: "Single",
     duration: 245,
-    cover: '/tracks/cubuocdi.jpg',
-    audioUrl: '/tracks/congtri_ & QUYEN - Cứ Bước Đi.wav',
-    lyricUrl: '/tracks/cubuocdi.json'
+    cover: "/tracks/cubuocdi.jpg",
+    audioUrl: "/tracks/congtri_ & QUYEN - Cứ Bước Đi.wav",
+    lyricUrl: "/tracks/cubuocdi.json",
   },
   {
-    id: '2',
-    title: 'Đừng Lo Đến Anh',
-    artist: 'Willdawind ft. Xesi',
-    album: 'Single',
+    id: "3",
+    title: "Đừng Lo Đến Anh",
+    artist: "Willdawind ft. Xesi",
+    album: "Single",
     duration: 240,
-    cover: '/tracks/dung-lo-den-anh.jpg',
-    audioUrl: '/tracks/Willdawind - đừng lo đến anh ft. Xesi (Prod. by Pawn).m4a',
-    lyricUrl: '/tracks/dunglodenanh.json'
+    cover: "/tracks/dung-lo-den-anh.jpg",
+    audioUrl:
+      "/tracks/Willdawind - đừng lo đến anh ft. Xesi (Prod. by Pawn).m4a",
+    lyricUrl: "/tracks/dunglodenanh.json",
   },
   {
-    id: '3',
-    title: 'Nếu Như (OST Short Film WHAT IF)',
-    artist: 'An Kun, Cinnamorolls, KC Phan',
-    album: 'WHAT IF',
+    id: "4",
+    title: "Nếu Như (OST Short Film WHAT IF)",
+    artist: "An Kun, Cinnamorolls, KC Phan",
+    album: "WHAT IF",
     duration: 312,
-    cover: 'https://t2.genius.com/unsafe/344x344/https%3A%2F%2Fimages.genius.com%2F95435768cd84f1b6a7af36f182b20a54.500x500x1.jpg',
-    audioUrl: '/tracks/neunhu.wav',
-    lyricUrl: '/tracks/neunhu.json'
+    cover:
+      "https://t2.genius.com/unsafe/344x344/https%3A%2F%2Fimages.genius.com%2F95435768cd84f1b6a7af36f182b20a54.500x500x1.jpg",
+    audioUrl: "/tracks/neunhu.wav",
+    lyricUrl: "/tracks/neunhu.json",
   },
   {
-    id: '4',
-    title: 'Destiny',
-    artist: 'Willdawind ft. Bảo Hân Helia',
-    album: 'Amor Fati',
+    id: "5",
+    title: "Destiny",
+    artist: "Willdawind ft. Bảo Hân Helia",
+    album: "Amor Fati",
     duration: 276,
-    cover: '/tracks/Willdawind - DESTINY ft Bao Han Helia.jpg',
-    audioUrl: '/tracks/Destiny - Willdawind x Bảo Hân Helia - Prod. by Pawn by Willdawind.wav',
-    lyricUrl: '/tracks/Willdawind - Destiny ft Bao Han Helia.json'
-  },
-  {
-    id: '5',
-    title: 'Rhythm Flow',
-    artist: 'Wave Riders',
-    album: 'Coastal Dreams',
-    duration: 223,
-    cover: '/tracks/rhythm-flow.jpg',
-    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+    cover: "/tracks/Willdawind - DESTINY ft Bao Han Helia.jpg",
+    audioUrl: "/tracks/destiny.wav",
+    lyricUrl: "/tracks/Willdawind - Destiny ft Bao Han Helia.json",
   },
 ];
 
@@ -102,14 +113,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const playTrackRef = useRef<(track: Track) => void>(() => { });
+  const playTrackRef = useRef<(track: Track) => void>(() => {});
   const retryCountRef = useRef(0);
   const maxRetries = 3;
 
   const nextTrack = useCallback(() => {
-    setQueueState(prevQueue => {
+    setQueueState((prevQueue) => {
       if (!currentTrack || prevQueue.length === 0) return prevQueue;
-      const currentIndex = prevQueue.findIndex(t => t.id === currentTrack.id);
+      const currentIndex = prevQueue.findIndex((t) => t.id === currentTrack.id);
       const nextIndex = (currentIndex + 1) % prevQueue.length;
       playTrackRef.current(prevQueue[nextIndex]);
       return prevQueue;
@@ -119,17 +130,17 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   // Initialize playTrack function in useEffect to avoid render-time ref access
   useEffect(() => {
     playTrackRef.current = (track: Track) => {
-      console.log('Đang chơi nhạc:', track.title, 'URL:', track.audioUrl);
+      console.log("Đang chơi nhạc:", track.title, "URL:", track.audioUrl);
       setError(null);
       setIsLoading(true);
       retryCountRef.current = 0;
 
       // Get current state from closure instead of depending on currentTrack in deps
       const currentTrackId = audioRef.current ? currentTrack?.id : null;
-      
+
       // If same track is already playing, don't recreate audio
       if (audioRef.current && currentTrackId === track.id) {
-        console.log('Bài hát đang phát, tiếp tục...');
+        console.log("Bài hát đang phát, tiếp tục...");
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
           playPromise
@@ -137,15 +148,17 @@ export function MusicProvider({ children }: { children: ReactNode }) {
               setIsLoading(false);
               setIsPlaying(true);
             })
-            .catch(error => {
+            .catch((error) => {
               setIsLoading(false);
-              if (error.name === 'AbortError') {
+              if (error.name === "AbortError") {
                 return;
               }
-              if (error.name === 'NotAllowedError') {
-                setError('Vui lòng tương tác với trang để phát nhạc (chạm vào màn hình)');
+              if (error.name === "NotAllowedError") {
+                setError(
+                  "Vui lòng tương tác với trang để phát nhạc (chạm vào màn hình)",
+                );
               }
-              console.error('Âm thanh thất bại khi phát lại:', error);
+              console.error("Âm thanh thất bại khi phát lại:", error);
             });
         }
         return;
@@ -153,14 +166,14 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
       if (audioRef.current) {
         audioRef.current.pause();
-        audioRef.current.removeEventListener('timeupdate', () => { });
-        audioRef.current.removeEventListener('ended', () => { });
+        audioRef.current.removeEventListener("timeupdate", () => {});
+        audioRef.current.removeEventListener("ended", () => {});
       }
 
       // Create new audio element to avoid conflicts
       const newAudio = new Audio();
       newAudio.volume = volume;
-      newAudio.preload = 'metadata';
+      newAudio.preload = "metadata";
 
       // Set up event listeners for new audio
       const handleTimeUpdate = () => {
@@ -168,12 +181,12 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           setProgress((newAudio.currentTime / newAudio.duration) * 100);
         }
       };
-      
+
       const handleEnded = () => {
         // Use functional update to avoid dependency issues
-        setQueueState(prevQueue => {
+        setQueueState((prevQueue) => {
           if (!prevQueue.length) return prevQueue;
-          const currentIndex = prevQueue.findIndex(t => t.id === track.id);
+          const currentIndex = prevQueue.findIndex((t) => t.id === track.id);
           const nextIndex = (currentIndex + 1) % prevQueue.length;
           // Schedule next track
           setTimeout(() => {
@@ -182,38 +195,45 @@ export function MusicProvider({ children }: { children: ReactNode }) {
           return prevQueue;
         });
       };
-      
+
       const handleCanPlayThrough = () => {
         setIsLoading(false);
       };
-      
+
       const handleError = (e: Event) => {
         setIsLoading(false);
-        console.error('Lỗi khi phát audio:', e);
-        console.error('Mã lỗi audio:', newAudio.error);
-        
+        console.error("Lỗi khi phát audio:", e);
+        console.error("Mã lỗi audio:", newAudio.error);
+
         const errorCode = newAudio.error?.code;
-        let errorMessage = 'Không thể phát bài hát';
-        
+        let errorMessage = "Không thể phát bài hát";
+
         switch (errorCode) {
           case 1:
-            errorMessage = 'Quá trình tải bài hát bị gián đoạn. Vui lòng thử lại.';
+            errorMessage =
+              "Quá trình tải bài hát bị gián đoạn. Vui lòng thử lại.";
             break;
           case 2:
-            errorMessage = 'Lỗi mạng. Vui lòng kiểm tra kết nối internet.';
+            errorMessage = "Lỗi mạng. Vui lòng kiểm tra kết nối internet.";
             break;
           case 3:
-            errorMessage = 'Định dạng âm thanh không được hỗ trợ.';
+            errorMessage = "Định dạng âm thanh không được hỗ trợ.";
             break;
           case 4:
-            errorMessage = 'Không thể tải bài hát. File có thể bị lỗi hoặc không tồn tại.';
+            errorMessage =
+              "Không thể tải bài hát. File có thể bị lỗi hoặc không tồn tại.";
             break;
         }
-        
+
         // Retry logic for network errors
-        if (retryCountRef.current < maxRetries && (errorCode === 2 || errorCode === 4)) {
+        if (
+          retryCountRef.current < maxRetries &&
+          (errorCode === 2 || errorCode === 4)
+        ) {
           retryCountRef.current += 1;
-          console.log(`Đang thử lại tải audio (lần ${retryCountRef.current}/${maxRetries})...`);
+          console.log(
+            `Đang thử lại tải audio (lần ${retryCountRef.current}/${maxRetries})...`,
+          );
           setTimeout(() => {
             newAudio.load();
           }, 1000 * retryCountRef.current);
@@ -223,10 +243,10 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         }
       };
 
-      newAudio.addEventListener('timeupdate', handleTimeUpdate);
-      newAudio.addEventListener('ended', handleEnded);
-      newAudio.addEventListener('canplaythrough', handleCanPlayThrough);
-      newAudio.addEventListener('error', handleError);
+      newAudio.addEventListener("timeupdate", handleTimeUpdate);
+      newAudio.addEventListener("ended", handleEnded);
+      newAudio.addEventListener("canplaythrough", handleCanPlayThrough);
+      newAudio.addEventListener("error", handleError);
 
       // Set source and play
       newAudio.src = track.audioUrl;
@@ -238,37 +258,37 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       // Small delay to ensure state is updated
       setTimeout(() => {
         const playPromise = newAudio.play();
-        console.log('Play promise:', playPromise);
+        console.log("Play promise:", playPromise);
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
-              console.log('Âm thanh đang phát thành công');
+              console.log("Âm thanh đang phát thành công");
               setIsLoading(false);
               setIsPlaying(true);
               retryCountRef.current = 0;
             })
-            .catch(error => {
+            .catch((error) => {
               setIsLoading(false);
               // AbortError is expected when play is interrupted by pause
-              if (error.name === 'AbortError') {
-                console.log('Âm thanh bị gián đoạn (AbortError - expected)');
+              if (error.name === "AbortError") {
+                console.log("Âm thanh bị gián đoạn (AbortError - expected)");
                 return;
               }
-              
+
               // Mobile-specific error handling
-              if (error.name === 'NotAllowedError') {
-                setError('Vui lòng chạm vào màn hình để phát nhạc');
+              if (error.name === "NotAllowedError") {
+                setError("Vui lòng chạm vào màn hình để phát nhạc");
               } else {
-                setError('Không thể phát bài hát. Vui lòng thử lại.');
+                setError("Không thể phát bài hát. Vui lòng thử lại.");
               }
-              
-              console.error('Âm thanh thất bại khi phát:', error);
-              console.error('Tên lỗi:', error.name);
-              console.error('Thông báo lỗi:', error.message);
+
+              console.error("Âm thanh thất bại khi phát:", error);
+              console.error("Tên lỗi:", error.name);
+              console.error("Thông báo lỗi:", error.message);
               setIsPlaying(false);
             });
         } else {
-          console.log('Play promise is undefined');
+          console.log("Play promise is undefined");
           setIsLoading(false);
           setIsPlaying(true);
         }
@@ -277,10 +297,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   }, [volume, currentTrack?.id]); // Only depend on volume and currentTrack.id for same-track detection
 
   const previous = useCallback(() => {
-    setQueueState(prevQueue => {
+    setQueueState((prevQueue) => {
       if (!currentTrack || prevQueue.length === 0) return prevQueue;
-      const currentIndex = prevQueue.findIndex(t => t.id === currentTrack.id);
-      const prevIndex = currentIndex === 0 ? prevQueue.length - 1 : currentIndex - 1;
+      const currentIndex = prevQueue.findIndex((t) => t.id === currentTrack.id);
+      const prevIndex =
+        currentIndex === 0 ? prevQueue.length - 1 : currentIndex - 1;
       playTrackRef.current(prevQueue[prevIndex]);
       return prevQueue;
     });
@@ -305,63 +326,68 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const pause = useCallback(() => {
-    console.log('pause() called, audioRef.current exists:', !!audioRef.current);
+    console.log("pause() called, audioRef.current exists:", !!audioRef.current);
     if (audioRef.current) {
       try {
-        console.log('Pausing audio...');
-        console.log('Audio paused before:', audioRef.current.paused);
-        console.log('Audio currentTime:', audioRef.current.currentTime);
+        console.log("Pausing audio...");
+        console.log("Audio paused before:", audioRef.current.paused);
+        console.log("Audio currentTime:", audioRef.current.currentTime);
 
         audioRef.current.pause();
 
         // Check if pause actually worked
         setTimeout(() => {
-          console.log('Audio paused after:', audioRef.current?.paused);
-          console.log('Audio currentTime after pause:', audioRef.current?.currentTime);
+          console.log("Audio paused after:", audioRef.current?.paused);
+          console.log(
+            "Audio currentTime after pause:",
+            audioRef.current?.currentTime,
+          );
         }, 100);
 
         setIsPlaying(false);
-        console.log('Set isPlaying to false');
+        console.log("Set isPlaying to false");
       } catch (error) {
-        console.error('Audio pause failed:', error);
+        console.error("Audio pause failed:", error);
         // Don't change state if pause failed
       }
     }
   }, []);
 
   const resume = useCallback(() => {
-    console.log('resume() called');
-    console.log('audioRef.current exists:', !!audioRef.current);
-    console.log('currentTrack exists:', !!currentTrack);
-    console.log('audioRef.current.paused:', audioRef.current?.paused);
+    console.log("resume() called");
+    console.log("audioRef.current exists:", !!audioRef.current);
+    console.log("currentTrack exists:", !!currentTrack);
+    console.log("audioRef.current.paused:", audioRef.current?.paused);
 
     if (audioRef.current && currentTrack) {
-      console.log('Resuming audio...');
+      console.log("Resuming audio...");
       setIsLoading(true);
       setError(null);
       // Small delay to ensure pause is fully processed
       setTimeout(() => {
         if (audioRef.current) {
-          console.log('Attempting to play audio...');
+          console.log("Attempting to play audio...");
           const playPromise = audioRef.current.play();
           if (playPromise !== undefined) {
             playPromise
               .then(() => {
-                console.log('Audio resumed successfully');
+                console.log("Audio resumed successfully");
                 setIsLoading(false);
                 setIsPlaying(true);
               })
-              .catch(error => {
+              .catch((error) => {
                 setIsLoading(false);
                 // AbortError is expected when play is interrupted by pause
-                if (error.name === 'AbortError') {
-                  console.log('Audio resume interrupted (AbortError - expected)');
+                if (error.name === "AbortError") {
+                  console.log(
+                    "Audio resume interrupted (AbortError - expected)",
+                  );
                   return;
                 }
-                if (error.name === 'NotAllowedError') {
-                  setError('Vui lòng chạm vào màn hình để tiếp tục phát nhạc');
+                if (error.name === "NotAllowedError") {
+                  setError("Vui lòng chạm vào màn hình để tiếp tục phát nhạc");
                 }
-                console.error('Audio resume failed:', error);
+                console.error("Audio resume failed:", error);
               });
           }
         }
@@ -383,7 +409,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const addToQueue = useCallback((track: Track) => {
-    setQueueState(prev => [...prev, track]);
+    setQueueState((prev) => [...prev, track]);
   }, []);
 
   const setQueue = useCallback((tracks: Track[]) => {
@@ -440,7 +466,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 export function useMusic() {
   const context = useContext(MusicContext);
   if (!context) {
-    throw new Error('useMusic must be used within a MusicProvider');
+    throw new Error("useMusic must be used within a MusicProvider");
   }
   return context;
 }

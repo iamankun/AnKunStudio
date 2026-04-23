@@ -1,17 +1,56 @@
-'use client';
+"use client";
 
-import { useMusic, sampleTracks, Track } from '@/lib/music-context';
-import { layDanhSachArtists } from '@/lib/artists';
-import type { Artist } from '@/types/database';
-import { Play, Pause, Heart, Plus } from 'lucide-react';
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useMusic, sampleTracks, Track } from "@/lib/music-context";
+import { layDanhSachArtists } from "@/lib/artists";
+import type { Artist } from "@/types/database";
+import { Play, Pause, Heart, Plus } from "lucide-react";
+import Image from "next/image";
+import { useState, useEffect, useRef, useCallback } from "react";
+import Link from "next/link";
 
 export function Featured() {
-  const { currentTrack, isPlaying, playTrack, pause, resume, setIsPlayerVisible } = useMusic();
+  const {
+    currentTrack,
+    isPlaying,
+    playTrack,
+    pause,
+    resume,
+    setIsPlayerVisible,
+  } = useMusic();
   const [artists, setArtists] = useState<Artist[]>([] as Artist[]);
   const [loading, setLoading] = useState(true);
+
+  // Drag to scroll refs and state
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  }, []);
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent) => {
+      if (!isDragging || !scrollRef.current) return;
+      e.preventDefault();
+      const x = e.pageX - scrollRef.current.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    },
+    [isDragging, startX, scrollLeft],
+  );
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsDragging(false);
+  }, []);
 
   useEffect(() => {
     const fetchArtists = async () => {
@@ -19,7 +58,7 @@ export function Featured() {
         const data = await layDanhSachArtists();
         setArtists(data.slice(0, 6)); // Lấy 6 nghệ sĩ đầu tiên
       } catch (error) {
-        console.error('Error fetching artists:', error);
+        console.error("Error fetching artists:", error);
         setArtists([]);
       } finally {
         setLoading(false);
@@ -29,66 +68,96 @@ export function Featured() {
     fetchArtists();
   }, []);
 
-  const featuredTracks: (Track & { plays: string; durationFormatted: string })[] = sampleTracks.map((track, idx) => ({
+  // Generate plays dynamically based on index - supports unlimited tracks
+  const generatePlays = (idx: number): string => {
+    const basePlays = [5.5, 4.2, 3.8, 5.1, 2.9, 3.5];
+    if (idx < basePlays.length) {
+      return `${basePlays[idx]}M`;
+    }
+    // Generate random plays for new tracks (1M - 6M)
+    const randomPlays = (Math.random() * 5 + 1).toFixed(1);
+    return `${randomPlays}M`;
+  };
+
+  const featuredTracks: (Track & {
+    plays: string;
+    durationFormatted: string;
+  })[] = sampleTracks.map((track, idx) => ({
     ...track,
-    plays: ['5.5M', '4.2M', '3.8M', '5.1M', '2.9M', '3.5M'][idx] || '1.0M',
+    plays: generatePlays(idx),
     durationFormatted: formatDuration(track.duration),
   }));
 
   function formatDuration(seconds: number): string {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   }
 
   const handlePlayTrack = (track: Track) => {
-    console.log('handlePlayTrack called with:', track.title);
-    console.log('Current track:', currentTrack?.title);
-    console.log('Is playing:', isPlaying);
-    console.log('Track ID match:', currentTrack?.id === track.id);
-    
+    console.log("handlePlayTrack called with:", track.title);
+    console.log("Current track:", currentTrack?.title);
+    console.log("Is playing:", isPlaying);
+    console.log("Track ID match:", currentTrack?.id === track.id);
+
     setIsPlayerVisible(true); // Show music player
-    
+
     if (currentTrack?.id === track.id) {
-      console.log('Same track selected');
+      console.log("Same track selected");
       if (isPlaying) {
-        console.log('Track is playing, calling pause...');
+        console.log("Track is playing, calling pause...");
         pause();
       } else {
-        console.log('Track is paused, calling resume...');
+        console.log("Track is paused, calling resume...");
         resume();
       }
     } else {
-      console.log('Different track, calling playTrack...');
+      console.log("Different track, calling playTrack...");
       playTrack(track);
     }
   };
 
   return (
-    <section id="featured" className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-background to-secondary/20">
+    <section
+      id="featured"
+      className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-background to-secondary/20"
+    >
       <div className="max-w-7xl mx-auto space-y-16">
-
         {/* Trending Now */}
         <div className="space-y-12">
           <div className="space-y-4 animate-fade-in-up">
-            <p className="text-sm font-semibold text-primary uppercase tracking-widest">Nổi bật</p>
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest">
+              Nổi bật
+            </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight rainbow-text inline-block leading-tight">
               Đang thịnh hành
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Khám phá các bài hát nóng nhất và các nghệ sĩ mới nổi từ khắp nơi trên thế giới
+              Khám phá các bài hát nóng nhất và các nghệ sĩ mới nổi từ khắp nơi
+              trên thế giới
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredTracks.slice(0, 4).map((track) => {
+          <div
+            ref={scrollRef}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            className={`flex gap-6 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {featuredTracks.map((track) => {
               const isCurrentTrack = currentTrack?.id === track.id;
               const isCurrentlyPlaying = isCurrentTrack && isPlaying;
 
               return (
                 <div
                   key={track.id}
-                  className="group cursor-pointer animate-fade-in-up animate-delay-[0ms]"
+                  className="group cursor-pointer animate-fade-in-up animate-delay-[0ms] min-w-[250px] w-[250px] sm:min-w-[280px] sm:w-[280px]"
                 >
                   <div className="relative overflow-hidden rounded-xl mb-4">
                     <div className="aspect-square relative w-full overflow-hidden bg-secondary">
@@ -105,8 +174,8 @@ export function Featured() {
                           onClick={() => handlePlayTrack(track)}
                           className={`transition-all duration-300 transform w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center hover:bg-primary ${
                             isCurrentlyPlaying
-                              ? 'opacity-100 translate-y-0'
-                              : 'opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0'
+                              ? "opacity-100 translate-y-0"
+                              : "opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0"
                           }`}
                         >
                           {isCurrentlyPlaying ? (
@@ -123,24 +192,33 @@ export function Featured() {
                               <div
                                 key={bar}
                                 className={`w-1 bg-primary rounded-full animate-pulse animate-delay-[${bar * 100}ms] ${
-                                  bar === 1 ? 'h-2/4' : 
-                                  bar === 2 ? 'h-3/4' : 
-                                  bar === 3 ? 'h-full' : 
-                                  'h-1/2'
+                                  bar === 1
+                                    ? "h-2/4"
+                                    : bar === 2
+                                      ? "h-3/4"
+                                      : bar === 3
+                                        ? "h-full"
+                                        : "h-1/2"
                                 }`}
                               />
                             ))}
                           </div>
-                          <span className="text-xs text-white font-medium ml-1">Đang phát</span>
+                          <span className="text-xs text-white font-medium ml-1">
+                            Đang phát
+                          </span>
                         </div>
                       )}
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className={`font-semibold transition-colors duration-300 line-clamp-1 ${
-                      isCurrentTrack ? 'text-primary' : 'text-foreground group-hover:text-primary'
-                    }`}>
+                    <h3
+                      className={`font-semibold transition-colors duration-300 line-clamp-1 ${
+                        isCurrentTrack
+                          ? "text-primary"
+                          : "text-foreground group-hover:text-primary"
+                      }`}
+                    >
                       {track.title}
                     </h3>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
@@ -154,14 +232,14 @@ export function Featured() {
 
                     <div className="pt-3 border-t border-border group-hover:border-primary/30 transition-colors duration-300 flex items-center justify-between">
                       <div className="flex gap-2">
-                        <button 
+                        <button
                           type="button"
                           className="p-1.5 rounded-full hover:bg-primary/10 transition-colors duration-300"
                           aria-label="Like track"
                         >
                           <Heart className="w-4 h-4 text-foreground group-hover:text-primary transition-colors" />
                         </button>
-                        <button 
+                        <button
                           type="button"
                           className="p-1.5 rounded-full hover:bg-primary/10 transition-colors duration-300"
                           aria-label="Add to playlist"
@@ -173,7 +251,7 @@ export function Featured() {
                         onClick={() => handlePlayTrack(track)}
                         className="text-primary font-medium text-xs hover:underline"
                       >
-                        {isCurrentlyPlaying ? 'Pause' : 'Listen'}
+                        {isCurrentlyPlaying ? "Pause" : "Listen"}
                       </button>
                     </div>
                   </div>
@@ -186,7 +264,9 @@ export function Featured() {
         {/* Discover Amazing Talent */}
         <div className="space-y-12">
           <div className="space-y-4 animate-fade-in-up">
-            <p className="text-sm font-semibold text-primary uppercase tracking-widest">Nghệ sĩ</p>
+            <p className="text-sm font-semibold text-primary uppercase tracking-widest">
+              Nghệ sĩ
+            </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight rainbow-text inline-block leading-tight">
               Khám phá Tài năng Phi thường
             </h2>
@@ -220,7 +300,7 @@ export function Featured() {
                 >
                   <div className="relative w-full h-32 overflow-hidden rounded-t-xl">
                     <Image
-                      src={artist.avatar_url || '/artists/luna-echo.jpg'}
+                      src={artist.avatar_url || "/artists/luna-echo.jpg"}
                       alt={artist.name}
                       fill
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 16vw, 12vw"
@@ -233,9 +313,13 @@ export function Featured() {
                     <h4 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1">
                       {artist.name}
                     </h4>
-                    <p className="text-xs text-muted-foreground">{artist.genre?.[0] || 'Unknown'}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {artist.genre?.[0] || "Unknown"}
+                    </p>
                     <div className="pt-2 border-t border-primary/10 group-hover:border-primary/30 transition-colors duration-300">
-                      <p className="text-xs font-medium text-primary">{artist.monthly_listeners || '0'} người nghe/tháng</p>
+                      <p className="text-xs font-medium text-primary">
+                        {artist.monthly_listeners || "0"} người nghe/tháng
+                      </p>
                     </div>
                   </div>
 
@@ -245,7 +329,6 @@ export function Featured() {
             )}
           </div>
         </div>
-
       </div>
     </section>
   );
