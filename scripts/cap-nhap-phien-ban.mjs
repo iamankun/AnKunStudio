@@ -27,28 +27,61 @@ const logoAnKun = `
             |____S T U D I O  b y  A N K U N  S T U D I O,  L L C
 `;
 
+// --- Spinner animation ---
+const frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+let spinnerInterval;
+
+function startSpinner(message) {
+    let i = 0;
+    spinnerInterval = setInterval(() => {
+        process.stdout.write(`\r${colors.cyan}${frames[i]}${colors.reset} ${message}`);
+        i = (i + 1) % frames.length;
+    }, 80);
+}
+
+function stopSpinner() {
+    if (spinnerInterval) {
+        clearInterval(spinnerInterval);
+        process.stdout.write('\r' + ' '.repeat(process.stdout.columns) + '\r');
+    }
+}
+
 async function initAnKunStudio() {
     // 1. Hiển thị thông điệp chào mừng
     console.log(`${colors.cyan}${colors.bright}${logoAnKun}${colors.reset}`);
     console.log(`${colors.yellow}🚀 Đang khởi động tiến trình hệ thống cho An Kun Studio...${colors.reset}\n`);
 
     try {
-        // --- KHÔNG GIAN ĐỂ THÊM LOGIC SAU NÀY ---
-        // Tại đây, bạn có thể thêm các luồng xử lý như:
-        // - Đọc phiên bản từ package.json
-        // - Quản lý tệp tĩnh, sitemap, hoặc tự động tạo thẻ meta
-        // - Tối ưu hóa hình ảnh hoặc đồng bộ dữ liệu
-        
-        // Giả lập một khoảng thời gian chờ (bạn có thể xóa dòng này khi có logic thực tế)
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // --- Build Process Steps ---
+        const buildSteps = [
+            "Đang kiểm tra môi trường...",
+            "Đang tải các thành phần...",
+            "Đang tối ưu hóa tài nguyên...",
+            "Đang biên dịch ứng dụng...",
+            "Đang tạo bản build cuối cùng..."
+        ];
+
+        for (let i = 0; i < buildSteps.length; i++) {
+            startSpinner(buildSteps[i]);
+            // Giả lập thời gian xử lý cho mỗi bước
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            stopSpinner();
+            console.log(`${colors.green}✅${colors.reset} ${buildSteps[i]}`);
+        }
+
+        // Final step
+        startSpinner("Đang hoàn tất cài đặt...");
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        stopSpinner();
 
         // 2. Thông báo thành công
-        console.log(`${colors.green}---------------------------------------------------`);
+        console.log(`\n${colors.green}---------------------------------------------------`);
         console.log(`✅  Hệ thống An Kun Studio đã sẵn sàng biên dịch!`);
         console.log(`👉  Chào mừng An Kun đến với An Kun Studio Digital Music Distribution`);
         console.log(`---------------------------------------------------${colors.reset}\n`);
         
     } catch (error) {
+        stopSpinner();
         // 3. Bắt lỗi an toàn và dừng luồng
         console.error(`${colors.red}❌ Lỗi tiến trình: ${error.message}${colors.reset}`);
         process.exit(1);
