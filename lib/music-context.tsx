@@ -55,9 +55,9 @@ const sampleTracks: Track[] = [
     artist: "An Kun",
     album: "Single",
     duration: 180,
-    cover: "/tracks/refrigerator&box.jpg",
-    audioUrl: "/tracks/refrigerator&box.mp3",
-    lyricUrl: "/tracks/refrigerator&box.json",
+    cover: "/tracks/Refrigerator&Box.jpg",
+    audioUrl: "/tracks/Refrigerator&Box.mp3",
+    lyricUrl: "/tracks/Refrigerator&Box.json",
   },
   {
     id: "2",
