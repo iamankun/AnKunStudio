@@ -1,3 +1,6 @@
+@import '../styles/_variables.scss';
+@import '../styles/_keyframe-animations.scss';
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -328,6 +331,38 @@
 
     75% {
       transform: translate(-5%, -3%) rotate(2deg) scale(1.03);
+    }
+  }
+
+  /* Image hover zoom animation */
+  img {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Smooth zoom animation for all images */
+  @keyframes imageZoomIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0.8;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes imageZoomOut {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.95);
+      opacity: 0.8;
     }
   }
 }

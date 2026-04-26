@@ -1,0 +1,30 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "heading",
+      "attrs": {
+        "textAlign": null,
+        "level": 1
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Viết bài mới"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "attrs": {
+        "textAlign": null
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Bắt đầu viết nội dung của bạn tại đây. Sử dụng các công cụ định dạng văn bản phong phú để tạo ra bài viết hấp dẫn."
+        }
+      ]
+    }
+  ]
+}
