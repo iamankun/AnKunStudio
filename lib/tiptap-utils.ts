@@ -363,8 +363,10 @@ export function selectionWithinConvertibleTypes(
  */
 export const handleImageUpload = async (
   file: File,
-  onProgress?: (event: { progress: number }) => void,
-  abortSignal?: AbortSignal,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _onProgress?: (event: { progress: number }) => void,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _abortSignal?: AbortSignal,
 ): Promise<string> => {
   // Validate file
   if (!file) {
@@ -385,7 +387,7 @@ export const handleImageUpload = async (
   const filePath = `blog-images/${fileName}`;
 
   // Upload to Supabase Storage
-  const { data, error } = await supabase.storage
+  const { error } = await supabase.storage
     .from("AnKunStudio")
     .upload(filePath, file, {
       cacheControl: "3600",
