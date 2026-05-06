@@ -1,9 +1,9 @@
-import type { NextConfig } from "next";
+// @ts-check
 
 // Kiểm tra xem hệ thống có đang ở môi trường phát triển (development) hay không
 const isDev = process.env.NODE_ENV !== "production";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
