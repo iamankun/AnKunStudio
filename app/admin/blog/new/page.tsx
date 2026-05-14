@@ -320,13 +320,12 @@ export default function NewBlogPostPage() {
                   </div>
 
                   {formData.featuredImage && (
-                    <div className="mt-3">
+                    <div className="mt-3 relative w-full h-32">
                       <Image
                         src={formData.featuredImage}
                         alt="Featured image preview"
-                        width={1280}
-                        height={720}
-                        className="w-full h-32 object-cover rounded-lg border"
+                        fill
+                        className="object-cover rounded-lg border"
                         onError={(e) => {
                           e.currentTarget.src =
                             "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjEzMCIgdmlld0JveD0iMCAwIDMyMCAxMzAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxMzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7Ekb25nIGjhu5QgY+G7oWk8L3RleHQ+PC9zdmc+";
