@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -320,9 +321,11 @@ export default function NewBlogPostPage() {
 
                   {formData.featuredImage && (
                     <div className="mt-3">
-                      <img
+                      <Image
                         src={formData.featuredImage}
                         alt="Featured image preview"
+                        width={1280}
+                        height={720}
                         className="w-full h-32 object-cover rounded-lg border"
                         onError={(e) => {
                           e.currentTarget.src =
