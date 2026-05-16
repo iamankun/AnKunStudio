@@ -334,13 +334,17 @@
     }
   }
 
-  /* Image hover zoom animation */
-  img {
-    transition: transform 0.3s ease-in-out;
+  /* Image hover zoom animation - works with Next.js Image component */
+  img,
+  img[src],
+  span img {
+    transition: transform 0.3s ease-in-out !important;
   }
 
-  img:hover {
-    transform: scale(1.05);
+  img:hover,
+  img[src]:hover,
+  span img:hover {
+    transform: scale(1.05) !important;
   }
 
   /* Smooth zoom animation for all images */
