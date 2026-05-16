@@ -4,9 +4,6 @@
 const isDev = process.env.NODE_ENV !== "production";
 
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -19,7 +16,7 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "**",
-      }
+      },
     ],
   },
   experimental: {
@@ -28,10 +25,10 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: "/(.*)",
         headers: [
           {
-            key: 'Content-Security-Policy',
+            key: "Content-Security-Policy",
             // Nội suy biến isDev để tự động thêm 'unsafe-eval' khi đang code,
             // và tự động xóa bỏ khi triển khai lên máy chủ thật.
             value: `default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com ${isDev ? "'unsafe-eval'" : ""}; script-src-elem 'self' 'unsafe-inline' https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://exsoflgvdreikabvhvkg.supabase.co https://*.supabase.co https://images.unsplash.com https://i.imgur.com https://i.ibb.co https://placehold.co https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' data:; connect-src 'self' https://exsoflgvdreikabvhvkg.supabase.co https://*.supabase.co https://va.vercel-scripts.com https://www.google-analytics.com https://analytics.google.com; media-src 'self' https://www.soundhelix.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;`,
