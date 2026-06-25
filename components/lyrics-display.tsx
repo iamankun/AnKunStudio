@@ -4,15 +4,14 @@ import { useLyrics } from '@/lib/lyrics-context';
 import { ChevronUp, ChevronDown, Mic2, Target } from 'lucide-react';
 import { getWordProgress } from '@/lib/lyrics-utils';
 import { useMusic } from '@/lib/music-context';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import '@/styles/lyrics-display.css';
 
 interface LyricsDisplayProps {
-  currentTime: number;
   onCalibrate?: () => void;
 }
 
-export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: LyricsDisplayProps) {
+export function LyricsDisplay({ onCalibrate }: LyricsDisplayProps) {
   const { 
     lyrics, 
     currentLine, 
@@ -37,32 +36,7 @@ export function LyricsDisplay({ currentTime: initialTimeProp, onCalibrate }: Lyr
     }
   }, [currentLine, isExpanded]);
 
-  const { getCurrentTime, isPlaying } = useMusic();
-  const [animationTime, setAnimationTime] = useState(initialTimeProp || 0);
-
-  // Dedicated high-frequency render loop for buttery smooth highlights
-  useEffect(() => {
-    let rafId: number;
-    const loop = () => {
-      if (isPlaying) {
-        setAnimationTime(getCurrentTime());
-      }
-      rafId = requestAnimationFrame(loop);
-    };
-    if (isPlaying) {
-      rafId = requestAnimationFrame(loop);
-    } else {
-      // Use setTimeout to avoid synchronous setState in effect
-      const timeoutId = setTimeout(() => {
-        setAnimationTime(getCurrentTime());
-      }, 0);
-      return () => {
-        clearTimeout(timeoutId);
-        if (rafId) cancelAnimationFrame(rafId);
-      };
-    }
-    return () => cancelAnimationFrame(rafId);
-  }, [isPlaying, getCurrentTime]);
+  const { currentTime: animationTime } = useMusic();
 
   if (isLoading) {
     return (

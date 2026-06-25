@@ -34,6 +34,7 @@ export function MusicPlayer() {
     isLoading,
     error,
     progress,
+    currentTime,
     volume,
     queue,
     isPlayerVisible,
@@ -69,30 +70,12 @@ export function MusicPlayer() {
   }, [currentTrack, loadLyrics, clearLyrics]);
 
 
-  const getCurrentTime = useMusic().getCurrentTime;
-  
-  // High-performance 60fps lyrics sync loop
+  // Sync lyrics when currentTime changes
   useEffect(() => {
-    let animationFrameId: number;
-    
-    function syncLyrics() {
-      if (isPlaying) {
-        const time = getCurrentTime();
-        updatePosition(time);
-      }
-      animationFrameId = requestAnimationFrame(syncLyrics);
-    }
-    
     if (isPlaying) {
-      animationFrameId = requestAnimationFrame(syncLyrics);
+      updatePosition(currentTime);
     }
-    
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [isPlaying, getCurrentTime, updatePosition]);
-
-  const currentTimeDisplay = currentTrack ? (progress / 100) * currentTrack.duration : 0;
+  }, [currentTime, isPlaying, updatePosition]);
 
   // Handle lyrics button click
   const handleToggleLyrics = useCallback(() => {
@@ -207,7 +190,7 @@ export function MusicPlayer() {
               {/* Progress (desktop) */}
               <div className="hidden md:flex items-center gap-3 flex-1 max-w-md">
                 <span className="text-xs text-muted-foreground w-10 text-right">
-                  {formatTime(currentTimeDisplay)}
+                  {formatTime(currentTime)}
                 </span>
                 <Slider
                   value={[progress]}
@@ -362,7 +345,7 @@ export function MusicPlayer() {
                       step={0.1}
                     />
                     <div className="flex justify-between text-xs text-muted-foreground">
-                      <span>{formatTime(currentTimeDisplay)}</span>
+                      <span>{formatTime(currentTime)}</span>
                       <span>{formatTime(currentTrack.duration)}</span>
                     </div>
                   </div>
@@ -499,7 +482,7 @@ export function MusicPlayer() {
                 {/* Lyrics Panel */}
                 {isExpanded && isLyricsExpanded && (
                   <div className="md:w-96 border-t md:border-t-0 md:border-l border-border overflow-y-auto">
-                    <LyricsDisplay currentTime={currentTimeDisplay} />
+                    <LyricsDisplay />
                   </div>
                 )}
               </div>
@@ -509,7 +492,7 @@ export function MusicPlayer() {
       </div>
 
       {/* Full Screen Lyrics Overlay */}
-      {isLyricsExpanded && <LyricsDisplay currentTime={currentTimeDisplay} />}
+      {isLyricsExpanded && <LyricsDisplay />}
     </>
   );
 }

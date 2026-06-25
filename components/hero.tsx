@@ -10,17 +10,22 @@ const isTouchDevice = () => {
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isMuted, setIsMuted] = useState(true);
-  // Initialize with SSR-safe default, then hydrate correctly
-  const [isMobile] = useState(() => {
-    // This runs once during client hydration, safe for SSR
-    if (typeof window === 'undefined') return false;
-    return isTouchDevice();
-  });
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    setIsMobile(isTouchDevice());
+  }, []);
+
+  useEffect(() => {
+    if (isMobile || !iframeRef.current) return;
+    iframeRef.current.src = 'https://www.youtube-nocookie.com/embed/woXlYnl0V6U?autoplay=1&mute=1&loop=1&playlist=woXlYnl0V6U&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1';
+  }, [isMobile]);
 
   // Optimized parallax effect with RAF throttling
   useEffect(() => {
-    if (isMobile) return; // Disable parallax on mobile
+    if (isMobile) return;
     
     const container = containerRef.current;
     if (!container) return;
@@ -60,15 +65,14 @@ export function Hero() {
       ref={containerRef}
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* YouTube Video Background - No autoplay on mobile */}
+      {/* YouTube Video Background - no preload on mobile */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <iframe
+          ref={iframeRef}
           className="absolute top-1/2 left-1/2 w-[120%] h-[120%] min-w-[120%] min-h-[120%] -translate-x-1/2 -translate-y-1/2"
-          src={`https://www.youtube-nocookie.com/embed/woXlYnl0V6U?${isMobile ? '' : 'autoplay=1&'}mute=1&loop=1&playlist=woXlYnl0V6U&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&playsinline=1`}
           allow="autoplay; encrypted-media"
           allowFullScreen={false}
           title="Background video"
-          loading="eager"
         />
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-background/70" />
